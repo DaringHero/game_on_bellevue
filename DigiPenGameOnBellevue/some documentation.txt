@@ -1,0 +1,13 @@
+This was made by Shawn as a kind of "readme" and FAQ
+
+1. What scene do I open?
+Open Boot.unity, this will lead to the other scenes
+
+2. How do I turn on emulation?
+Go to the BitToysManager object in Boot and click the Bit Toys Emulator
+
+3. How do I change colors? They are always the same (for completing the challenge)
+Uh, IDK.  I emailed Jacob about this.  Awaiting response.  He fixed it when he demoe'd it but I forgot how he did it :(
+
+4. Where are we going to add the minigames?
+How about inside that giant .cs file "TheEntireKiosk.cs" ? See the quest stuff
