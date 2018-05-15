@@ -11,3 +11,25 @@ Uh, IDK.  I emailed Jacob about this.  Awaiting response.  He fixed it when he d
 
 4. Where are we going to add the minigames?
 How about inside that giant .cs file "TheEntireKiosk.cs" ? See the quest stuff
+
+5. How do you backout?
+Press escape
+
+6.If you put certain things in the Registration text field, there can be special functions
+_adminBoot - loadslevel 0
+
+      if (userField.text == "_adminClearRegistration")
+      {
+        clearChip = true;
+      }
+      else if(userField.text == "_adminClearChip")
+      {
+        fullClearChip = true;
+      }
+      else if(userField.text == "_adminTacticalNuke")
+      {
+        fullClearServer = true;
+      }
+
+
+7.

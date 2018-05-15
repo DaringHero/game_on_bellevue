@@ -149,7 +149,7 @@ public class TheEntireKiosk : MonoBehaviour
 
   void PlayerInUpdate()
   {
-    if (Questor.IsThereAChallenge(location, activePlayer) == true)
+    if (Questor.IsThereAChallenge(location, activePlayer) == true) //this function always returns true - intended?
     {
       activeChallenge = Questor.GetChallenge(location, activePlayer);
 
