@@ -501,7 +501,7 @@ public class TheEntireKiosk : MonoBehaviour
   {
     if (allowNewPlayer)
     {
-      LoadingWheel.gameObject.SetActive(true);
+      LoadingWheel.gameObject.SetActive(true); //is the loading wheel supposed to spin??
     }
   }
 
