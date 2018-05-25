@@ -35,6 +35,7 @@ _adminBoot - loadslevel 0
 7.Why doesn't it build?
 Try downgrading the JDK to 8, and try upgrading your android sdk to at least level 26 aka 8.0.
 Also, don't worry about trying to pair the scanner to the device, the device should pair automatically when the game starts.  
+Also, make sure you use the "Internal" not the "Gradle" build system. Not sure why, but for me at least Gradle doesn't work.
 
 8.How am I supposed to debug this thing?
 Unity Remote doesn't seem to really work because of the external specialized hardware, so not sure about this one.
