@@ -13,7 +13,7 @@ Uh, IDK.  I emailed Jacob about this.  Awaiting response.  He fixed it when he d
 How about inside that giant .cs file "TheEntireKiosk.cs" ? See the quest stuff
 
 5. How do you backout?
-Press escape
+Press escape / back key on device
 
 6.If you put certain things in the Registration text field, there can be special functions
 _adminBoot - loadslevel 0
@@ -32,4 +32,9 @@ _adminBoot - loadslevel 0
       }
 
 
-7.
+7.Why doesn't it build?
+Try downgrading the JDK to 8, and try upgrading your android sdk to at least level 26 aka 8.0.
+Also, don't worry about trying to pair the scanner to the device, the device should pair automatically when the game starts.  
+
+8.How am I supposed to debug this thing?
+Unity Remote doesn't seem to really work because of the external specialized hardware, so not sure about this one.
