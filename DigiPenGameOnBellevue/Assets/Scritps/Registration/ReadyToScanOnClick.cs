@@ -25,6 +25,7 @@ public class ReadyToScanOnClick : MonoBehaviour
     btn.onClick.AddListener(OnButtonClick);
 
     BitToysWrapper.inst.registerOnClaimToy(OnClaimToy);
+        BitToysWrapper.inst.registerOnFailToy(OnFailToy);
   }
 
   void Update()
@@ -86,6 +87,13 @@ public class ReadyToScanOnClick : MonoBehaviour
       UnlockUI();
     }
   }
+
+ void OnFailToy(BitToys.FailReason reason, string texto)
+    {
+        userFeedback.text = texto;
+        text.text = reason.ToString();
+
+    }
 
   void OnClaimToy(ToyWrapper toy, bool TLL)
   {

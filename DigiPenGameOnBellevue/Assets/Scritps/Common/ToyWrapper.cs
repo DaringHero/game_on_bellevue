@@ -360,7 +360,10 @@ public abstract class BitToysWrapper
 {
   public delegate void OnClaimToy(ToyWrapper toy, bool TLL_val);
   public delegate void OnDetectToy(string text);
+    public delegate void OnFailToy(BitToys.FailReason reason, string texto);
+
   public abstract void registerOnClaimToy(OnClaimToy del);
+  public abstract void registerOnFailToy(OnFailToy del);
   public abstract void registerOnDetectToy(OnDetectToy del);
 
   public static BitToysWrapper inst;
@@ -369,7 +372,7 @@ public abstract class BitToysWrapper
 public class LiteralBitToys : BitToysWrapper
 {
   public event OnClaimToy OnClaimToy_OK;
-  public event OnClaimToy OnClaimToy_Fail;
+  public event OnFailToy OnClaimToy_Fail;
   public event OnDetectToy OnDetectToy;
 
   public LiteralBitToys()
@@ -412,12 +415,18 @@ public class LiteralBitToys : BitToysWrapper
   {
     OnDetectToy += del;
   }
+
+    public override void registerOnFailToy(OnFailToy del)
+    {
+        OnClaimToy_Fail += del;
+    }
 }
 
 public class EmulateBitToys : BitToysWrapper
 {
   public event OnClaimToy OnClaimToy_OK;
   public event OnDetectToy OnDetectToy_OK;
+    public event OnFailToy OnClaimToy_Fail;
 
   public override void registerOnClaimToy(OnClaimToy del)
   {
@@ -438,4 +447,9 @@ public class EmulateBitToys : BitToysWrapper
   {
     OnDetectToy_OK(text);
   }
+
+    public override void registerOnFailToy(OnFailToy del)
+    {
+        OnClaimToy_Fail += del;  
+    }
 }
