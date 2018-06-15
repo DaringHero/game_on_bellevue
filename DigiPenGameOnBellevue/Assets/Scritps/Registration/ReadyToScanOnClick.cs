@@ -30,7 +30,26 @@ public class ReadyToScanOnClick : MonoBehaviour
 
   void Update()
   {
-    if (Input.GetKeyDown(KeyCode.Escape))
+
+        // Method: SetLED_Connected(Red, Green, Blue, Red Pulse, Green Pulse, Blue Pulse).
+
+        // When device is connected and idle, the light is solid bright blue.
+        BitToys.inst.ble_SetLED_Connected(0, 0, 255, 0, 0, 0);
+
+        // When a tag is detected and being read, change the light to a bright pulsing green
+
+        BitToys.inst.ble_SetLED_nfcTagDetected(0, 255, 0, 0, 15, 0);
+
+        // If a tag fails to read properly, change it to bright pulsing Red.
+
+        BitToys.inst.ble_SetLED_nfcTagError(255, 0, 0, 15, 0, 0);
+
+        // If a tag is read correctly, change the light to bright solid green.
+
+        BitToys.inst.ble_SetLED_nfcTagOK(0, 255, 0, 0, 0, 0);
+
+
+        if (Input.GetKeyDown(KeyCode.Escape))
     {
       Application.LoadLevel(3);
     }
