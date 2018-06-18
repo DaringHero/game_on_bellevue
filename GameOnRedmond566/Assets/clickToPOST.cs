@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
 public class clickToPOST : MonoBehaviour {
 
     private static readonly string POSTAddUserURL = "INSERTLATER";
 
-    var speed = 1.0f; //how fast it shakes
-    var amount = 1.0f; //how much it shakes
+    float speed = 1.0f; //how fast it shakes
+    float amount = 1.0f; //how much it shakes
     public bool interacted = false;
     // Use this for initialization
     void Start () {
@@ -17,16 +18,16 @@ public class clickToPOST : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-        if(this.)
+      //  if(this.) at some point make this if interacted wiggle around
 
-            if(interacted)
-                transform.position.x = Mathf.Sin(Time.time * speed) * amount;
+          //  if(interacted)
+           //     transform.position.x = Mathf.Sin(Time.time * speed) * amount;
     }
 
     public WWW POST()
     {
         WWW www;
-        Hashtable postHeader = new Hashtable();
+        Dictionary<string,string> postHeader = new Dictionary<string,string>();
         postHeader.Add("Content-Type", "application/json");
 
         string jsonStr = "\"\" "; //dont put newlines
