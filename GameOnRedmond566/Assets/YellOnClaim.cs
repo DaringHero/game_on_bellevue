@@ -38,6 +38,8 @@ public class YellOnClaim : MonoBehaviour
     public GameObject sanc;
     public GameObject forest;
 
+    public ParticleSystem MegaScanInParticles;
+
     public void ChangeBackground(int index)
     {
         switch(index)
@@ -98,10 +100,19 @@ public class YellOnClaim : MonoBehaviour
         currentState = State.QuestOrGather;
     }
 
+    void ChangeFromGatherToScan()
+    {
+        UnHideQuestAndGatherButts(false);
+        UnHideScanStuff(true);
+        currentState = State.ScanIn;
+        
+    }
+
     public void ChangeFromQuestGatherToGather()
     {
         UnHideQuestAndGatherButts(false);
         ResourceSpawner.GetComponent<SpawnResources>().Spawn();
+        currentState = State.ActualGather;
     }
 
     void MoveToQuestOrResourceScreen()
@@ -136,6 +147,7 @@ public class YellOnClaim : MonoBehaviour
   // Use this for initialization
   void Start ()
   {
+        MegaScanInParticles = GameObject.Find("MegaScanInParticles").GetComponent<ParticleSystem>();
         //this is like the worst possible way of doing this, but ill fix it later
         ResourceSpawner = GameObject.Find("ResourceSpawner");
         QuestButton = GameObject.Find("GoQuestButton").GetComponent<Button>();
@@ -179,6 +191,8 @@ public class YellOnClaim : MonoBehaviour
     }
     public void OnClaimToy_Success(BitToys.Toy theToy, bool val)
     {
+        MegaScanInParticles.Play();
+
         MyText.text += ""; //clear text
 
         MyText.text += "\n Toy id = " + theToy.bitToysId;
@@ -222,6 +236,18 @@ public class YellOnClaim : MonoBehaviour
         {
             ChangeFromScanToQuestGather();
         }
+
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Debug.Log("current state is " + currentState.ToString());
+            GoBack();
+        }
+    }
+
+    public void GoBack()
+    {
+        if(currentState == State.ActualGather)
+        ChangeFromGatherToScan();
     }
 
     public void OnClaimToy_Fail(BitToys.FailReason reason, string mytext)

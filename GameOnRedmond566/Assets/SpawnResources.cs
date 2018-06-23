@@ -14,16 +14,32 @@ public class SpawnResources : MonoBehaviour {
     // public GameObject mushrooms;
     // Use this for initialization
     public GameObject[] locations;
-	void Start () {
-		
-	}
+
+    public ParticleSystem blue1f;
+    public ParticleSystem red1f;
+    public ParticleSystem blue2f;
+    public ParticleSystem red12;
+    public ParticleSystem blue3f;
+    public ParticleSystem red3f;
+
+    void Start () {
+
+        blue1f = GameObject.Find("bf1").GetComponent<ParticleSystem>();
+        red1f = GameObject.Find("rf1").GetComponent<ParticleSystem>();
+        blue2f = GameObject.Find("gf1").GetComponent<ParticleSystem>();
+        red12 = GameObject.Find("gf2").GetComponent<ParticleSystem>();
+        blue3f = GameObject.Find("bf2").GetComponent<ParticleSystem>();
+        red3f = GameObject.Find("bf3").GetComponent<ParticleSystem>();
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
 		
-        if(HasSpawnedAtLeastOnce && CurrentlyAvailableResources < 3)
+        if(HasSpawnedAtLeastOnce && (CurrentlyAvailableResources < 3))
         {
             PlayFireWorks();
+            HasSpawnedAtLeastOnce = false;
         }
 
 	}
@@ -47,6 +63,12 @@ public class SpawnResources : MonoBehaviour {
     //celebratory function
     public void PlayFireWorks()
     {
-        
-    }
+        Debug.Log("PLAYING FIREWORKS");
+        blue1f.Play() ;
+     red1f.Play();
+     blue2f.Play();
+     red12.Play();
+     blue3f.Play();
+     red3f.Play();
+}
 }
