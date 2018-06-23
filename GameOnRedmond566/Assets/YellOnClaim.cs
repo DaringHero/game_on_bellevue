@@ -108,6 +108,24 @@ public class YellOnClaim : MonoBehaviour
         
     }
 
+    public void ChangeFromQuestGatherToQuest()
+    {
+        UnHideQuestAndGatherButts(false);
+        currentState = State.ActualQuest;
+    }
+
+    public void ChangeFromGatherToQuestGather()
+    {
+        UnHideQuestAndGatherButts(true);
+        currentState = State.QuestOrGather;
+    }
+
+    public void ChangeFromQuestToQuestGather()
+    {
+        UnHideQuestAndGatherButts(true);
+        currentState = State.QuestOrGather;
+    }
+
     public void ChangeFromQuestGatherToGather()
     {
         UnHideQuestAndGatherButts(false);
@@ -158,6 +176,8 @@ public class YellOnClaim : MonoBehaviour
     this.MyText = GetComponent<Text>();
         MyDropdown = GameObject.Find("Dropdown").GetComponent<Dropdown>();
         currentBackgroundIndex = MyDropdown.value;
+
+        ChangeBackground(0);
 
         redfireworks = GameObject.Find("redfireworks").GetComponent<ParticleSystem>();
         greenfireworks = GameObject.Find("greenfireworks").GetComponent<ParticleSystem>();

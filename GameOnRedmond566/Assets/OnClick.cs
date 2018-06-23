@@ -19,6 +19,6 @@ public class OnClick : MonoBehaviour {
     {
         
         Resourcespawner.GetComponent<SpawnResources>().CurrentlyAvailableResources--;
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }

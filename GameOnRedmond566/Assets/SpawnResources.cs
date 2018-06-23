@@ -7,6 +7,7 @@ public class SpawnResources : MonoBehaviour {
     public bool HasSpawnedAtLeastOnce = false;
     public GameObject[] resources;
     public int CurrentlyAvailableResources = 0;
+    public List<GameObject> listOfSpawnedResources;
     // public GameObject scales;
     // public GameObject braidedcord;
     // public GameObject wood;
@@ -21,7 +22,7 @@ public class SpawnResources : MonoBehaviour {
     public ParticleSystem red12;
     public ParticleSystem blue3f;
     public ParticleSystem red3f;
-
+    public int MinResourceNumber;
     void Start () {
 
         blue1f = GameObject.Find("bf1").GetComponent<ParticleSystem>();
@@ -35,8 +36,15 @@ public class SpawnResources : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-        if(HasSpawnedAtLeastOnce && (CurrentlyAvailableResources < 3))
+
+        int resourcesStillOnScreen = 0;
+        foreach (GameObject g in listOfSpawnedResources)
+            {
+            if (g.activeSelf)
+                resourcesStillOnScreen++;
+        }
+
+        if(HasSpawnedAtLeastOnce && (resourcesStillOnScreen < MinResourceNumber))
         {
             PlayFireWorks();
             HasSpawnedAtLeastOnce = false;
@@ -54,7 +62,7 @@ public class SpawnResources : MonoBehaviour {
         {
             int lengthofresources = resources.Length;
             int randomIndex = Random.Range(0, lengthofresources-1);
-            Instantiate(resources[randomIndex], locations[i].transform.position, Quaternion.identity);
+            listOfSpawnedResources.Add(Instantiate(resources[randomIndex], locations[i].transform.position, Quaternion.identity));
             CurrentlyAvailableResources++;
         }
         HasSpawnedAtLeastOnce = true;
@@ -63,8 +71,14 @@ public class SpawnResources : MonoBehaviour {
     //celebratory function
     public void PlayFireWorks()
     {
-        Debug.Log("PLAYING FIREWORKS");
-        blue1f.Play() ;
+        foreach(GameObject g in listOfSpawnedResources)
+        {
+            if (g.activeSelf)
+                g.SetActive(false);
+        }
+
+     Debug.Log("PLAYING FIREWORKS");
+     blue1f.Play() ;
      red1f.Play();
      blue2f.Play();
      red12.Play();
