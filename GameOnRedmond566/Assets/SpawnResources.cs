@@ -19,6 +19,11 @@ public class SpawnResources : MonoBehaviour {
     // Use this for initialization
     public GameObject[] locations;
 
+    public GameObject[] ForestResources;
+    public GameObject[] SwampResources;
+    public GameObject[] MountainResources;
+
+
     public ParticleSystem blue1f;
     public ParticleSystem red1f;
     public ParticleSystem blue2f;
@@ -37,6 +42,7 @@ public class SpawnResources : MonoBehaviour {
         blue3f = GameObject.Find("bf2").GetComponent<ParticleSystem>();
         red3f = GameObject.Find("bf3").GetComponent<ParticleSystem>();
 
+    
     }
 	
 	// Update is called once per frame
@@ -72,6 +78,55 @@ public class SpawnResources : MonoBehaviour {
         }
         HasSpawnedAtLeastOnce = true;
     }
+
+    public void SpawnForForest()
+    {
+        //grab resources randomly and spawn them at predefined locations
+        //right now this will be called from the mega file YellOnClaim (lol, maybe fix that later to actually be reasonable)
+
+        int numOfLocs = locations.Length;
+        for (int i = 0; i < numOfLocs; ++i)
+        {
+            int lengthofresources = ForestResources.Length;
+            int randomIndex = Random.Range(0, lengthofresources - 1);
+            listOfSpawnedResources.Add(Instantiate(ForestResources[randomIndex], locations[i].transform.position, Quaternion.identity));
+            CurrentlyAvailableResources++;
+        }
+        HasSpawnedAtLeastOnce = true;
+    }
+
+    public void SpawnForMountain()
+    {
+        //grab resources randomly and spawn them at predefined locations
+        //right now this will be called from the mega file YellOnClaim (lol, maybe fix that later to actually be reasonable)
+
+        int numOfLocs = locations.Length;
+        for (int i = 0; i < numOfLocs; ++i)
+        {
+            int lengthofresources = MountainResources.Length;
+            int randomIndex = Random.Range(0, lengthofresources - 1);
+            listOfSpawnedResources.Add(Instantiate(MountainResources[randomIndex], locations[i].transform.position, Quaternion.identity));
+            CurrentlyAvailableResources++;
+        }
+        HasSpawnedAtLeastOnce = true;
+    }
+
+    public void SpawnForSwamp()
+    {
+        //grab resources randomly and spawn them at predefined locations
+        //right now this will be called from the mega file YellOnClaim (lol, maybe fix that later to actually be reasonable)
+
+        int numOfLocs = locations.Length;
+        for (int i = 0; i < numOfLocs; ++i)
+        {
+            int lengthofresources = SwampResources.Length;
+            int randomIndex = Random.Range(0, lengthofresources - 1);
+            listOfSpawnedResources.Add(Instantiate(SwampResources[randomIndex], locations[i].transform.position, Quaternion.identity));
+            CurrentlyAvailableResources++;
+        }
+        HasSpawnedAtLeastOnce = true;
+    }
+
 
     //celebratory function
     public void PlayFireWorks()

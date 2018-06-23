@@ -38,6 +38,8 @@ public class YellOnClaim : MonoBehaviour
     public GameObject sanc;
     public GameObject forest;
 
+    public GameObject dragon;
+
     public Text gathercompletetext;
 
     public ParticleSystem MegaScanInParticles;
@@ -167,6 +169,8 @@ public class YellOnClaim : MonoBehaviour
   // Use this for initialization
   void Start ()
   {
+        dragon = GameObject.Find("dragon");
+        dragon.SetActive(false);
         gathercompletetext = GameObject.Find("GatherResourcesCompleteText").GetComponent<Text>();
         gathercompletetext.gameObject.SetActive(false);
         MegaScanInParticles = GameObject.Find("MegaScanInParticles").GetComponent<ParticleSystem>();
@@ -258,6 +262,7 @@ public class YellOnClaim : MonoBehaviour
 
         if(currentState == State.ScanIn && Input.GetKeyDown(KeyCode.Space))
         {
+            MegaScanInParticles.Play();
             ChangeFromScanToQuestGather();
         }
 
