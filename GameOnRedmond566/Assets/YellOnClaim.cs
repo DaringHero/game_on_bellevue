@@ -7,20 +7,155 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Text))]
 public class YellOnClaim : MonoBehaviour
 {
+    
+    
+    //lets put everything in One big File, one big scene! THis is the way of the programming gods
   public Text MyText;
+
+    public Dropdown MyDropdown;
+    public int currentBackgroundIndex;
+
+    public GameObject ResourceSpawner;
 
     public ParticleSystem redfireworks;
     public ParticleSystem greenfireworks;
     public ParticleSystem bluefireworks;
 
+    public ParticleSystem leftScanParticles;
+    public ParticleSystem rightscanParticles;
+    public Text ScanText;
+
+    public bool somethingWasScanned = false;
+
+    public Button QuestButton;
+    public Button GatherButton;
+
+    public enum State { ScanIn, QuestOrGather, ActualGather, ActualQuest };
+
+    public State currentState = State.ScanIn;
+
+    public GameObject shrek;
+    public GameObject sanc;
+    public GameObject forest;
+
+    public void ChangeBackground(int index)
+    {
+        switch(index)
+        {
+            case 0:
+                DisplayShrekBacground();
+                break;
+
+            case 1:
+                DisplaySancBackground();
+                break;
+
+            case 2:
+                DisplayForestBackground();
+                break;
+        }
+    }
+
+    public void DisplayForestBackground()
+    {
+        shrek.SetActive(false);
+        sanc.SetActive(false);
+        forest.SetActive(true);
+    }
+
+    public void DisplayShrekBacground()
+    {
+        shrek.SetActive(true);
+        sanc.SetActive(false);
+        forest.SetActive(false);
+    }
+
+    public void DisplaySancBackground()
+    {
+        shrek.SetActive(false);
+        sanc.SetActive(true);
+        forest.SetActive(false);
+    }
+
+
+    void UnHideScanStuff(bool visible)
+    {
+        leftScanParticles.gameObject.SetActive(visible);
+        rightscanParticles.gameObject.SetActive(visible);
+        ScanText.gameObject.SetActive(visible);
+    }
+
+    void UnHideQuestAndGatherButts(bool visible)
+    {
+        QuestButton.gameObject.SetActive(visible);
+        GatherButton.gameObject.SetActive(visible);
+    }
+
+    void ChangeFromScanToQuestGather()
+    {
+        UnHideQuestAndGatherButts(true);
+        UnHideScanStuff(false);
+        currentState = State.QuestOrGather;
+    }
+
+    public void ChangeFromQuestGatherToGather()
+    {
+        UnHideQuestAndGatherButts(false);
+        ResourceSpawner.GetComponent<SpawnResources>().Spawn();
+    }
+
+    void MoveToQuestOrResourceScreen()
+    {
+        //hide scan particles and text
+        UnHideScanStuff(false);
+        //unhide buttons for quest and gather
+        UnHideQuestAndGatherButts(true);
+        currentState = State.QuestOrGather;
+    }
+
+    void HideQuestAndGatherShit(bool visible)
+    {
+        QuestButton.gameObject.SetActive(visible);
+        GatherButton.gameObject.SetActive(visible);
+    }
+
+
+    void HideActualGatherShit(bool shrekIsVisible)
+    {
+        shrek.SetActive(shrekIsVisible);
+        sanc.SetActive(!shrekIsVisible);
+    }
+
+    void MoveToActualGather()
+    {
+        HideQuestAndGatherShit(false);
+        HideActualGatherShit(true);
+        
+        currentState = State.ActualGather;
+    }
   // Use this for initialization
   void Start ()
   {
+        //this is like the worst possible way of doing this, but ill fix it later
+        ResourceSpawner = GameObject.Find("ResourceSpawner");
+        QuestButton = GameObject.Find("GoQuestButton").GetComponent<Button>();
+        GatherButton = GameObject.Find("GoGatherResourcesButton").GetComponent<Button>();
+            shrek = GameObject.Find("shrek");
+        sanc = GameObject.Find("sanc");
+        forest = GameObject.Find("forest");
     this.MyText = GetComponent<Text>();
+        MyDropdown = GameObject.Find("Dropdown").GetComponent<Dropdown>();
+        currentBackgroundIndex = MyDropdown.value;
 
         redfireworks = GameObject.Find("redfireworks").GetComponent<ParticleSystem>();
         greenfireworks = GameObject.Find("greenfireworks").GetComponent<ParticleSystem>();
         bluefireworks = GameObject.Find("bluefireworks").GetComponent<ParticleSystem>();
+
+        ScanText = GameObject.Find("ScanText").GetComponent<Text>();
+        leftScanParticles = GameObject.Find("scantext_particles_left").GetComponent<ParticleSystem>();
+        rightscanParticles = GameObject.Find("scantext_particles_right").GetComponent<ParticleSystem>();
+
+        UnHideQuestAndGatherButts(false);
 
         string temp = BitToys.inst.ToString();
     //BitToysWrapper.inst.registerOnClaimToy(this.OnClaim);
@@ -52,6 +187,9 @@ public class YellOnClaim : MonoBehaviour
         MyText.text += "\n SKU id = " + theToy.skuId;
         MyText.text += "\n ******************************";
 
+        somethingWasScanned = true;
+        MoveToQuestOrResourceScreen();
+
         if(theToy.styleId == "gameon_red")
         {
             redfireworks.Stop();
@@ -71,6 +209,21 @@ public class YellOnClaim : MonoBehaviour
         }
 
     }
+
+    private void Update()
+    {
+        if(currentBackgroundIndex != MyDropdown.value)
+        {
+            ChangeBackground(MyDropdown.value);
+            currentBackgroundIndex = MyDropdown.value;
+        }
+
+        if(currentState == State.ScanIn && Input.GetKeyDown(KeyCode.Space))
+        {
+            ChangeFromScanToQuestGather();
+        }
+    }
+
     public void OnClaimToy_Fail(BitToys.FailReason reason, string mytext)
     {
         this.MyText.text += "OnClaimToy_Fail" + "\n"; //clear text
