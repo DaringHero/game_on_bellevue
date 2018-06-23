@@ -1,13 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SpawnResources : MonoBehaviour {
 
     public bool HasSpawnedAtLeastOnce = false;
     public GameObject[] resources;
     public int CurrentlyAvailableResources = 0;
+    public Text gatherdonetext;
     public List<GameObject> listOfSpawnedResources;
+    public GameObject MainManager;
     // public GameObject scales;
     // public GameObject braidedcord;
     // public GameObject wood;
@@ -25,6 +28,8 @@ public class SpawnResources : MonoBehaviour {
     public int MinResourceNumber;
     void Start () {
 
+        gatherdonetext = GameObject.Find("GatherResourcesCompleteText").GetComponent<Text>();
+        MainManager = GameObject.Find("DebugLog");
         blue1f = GameObject.Find("bf1").GetComponent<ParticleSystem>();
         red1f = GameObject.Find("rf1").GetComponent<ParticleSystem>();
         blue2f = GameObject.Find("gf1").GetComponent<ParticleSystem>();
@@ -77,6 +82,9 @@ public class SpawnResources : MonoBehaviour {
                 g.SetActive(false);
         }
 
+        gatherdonetext.gameObject.SetActive(true);
+
+        StartCoroutine(LateCall());
      Debug.Log("PLAYING FIREWORKS");
      blue1f.Play() ;
      red1f.Play();
@@ -85,4 +93,15 @@ public class SpawnResources : MonoBehaviour {
      blue3f.Play();
      red3f.Play();
 }
+
+    IEnumerator LateCall()
+    {
+
+        yield return new WaitForSeconds(6);
+        gatherdonetext.gameObject.SetActive(false);
+
+        MainManager.GetComponent<YellOnClaim>().ChangeFromGatherToQuestGather();
+        //Do Function here...
+    }
+
 }

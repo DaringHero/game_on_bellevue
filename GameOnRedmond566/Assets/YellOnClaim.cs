@@ -38,6 +38,8 @@ public class YellOnClaim : MonoBehaviour
     public GameObject sanc;
     public GameObject forest;
 
+    public Text gathercompletetext;
+
     public ParticleSystem MegaScanInParticles;
 
     public void ChangeBackground(int index)
@@ -165,6 +167,8 @@ public class YellOnClaim : MonoBehaviour
   // Use this for initialization
   void Start ()
   {
+        gathercompletetext = GameObject.Find("GatherResourcesCompleteText").GetComponent<Text>();
+        gathercompletetext.gameObject.SetActive(false);
         MegaScanInParticles = GameObject.Find("MegaScanInParticles").GetComponent<ParticleSystem>();
         //this is like the worst possible way of doing this, but ill fix it later
         ResourceSpawner = GameObject.Find("ResourceSpawner");
