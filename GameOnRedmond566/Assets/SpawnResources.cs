@@ -72,7 +72,7 @@ public class SpawnResources : MonoBehaviour {
         for (int i = 0; i < numOfLocs; ++i)
         {
             int lengthofresources = resources.Length;
-            int randomIndex = Random.Range(0, lengthofresources-1);
+            int randomIndex = Random.Range(0, lengthofresources);
             listOfSpawnedResources.Add(Instantiate(resources[randomIndex], locations[i].transform.position, Quaternion.identity));
             CurrentlyAvailableResources++;
         }
@@ -88,7 +88,7 @@ public class SpawnResources : MonoBehaviour {
         for (int i = 0; i < numOfLocs; ++i)
         {
             int lengthofresources = ForestResources.Length;
-            int randomIndex = Random.Range(0, lengthofresources - 1);
+            int randomIndex = Random.Range(0, lengthofresources);
             listOfSpawnedResources.Add(Instantiate(ForestResources[randomIndex], locations[i].transform.position, Quaternion.identity));
             CurrentlyAvailableResources++;
         }
@@ -104,7 +104,7 @@ public class SpawnResources : MonoBehaviour {
         for (int i = 0; i < numOfLocs; ++i)
         {
             int lengthofresources = MountainResources.Length;
-            int randomIndex = Random.Range(0, lengthofresources - 1);
+            int randomIndex = Random.Range(0, lengthofresources);
             listOfSpawnedResources.Add(Instantiate(MountainResources[randomIndex], locations[i].transform.position, Quaternion.identity));
             CurrentlyAvailableResources++;
         }
@@ -120,7 +120,7 @@ public class SpawnResources : MonoBehaviour {
         for (int i = 0; i < numOfLocs; ++i)
         {
             int lengthofresources = SwampResources.Length;
-            int randomIndex = Random.Range(0, lengthofresources - 1);
+            int randomIndex = Random.Range(0, lengthofresources);
             listOfSpawnedResources.Add(Instantiate(SwampResources[randomIndex], locations[i].transform.position, Quaternion.identity));
             CurrentlyAvailableResources++;
         }
@@ -155,7 +155,8 @@ public class SpawnResources : MonoBehaviour {
         yield return new WaitForSeconds(6);
         gatherdonetext.gameObject.SetActive(false);
 
-        MainManager.GetComponent<YellOnClaim>().ChangeFromGatherToQuestGather();
+       MainManager.GetComponent<YellOnClaim>().ChangeFromGatherToQuestGather();
+        
         //Do Function here...
     }
 

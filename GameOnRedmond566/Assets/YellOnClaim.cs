@@ -12,6 +12,8 @@ public class YellOnClaim : MonoBehaviour
     //lets put everything in One big File, one big scene! THis is the way of the programming gods
   public Text MyText;
 
+    public GameObject debugstuff;
+
     public Dropdown MyDropdown;
     public int currentBackgroundIndex;
 
@@ -30,9 +32,11 @@ public class YellOnClaim : MonoBehaviour
     public Button QuestButton;
     public Button GatherButton;
 
-    public enum State { ScanIn, QuestOrGather, ActualGather, ActualQuest };
+    public enum State { ScanIn, QuestProgress, ActualGather, QuestComplete };
 
     public State currentState = State.ScanIn;
+
+    public enum Location { SWAMP, MOUNTAIN, FOREST };
 
     public GameObject shrek;
     public GameObject sanc;
@@ -43,6 +47,25 @@ public class YellOnClaim : MonoBehaviour
     public Text gathercompletetext;
 
     public ParticleSystem MegaScanInParticles;
+    public Dictionary<string,int> playerIDsForQuests; //string is playerid, int is quest they are on (0-1)
+    public Dictionary<string, Dictionary<string, int>> playerInventory; //inventory for players, items referred to as strings then count is int
+    public Dictionary<string, bool[]> playerIDQuestsCompleteOrNot; //an array of bools, one for each location, if the player is done with that quest or not
+
+    public string CurrentPlayerID;
+
+    public Text QuestCompleteText;
+    public Text QuestProgressText;
+    public GameObject EstuaryQuestProgress;
+    public GameObject SanctuaryQuestProgress;
+    public GameObject MountainQuestProgress;
+    public GameObject ForestQuestProgress;
+
+    public Location currentLocation;
+    public GameObject mountain;
+    public bool debugmode;
+    public GameObject QuestGiver;
+
+    public Vector3 origDebugPosition;
 
     public void ChangeBackground(int index)
     {
@@ -50,14 +73,17 @@ public class YellOnClaim : MonoBehaviour
         {
             case 0:
                 DisplayShrekBacground();
+                currentLocation = Location.SWAMP;
                 break;
 
             case 1:
                 DisplaySancBackground();
+                currentLocation = Location.MOUNTAIN;
                 break;
 
             case 2:
                 DisplayForestBackground();
+                currentLocation = Location.FOREST;
                 break;
         }
     }
@@ -83,6 +109,14 @@ public class YellOnClaim : MonoBehaviour
         forest.SetActive(false);
     }
 
+    public void DisplayMountainBackground()
+    {
+        shrek.SetActive(false);
+        sanc.SetActive(false);
+        forest.SetActive(false);
+        mountain.SetActive(true);
+    }
+
 
     void UnHideScanStuff(bool visible)
     {
@@ -97,11 +131,9 @@ public class YellOnClaim : MonoBehaviour
         GatherButton.gameObject.SetActive(visible);
     }
 
-    void ChangeFromScanToQuestGather()
+    void ChangeFromScanToQuest()
     {
-        UnHideQuestAndGatherButts(true);
-        UnHideScanStuff(false);
-        currentState = State.QuestOrGather;
+
     }
 
     void ChangeFromGatherToScan()
@@ -112,29 +144,90 @@ public class YellOnClaim : MonoBehaviour
         
     }
 
+    void ChangeFromScanToGather()
+    {
+        UnHideQuestAndGatherButts(false);
+        UnHideScanStuff(false);
+        currentState = State.ActualGather;
+
+        UnHideQuestAndGatherButts(false);
+        //SPAWN BASED ON LOCATION
+
+        switch (currentLocation)
+        {
+            case Location.FOREST:
+                ResourceSpawner.GetComponent<SpawnResources>().SpawnForForest();
+                break;
+            case Location.MOUNTAIN:
+                ResourceSpawner.GetComponent<SpawnResources>().SpawnForMountain();
+                break;
+            case Location.SWAMP:
+                ResourceSpawner.GetComponent<SpawnResources>().SpawnForSwamp();
+                break;
+
+                //TODO: add mountain shit here
+                //    break;
+        }
+
+
+        currentState = State.ActualGather;
+
+    }
+
     public void ChangeFromQuestGatherToQuest()
     {
         UnHideQuestAndGatherButts(false);
-        currentState = State.ActualQuest;
+     //   currentState = State.ActualQuest;
     }
 
     public void ChangeFromGatherToQuestGather()
     {
-        UnHideQuestAndGatherButts(true);
-        currentState = State.QuestOrGather;
+        // UnHideQuestAndGatherButts(true);
+        //update player quest- if done, do celebration, if only halfway done, tell it 
+        if(playerIDQuestsCompleteOrNot[CurrentPlayerID][(int)currentLocation] == false)
+        {
+            switch(currentLocation)
+            {
+                case Location.SWAMP:
+                    EstuaryQuestProgress.SetActive(true);
+                    break;
+
+                case Location.MOUNTAIN:
+                    MountainQuestProgress.SetActive(true);
+                    break;
+
+                case Location.FOREST:
+                    ForestQuestProgress.SetActive(true);
+                    break;
+            }
+            QuestGiver.SetActive(true);
+        }
+        else
+        {
+            QuestCompleteText.gameObject.SetActive(true);
+            dragon.SetActive(true);
+        }
+        //go back to scan
+        StartCoroutine(LateSetToScan());
     }
 
+    //TODO: probably delete this and related functions
     public void ChangeFromQuestToQuestGather()
     {
         UnHideQuestAndGatherButts(true);
-        currentState = State.QuestOrGather;
+      //  currentState = State.QuestOrGather;
+    }
+
+    //after gather, go to quest update/complete, then scan
+    public void ChangeFromQuestToScan()
+    {
+        currentState = State.ScanIn;
+
     }
 
     public void ChangeFromQuestGatherToGather()
     {
-        UnHideQuestAndGatherButts(false);
-        ResourceSpawner.GetComponent<SpawnResources>().Spawn();
-        currentState = State.ActualGather;
+
     }
 
     void MoveToQuestOrResourceScreen()
@@ -143,7 +236,7 @@ public class YellOnClaim : MonoBehaviour
         UnHideScanStuff(false);
         //unhide buttons for quest and gather
         UnHideQuestAndGatherButts(true);
-        currentState = State.QuestOrGather;
+ //       currentState = State.QuestOrGather;
     }
 
     void HideQuestAndGatherShit(bool visible)
@@ -152,7 +245,7 @@ public class YellOnClaim : MonoBehaviour
         GatherButton.gameObject.SetActive(visible);
     }
 
-
+    //TODO: wtf is this function?
     void HideActualGatherShit(bool shrekIsVisible)
     {
         shrek.SetActive(shrekIsVisible);
@@ -169,6 +262,25 @@ public class YellOnClaim : MonoBehaviour
   // Use this for initialization
   void Start ()
   {
+        QuestCompleteText = GameObject.Find("QuestCompleteText").GetComponent<Text>();
+        QuestCompleteText.gameObject.SetActive(false);
+
+        EstuaryQuestProgress = GameObject.Find("EstuaryQuestText");
+        MountainQuestProgress = GameObject.Find("MountainQuestText");
+        ForestQuestProgress = GameObject.Find("ForestQuestText");
+
+        QuestProgressText = GameObject.Find("QuestProgressText").GetComponent<Text>();
+        QuestProgressText.gameObject.SetActive(false);
+        QuestGiver = GameObject.Find("questgiver");
+        QuestGiver.SetActive(false);
+        debugstuff = GameObject.Find("debugstuff");
+        debugmode = true;
+        origDebugPosition = debugstuff.transform.position;
+        currentLocation = Location.SWAMP;
+        playerIDsForQuests = new Dictionary<string, int>();
+        playerIDQuestsCompleteOrNot = new Dictionary<string, bool[]>();
+        playerInventory = new Dictionary<string, Dictionary<string, int>>();
+
         dragon = GameObject.Find("dragon");
         dragon.SetActive(false);
         gathercompletetext = GameObject.Find("GatherResourcesCompleteText").GetComponent<Text>();
@@ -221,6 +333,22 @@ public class YellOnClaim : MonoBehaviour
     {
         MegaScanInParticles.Play();
 
+        if(playerIDsForQuests.ContainsKey(theToy.bitToysId))
+        {
+            playerIDsForQuests[theToy.bitToysId]++;
+        }
+        else //add new player
+        {
+            playerIDsForQuests.Add(theToy.bitToysId, 0);
+            bool[] quests = new bool[3];
+            for(int i = 0; i < quests.Length; ++i)
+            {
+                quests[i] = false;
+            }
+            playerIDQuestsCompleteOrNot.Add(theToy.bitToysId, quests);
+        }
+        CurrentPlayerID = theToy.bitToysId;
+
         MyText.text += ""; //clear text
 
         MyText.text += "\n Toy id = " + theToy.bitToysId;
@@ -230,31 +358,86 @@ public class YellOnClaim : MonoBehaviour
         MyText.text += "\n ******************************";
 
         somethingWasScanned = true;
-        MoveToQuestOrResourceScreen();
+        //  MoveToQuestOrResourceScreen();
+        MoveToActualGather();
 
-        if(theToy.styleId == "gameon_red")
+        //if(theToy.styleId == "gameon_red")
+        //{
+        //    redfireworks.Stop();
+        //    redfireworks.Play();
+        //}
+
+        //if(theToy.styleId == "gameon_green")
+        //{
+        //    greenfireworks.Stop();
+        //    greenfireworks.Play();
+        //}
+
+        //if((theToy.styleId == "gameon_gray") || (theToy.styleId == "gameon_blue"))
+        //{
+        //    bluefireworks.Stop();
+        //    bluefireworks.Play();
+        //}
+
+    }
+
+    public void ShowQuestProgress()
+    {
+        if(playerIDsForQuests[CurrentPlayerID] == 0)
         {
-            redfireworks.Stop();
-            redfireworks.Play();
+            ShowContinueQuest();
         }
-
-        if(theToy.styleId == "gameon_green")
+        else
         {
-            greenfireworks.Stop();
-            greenfireworks.Play();
+            ShowQuestComplete();
         }
+    }
 
-        if((theToy.styleId == "gameon_gray") || (theToy.styleId == "gameon_blue"))
-        {
-            bluefireworks.Stop();
-            bluefireworks.Play();
-        }
+    public void ShowContinueQuest()
+    {
+        QuestGiver.SetActive(true);
+        QuestProgressText.gameObject.SetActive(true);
+        StartCoroutine(LateSetToScan());
+    }
 
+    public void ShowQuestComplete()
+    {
+        dragon.SetActive(true);
+        QuestCompleteText.gameObject.SetActive(true);
+        StartCoroutine(LateSetToScan());
+
+    }
+
+    IEnumerator LateSetToScan()
+    {
+        yield return new WaitForSeconds(6);
+        QuestGiver.SetActive(false);
+        dragon.SetActive(false);
+        EstuaryQuestProgress.SetActive(false);
+        MountainQuestProgress.SetActive(false);
+        ForestQuestProgress.SetActive(false);
+
+        QuestCompleteText.gameObject.SetActive(false);
+        QuestProgressText.gameObject.SetActive(false);
+        currentState = State.ScanIn;
+        UnHideScanStuff(true);
+    }
+
+    public void ToggleDebugStuff()
+    {
+        // debugstuff.SetActive(!debugmode);
+        //just move it offscreen for now
+        if (debugmode)
+            debugstuff.transform.position = new Vector3(origDebugPosition.x + 1000, 11600, origDebugPosition.z);
+        else
+            debugstuff.transform.position = origDebugPosition;
+
+        debugmode = !debugmode;
     }
 
     private void Update()
     {
-        if(currentBackgroundIndex != MyDropdown.value)
+        if(debugstuff.activeSelf && (currentBackgroundIndex != MyDropdown.value))
         {
             ChangeBackground(MyDropdown.value);
             currentBackgroundIndex = MyDropdown.value;
@@ -263,13 +446,13 @@ public class YellOnClaim : MonoBehaviour
         if(currentState == State.ScanIn && Input.GetKeyDown(KeyCode.Space))
         {
             MegaScanInParticles.Play();
-            ChangeFromScanToQuestGather();
+            ChangeFromScanToGather();
         }
 
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             Debug.Log("current state is " + currentState.ToString());
-            GoBack();
+      //      GoBack();
         }
     }
 
