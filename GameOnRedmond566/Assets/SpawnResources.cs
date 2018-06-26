@@ -137,9 +137,9 @@ public class SpawnResources : MonoBehaviour {
                 g.SetActive(false);
         }
 
-        gatherdonetext.gameObject.SetActive(true);
+        //gatherdonetext.gameObject.SetActive(true);
 
-        StartCoroutine(LateCall());
+ //       StartCoroutine(LateCall());
      Debug.Log("PLAYING FIREWORKS");
      blue1f.Play() ;
      red1f.Play();
@@ -147,15 +147,16 @@ public class SpawnResources : MonoBehaviour {
      red12.Play();
      blue3f.Play();
      red3f.Play();
-}
+
+        MainManager.GetComponent<YellOnClaim>().ShowQuestProgress();
+    }
 
     IEnumerator LateCall()
     {
 
-        yield return new WaitForSeconds(6);
-        gatherdonetext.gameObject.SetActive(false);
+        yield return new WaitForSeconds(3);
+      //  gatherdonetext.gameObject.SetActive(false);
 
-       MainManager.GetComponent<YellOnClaim>().ChangeFromGatherToQuestGather();
         
         //Do Function here...
     }

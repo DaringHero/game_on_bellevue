@@ -7,8 +7,8 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Text))]
 public class YellOnClaim : MonoBehaviour
 {
-    
-    
+    public float TimeBeforeNextScan;
+    const int TIME_DELAY_FOR_QUEST = 6;
     //lets put everything in One big File, one big scene! THis is the way of the programming gods
   public Text MyText;
 
@@ -50,6 +50,7 @@ public class YellOnClaim : MonoBehaviour
     public Dictionary<string,int> playerIDsForQuests; //string is playerid, int is quest they are on (0-1)
     public Dictionary<string, Dictionary<string, int>> playerInventory; //inventory for players, items referred to as strings then count is int
     public Dictionary<string, bool[]> playerIDQuestsCompleteOrNot; //an array of bools, one for each location, if the player is done with that quest or not
+    public Dictionary<string, float> playerScanInTimes;
 
     public string CurrentPlayerID;
 
@@ -136,7 +137,7 @@ public class YellOnClaim : MonoBehaviour
 
     }
 
-    void ChangeFromGatherToScan()
+    public void ChangeFromGatherToScan()
     {
         UnHideQuestAndGatherButts(false);
         UnHideScanStuff(true);
@@ -254,6 +255,7 @@ public class YellOnClaim : MonoBehaviour
 
     void MoveToActualGather()
     {
+        UnHideScanStuff(false);
         HideQuestAndGatherShit(false);
         HideActualGatherShit(true);
         
@@ -278,6 +280,8 @@ public class YellOnClaim : MonoBehaviour
         origDebugPosition = debugstuff.transform.position;
         currentLocation = Location.SWAMP;
         playerIDsForQuests = new Dictionary<string, int>();
+        playerIDsForQuests.Add("gay", 1);
+        playerScanInTimes = new Dictionary<string, float>();
         playerIDQuestsCompleteOrNot = new Dictionary<string, bool[]>();
         playerInventory = new Dictionary<string, Dictionary<string, int>>();
 
@@ -331,23 +335,46 @@ public class YellOnClaim : MonoBehaviour
     }
     public void OnClaimToy_Success(BitToys.Toy theToy, bool val)
     {
-        MegaScanInParticles.Play();
+        MyText.text += "\n current state is " + currentState.ToString();
+        //only one player, one scan at a time
+        if (currentState != State.ScanIn)
+            return;
 
-        if(playerIDsForQuests.ContainsKey(theToy.bitToysId))
+        //watchdog timer
+        if(playerScanInTimes.ContainsKey(CurrentPlayerID))
         {
-            playerIDsForQuests[theToy.bitToysId]++;
+            //time must be at least x secs after last scan
+            float validtime = playerScanInTimes[CurrentPlayerID] + TimeBeforeNextScan;
+
+            MyText.text += "\n current time is " + Time.time.ToString();
+            MyText.text += "\n Last scan in time for this id was  = " + playerScanInTimes[CurrentPlayerID].ToString() ;
+            MyText.text += "\n ********************************";
+
+            if (validtime > Time.time)
+            {
+                return;
+            }
+        }
+
+        MegaScanInParticles.Play();
+        CurrentPlayerID = theToy.bitToysId;
+        if (playerIDsForQuests.ContainsKey(CurrentPlayerID))
+        {
+            playerIDsForQuests[CurrentPlayerID]++;
+            playerScanInTimes[CurrentPlayerID] = Time.time;
         }
         else //add new player
         {
-            playerIDsForQuests.Add(theToy.bitToysId, 0);
-            bool[] quests = new bool[3];
-            for(int i = 0; i < quests.Length; ++i)
-            {
-                quests[i] = false;
-            }
-            playerIDQuestsCompleteOrNot.Add(theToy.bitToysId, quests);
+            playerIDsForQuests.Add(CurrentPlayerID, 0);
+            playerScanInTimes.Add(CurrentPlayerID, Time.time);
+            //bool[] quests = new bool[3];
+            //for(int i = 0; i < quests.Length; ++i)
+            //{
+            //    quests[i] = false;
+            //}
+            //playerIDQuestsCompleteOrNot.Add(theToy.bitToysId, quests);
         }
-        CurrentPlayerID = theToy.bitToysId;
+        
 
         MyText.text += ""; //clear text
 
@@ -356,11 +383,18 @@ public class YellOnClaim : MonoBehaviour
         MyText.text += "\n Style id = " + theToy.styleId;
         MyText.text += "\n SKU id = " + theToy.skuId;
         MyText.text += "\n ******************************";
+        MyText.text += "\n Dictionary has: ";
 
-        somethingWasScanned = true;
+        foreach (KeyValuePair<string, int> entry in playerIDsForQuests)
+        {
+            MyText.text += "\n Player ID: " + entry.Key.ToString() + " val is " + entry.Value.ToString();
+            // do something with entry.Value or entry.Key
+        }
+
+      //  somethingWasScanned = true;
         //  MoveToQuestOrResourceScreen();
-        MoveToActualGather();
-
+        // MoveToActualGather();
+        ChangeFromScanToGather();
         //if(theToy.styleId == "gameon_red")
         //{
         //    redfireworks.Stop();
@@ -383,39 +417,39 @@ public class YellOnClaim : MonoBehaviour
 
     public void ShowQuestProgress()
     {
-        if(playerIDsForQuests[CurrentPlayerID] == 0)
+        if(playerIDsForQuests.ContainsKey(CurrentPlayerID) && playerIDsForQuests[CurrentPlayerID] == 0)
         {
+
             ShowContinueQuest();
         }
         else
         {
             ShowQuestComplete();
         }
+        StartCoroutine(LateSetToScan());
     }
 
     public void ShowContinueQuest()
     {
         QuestGiver.SetActive(true);
         QuestProgressText.gameObject.SetActive(true);
-        StartCoroutine(LateSetToScan());
     }
 
     public void ShowQuestComplete()
     {
         dragon.SetActive(true);
         QuestCompleteText.gameObject.SetActive(true);
-        StartCoroutine(LateSetToScan());
 
     }
 
     IEnumerator LateSetToScan()
     {
-        yield return new WaitForSeconds(6);
+        yield return new WaitForSeconds(TIME_DELAY_FOR_QUEST);
         QuestGiver.SetActive(false);
         dragon.SetActive(false);
         EstuaryQuestProgress.SetActive(false);
-        MountainQuestProgress.SetActive(false);
-        ForestQuestProgress.SetActive(false);
+      //  MountainQuestProgress.SetActive(false);
+      //  ForestQuestProgress.SetActive(false);
 
         QuestCompleteText.gameObject.SetActive(false);
         QuestProgressText.gameObject.SetActive(false);
@@ -439,13 +473,16 @@ public class YellOnClaim : MonoBehaviour
     {
         if(debugstuff.activeSelf && (currentBackgroundIndex != MyDropdown.value))
         {
+            //inside the change background function current location is set currentlocation
             ChangeBackground(MyDropdown.value);
             currentBackgroundIndex = MyDropdown.value;
+
         }
 
         if(currentState == State.ScanIn && Input.GetKeyDown(KeyCode.Space))
         {
             MegaScanInParticles.Play();
+            CurrentPlayerID = "gay";
             ChangeFromScanToGather();
         }
 
