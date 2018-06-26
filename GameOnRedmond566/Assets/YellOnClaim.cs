@@ -68,6 +68,8 @@ public class YellOnClaim : MonoBehaviour
 
     public Vector3 origDebugPosition;
 
+    public Text Fuckofftext;
+
     public void ChangeBackground(int index)
     {
         switch(index)
@@ -267,6 +269,9 @@ public class YellOnClaim : MonoBehaviour
         QuestCompleteText = GameObject.Find("QuestCompleteText").GetComponent<Text>();
         QuestCompleteText.gameObject.SetActive(false);
 
+        Fuckofftext = GameObject.Find("Fuckofftext").GetComponent<Text>();
+        Fuckofftext.gameObject.SetActive(false);
+
         EstuaryQuestProgress = GameObject.Find("EstuaryQuestText");
         MountainQuestProgress = GameObject.Find("MountainQuestText");
         ForestQuestProgress = GameObject.Find("ForestQuestText");
@@ -280,7 +285,7 @@ public class YellOnClaim : MonoBehaviour
         origDebugPosition = debugstuff.transform.position;
         currentLocation = Location.SWAMP;
         playerIDsForQuests = new Dictionary<string, int>();
-        playerIDsForQuests.Add("gay", 1);
+        playerIDsForQuests.Add("gay", 0);
         playerScanInTimes = new Dictionary<string, float>();
         playerIDQuestsCompleteOrNot = new Dictionary<string, bool[]>();
         playerInventory = new Dictionary<string, Dictionary<string, int>>();
@@ -333,6 +338,29 @@ public class YellOnClaim : MonoBehaviour
         BitToys.inst.onFetchToyList_Fail += this.OnFetchAllToysFailed;
 
     }
+
+    public bool CheckForValidScanTime(string id)
+    {
+        if (playerScanInTimes.ContainsKey(CurrentPlayerID))
+        {
+            //time must be at least x secs after last scan
+            float validtime = playerScanInTimes[CurrentPlayerID] + TimeBeforeNextScan;
+
+            MyText.text += "\n current time is " + Time.time.ToString();
+            MyText.text += "\n Last scan in time for this id was  = " + playerScanInTimes[CurrentPlayerID].ToString();
+            MyText.text += "\n ********************************";
+
+            if (validtime > Time.time)
+            {
+                Fuckofftext.gameObject.SetActive(true);
+                StartCoroutine(LateTurnOffFuckOffText());
+                return false;
+            }
+        }
+
+        return true;
+    }
+
     public void OnClaimToy_Success(BitToys.Toy theToy, bool val)
     {
         MyText.text += "\n current state is " + currentState.ToString();
@@ -340,24 +368,14 @@ public class YellOnClaim : MonoBehaviour
         if (currentState != State.ScanIn)
             return;
 
+        CurrentPlayerID = theToy.bitToysId;
         //watchdog timer
-        if(playerScanInTimes.ContainsKey(CurrentPlayerID))
-        {
-            //time must be at least x secs after last scan
-            float validtime = playerScanInTimes[CurrentPlayerID] + TimeBeforeNextScan;
-
-            MyText.text += "\n current time is " + Time.time.ToString();
-            MyText.text += "\n Last scan in time for this id was  = " + playerScanInTimes[CurrentPlayerID].ToString() ;
-            MyText.text += "\n ********************************";
-
-            if (validtime > Time.time)
-            {
-                return;
-            }
-        }
+        bool validscan = CheckForValidScanTime(CurrentPlayerID);
+        if (!validscan)
+            return;
 
         MegaScanInParticles.Play();
-        CurrentPlayerID = theToy.bitToysId;
+      
         if (playerIDsForQuests.ContainsKey(CurrentPlayerID))
         {
             playerIDsForQuests[CurrentPlayerID]++;
@@ -367,12 +385,12 @@ public class YellOnClaim : MonoBehaviour
         {
             playerIDsForQuests.Add(CurrentPlayerID, 0);
             playerScanInTimes.Add(CurrentPlayerID, Time.time);
-            //bool[] quests = new bool[3];
-            //for(int i = 0; i < quests.Length; ++i)
-            //{
-            //    quests[i] = false;
-            //}
-            //playerIDQuestsCompleteOrNot.Add(theToy.bitToysId, quests);
+            bool[] quests = new bool[3];
+            for(int i = 0; i < quests.Length; ++i)
+            {
+                quests[i] = false;
+            }
+            playerIDQuestsCompleteOrNot.Add(theToy.bitToysId, quests);
         }
         
 
@@ -429,6 +447,20 @@ public class YellOnClaim : MonoBehaviour
         StartCoroutine(LateSetToScan());
     }
 
+    public void ShowQuestPerLocation()
+    {
+        if (playerIDQuestsCompleteOrNot[CurrentPlayerID][(int)currentLocation] == false)
+        {
+            playerIDQuestsCompleteOrNot[CurrentPlayerID][(int)currentLocation] = true;
+            ShowContinueQuest();
+        }
+        else
+        {
+            ShowQuestComplete();
+        }
+        StartCoroutine(LateSetToScan());
+    }
+
     public void ShowContinueQuest()
     {
         QuestGiver.SetActive(true);
@@ -440,6 +472,12 @@ public class YellOnClaim : MonoBehaviour
         dragon.SetActive(true);
         QuestCompleteText.gameObject.SetActive(true);
 
+    }
+
+    IEnumerator LateTurnOffFuckOffText()
+    {
+        yield return new WaitForSeconds(3);
+        Fuckofftext.gameObject.SetActive(false);
     }
 
     IEnumerator LateSetToScan()
@@ -483,10 +521,56 @@ public class YellOnClaim : MonoBehaviour
         {
             MegaScanInParticles.Play();
             CurrentPlayerID = "gay";
+
+            bool[] bools = new bool[3];
+            bools[0] = false;
+            bools[1] = false;
+            bools[2] = false;
+
+            if(!playerIDQuestsCompleteOrNot.ContainsKey("gay"))
+            {
+
+                playerIDQuestsCompleteOrNot.Add("gay", bools);
+            }
+
+            if(!playerScanInTimes.ContainsKey("gay"))
+            {
+                playerScanInTimes.Add("gay", Time.time);
+            }
+
+            bool validscan = CheckForValidScanTime(CurrentPlayerID);
+
+            if (!validscan)
+                return;
+
+
             ChangeFromScanToGather();
         }
 
-        if(Input.GetKeyDown(KeyCode.Escape))
+
+        if (currentState == State.ScanIn && Input.GetKeyDown(KeyCode.M))
+        {
+            MegaScanInParticles.Play();
+            if(!playerIDsForQuests.ContainsKey("balls"))
+            {
+                playerIDsForQuests.Add("balls", 1);
+            }
+
+            if(!playerIDQuestsCompleteOrNot.ContainsKey("balls"))
+            {
+                bool[] bools = new bool[3];
+                bools[0] = true;
+                bools[1] = true;
+                bools[2] = true;
+                playerIDQuestsCompleteOrNot.Add("balls", bools);
+            }
+            CurrentPlayerID = "balls";
+          
+        
+            ChangeFromScanToGather();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             Debug.Log("current state is " + currentState.ToString());
       //      GoBack();

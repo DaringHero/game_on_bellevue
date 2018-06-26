@@ -141,14 +141,15 @@ public class SpawnResources : MonoBehaviour {
 
  //       StartCoroutine(LateCall());
      Debug.Log("PLAYING FIREWORKS");
-     blue1f.Play() ;
+     blue1f.Play();
      red1f.Play();
      blue2f.Play();
      red12.Play();
      blue3f.Play();
      red3f.Play();
 
-        MainManager.GetComponent<YellOnClaim>().ShowQuestProgress();
+     //   MainManager.GetComponent<YellOnClaim>().ShowQuestProgress();
+        MainManager.GetComponent<YellOnClaim>().ShowQuestPerLocation();
     }
 
     IEnumerator LateCall()
