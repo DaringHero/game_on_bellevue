@@ -570,11 +570,47 @@ public class YellOnClaim : MonoBehaviour
             ChangeFromScanToGather();
         }
 
+
+
+        if (currentState == State.ScanIn && Input.GetKeyDown(KeyCode.M))
+        {
+            MegaScanInParticles.Play();
+            ScanIn("testaccount");
+
+
+            ChangeFromScanToGather();
+        }
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Debug.Log("current state is " + currentState.ToString());
       //      GoBack();
         }
+    }
+
+    //this is a test function
+    public void ScanIn(string id)
+    {
+        //check for basic quest
+        if(playerIDsForQuests.ContainsKey(id))
+        {
+
+        }
+
+        //check for location quests
+        if(playerIDQuestsCompleteOrNot.ContainsKey(id))
+        {
+
+        }
+
+        //check for scan time
+        if(playerScanInTimes.ContainsKey(id))
+        {
+            playerScanInTimes[id] = Time.time;
+        }
+
+
+
     }
 
     public void GoBack()
