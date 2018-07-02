@@ -68,7 +68,11 @@ public class YellOnClaim : MonoBehaviour
 
     public Vector3 origDebugPosition;
 
-    public Text Fuckofftext;
+    public Text Fuckofftext; //this is displayed if the player tries to scan in too soon
+
+    //these are debug things for testing
+    public bool unquestedplayerscan = false;
+    public bool questedplayerscan = false;
 
     public void ChangeBackground(int index)
     {
@@ -517,69 +521,86 @@ public class YellOnClaim : MonoBehaviour
 
         }
 
+
+        //g will be for a new player with no finished quests
         if(currentState == State.ScanIn && Input.GetKeyDown(KeyCode.Space))
         {
             MegaScanInParticles.Play();
-            CurrentPlayerID = "gay";
+            CurrentPlayerID = "g_THISISATEST";
 
-            bool[] bools = new bool[3];
+            if(!unquestedplayerscan)
+            {
+
+           bool[] bools = new bool[3];
             bools[0] = false;
             bools[1] = false;
             bools[2] = false;
 
-            if(!playerIDQuestsCompleteOrNot.ContainsKey("gay"))
-            {
 
-                playerIDQuestsCompleteOrNot.Add("gay", bools);
+                playerIDQuestsCompleteOrNot.Add("g_THISISATEST", bools);
+
+                playerScanInTimes.Add("g_THISISATEST", Time.time);
+
+                unquestedplayerscan = true;
             }
 
-            if(!playerScanInTimes.ContainsKey("gay"))
+  
+
+           if(unquestedplayerscan)
             {
-                playerScanInTimes.Add("gay", Time.time);
+                bool validscan = CheckForValidScanTime(CurrentPlayerID);
+
+                if (!validscan)
+                    return;
+
+
+                playerScanInTimes[CurrentPlayerID] = Time.time;
             }
-
-            bool validscan = CheckForValidScanTime(CurrentPlayerID);
-
-            if (!validscan)
-                return;
-
 
             ChangeFromScanToGather();
         }
 
-
+        //b will be for a player who has all level 1 quests done
+        //b_level1done
         if (currentState == State.ScanIn && Input.GetKeyDown(KeyCode.M))
         {
             MegaScanInParticles.Play();
-            if(!playerIDsForQuests.ContainsKey("balls"))
-            {
-                playerIDsForQuests.Add("balls", 1);
-            }
+            CurrentPlayerID = "b_level1done";
 
-            if(!playerIDQuestsCompleteOrNot.ContainsKey("balls"))
+            if (!questedplayerscan)
             {
+
                 bool[] bools = new bool[3];
-                bools[0] = true;
-                bools[1] = true;
-                bools[2] = true;
-                playerIDQuestsCompleteOrNot.Add("balls", bools);
+                bools[0] = false;
+                bools[1] = false;
+                bools[2] = false;
+
+
+                playerIDQuestsCompleteOrNot.Add("b_level1done", bools);
+
+                playerScanInTimes.Add("b_level1done", Time.time);
+
+                questedplayerscan = true;
             }
-            CurrentPlayerID = "balls";
-          
-        
+
+
+
+            if (questedplayerscan)
+            {
+                bool validscan = CheckForValidScanTime(CurrentPlayerID);
+
+                if (!validscan)
+                    return;
+
+
+                playerScanInTimes[CurrentPlayerID] = Time.time;
+            }
+
             ChangeFromScanToGather();
         }
 
 
-
-        if (currentState == State.ScanIn && Input.GetKeyDown(KeyCode.M))
-        {
-            MegaScanInParticles.Play();
-            ScanIn("testaccount");
-
-
-            ChangeFromScanToGather();
-        }
+//future TODO: add some sort of scanin function so that we can cut down on copy paste code, and abstract out from the claimtoy success
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -602,8 +623,6 @@ public class YellOnClaim : MonoBehaviour
         {
 
         }
-
-        bool validscan
 
         //check for scan time
         if(playerScanInTimes.ContainsKey(id))
