@@ -603,10 +603,13 @@ public class YellOnClaim : MonoBehaviour
 
         }
 
+        bool validscan
+
         //check for scan time
         if(playerScanInTimes.ContainsKey(id))
         {
             playerScanInTimes[id] = Time.time;
+            
         }
 
 
