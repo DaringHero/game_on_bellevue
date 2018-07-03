@@ -341,6 +341,9 @@ public class YellOnClaim : MonoBehaviour
         BitToys.inst.onFetchToyList_OK += this.OnFetchOwnedToys;
         BitToys.inst.onFetchToyList_Fail += this.OnFetchAllToysFailed;
 
+        BitToys.inst.onPutCustomData_Fail += this.OnPutCustomData_Fail;
+        BitToys.inst.onPutCustomData_OK += this.OnPutCustomData_OK;
+
     }
 
     public bool CheckForValidScanTime(string id)
@@ -684,6 +687,18 @@ public class YellOnClaim : MonoBehaviour
         this.MyText.text += mytext + "\n";
         this.MyText.text += "\n ******************************";
     }
+
+    public void OnPutCustomData_OK(​BitToys​.Toy​ toy)
+    {
+        Debug​.Log(​"Updating customData succeeded for toy: " + toy.bitToysId);
+    }
+
+    public void OnPutCustomData_Fail(​string _id, BitToys.FailReason reason​, string text)
+    {
+        Debug.Log("Updating cust data for id: " + _id + " failed : " + reason + " " + text);
+    }
+
+
 
     public void TextReset1()
     {
