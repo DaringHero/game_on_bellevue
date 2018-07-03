@@ -5,6 +5,7 @@ using UnityEngine;
 public class OnClick : MonoBehaviour {
 
     GameObject Resourcespawner;
+    public GameObject particleeffects;
 	// Use this for initialization
 	void Start () {
         Resourcespawner = GameObject.Find("ResourceSpawner");
@@ -19,6 +20,7 @@ public class OnClick : MonoBehaviour {
     {
         
         Resourcespawner.GetComponent<SpawnResources>().CurrentlyAvailableResources--;
+        Instantiate(particleeffects);
         gameObject.SetActive(false);
     }
 }

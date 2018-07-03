@@ -372,6 +372,8 @@ public class YellOnClaim : MonoBehaviour
         if (currentState != State.ScanIn)
             return;
 
+        theToy.customData.SendAsync();
+
         CurrentPlayerID = theToy.bitToysId;
         //watchdog timer
         bool validscan = CheckForValidScanTime(CurrentPlayerID);
@@ -569,7 +571,7 @@ public class YellOnClaim : MonoBehaviour
 
             if (!questedplayerscan)
             {
-
+                
                 bool[] bools = new bool[3];
                 bools[0] = false;
                 bools[1] = false;
