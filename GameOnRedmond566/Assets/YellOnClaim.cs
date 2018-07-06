@@ -54,6 +54,8 @@ public class YellOnClaim : MonoBehaviour
 
     public string CurrentPlayerID;
 
+    public BitToys.Toy CurrentToy;
+
     public Text QuestCompleteText;
     public Text QuestProgressText;
     public GameObject EstuaryQuestProgress;
@@ -68,7 +70,31 @@ public class YellOnClaim : MonoBehaviour
 
     public Vector3 origDebugPosition;
 
+    public int[] CurrentPlayerResources;
+
     public Text Fuckofftext; //this is displayed if the player tries to scan in too soon
+
+    //idea for structure of custom data
+    //inventory - array of integers, indexed by enum
+
+        //TODO put this in a separate file
+        enum Resources
+    {
+        AMETHYST,
+        APPLE,
+        BERRY,
+        GRASS,
+        CEDAR,
+        CRYSTAL,
+        FEATHER,
+        ICE,
+        MUSHROOM,
+        ROCKS,
+        SCALE,
+        TOTALNUMBER
+
+    };
+
 
     //these are debug things for testing
     public bool unquestedplayerscan = false;
@@ -368,6 +394,10 @@ public class YellOnClaim : MonoBehaviour
         return true;
     }
 
+    //method for controlling player data:
+    //when scanning in, download data
+    //when quest complete, save data
+
     public void OnClaimToy_Success(BitToys.Toy theToy, bool val)
     {
         MyText.text += "\n current state is " + currentState.ToString();
@@ -375,13 +405,29 @@ public class YellOnClaim : MonoBehaviour
         if (currentState != State.ScanIn)
             return;
 
-        theToy.customData.SendAsync();
+        //get the data
+
+
+
+       // theToy.customData.SendAsync();
 
         CurrentPlayerID = theToy.bitToysId;
-        //watchdog timer
+        CurrentToy = theToy;
+
         bool validscan = CheckForValidScanTime(CurrentPlayerID);
         if (!validscan)
             return;
+
+        //populate the resources (this, along with the quests, is our custom data)
+       // CurrentPlayerResources =
+
+        //now populate quests
+
+        //watchdog timer
+
+        //Two global data entries under "intMultiple". toyExample​.​customData​.​AddInt_Global​(​"intMultiple"​,​ ​2​);
+        //toyExample​.​customData​.​AddInt_Global​(​"intMultiple"​,​ ​3​);
+
 
         MegaScanInParticles.Play();
       
@@ -444,6 +490,9 @@ public class YellOnClaim : MonoBehaviour
 
     public void ShowQuestProgress()
     {
+        //save data
+        CurrentToy.customData.SendAsync();
+
         if(playerIDsForQuests.ContainsKey(CurrentPlayerID) && playerIDsForQuests[CurrentPlayerID] == 0)
         {
 
@@ -454,6 +503,11 @@ public class YellOnClaim : MonoBehaviour
             ShowQuestComplete();
         }
         StartCoroutine(LateSetToScan());
+    }
+
+    public void ClearServer()
+    {
+        CurrentToy.customData.ClearAll_Local();
     }
 
     public void ShowQuestPerLocation()
@@ -688,17 +742,17 @@ public class YellOnClaim : MonoBehaviour
         this.MyText.text += "\n ******************************";
     }
 
-    public void OnPutCustomData_OK(​BitToys​.Toy​ toy)
+    public void OnPutCustomData_OK(BitToys.Toy toy)
     {
-        Debug​.Log(​"Updating customData succeeded for toy: " + toy.bitToysId);
+        Debug.Log("Updating customData succeeded for toy: " + toy.bitToysId);
     }
 
-    public void OnPutCustomData_Fail(​string _id, BitToys.FailReason reason​, string text)
+    public void OnPutCustomData_Fail(string _id, BitToys.FailReason reason, string text)
     {
         Debug.Log("Updating cust data for id: " + _id + " failed : " + reason + " " + text);
     }
 
-
+    //TODO: future improvement, somehow batch up updates and send as a bunch, instead of just immediately sending/receiving data (strains network and if digipen wifi is bad it could be trouble)
 
     public void TextReset1()
     {
