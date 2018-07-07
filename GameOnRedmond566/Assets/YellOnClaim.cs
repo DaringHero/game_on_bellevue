@@ -47,10 +47,6 @@ public class YellOnClaim : MonoBehaviour
     public Text gathercompletetext;
 
     public ParticleSystem MegaScanInParticles;
-    public Dictionary<string,int> playerIDsForQuests; //string is playerid, int is quest they are on (0-1)
-    public Dictionary<string, Dictionary<string, int>> playerInventory; //inventory for players, items referred to as strings then count is int
-    public Dictionary<string, bool[]> playerIDQuestsCompleteOrNot; //an array of bools, one for each location, if the player is done with that quest or not
-    public Dictionary<string, float> playerScanInTimes;
 
     public string CurrentPlayerID;
 
@@ -70,15 +66,24 @@ public class YellOnClaim : MonoBehaviour
 
     public Vector3 origDebugPosition;
 
-    public int[] CurrentPlayerResources;
+    //these are debug things for testing
+    public Dictionary<string, int> playerIDsForQuests; //string is playerid, int is quest they are on (0-1)
+    public Dictionary<string, Dictionary<string, int>> playerInventory; //inventory for players, items referred to as strings then count is int
+    public Dictionary<string, bool[]> playerIDQuestsCompleteOrNot; //an array of bools, one for each location, if the player is done with that quest or not
+    public Dictionary<string, float> playerScanInTimes;
+
+    public bool unquestedplayerscan = false;
+    public bool questedplayerscan = false;
 
     public Text Fuckofftext; //this is displayed if the player tries to scan in too soon
+
+    public const int BAD_STUFF = -999;
 
     //idea for structure of custom data
     //inventory - array of integers, indexed by enum
 
         //TODO put this in a separate file
-        enum Resources
+    public enum Resources
     {
         AMETHYST,
         APPLE,
@@ -91,14 +96,15 @@ public class YellOnClaim : MonoBehaviour
         MUSHROOM,
         ROCKS,
         SCALE,
-        TOTALNUMBER
+        TOTALNUMBER,
 
     };
 
+    //DATA RETRIEVED FROM BIT TOYS SERVER
+    public int[] currentPlayerResources;
+    public float currentLastScanInTime;
+    public bool[] questsdone;
 
-    //these are debug things for testing
-    public bool unquestedplayerscan = false;
-    public bool questedplayerscan = false;
 
     public void ChangeBackground(int index)
     {
@@ -296,6 +302,8 @@ public class YellOnClaim : MonoBehaviour
   // Use this for initialization
   void Start ()
   {
+        currentPlayerResources = new int[(int)Resources.TOTALNUMBER];
+
         QuestCompleteText = GameObject.Find("QuestCompleteText").GetComponent<Text>();
         QuestCompleteText.gameObject.SetActive(false);
 
@@ -398,6 +406,45 @@ public class YellOnClaim : MonoBehaviour
     //when scanning in, download data
     //when quest complete, save data
 
+        //custom data: resources (array of integers)
+        
+        public bool ClaimData()
+    {
+        //claim resource
+
+        //Grab load. toyExample​.​customData​.​GetString​(​"stringMultiple"​,​ ​1​,​ ​"string2"​); 
+        currentPlayerResources[(int)Resources.AMETHYST] = CurrentToy.customData.GetInt("resources", (int)Resources.AMETHYST, BAD_STUFF);
+        currentPlayerResources[(int)Resources.APPLE] = CurrentToy.customData.GetInt("resources", (int)Resources.APPLE, BAD_STUFF);
+        currentPlayerResources[(int)Resources.BERRY] = CurrentToy.customData.GetInt("resources", (int)Resources.BERRY, BAD_STUFF);
+        currentPlayerResources[(int)Resources.CEDAR] = CurrentToy.customData.GetInt("resources", (int)Resources.CEDAR, BAD_STUFF);
+        currentPlayerResources[(int)Resources.CRYSTAL] = CurrentToy.customData.GetInt("resources", (int)Resources.CRYSTAL, BAD_STUFF);
+        currentPlayerResources[(int)Resources.FEATHER] = CurrentToy.customData.GetInt("resources", (int)Resources.FEATHER, BAD_STUFF);
+        currentPlayerResources[(int)Resources.GRASS] = CurrentToy.customData.GetInt("resources", (int)Resources.GRASS, BAD_STUFF);
+        currentPlayerResources[(int)Resources.ICE] = CurrentToy.customData.GetInt("resources", (int)Resources.ICE, BAD_STUFF);
+        currentPlayerResources[(int)Resources.MUSHROOM] = CurrentToy.customData.GetInt("resources", (int)Resources.MUSHROOM, BAD_STUFF);
+        currentPlayerResources[(int)Resources.ROCKS] = CurrentToy.customData.GetInt("resources", (int)Resources.ROCKS, BAD_STUFF);
+        currentPlayerResources[(int)Resources.SCALE] = CurrentToy.customData.GetInt("resources", (int)Resources.SCALE, BAD_STUFF);
+
+        //error check if any are bad?
+
+        //claim quest status
+        questsdone[(int)Location.SWAMP] = CurrentToy.customData.GetBool("quests", (int)Location.SWAMP, false);
+        questsdone[(int)Location.MOUNTAIN] = CurrentToy.customData.GetBool("quests", (int)Location.MOUNTAIN, false);
+        questsdone[(int)Location.FOREST] = CurrentToy.customData.GetBool("quests", (int)Location.FOREST, false);
+
+        //claim last scan in time
+        currentLastScanInTime = CurrentToy.customData.GetFloat("lastscanintime", .66666666666666f);
+
+
+        //if we had some errors, we need to add the values.  maybe it would be best instead of keeping things in arrays,
+        //if we instead did a key for each one, just to keep things simpler
+
+        //claim 
+
+        return true;
+    }
+
+
     public void OnClaimToy_Success(BitToys.Toy theToy, bool val)
     {
         MyText.text += "\n current state is " + currentState.ToString();
@@ -406,7 +453,7 @@ public class YellOnClaim : MonoBehaviour
             return;
 
         //get the data
-
+        ClaimData();
 
 
        // theToy.customData.SendAsync();
@@ -488,10 +535,39 @@ public class YellOnClaim : MonoBehaviour
 
     }
 
+    public void SaveData()
+    {
+         CurrentToy.customData.SetInt("resources", (int)Resources.AMETHYST, currentPlayerResources[(int)Resources.AMETHYST]);
+         CurrentToy.customData.SetInt("resources", (int)Resources.APPLE,    currentPlayerResources[(int)Resources.APPLE]);
+         CurrentToy.customData.SetInt("resources", (int)Resources.BERRY,    currentPlayerResources[(int)Resources.BERRY]);
+         CurrentToy.customData.SetInt("resources", (int)Resources.CEDAR,    currentPlayerResources[(int)Resources.CEDAR]);
+         CurrentToy.customData.SetInt("resources", (int)Resources.CRYSTAL,  currentPlayerResources[(int)Resources.CRYSTAL]);
+         CurrentToy.customData.SetInt("resources", (int)Resources.FEATHER,  currentPlayerResources[(int)Resources.FEATHER]);
+         CurrentToy.customData.SetInt("resources", (int)Resources.GRASS,    currentPlayerResources[(int)Resources.GRASS]);
+         CurrentToy.customData.SetInt("resources", (int)Resources.ICE,      currentPlayerResources[(int)Resources.ICE]);
+         CurrentToy.customData.SetInt("resources", (int)Resources.MUSHROOM, currentPlayerResources[(int)Resources.MUSHROOM]);
+         CurrentToy.customData.SetInt("resources", (int)Resources.ROCKS,    currentPlayerResources[(int)Resources.ROCKS]);
+         CurrentToy.customData.SetInt("resources", (int)Resources.SCALE,    currentPlayerResources[(int)Resources.SCALE]);
+
+        //error check if any are bad?
+
+        //claim quest status
+        CurrentToy.customData.GetBool("quests", (int)Location.SWAMP,    questsdone[(int)Location.SWAMP]);
+        CurrentToy.customData.GetBool("quests", (int)Location.MOUNTAIN, questsdone[(int)Location.FOREST]);
+        CurrentToy.customData.GetBool("quests", (int)Location.FOREST, questsdone[(int)Location.MOUNTAIN]);
+
+        //claim last scan in time
+        CurrentToy.customData.SetFloat("lastscanintime", currentLastScanInTime);
+
+
+        CurrentToy.customData.SendAsync();
+    }
+
     public void ShowQuestProgress()
     {
         //save data
-        CurrentToy.customData.SendAsync();
+        SaveData();//sendasync called here
+
 
         if(playerIDsForQuests.ContainsKey(CurrentPlayerID) && playerIDsForQuests[CurrentPlayerID] == 0)
         {
