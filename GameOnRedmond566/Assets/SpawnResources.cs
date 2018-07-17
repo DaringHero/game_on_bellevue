@@ -57,7 +57,7 @@ public class SpawnResources : MonoBehaviour {
 
         if(HasSpawnedAtLeastOnce && (resourcesStillOnScreen < MinResourceNumber))
         {
-            PlayFireWorks();
+            //PlayFireWorks();
             HasSpawnedAtLeastOnce = false;
         }
 
@@ -129,6 +129,7 @@ public class SpawnResources : MonoBehaviour {
 
 
     //celebratory function
+    /*
     public void PlayFireWorks()
     {
         foreach(GameObject g in listOfSpawnedResources)
@@ -150,7 +151,7 @@ public class SpawnResources : MonoBehaviour {
 
      //   MainManager.GetComponent<YellOnClaim>().ShowQuestProgress();
         MainManager.GetComponent<YellOnClaim>().ShowQuestPerLocation();
-    }
+    }*/
 
     IEnumerator LateCall()
     {

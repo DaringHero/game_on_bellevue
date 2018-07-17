@@ -1,0 +1,41 @@
+This was made by Shawn as a kind of "readme" and FAQ
+
+1. What scene do I open?
+Open Boot.unity, this will lead to the other scenes
+
+2. How do I turn on emulation?
+Go to the BitToysManager object in Boot and click the Bit Toys Emulator
+
+3. How do I change colors? They are always the same (for completing the challenge)
+Uh, IDK.  I emailed Jacob about this.  Awaiting response.  He fixed it when he demoe'd it but I forgot how he did it :(
+
+4. Where are we going to add the minigames?
+How about inside that giant .cs file "TheEntireKiosk.cs" ? See the quest stuff
+
+5. How do you backout?
+Press escape / back key on device
+
+6.If you put certain things in the Registration text field, there can be special functions
+_adminBoot - loadslevel 0
+
+      if (userField.text == "_adminClearRegistration")
+      {
+        clearChip = true;
+      }
+      else if(userField.text == "_adminClearChip")
+      {
+        fullClearChip = true;
+      }
+      else if(userField.text == "_adminTacticalNuke")
+      {
+        fullClearServer = true;
+      }
+
+
+7.Why doesn't it build?
+Try downgrading the JDK to 8, and try upgrading your android sdk to at least level 26 aka 8.0.
+Also, don't worry about trying to pair the scanner to the device, the device should pair automatically when the game starts.  
+Also, make sure you use the "Internal" not the "Gradle" build system. Not sure why, but for me at least Gradle doesn't work.
+
+8.How am I supposed to debug this thing?
+Unity Remote doesn't seem to really work because of the external specialized hardware, so not sure about this one.

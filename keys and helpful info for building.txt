@@ -1,0 +1,7 @@
+Keystore password: A@8g#6X^oY$1rv3A^Cnp%KfH%vbgrfvb
+
+Alias: digipengameonbellevue
+keystore
+Alias Password: !2X9J%%uHSMGN13xu3O4UPE0$^2!3lmI
+
+These things are for unity under Edit -> Project Settings -> Player

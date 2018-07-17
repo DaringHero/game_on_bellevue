@@ -13,7 +13,7 @@ public class JSONPost : MonoBehaviour {
     public WWW POST()
     {
         WWW www;
-        Hashtable postHeader = new Hashtable();
+        Dictionary<string, string> postHeader = new Dictionary<string, string>();
         postHeader.Add("Content-Type", "application/json");
 
         string jsonStr = "\"\" "; //dont put newlines

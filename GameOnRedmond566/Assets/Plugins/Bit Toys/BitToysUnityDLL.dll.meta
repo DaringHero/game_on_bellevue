@@ -1,12 +1,12 @@
 fileFormatVersion: 2
 guid: 37ca7e128c62f834a9c8039782a9643a
-timeCreated: 1496960757
+timeCreated: 1528082349
 licenseType: Free
 PluginImporter:
   serializedVersion: 2
   iconMap: {}
   executionOrder:
-    BitToys: -3
+    BitToys: 100
   isPreloaded: 0
   isOverridable: 0
   platformData:
