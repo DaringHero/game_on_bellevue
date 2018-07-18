@@ -5892,7 +5892,7 @@ Prefab:
     - target: {fileID: 198418460112399168, guid: 4ff2be6d06c30f44bb63e15741e0bf40,
         type: 2}
       propertyPath: startDelay.scalar
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 198418460112399168, guid: 4ff2be6d06c30f44bb63e15741e0bf40,
         type: 2}
@@ -7340,6 +7340,7 @@ GameObject:
   - component: {fileID: 932742027}
   - component: {fileID: 932742026}
   - component: {fileID: 932742025}
+  - component: {fileID: 932742030}
   m_Layer: 5
   m_Name: DragonHatchText
   m_TagString: Untagged
@@ -7447,6 +7448,27 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 932742023}
+--- !u!114 &932742030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 932742023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 412724f282c58fd42aca31e3e882ab51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  f:
+  - {fileID: 1047974617}
+  - {fileID: 1352318227}
+  - {fileID: 1870212086}
+  - {fileID: 187626405}
+  - {fileID: 207768169}
+  - {fileID: 1015918831}
+  - {fileID: 1721767720}
+  - {fileID: 907422654}
+  - {fileID: 1737161388}
 --- !u!1 &934518128
 GameObject:
   m_ObjectHideFlags: 0
@@ -7982,7 +8004,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -354705075
+  randomSeed: -1916745711
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -12138,7 +12160,7 @@ Prefab:
     - target: {fileID: 198775127684553370, guid: f38f44585f63e0940b6ae2a0205c2504,
         type: 2}
       propertyPath: startDelay.scalar
-      value: 3
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 198775127684553370, guid: f38f44585f63e0940b6ae2a0205c2504,
         type: 2}
@@ -12341,7 +12363,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -663153878
+  randomSeed: -73730083
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -17947,12 +17969,12 @@ Prefab:
     - target: {fileID: 198091031496263230, guid: 22028270887586f4fbcc95d89bc1026f,
         type: 2}
       propertyPath: startDelay.scalar
-      value: 2
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 198091031496263230, guid: 22028270887586f4fbcc95d89bc1026f,
         type: 2}
       propertyPath: randomSeed
-      value: -991029877
+      value: -2313016
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 22028270887586f4fbcc95d89bc1026f, type: 2}
@@ -18238,7 +18260,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -361135605
+  randomSeed: -948605178
   InitialModule:
     serializedVersion: 3
     enabled: 1

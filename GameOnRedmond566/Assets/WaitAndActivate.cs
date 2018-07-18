@@ -15,6 +15,11 @@ public class WaitAndActivate : MonoBehaviour {
         {
             StartCoroutine(this.WaitAndThenActivate());
         }
+
+        if(GetComponent<PlayFireworks>())
+        {
+            GetComponent<PlayFireworks>().PlayTheFireWorks();
+        }
     }
 
     IEnumerator WaitAndThenActivate()
