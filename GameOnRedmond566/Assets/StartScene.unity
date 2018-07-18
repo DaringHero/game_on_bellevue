@@ -7846,7 +7846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33d6b05ba0cafa14a884cafb012b2019, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waittime: 1
+  waittime: 3
   ActivateQuestContinue: {fileID: 83889512}
   ActivateQuestComplete: {fileID: 1692272653}
   ActivateQuestNone: {fileID: 232652766}
@@ -25278,7 +25278,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1676054913
+  randomSeed: -755371944
   InitialModule:
     serializedVersion: 3
     enabled: 1
