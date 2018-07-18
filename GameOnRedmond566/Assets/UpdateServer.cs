@@ -22,6 +22,16 @@ public class UpdateServer : MonoBehaviour {
     {
         yield return new WaitForSeconds(waittime);
         myYellOnClaim.ready2scan = true;
+
+        if(myYellOnClaim.particleMode)
+        {
+            myYellOnClaim.leftScanParticles.gameObject.SetActive(true);
+            myYellOnClaim.leftScanParticles.Play();
+            myYellOnClaim.rightscanParticles.gameObject.SetActive(true);
+            myYellOnClaim.rightscanParticles.Play();
+
+        }
+
         this.Activate.SetActive(true);
         this.Deactivate.SetActive(false);
     }

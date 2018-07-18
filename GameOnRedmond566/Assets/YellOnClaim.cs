@@ -95,6 +95,8 @@ public class YellOnClaim : MonoBehaviour
     {
         ready2scan = true;
         particleMode = true;
+        leftScanParticles.Play();
+        rightscanParticles.Play();
         //QuestCompleteText = GameObject.Find("QuestCompleteText").GetComponent<Text>();
         //QuestCompleteText.gameObject.SetActive(false);
 
@@ -188,6 +190,8 @@ public class YellOnClaim : MonoBehaviour
         if (!ready2scan)
             return;
 
+  
+
         ready2scan = false;
         //MyText.text += "\n current state is " + currentState.ToString();
         //only one player, one scan at a time
@@ -214,14 +218,16 @@ public class YellOnClaim : MonoBehaviour
                 this.ScanCardTooRecent.SetActive(true); //weve seen this player before, and the time
             //hasnt expired yet, so they need to come back later
             //no need for return here, this goes to the end of the function just the same
+            ready2scan = true;
         }
         else
         {
             this.ScanCardSuccess.SetActive(true);
-      
 
-
-        //MegaScanInParticles.Play();
+            leftScanParticles.gameObject.SetActive(false);
+            rightscanParticles.gameObject.SetActive(false);
+            // if(MegaScanInParticles.gameObject.activeSelf)
+            MegaScanInParticles.Play();
 
 
         //at this point it will always contain the key, this is just to prevent nulls
@@ -552,7 +558,7 @@ public class YellOnClaim : MonoBehaviour
 
         debugmode = !debugmode;//toggle
     }
-
+    //for now this function will only work at scan page
     public void ToggleParticles()
     {
         //all particles:
@@ -565,10 +571,22 @@ public class YellOnClaim : MonoBehaviour
         if(!particleMode)
         {
 
+                leftScanParticles.gameObject.SetActive(false);
+            rightscanParticles.gameObject.SetActive(false);
+            MegaScanInParticles.gameObject.SetActive(false);
         }
         else
         {
-
+            if(!ready2scan)
+            {
+                MegaScanInParticles.gameObject.SetActive(true);
+            }
+            else
+            {
+                MegaScanInParticles.gameObject.SetActive(true);
+                leftScanParticles.gameObject.SetActive(true);
+                rightscanParticles.gameObject.SetActive(true);
+            }
         }
 
     }

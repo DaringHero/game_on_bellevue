@@ -110,7 +110,7 @@ MonoBehaviour:
   m_MinSize: {x: 707, y: 492}
   m_MaxSize: {x: 18002, y: 14042}
   vertical: 0
-  controlID: 10
+  controlID: 61
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -134,7 +134,7 @@ MonoBehaviour:
   m_MinSize: {x: 232, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 11
+  controlID: 84
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -153,8 +153,8 @@ MonoBehaviour:
     y: 0
     width: 1201
     height: 577
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -369,14 +369,14 @@ MonoBehaviour:
     width: 1199
     height: 556
   m_SceneLighting: 1
-  lastFramingTime: 787.8178950038202
+  lastFramingTime: 2174.4706362933152
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 432, y: 270, z: 0}
+    m_Target: {x: 431.0003, y: 309.39658, z: 0}
     speed: 2
-    m_Value: {x: 432, y: 270, z: 0}
+    m_Value: {x: 431.0003, y: 309.39658, z: 0}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -399,13 +399,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.0078092124, y: -0.011096528, z: 0.00008661144, w: 0.999908}
+    m_Target: {x: -0.007092069, y: 0.16455424, z: 0.0011831549, w: 0.9863419}
     speed: 2
-    m_Value: {x: -0.0078092124, y: 0.011096528, z: -0.00008661144, w: -0.999908}
+    m_Value: {x: -0.007092069, y: 0.16455424, z: 0.0011831549, w: 0.9863419}
   m_Size:
-    m_Target: 559.7916
+    m_Target: 698.1908
     speed: 2
-    m_Value: 559.7916
+    m_Value: 698.1908
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -522,19 +522,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/ResourcePrefabs
+    - Assets
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/ResourcePrefabs
+  - Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\digipen\game_on_bellevue\GameOnRedmond566
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 169}
-    m_SelectedIDs: d82c0000
-    m_LastClickedID: 11480
-    m_ExpandedIDs: 000000001e29000066290000c82900007a2a00009e2a00005c2b00007c2c0000c02c0000d82c000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 95}
+    m_SelectedIDs: 90250000
+    m_LastClickedID: 9616
+    m_ExpandedIDs: 0000000090250000d82500004a2600000c27000030270000fe2700002a290000742900008c29000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -562,7 +562,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000001e29000066290000c82900007a2a00009e2a00005c2b00007c2c0000c02c0000
+    m_ExpandedIDs: 0000000090250000d82500004a2600000c27000030270000fe2700002a290000742900008c290000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -645,20 +645,20 @@ MonoBehaviour:
     height: 869
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 5e280000
-    m_LastClickedID: 0
-    m_ExpandedIDs: 02f0ffff6cf8ffff00000000482e0000dc2e0000
+    m_SelectedIDs: f82a0000
+    m_LastClickedID: 11000
+    m_ExpandedIDs: e4fbffff00000000442b00008e2b0000e02b0000182c0000982d0000aa2d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: fakescan (1)
-      m_OriginalName: fakescan (1)
+      m_Name: 0_ScanPage
+      m_OriginalName: 0_ScanPage
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: -4094
+      m_UserData: 11150
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0
@@ -696,7 +696,7 @@ MonoBehaviour:
     y: 100
     width: 324
     height: 869
-  m_ScrollPosition: {x: 0, y: 91.95508}
+  m_ScrollPosition: {x: 0, y: 69.95508}
   m_InspectorMode: 0
   m_PreviewResizer:
     m_CachedPref: 160
