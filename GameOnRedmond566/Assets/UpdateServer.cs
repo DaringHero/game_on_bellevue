@@ -21,6 +21,7 @@ public class UpdateServer : MonoBehaviour {
     {
         Debug.Log(_id + " Reason: " + reason + " " + text);
         //send again
+        StartCoroutine(WaitAndSendAgain());
     }
 
     public void OnPutData_Success(BitToys.Toy _toy)
@@ -30,9 +31,10 @@ public class UpdateServer : MonoBehaviour {
 
     private void OnEnable()
     {
-        
-        bool sentsuccess = this.myYellOnClaim.MyCurrentToy.customData.SendAsync();
-
+        if (myYellOnClaim.MyCurrentToy.bitToysId != "player1NUXtest")
+            this.myYellOnClaim.MyCurrentToy.customData.SendAsync();
+        else
+            StartCoroutine(WaitAndThenActivate());
 
     }
 
