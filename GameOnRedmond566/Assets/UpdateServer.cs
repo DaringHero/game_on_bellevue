@@ -21,7 +21,7 @@ public class UpdateServer : MonoBehaviour {
     IEnumerator WaitAndThenActivate()
     {
         yield return new WaitForSeconds(waittime);
-
+        myYellOnClaim.ready2scan = true;
         this.Activate.SetActive(true);
         this.Deactivate.SetActive(false);
     }
