@@ -27,8 +27,13 @@ public class OnClickHarvest : MonoBehaviour {
             }
             else
             {
-                this.myYellOnClaim.MyCurrentToy.customData.SetInt(this.ResourceType, resourceCounttemp + 1);
+                this.myYellOnClaim.MyCurrentToy.customData.SetInt(this.ResourceType, ++resourceCounttemp);
             }
+
+            if (myYellOnClaim.resourceCountForText.ContainsKey(ResourceType))
+                myYellOnClaim.resourceCountForText[ResourceType]++;
+            else
+                myYellOnClaim.resourceCountForText.Add(ResourceType, 1);
 
             AudioSource.PlayClipAtPoint(soundeffect, Vector3.zero);
             Debug.Log("Currently have " + resourceCounttemp  + " " + this.ResourceType);

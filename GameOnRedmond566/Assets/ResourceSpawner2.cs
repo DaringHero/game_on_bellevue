@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ResourceSpawner2 : MonoBehaviour {
 
@@ -18,6 +19,8 @@ public class ResourceSpawner2 : MonoBehaviour {
     public GameObject Nextpage;
     public GameObject Deactivate;
 
+    public Text resourceCountText;
+
     public void OnEnable()
     {
         Debug.Log("loc ="+ this.location.ToString()+ " currentLocation = "+ myYellOnClaim.currentLocation.ToString());
@@ -26,6 +29,7 @@ public class ResourceSpawner2 : MonoBehaviour {
 
         if (this.location == myYellOnClaim.currentLocation)//if this is the correct location
         {
+            myYellOnClaim.resourceCountForText.Clear();
             Debug.Log("******************************CorrectLocation");
             //spawn resources
             for (int i = 0; i < this.SpawnPoints.Count; i++)
@@ -78,6 +82,13 @@ public class ResourceSpawner2 : MonoBehaviour {
         {
             this.CollectedResource = 0;//make sure this var is reset
             //goto next page
+            resourceCountText.text = "";
+            //update the text
+            foreach(KeyValuePair<string,int> a in myYellOnClaim.resourceCountForText)
+            {
+                resourceCountText.text += "\n " + a.Value + " " + a.Key;
+            }
+
             this.Nextpage.SetActive(true);
           
             this.Deactivate.SetActive(false);

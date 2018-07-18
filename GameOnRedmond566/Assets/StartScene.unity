@@ -1611,7 +1611,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1259537095
+  randomSeed: 1980121593
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -5298,7 +5298,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 403761280}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1465.2, y: -898.4, z: -2}
+  m_LocalPosition: {x: -1479.3, y: -904.5, z: -2}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 1159777002}
@@ -5326,7 +5326,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 422772976}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1533.6, y: -894.9, z: -2}
+  m_LocalPosition: {x: -1521.6, y: -902.9, z: -2}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 1159777002}
@@ -5586,7 +5586,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 501503999}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1469, y: -946.8, z: -2}
+  m_LocalPosition: {x: -1475.7, y: -944.7, z: -2}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 1159777002}
@@ -6686,7 +6686,7 @@ GameObject:
   m_Component:
   - component: {fileID: 710357219}
   m_Layer: 5
-  m_Name: EstuaryQuest
+  m_Name: resourcecounttext
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6777,7 +6777,7 @@ Transform:
   m_GameObject: {fileID: 717002146}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1480, y: -923.01074, z: 25}
-  m_LocalScale: {x: 3.1827958, y: 3.1827958, z: 3.1827958}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 1671273766}
   m_RootOrder: 0
@@ -6995,39 +6995,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &835937951
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 835937952}
-  m_Layer: 5
-  m_Name: MountainQuest
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &835937952
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 835937951}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1012014237}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &860381145
 GameObject:
   m_ObjectHideFlags: 0
@@ -7087,7 +7054,7 @@ Transform:
   m_GameObject: {fileID: 905019943}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1480, y: -923.01074, z: 25}
-  m_LocalScale: {x: 7.92544, y: 7.92544, z: 7.92544}
+  m_LocalScale: {x: 7, y: 7, z: 7}
   m_Children: []
   m_Father: {fileID: 1864480521}
   m_RootOrder: 0
@@ -7736,8 +7703,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 710357219}
-  - {fileID: 1303455058}
-  - {fileID: 835937952}
   m_Father: {fileID: 1078395710}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7957,7 +7922,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -2090894994
+  randomSeed: -354705075
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -11403,7 +11368,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1137016194}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1430.3, y: -902.3, z: -2}
+  m_LocalPosition: {x: -1445.2, y: -905.6, z: -2}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 1159777002}
@@ -11684,6 +11649,7 @@ MonoBehaviour:
   MaxResourcesToCollect: 4
   Nextpage: {fileID: 1078395709}
   Deactivate: {fileID: 464892081}
+  resourceCountText: {fileID: 1859399986}
 --- !u!114 &1159777004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11712,6 +11678,7 @@ MonoBehaviour:
   MaxResourcesToCollect: 4
   Nextpage: {fileID: 1078395709}
   Deactivate: {fileID: 464892081}
+  resourceCountText: {fileID: 1859399986}
 --- !u!114 &1159777005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11740,6 +11707,7 @@ MonoBehaviour:
   MaxResourcesToCollect: 4
   Nextpage: {fileID: 1078395709}
   Deactivate: {fileID: 464892081}
+  resourceCountText: {fileID: 1859399986}
 --- !u!114 &1159777006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11768,6 +11736,7 @@ MonoBehaviour:
   MaxResourcesToCollect: 4
   Nextpage: {fileID: 1078395709}
   Deactivate: {fileID: 464892081}
+  resourceCountText: {fileID: 1859399986}
 --- !u!1 &1189067282
 GameObject:
   m_ObjectHideFlags: 0
@@ -12106,39 +12075,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f38f44585f63e0940b6ae2a0205c2504, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1303455057
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1303455058}
-  m_Layer: 5
-  m_Name: SanctuaryQuest
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1303455058
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1303455057}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1012014237}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1337686235
 GameObject:
   m_ObjectHideFlags: 0
@@ -15586,7 +15522,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1385270728}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1534.3, y: -946.8, z: -2}
+  m_LocalPosition: {x: -1518.5, y: -940, z: -2}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 1159777002}
@@ -15894,7 +15830,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1441408820}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1429.1, y: -946.4, z: -2}
+  m_LocalPosition: {x: -1441.3, y: -939.9, z: -2}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 1159777002}
@@ -16424,7 +16360,7 @@ Transform:
   m_GameObject: {fileID: 1604053431}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1480, y: -923.01074, z: 25}
-  m_LocalScale: {x: 7.92544, y: 7.92544, z: 7.92544}
+  m_LocalScale: {x: 7, y: 7, z: 7}
   m_Children: []
   m_Father: {fileID: 31915946}
   m_RootOrder: 0
@@ -17932,8 +17868,9 @@ GameObject:
   - component: {fileID: 1859399985}
   - component: {fileID: 1859399987}
   - component: {fileID: 1859399986}
+  - component: {fileID: 1859399988}
   m_Layer: 5
-  m_Name: EstuaryQuestText
+  m_Name: resourcecounttext
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17969,7 +17906,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -17978,10 +17915,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 300
+    m_FontSize: 120
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 300
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -17989,13 +17926,27 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 0x
+  m_Text: 
 --- !u!222 &1859399987
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1859399984}
+--- !u!114 &1859399988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1859399984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1864480520
 GameObject:
   m_ObjectHideFlags: 0
@@ -21478,7 +21429,7 @@ Transform:
   m_GameObject: {fileID: 1952315975}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1480, y: -923.01074, z: 25}
-  m_LocalScale: {x: 7.9254394, y: 7.92544, z: 7.92544}
+  m_LocalScale: {x: 7, y: 7, z: 7}
   m_Children: []
   m_Father: {fileID: 480540697}
   m_RootOrder: 0
@@ -21543,7 +21494,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6322d0927a1774e4b9c01302049a75f1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9166ab5bbf5246e448dac74a6db96180, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -21560,7 +21511,7 @@ Transform:
   m_GameObject: {fileID: 1959398882}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1479.0453, y: -923.01074, z: 25}
-  m_LocalScale: {x: 3.1827958, y: 3.1827958, z: 3.1827958}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 1436556727}
   m_RootOrder: 0
@@ -28381,7 +28332,7 @@ Transform:
   m_GameObject: {fileID: 2138138259}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1480, y: -923.01074, z: 25}
-  m_LocalScale: {x: 7.9254394, y: 7.92544, z: 7.92544}
+  m_LocalScale: {x: 7, y: 7, z: 7}
   m_Children: []
   m_Father: {fileID: 395193092}
   m_RootOrder: 0

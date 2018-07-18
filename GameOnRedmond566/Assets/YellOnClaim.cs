@@ -90,6 +90,11 @@ public class YellOnClaim : MonoBehaviour
     public bool ready2scan;
 
     public bool particleMode;
+
+    //maybe move this stuff somewhere else
+    public Dictionary<string, int> resourceCountForText;
+    
+
     // Use this for initialization
     void Start()
     {
@@ -97,15 +102,16 @@ public class YellOnClaim : MonoBehaviour
         particleMode = true;
         leftScanParticles.Play();
         rightscanParticles.Play();
+        resourceCountForText = new Dictionary<string, int>();
         //QuestCompleteText = GameObject.Find("QuestCompleteText").GetComponent<Text>();
         //QuestCompleteText.gameObject.SetActive(false);
 
         //ComebackLater = GameObject.Find("ComebackLater").GetComponent<Text>();
-       // ComebackLater.gameObject.SetActive(false);
+        // ComebackLater.gameObject.SetActive(false);
 
-       // EstuaryQuestProgress = GameObject.Find("EstuaryQuestText");
-       // MountainQuestProgress = GameObject.Find("MountainQuestText");
-       // ForestQuestProgress = GameObject.Find("ForestQuestText");
+        // EstuaryQuestProgress = GameObject.Find("EstuaryQuestText");
+        // MountainQuestProgress = GameObject.Find("MountainQuestText");
+        // ForestQuestProgress = GameObject.Find("ForestQuestText");
 
         //QuestProgressText = GameObject.Find("QuestProgressText").GetComponent<Text>();
         //QuestProgressText.gameObject.SetActive(false);
