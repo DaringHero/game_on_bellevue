@@ -87,10 +87,12 @@ public class YellOnClaim : MonoBehaviour
 
     public Text ComebackLater;
 
+    public bool ready2scan;
 
     // Use this for initialization
     void Start()
     {
+        ready2scan = true;
         //QuestCompleteText = GameObject.Find("QuestCompleteText").GetComponent<Text>();
         //QuestCompleteText.gameObject.SetActive(false);
 
@@ -181,6 +183,10 @@ public class YellOnClaim : MonoBehaviour
 
     public void OnClaimToy_Success(BitToys.Toy theToy, bool val)
     {
+        if (!ready2scan)
+            return;
+
+        ready2scan = false;
         //MyText.text += "\n current state is " + currentState.ToString();
         //only one player, one scan at a time
         //if (currentState != State.ScanIn)
@@ -188,15 +194,24 @@ public class YellOnClaim : MonoBehaviour
         this.MyCurrentToy = theToy;
 
         CurrentPlayerID = theToy.bitToysId;
-        //watchdog timer
-        bool validscan = CheckForValidScanTime(CurrentPlayerID);
+
+        bool validscan = false;
+
+        if (!playerScanInTimes.ContainsKey(CurrentPlayerID))
+        {
+            playerScanInTimes.Add(CurrentPlayerID, Time.time);
+            validscan = true;
+        }
+        else
+        {
+            validscan = CheckForValidScanTime(CurrentPlayerID);
+        }
+            
         if (!validscan)
         {
-            this.ScanCardTooRecent.SetActive(true);
-
-            //add new player
-            if(!playerScanInTimes.ContainsKey(CurrentPlayerID))
-                playerScanInTimes.Add(CurrentPlayerID, Time.time);
+                this.ScanCardTooRecent.SetActive(true); //weve seen this player before, and the time
+            //hasnt expired yet, so they need to come back later
+            //no need for return here, this goes to the end of the function just the same
         }
         else
         {
@@ -252,7 +267,7 @@ public class YellOnClaim : MonoBehaviour
         //handle screen activations
             this.ScanScreen.SetActive(false);// deactivate scan screen
         }// valid scan
-    }
+    }//end function
 
 
 
@@ -546,6 +561,11 @@ public class YellOnClaim : MonoBehaviour
         //this.MyCurrentToy.customData.SendAsync();
 
         this.OnClaimToy_Success(this.MyCurrentToy, true);// fake the scan
+    }
+
+    public void FakeFailScan()
+    {
+        this.OnClaimToy_Fail(BitToys.FailReason.NETWORK_ERROR, "test fail");
     }
 
     public void FakeScan()
