@@ -95,6 +95,9 @@ public class YellOnClaim : MonoBehaviour
     public Dictionary<string, int> resourceCountForText;
     
 
+
+
+
     // Use this for initialization
     void Start()
     {
