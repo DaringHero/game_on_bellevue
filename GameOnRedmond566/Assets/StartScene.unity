@@ -586,11 +586,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4876312650372136, guid: 4c05bb7646b68f84e83f5ff9f69a66b6, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 5
+      value: 11.169
       objectReference: {fileID: 0}
     - target: {fileID: 4876312650372136, guid: 4c05bb7646b68f84e83f5ff9f69a66b6, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2
+      value: -4.255
       objectReference: {fileID: 0}
     - target: {fileID: 4876312650372136, guid: 4c05bb7646b68f84e83f5ff9f69a66b6, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1611,7 +1611,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1980121593
+  randomSeed: -1040235104
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -5284,6 +5284,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 403761281}
+  - component: {fileID: 403761282}
   m_Layer: 5
   m_Name: ResourceSpawnPoint (3)
   m_TagString: Untagged
@@ -5304,6 +5305,18 @@ Transform:
   m_Father: {fileID: 1159777002}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &403761282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 403761280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a444dfe0959a1144e9275f9607fe4f59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particlespawn: {fileID: 971463135}
 --- !u!1 &422772976
 GameObject:
   m_ObjectHideFlags: 0
@@ -5312,6 +5325,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 422772977}
+  - component: {fileID: 422772978}
   m_Layer: 5
   m_Name: ResourceSpawnPoint (0)
   m_TagString: Untagged
@@ -5332,6 +5346,18 @@ Transform:
   m_Father: {fileID: 1159777002}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &422772978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 422772976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a444dfe0959a1144e9275f9607fe4f59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particlespawn: {fileID: 604591196}
 --- !u!1 &464892081
 GameObject:
   m_ObjectHideFlags: 0
@@ -5517,11 +5543,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4174387697298366, guid: 537d2fa8cde385d41a7b19e3cf391a57, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -4.4
+      value: -11.185
       objectReference: {fileID: 0}
     - target: {fileID: 4174387697298366, guid: 537d2fa8cde385d41a7b19e3cf391a57, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.9
+      value: -4.223
       objectReference: {fileID: 0}
     - target: {fileID: 4174387697298366, guid: 537d2fa8cde385d41a7b19e3cf391a57, type: 2}
       propertyPath: m_LocalPosition.z
@@ -5572,6 +5598,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 501504000}
+  - component: {fileID: 501504001}
   m_Layer: 5
   m_Name: ResourceSpawnPoint (1)
   m_TagString: Untagged
@@ -5592,6 +5619,18 @@ Transform:
   m_Father: {fileID: 1159777002}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &501504001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 501503999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a444dfe0959a1144e9275f9607fe4f59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particlespawn: {fileID: 2137847234}
 --- !u!1 &506087494
 GameObject:
   m_ObjectHideFlags: 0
@@ -5816,11 +5855,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4762195260910510, guid: 4ff2be6d06c30f44bb63e15741e0bf40, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -4.4
+      value: 1.193
       objectReference: {fileID: 0}
     - target: {fileID: 4762195260910510, guid: 4ff2be6d06c30f44bb63e15741e0bf40, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.9
+      value: -5.698
       objectReference: {fileID: 0}
     - target: {fileID: 4762195260910510, guid: 4ff2be6d06c30f44bb63e15741e0bf40, type: 2}
       propertyPath: m_LocalPosition.z
@@ -5863,6 +5902,16 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4ff2be6d06c30f44bb63e15741e0bf40, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &600072738 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4405012267315960, guid: 22028270887586f4fbcc95d89bc1026f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1850660695}
+--- !u!4 &604591196 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4400308521259418, guid: f38f44585f63e0940b6ae2a0205c2504,
+    type: 2}
+  m_PrefabInternal: {fileID: 1281795898}
 --- !u!1 &606341458
 GameObject:
   m_ObjectHideFlags: 0
@@ -7672,6 +7721,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f01b5e520f501e8459c5d9e8696ac8fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &971463135 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4409779627436660, guid: c27fe3d2ae39c9c43867ef3a17c35f30,
+    type: 2}
+  m_PrefabInternal: {fileID: 2003645304}
+--- !u!4 &991800024 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4876312650372136, guid: 4c05bb7646b68f84e83f5ff9f69a66b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 60938720}
 --- !u!1 &1012014236
 GameObject:
   m_ObjectHideFlags: 0
@@ -11354,6 +11413,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1137016195}
+  - component: {fileID: 1137016196}
   m_Layer: 5
   m_Name: ResourceSpawnPoint (2)
   m_TagString: Untagged
@@ -11374,6 +11434,18 @@ Transform:
   m_Father: {fileID: 1159777002}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1137016196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1137016194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a444dfe0959a1144e9275f9607fe4f59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particlespawn: {fileID: 600072738}
 --- !u!1 &1137184389
 GameObject:
   m_ObjectHideFlags: 0
@@ -12028,11 +12100,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4400308521259418, guid: f38f44585f63e0940b6ae2a0205c2504, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -4.4
+      value: -12.027
       objectReference: {fileID: 0}
     - target: {fileID: 4400308521259418, guid: f38f44585f63e0940b6ae2a0205c2504, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.9
+      value: 6.458
       objectReference: {fileID: 0}
     - target: {fileID: 4400308521259418, guid: f38f44585f63e0940b6ae2a0205c2504, type: 2}
       propertyPath: m_LocalPosition.z
@@ -12268,7 +12340,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -529663361
+  randomSeed: -663153878
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -15508,6 +15580,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1385270729}
+  - component: {fileID: 1385270730}
   m_Layer: 5
   m_Name: ResourceSpawnPoint (5)
   m_TagString: Untagged
@@ -15528,6 +15601,18 @@ Transform:
   m_Father: {fileID: 1159777002}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1385270730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1385270728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a444dfe0959a1144e9275f9607fe4f59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particlespawn: {fileID: 2141175017}
 --- !u!1 &1396768899
 GameObject:
   m_ObjectHideFlags: 0
@@ -15816,6 +15901,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1441408821}
+  - component: {fileID: 1441408822}
   m_Layer: 5
   m_Name: ResourceSpawnPoint (4)
   m_TagString: Untagged
@@ -15836,6 +15922,18 @@ Transform:
   m_Father: {fileID: 1159777002}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1441408822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1441408820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a444dfe0959a1144e9275f9607fe4f59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particlespawn: {fileID: 991800024}
 --- !u!1 &1449704002
 GameObject:
   m_ObjectHideFlags: 0
@@ -17811,11 +17909,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4405012267315960, guid: 22028270887586f4fbcc95d89bc1026f, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 5
+      value: 10.173
       objectReference: {fileID: 0}
     - target: {fileID: 4405012267315960, guid: 22028270887586f4fbcc95d89bc1026f, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2
+      value: 5.667
       objectReference: {fileID: 0}
     - target: {fileID: 4405012267315960, guid: 22028270887586f4fbcc95d89bc1026f, type: 2}
       propertyPath: m_LocalPosition.z
@@ -18139,7 +18237,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1313634964
+  randomSeed: -361135605
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -21653,7 +21751,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1678173735
+  randomSeed: 1582388296
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -24903,11 +25001,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4409779627436660, guid: c27fe3d2ae39c9c43867ef3a17c35f30, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1
+      value: 0.172
       objectReference: {fileID: 0}
     - target: {fileID: 4409779627436660, guid: c27fe3d2ae39c9c43867ef3a17c35f30, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2
+      value: 6.09
       objectReference: {fileID: 0}
     - target: {fileID: 4409779627436660, guid: c27fe3d2ae39c9c43867ef3a17c35f30, type: 2}
       propertyPath: m_LocalPosition.z
@@ -25179,7 +25277,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -564920989
+  randomSeed: 1676054913
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -28307,6 +28405,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4d1dad057c63114d9ed5fb2638d6e47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &2137847234 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4762195260910510, guid: 4ff2be6d06c30f44bb63e15741e0bf40,
+    type: 2}
+  m_PrefabInternal: {fileID: 583661951}
 --- !u!1 &2138138259
 GameObject:
   m_ObjectHideFlags: 0
@@ -28389,3 +28492,8 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+--- !u!4 &2141175017 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4174387697298366, guid: 537d2fa8cde385d41a7b19e3cf391a57,
+    type: 2}
+  m_PrefabInternal: {fileID: 489501358}

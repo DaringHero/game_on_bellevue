@@ -95,6 +95,7 @@ MonoBehaviour:
   myYellOnClaim: {fileID: 0}
   mySpawner: {fileID: 0}
   soundeffect: {fileID: 8300000, guid: e45473bad6110b44a88796c2904bb263, type: 3}
+  particles: {fileID: 1040705778491072, guid: b8b6b077bd7f85f4f9898fe7c96f94b7, type: 2}
 --- !u!114 &114375798538025108
 MonoBehaviour:
   m_ObjectHideFlags: 1
