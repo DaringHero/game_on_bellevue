@@ -7,7 +7,7 @@ public class OnClickHarvest : MonoBehaviour {
     public string ResourceType = "DebugResourceName";
     public YellOnClaim myYellOnClaim = null;
     public ResourceSpawner2 mySpawner = null;
-
+    public AudioClip soundeffect;
 
     private void OnMouseDown()
     {
@@ -30,6 +30,7 @@ public class OnClickHarvest : MonoBehaviour {
                 this.myYellOnClaim.MyCurrentToy.customData.SetInt(this.ResourceType, resourceCounttemp + 1);
             }
 
+            AudioSource.PlayClipAtPoint(soundeffect, Vector3.zero);
             Debug.Log("Currently have " + resourceCounttemp  + " " + this.ResourceType);
             this.mySpawner.OnCollectedResource();//
             this.gameObject.SetActive(false);

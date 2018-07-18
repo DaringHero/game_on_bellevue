@@ -89,10 +89,12 @@ public class YellOnClaim : MonoBehaviour
 
     public bool ready2scan;
 
+    public bool particleMode;
     // Use this for initialization
     void Start()
     {
         ready2scan = true;
+        particleMode = true;
         //QuestCompleteText = GameObject.Find("QuestCompleteText").GetComponent<Text>();
         //QuestCompleteText.gameObject.SetActive(false);
 
@@ -549,6 +551,26 @@ public class YellOnClaim : MonoBehaviour
 
 
         debugmode = !debugmode;//toggle
+    }
+
+    public void ToggleParticles()
+    {
+        //all particles:
+        //left and right scan in particles
+        //mega scan particles
+        //victory fireworks
+        //
+        particleMode = !particleMode;
+
+        if(!particleMode)
+        {
+
+        }
+        else
+        {
+
+        }
+
     }
 
     public void FakeScanNUX()

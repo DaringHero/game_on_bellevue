@@ -83,6 +83,7 @@ MonoBehaviour:
   ResourceType: Quartz
   myYellOnClaim: {fileID: 0}
   mySpawner: {fileID: 0}
+  soundeffect: {fileID: 8300000, guid: e45473bad6110b44a88796c2904bb263, type: 3}
 --- !u!114 &114549735000082756
 MonoBehaviour:
   m_ObjectHideFlags: 1
