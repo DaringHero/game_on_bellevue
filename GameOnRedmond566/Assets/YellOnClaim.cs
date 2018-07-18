@@ -224,10 +224,11 @@ public class YellOnClaim : MonoBehaviour
             
         if (!validscan)
         {
-                this.ScanCardTooRecent.SetActive(true); //weve seen this player before, and the time
-            //hasnt expired yet, so they need to come back later
-            //no need for return here, this goes to the end of the function just the same
-            ready2scan = true;
+            this.ScanScreen.SetActive(false);
+            this.ScanCardTooRecent.SetActive(true); //weve seen this player before, and the time
+                                                    //hasnt expired yet, so they need to come back later
+                                                    //no need for return here, this goes to the end of the function just the same
+            StartCoroutine(EnableReady2Scan());
         }
         else
         {
@@ -286,6 +287,11 @@ public class YellOnClaim : MonoBehaviour
         }// valid scan
     }//end function
 
+    IEnumerator EnableReady2Scan()
+    {
+        yield return new WaitForSeconds(3.0f);
+        ready2scan = true;
+    }
 
 
     public void ChangeBackground(int index)

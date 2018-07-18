@@ -5,7 +5,7 @@ using UnityEngine;
 public class UpdateServer : MonoBehaviour {
 
     public float waittime = 1.0f;
-    public float retrytime = 3.0f; //for server
+    public float retrytime = 10.0f; //for server
     public GameObject Activate;
     public GameObject Deactivate;
 

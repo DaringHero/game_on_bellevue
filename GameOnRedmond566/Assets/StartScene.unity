@@ -6048,7 +6048,7 @@ GameObject:
   - component: {fileID: 609260442}
   - component: {fileID: 609260441}
   m_Layer: 5
-  m_Name: ScanText
+  m_Name: UpdateText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6083,7 +6083,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b7dc53803a06184fb2b1ca3e2931b7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waittime: 0.1
+  waittime: 1
+  retrytime: 10
   Activate: {fileID: 517703138}
   Deactivate: {fileID: 860381145}
   myYellOnClaim: {fileID: 1708775438}
@@ -17237,7 +17238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca96a9a6b7d16cc4d90f3496051736c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeBeforeNextScan: 5
+  TimeBeforeNextScan: 30
   ScanScreen: {fileID: 517703138}
   ScanCardSuccess: {fileID: 464892081}
   ScanCardTooRecent: {fileID: 1422783832}
