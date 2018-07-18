@@ -13,7 +13,7 @@ public class UpdateServer : MonoBehaviour {
 
     private void OnEnable()
     {
-        this.myYellOnClaim.MyCurrentToy.customData.SendAsync();//send data to the server?
+        bool sentsuccess = this.myYellOnClaim.MyCurrentToy.customData.SendAsync();
 
         StartCoroutine(WaitAndThenActivate());// bump players to next screen
     }

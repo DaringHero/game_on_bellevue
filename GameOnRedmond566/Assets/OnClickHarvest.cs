@@ -17,17 +17,20 @@ public class OnClickHarvest : MonoBehaviour {
             this.myYellOnClaim = GameObject.Find("DebugLog").GetComponent<YellOnClaim>();//hack since these are instances?
             }
 
+            Debug.Log("Resource type is: " + this.ResourceType);
             //if this toy does have the resource to the toy
-            int resourceCounttemp = this.myYellOnClaim.MyCurrentToy.customData.GetInt(this.ResourceType, 0);
-            if (resourceCounttemp == 0)
+            int resourceCounttemp = this.myYellOnClaim.MyCurrentToy.customData.GetInt(this.ResourceType, -999);
+            if (resourceCounttemp == -999)
             {
                 this.myYellOnClaim.MyCurrentToy.customData.AddInt(this.ResourceType, 1);
+                resourceCounttemp = 1;
             }
             else
             {
                 this.myYellOnClaim.MyCurrentToy.customData.SetInt(this.ResourceType, resourceCounttemp + 1);
             }
 
+            Debug.Log("Currently have " + resourceCounttemp  + " " + this.ResourceType);
             this.mySpawner.OnCollectedResource();//
             this.gameObject.SetActive(false);
         }
