@@ -720,10 +720,17 @@ public class YellOnClaim : MonoBehaviour
 
     public void OnClaimToy_Fail(BitToys.FailReason reason, string mytext)
     {
+
         this.MyText.text += "OnClaimToy_Fail" + "\n"; //clear text
         this.MyText.text += reason.ToString() + "\n";
         this.MyText.text += mytext + "\n";
         this.MyText.text += "\n ******************************";
+
+        if (!ready2scan)
+            return;
+
+        ready2scan = false;
+        StartCoroutine(EnableReady2Scan());
     }
     public void OnGetToy_Fail(BitToys.FailReason reason, string mytext)
     {

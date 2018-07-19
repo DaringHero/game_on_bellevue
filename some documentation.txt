@@ -1,5 +1,7 @@
 This was made by Shawn as a kind of "readme" and FAQ
 
+Warning: Do not copy and paste code from the BitToys guides.  They have hidden special characters that will stop things from compiling and cause problems.  Type it all out yourself. 
+
 1. What scene do I open?
 Open Boot.unity, this will lead to the other scenes
 
