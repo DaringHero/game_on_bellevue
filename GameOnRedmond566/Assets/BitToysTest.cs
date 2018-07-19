@@ -9,7 +9,7 @@ public class BitToysTest : MonoBehaviour
     {
         if(this.initializeBitToys)
         {
-            BitToys.inst.Init("User_ID_TomTest");// start an instance of bittoys
+            BitToys.inst.Init(SystemInfo.deviceUniqueIdentifier);// start an instance of bittoys
         }
     }
 
