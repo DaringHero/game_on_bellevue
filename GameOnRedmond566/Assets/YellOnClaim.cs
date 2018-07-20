@@ -193,7 +193,11 @@ public class YellOnClaim : MonoBehaviour
     public void OnClaimToy_Success(BitToys.Toy theToy, bool val)
     {
         if (!ready2scan)
+        {
+            GUIUtility.systemCopyBuffer += "\n" + " " + System.DateTime.Now + " Tried to scan but the reader wasn't ready...";
             return;
+        }
+            
 
   
 
@@ -224,6 +228,7 @@ public class YellOnClaim : MonoBehaviour
             this.ScanCardTooRecent.SetActive(true); //weve seen this player before, and the time
                                                     //hasnt expired yet, so they need to come back later
                                                     //no need for return here, this goes to the end of the function just the same
+            GUIUtility.systemCopyBuffer += "\n" + " " + System.DateTime.Now + " Tried to scan but it was too soon...";
             StartCoroutine(EnableReady2Scan());
         }
         else
@@ -251,11 +256,13 @@ public class YellOnClaim : MonoBehaviour
         tempDebug += "\n Style id = " + theToy.styleId;
         tempDebug += "\n SKU id = " + theToy.skuId;
         tempDebug += "\n customData has: "+ theToy.customData.ToString();
+            tempDebug += "\n " + System.DateTime.Now;
         tempDebug += "\n ******************************";
         MyText.text = tempDebug + MyText.text;// debug at the top!
 
+            GUIUtility.systemCopyBuffer += "\n" + " " + tempDebug + MyText.text + " " + System.DateTime.Now + " ";
 
-        foreach (KeyValuePair<string, float> entry in playerScanInTimes)
+            foreach (KeyValuePair<string, float> entry in playerScanInTimes)
         {
             MyText.text += "\n Player ID: " + entry.Key.ToString() + " val is " + entry.Value.ToString();
             // do something with entry.Value or entry.Key
@@ -277,7 +284,7 @@ public class YellOnClaim : MonoBehaviour
             ChangeFromScanToGather();
         }*/
 
-
+          
         //handle screen activations
             this.ScanScreen.SetActive(false);// deactivate scan screen
         }// valid scan
@@ -736,11 +743,14 @@ public class YellOnClaim : MonoBehaviour
 
     public void OnClaimToy_Fail(BitToys.FailReason reason, string mytext)
     {
+        string debugstring = "";
+        debugstring += "OnClaimToy_Fail" + "\n"; //clear text
+        debugstring += reason.ToString() + "\n";
+        debugstring += mytext + "\n";
+        debugstring += "\n ******************************";
 
-        this.MyText.text += "OnClaimToy_Fail" + "\n"; //clear text
-        this.MyText.text += reason.ToString() + "\n";
-        this.MyText.text += mytext + "\n";
-        this.MyText.text += "\n ******************************";
+        this.MyText.text += debugstring;
+        GUIUtility.systemCopyBuffer += "\n" + System.DateTime.Now + " " + debugstring;
 
         if (!ready2scan)
             return;
@@ -760,6 +770,8 @@ public class YellOnClaim : MonoBehaviour
         this.MyText.text += "OnDeviceConnect" + "\n"; //clear text
         this.MyText.text += mytext + "\n";
         this.MyText.text += "\n ******************************";
+
+        GUIUtility.systemCopyBuffer += "\n" + System.DateTime.Now + " Connected!";
     }
 
     public void OnFetchOwnedToys(List<BitToys.Toy> myToys, bool mybool)

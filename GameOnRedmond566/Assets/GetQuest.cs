@@ -24,7 +24,7 @@ public class GetQuest : MonoBehaviour
         this.DisplayText.text = this.QuestStrings[nextQuest];
 
         Debug.Log("Quest = "+ ((YellOnClaim.Location)nextQuest).ToString());
-
+        GUIUtility.systemCopyBuffer += "\n" + System.DateTime.Now + " " + "Quest is " + ((YellOnClaim.Location)nextQuest).ToString();
         StartCoroutine(WaitAndThenActivate());
 
     }

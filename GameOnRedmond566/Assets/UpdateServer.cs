@@ -20,12 +20,14 @@ public class UpdateServer : MonoBehaviour {
     public void OnPutData_Fail(string _id, BitToys.FailReason reason, string text)
     {
         Debug.Log(_id + " Reason: " + reason + " " + text);
+        GUIUtility.systemCopyBuffer += "\n" + System.DateTime.Now + " PutData failed " + _id + " Reason: " + reason + " " + text + " ";
         //send again
         StartCoroutine(WaitAndSendAgain());
     }
 
     public void OnPutData_Success(BitToys.Toy _toy)
     {
+        GUIUtility.systemCopyBuffer += "\n" + System.DateTime.Now + " " + " data successfully updated on server ";
         StartCoroutine(WaitAndThenActivate());// bump players to next screen
     }
 
