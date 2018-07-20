@@ -1,0 +1,9 @@
+FakeNUX- new user experience
+FakeFail - simulates a network error while scanning a card
+Particles Toggle - Turn off some particles so its easier to see
+FakeScan - Scan in the "test id" (use after FakeNUX)
+reset1 - Clear the text
+reset2 - clear the text and display the auth key
+Connect - 
+Disconenct - 
+Cancel - 
