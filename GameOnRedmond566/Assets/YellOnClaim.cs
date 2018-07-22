@@ -96,6 +96,10 @@ public class YellOnClaim : MonoBehaviour
 
     public static string ErrorLog = "";
 
+    public void ClearCard()
+    {
+        MyCurrentToy.customData.ClearAll_Local();
+    }
     // Use this for initialization
     void Start()
     {
