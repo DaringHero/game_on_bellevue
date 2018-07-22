@@ -17,10 +17,20 @@ public class GetQuest : MonoBehaviour
     public Text DisplayText;
     public int NumberOfQuestableAreas; //this and below must match
     public List<int> QuestWeights;
-    
+
+    public List<InputField> inputWeights;
+
     public int GetRandomWeightedQuest()
     {
-        int[] weights = QuestWeights.ToArray();
+        //    int[] weights = QuestWeights.ToArray();
+        int[] weights = new int[NumberOfQuestableAreas];
+        int gg = 0;
+        foreach(InputField g in inputWeights)
+        {
+            weights[gg] = System.Int32.Parse(g.text);
+            ++gg;
+        }
+
         // Get the total sum of all the weights.
         int weightSum = 0;
         foreach(int i in weights)
