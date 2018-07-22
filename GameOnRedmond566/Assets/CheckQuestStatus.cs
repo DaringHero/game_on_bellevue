@@ -46,7 +46,14 @@ public class CheckQuestStatus : MonoBehaviour {
                         this.myYellOnClaim.MyCurrentToy.customData.SetInt(resource1, resCount1 - 1);
                         this.myYellOnClaim.MyCurrentToy.customData.SetInt(resource2, resCount2 - 1);
                         this.myYellOnClaim.MyCurrentToy.customData.SetInt(resource3, resCount3 - 1);
-                        this.myYellOnClaim.MyCurrentToy.customData.AddInt("QuestsCompleted", 1);// update number of quests completed
+
+                        int currentQuestsCompleted = myYellOnClaim.MyCurrentToy.customData.GetInt("QuestsCompleted", -999);
+                        if(currentQuestsCompleted == -999)
+                         this.myYellOnClaim.MyCurrentToy.customData.AddInt("QuestsCompleted", 1);// update number of quests completed
+                        else
+                        {
+                            myYellOnClaim.MyCurrentToy.customData.SetInt("QuestsCompleted", ++currentQuestsCompleted);
+                        }
 
                         this.myYellOnClaim.MyCurrentToy.customData.SetInt("CurrentQuest", 0);// reset the current quest
 
