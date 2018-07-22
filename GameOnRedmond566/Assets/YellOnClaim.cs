@@ -94,6 +94,8 @@ public class YellOnClaim : MonoBehaviour
     //maybe move this stuff somewhere else
     public Dictionary<string, int> resourceCountForText;
 
+    public static string ErrorLog = "";
+
     // Use this for initialization
     void Start()
     {
@@ -173,6 +175,16 @@ public class YellOnClaim : MonoBehaviour
         BitToys.inst.onFetchToyList_OK += this.OnFetchOwnedToys;
         BitToys.inst.onFetchToyList_Fail += this.OnFetchAllToysFailed;
 
+    }
+
+    public void WriteToErrorLog(string message)
+    {
+        ErrorLog = (System.DateTime.Now).ToString() + ":" + message + "/n" + ErrorLog;
+    }
+
+    public void CopyErrorLog()
+    {
+        GUIUtility.systemCopyBuffer = ErrorLog;
     }
 
     public void SetNewToyVars(BitToys.Toy theToy, bool val)
@@ -644,7 +656,7 @@ public class YellOnClaim : MonoBehaviour
         this.MyCurrentToy.customData.SendAsync();
     }
 
-    public void Update()
+    public void SetLEDs()
     {
         // Method: SetLED_Connected(Red, Green, Blue, Red Pulse, Green Pulse, Blue Pulse).
 
