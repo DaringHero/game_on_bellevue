@@ -42,7 +42,7 @@ public class YellOnClaim : MonoBehaviour
 
     //all background screens
     public List<GameObject> Backgrounds;
-    public enum Location { SANC, SWAMP, MOUNTAIN, FOREST, LAKE, WIND };
+    public enum Location { SANC, SWAMP, MOUNTAIN, FOREST, LAKE, WIND, FARM };
 
     public Location questLocation = Location.SANC;//default to sanc for now
     //pages

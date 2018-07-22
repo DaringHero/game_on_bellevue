@@ -16,6 +16,7 @@ public class GetQuest : MonoBehaviour
 
     public Text DisplayText;
 
+ 
     private void OnEnable()
     {
         int nextQuest = Random.Range(1, QuestStrings.Count);
