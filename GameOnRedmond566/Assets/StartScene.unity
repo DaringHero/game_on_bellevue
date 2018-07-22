@@ -1265,6 +1265,8 @@ MonoBehaviour:
       m_Image: {fileID: 0}
     - m_Text: Windmill
       m_Image: {fileID: 0}
+    - m_Text: Farm
+      m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -11769,6 +11771,7 @@ GameObject:
   - component: {fileID: 1159777005}
   - component: {fileID: 1159777004}
   - component: {fileID: 1159777007}
+  - component: {fileID: 1159777008}
   m_Layer: 5
   m_Name: ResourceSpawner2
   m_TagString: Untagged
@@ -11940,6 +11943,35 @@ MonoBehaviour:
     type: 2}
   Resource1: {fileID: 1501098847658922, guid: cf4423c26b9628c47933bcf1e34a947f, type: 2}
   Resource2: {fileID: 1671120011900604, guid: 9decad1d2b70a6f4b85cbfa8d38cd090, type: 2}
+  CollectedResource: 0
+  MaxResourcesToCollect: 4
+  Nextpage: {fileID: 1078395709}
+  Deactivate: {fileID: 464892081}
+  resourceCountText: {fileID: 1859399986}
+--- !u!114 &1159777008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1159777001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 952490ae662894646b460395a16dbe63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myYellOnClaim: {fileID: 1708775438}
+  location: 6
+  SpawnPoints:
+  - {fileID: 422772976}
+  - {fileID: 501503999}
+  - {fileID: 1137016194}
+  - {fileID: 403761280}
+  - {fileID: 1441408820}
+  - {fileID: 1385270728}
+  uniqueResource: {fileID: 1339719016487082, guid: da84124c265ad1745aec63ef6c810c3a,
+    type: 2}
+  Resource1: {fileID: 1501098847658922, guid: cf4423c26b9628c47933bcf1e34a947f, type: 2}
+  Resource2: {fileID: 1501098847658922, guid: 37024f1aa1b55f546839f6e7750eb721, type: 2}
   CollectedResource: 0
   MaxResourcesToCollect: 4
   Nextpage: {fileID: 1078395709}
