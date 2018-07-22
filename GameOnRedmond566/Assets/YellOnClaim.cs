@@ -206,7 +206,7 @@ public class YellOnClaim : MonoBehaviour
     {
         if (!ready2scan)
         {
-            GUIUtility.systemCopyBuffer += "\n" + " " + System.DateTime.Now + " Tried to scan but the reader wasn't ready...";
+            UniClipboard.SetText(UniClipboard.GetText() + "\n" + " " + System.DateTime.Now + " Tried to scan but the reader wasn't ready...");
             return;
         }
             
@@ -240,7 +240,7 @@ public class YellOnClaim : MonoBehaviour
             this.ScanCardTooRecent.SetActive(true); //weve seen this player before, and the time
                                                     //hasnt expired yet, so they need to come back later
                                                     //no need for return here, this goes to the end of the function just the same
-            GUIUtility.systemCopyBuffer += "\n" + " " + System.DateTime.Now + " Tried to scan but it was too soon...";
+            UniClipboard.SetText(UniClipboard.GetText() + "\n" + " " + System.DateTime.Now + " Tried to scan but it was too soon...");
             StartCoroutine(EnableReady2Scan());
         }
         else
@@ -272,7 +272,7 @@ public class YellOnClaim : MonoBehaviour
         tempDebug += "\n ******************************";
         MyText.text = tempDebug + MyText.text;// debug at the top!
 
-            GUIUtility.systemCopyBuffer += "\n" + " " + tempDebug + MyText.text + " " + System.DateTime.Now + " ";
+            UniClipboard.SetText(UniClipboard.GetText() + "\n" + " " + tempDebug + MyText.text + " " + System.DateTime.Now + " ");
 
             foreach (KeyValuePair<string, float> entry in playerScanInTimes)
         {
@@ -762,7 +762,7 @@ public class YellOnClaim : MonoBehaviour
         debugstring += "\n ******************************";
 
         this.MyText.text += debugstring;
-        GUIUtility.systemCopyBuffer += "\n" + System.DateTime.Now + " " + debugstring;
+        UniClipboard.SetText(UniClipboard.GetText() + "\n" + System.DateTime.Now + " " + debugstring);
 
         if (!ready2scan)
             return;
@@ -783,7 +783,7 @@ public class YellOnClaim : MonoBehaviour
         this.MyText.text += mytext + "\n";
         this.MyText.text += "\n ******************************";
 
-        GUIUtility.systemCopyBuffer += "\n" + System.DateTime.Now + " Connected!";
+        UniClipboard.SetText(UniClipboard.GetText() + "\n" + System.DateTime.Now + " Connected!");
     }
 
     public void OnFetchOwnedToys(List<BitToys.Toy> myToys, bool mybool)

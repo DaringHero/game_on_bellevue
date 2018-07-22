@@ -1611,7 +1611,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1040235104
+  randomSeed: 920507541
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -17260,7 +17260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca96a9a6b7d16cc4d90f3496051736c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeBeforeNextScan: 30
+  TimeBeforeNextScan: 1
   ScanScreen: {fileID: 517703138}
   ScanCardSuccess: {fileID: 464892081}
   ScanCardTooRecent: {fileID: 1422783832}
@@ -25300,7 +25300,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -755371944
+  randomSeed: 512352417
   InitialModule:
     serializedVersion: 3
     enabled: 1
