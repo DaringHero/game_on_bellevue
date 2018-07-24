@@ -14,6 +14,7 @@ public class YellOnClaim : MonoBehaviour
     public GameObject ScanCardTooRecent;
     //for debug text
     public Text MyText;
+    public Text myLastToyText;
     //for debug
     public GameObject debugstuff;
     public GameObject debugtogglebutton;
@@ -58,6 +59,7 @@ public class YellOnClaim : MonoBehaviour
 
     //current scanned toy
     public BitToys.Toy MyCurrentToy = null;
+    public BitToys.Toy Debug_LastToyScanned = null;// last toy scanned, for erasing cards
 
     public GameObject dragon;
 
@@ -96,10 +98,16 @@ public class YellOnClaim : MonoBehaviour
 
     public static string ErrorLog = "";
 
-    public void ClearCard()
+    public void ClearCard(BitToys.Toy cardtoclear)
     {
-        MyCurrentToy.customData.ClearAll_Local();
+        cardtoclear.customData.ClearAll_Local();
     }
+
+    public void ClearCardButton()
+    {
+        this.ClearCard(this.Debug_LastToyScanned);
+    }
+
     // Use this for initialization
     void Start()
     {
@@ -181,14 +189,43 @@ public class YellOnClaim : MonoBehaviour
 
     }
 
-    public void WriteToErrorLog(string message)
+    public void WriteToErrorLog(string message)// new function for error logging, the old error logs are kinda a hack
     {
-        ErrorLog = (System.DateTime.Now).ToString() + ":" + message + "/n" + ErrorLog;
+        ErrorLog = ("/n" + " "+(System.DateTime.Now).ToString() + " : " + message) + ErrorLog;
+        UniClipboard.SetText(UniClipboard.GetText() + "\n" + " " + System.DateTime.Now + " : " + message);
+
+        MyText.text += ("/n" + " " + (System.DateTime.Now).ToString() + " : " + message);//write to old debug
     }
 
-    public void CopyErrorLog()
+    public string WriteToErrorLog(string message, bool returnString)// new function for error logging, the old error logs are kinda a hack
+    {
+        ErrorLog = ("/n" + " " + (System.DateTime.Now).ToString() + " : " + message) + ErrorLog;
+        UniClipboard.SetText(UniClipboard.GetText() + "\n" + " " + System.DateTime.Now + " : " + message);
+
+        MyText.text += ("/n" + " " + (System.DateTime.Now).ToString() + " : " + message);//write to old debug
+
+        if (returnString)
+            return ("/n" + " " + (System.DateTime.Now).ToString() + " : " + message);
+        else
+            return null;
+    }
+
+    public void DebugToyCustomData(BitToys.Toy debugtoy)
+    {
+        string debugstring = "toy id = "+debugtoy.bitToysId;
+        debugstring  = debugstring +"/n "+debugtoy.customData.AsJSONString();
+        this.WriteToErrorLog(debugstring);
+    }
+
+    public void CopyErrorLog()// should tie to button for copy buffer?
     {
         GUIUtility.systemCopyBuffer = ErrorLog;
+        UniClipboard.SetText(ErrorLog);
+    }
+    public void Copytext()// should tie to button for copy buffer?
+    {
+        GUIUtility.systemCopyBuffer = this.MyText.text;
+        UniClipboard.SetText(this.MyText.text);
     }
 
     public void SetNewToyVars(BitToys.Toy theToy, bool val)
@@ -206,8 +243,18 @@ public class YellOnClaim : MonoBehaviour
         }
     }
 
+    public void SetLastToyScanned(BitToys.Toy lastToyScanned)
+    {
+        this.Debug_LastToyScanned = lastToyScanned;
+        this.myLastToyText.text = "Toy ID: " + lastToyScanned.bitToysId;
+
+    }
+
     public void OnClaimToy_Success(BitToys.Toy theToy, bool val)
     {
+        //debug for erasing cards
+        SetLastToyScanned(theToy);
+
         if (!ready2scan)
         {
             UniClipboard.SetText(UniClipboard.GetText() + "\n" + " " + System.DateTime.Now + " Tried to scan but the reader wasn't ready...");
@@ -813,13 +860,9 @@ public class YellOnClaim : MonoBehaviour
 
     public void TextReset1()
     {
-        this.MyText.text = "Reset text1";
+        this.MyText.text = "Reset : Auth key = "+ BitToys.inst.authenticationKey;
     }
-    public void TextReset2()
-    {
-        //this.MyText.text = "Reset text2";
-        this.MyText.text = BitToys.inst.authenticationKey;
-    }
+
     /*
     public void OnClaim(ToyWrapper toy, bool TLL)
   {
