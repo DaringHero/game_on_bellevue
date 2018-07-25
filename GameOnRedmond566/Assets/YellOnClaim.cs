@@ -210,10 +210,18 @@ public class YellOnClaim : MonoBehaviour
             return null;
     }
 
+    public void DebugToyLastScanned()
+    {
+        if(this.Debug_LastToyScanned != null)
+        {
+            this.DebugToyCustomData(this.Debug_LastToyScanned);
+        }
+    }
+
     public void DebugToyCustomData(BitToys.Toy debugtoy)
     {
         string debugstring = "toy id = "+debugtoy.bitToysId;
-        debugstring  = debugstring +"/n "+debugtoy.customData.AsJSONString();
+        debugstring  = debugstring +"\n "+debugtoy.customData.AsJSONString();
         this.WriteToErrorLog(debugstring);
     }
 
@@ -846,7 +854,7 @@ public class YellOnClaim : MonoBehaviour
             MyText.text += "\n Owner id = " + toy.ownerId;
             MyText.text += "\n Style id = " + toy.styleId;
             MyText.text += "\n SKU id = " + toy.skuId;
-            MyText.text += "\n ******************************";
+            MyText.text += "\n ***********************";
         }
     }
 
@@ -855,7 +863,7 @@ public class YellOnClaim : MonoBehaviour
         this.MyText.text += "OnFetchAllToysFailed" + "\n"; //clear text
         this.MyText.text += reason.ToString() + "\n";
         this.MyText.text += mytext + "\n";
-        this.MyText.text += "\n ******************************";
+        this.MyText.text += "\n **********************";
     }
 
     public void TextReset1()

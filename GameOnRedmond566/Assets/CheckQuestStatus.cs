@@ -32,7 +32,7 @@ public class CheckQuestStatus : MonoBehaviour {
                 if ((int)Regions[i].location == currentQuest)//find region my quest is for
                 {
                      fail = false;//we found the location
-                    string resource1 = Regions[i].Resource1.GetComponent<OnClickHarvest>().ResourceType;
+                   string resource1 = Regions[i].Resource1.GetComponent<OnClickHarvest>().ResourceType;
                    string resource2 = Regions[i].Resource2.GetComponent<OnClickHarvest>().ResourceType;
                    string resource3 = Regions[i].uniqueResource.GetComponent<OnClickHarvest>().ResourceType;
 
@@ -48,14 +48,14 @@ public class CheckQuestStatus : MonoBehaviour {
                         this.myYellOnClaim.MyCurrentToy.customData.SetInt(resource3, resCount3 - 1);
 
                         int currentQuestsCompleted = myYellOnClaim.MyCurrentToy.customData.GetInt("QuestsCompleted", -999);
-                        if(currentQuestsCompleted == -999)
+                        if(currentQuestsCompleted == -999)//if i havent completed any quests
                          this.myYellOnClaim.MyCurrentToy.customData.AddInt("QuestsCompleted", 1);// update number of quests completed
                         else
                         {
                             myYellOnClaim.MyCurrentToy.customData.SetInt("QuestsCompleted", ++currentQuestsCompleted);
                         }
 
-                        this.myYellOnClaim.MyCurrentToy.customData.SetInt("CurrentQuest", 0);// reset the current quest
+                        this.myYellOnClaim.MyCurrentToy.customData.SetInt("CurrentQuest", 0);// reset the current quest to 'no quest'
 
                         this.Activate = this.ActivateQuestComplete;// player has completed quest
                         
@@ -71,6 +71,7 @@ public class CheckQuestStatus : MonoBehaviour {
             if (fail)// failed to find quest region
             {
                 Debug.LogException( new MissingReferenceException("CheckQuestStatus did not find quest region!"));
+                myYellOnClaim.WriteToErrorLog("CheckQuestStatus did not find quest region!");
             }
         }
 
@@ -84,4 +85,31 @@ public class CheckQuestStatus : MonoBehaviour {
         this.Activate.SetActive(true);
         this.Deactivate.SetActive(false);
     }
+
+    public List<string> GetQuestResourceStrings()// this function retruns a list of strings that are the quest resources for the current player
+    {
+        int currentQuest = this.myYellOnClaim.MyCurrentToy.customData.GetInt("CurrentQuest", 0);
+
+        List<ResourceSpawner2> Regions = new List<ResourceSpawner2>(Resources.FindObjectsOfTypeAll<ResourceSpawner2>());// gets inactive objects
+        bool fail = true;
+        List<string> ret = new List<string>();
+
+        for (int i = 0; i < Regions.Count; i++)
+        {
+
+            if ((int)Regions[i].location == currentQuest)//find region my quest is for
+            {
+                fail = false;//we found the location
+                string resource1 = Regions[i].Resource1.GetComponent<OnClickHarvest>().ResourceType;
+                string resource2 = Regions[i].Resource2.GetComponent<OnClickHarvest>().ResourceType;
+                string resource3 = Regions[i].uniqueResource.GetComponent<OnClickHarvest>().ResourceType;
+                ret.Add(resource3);
+                ret.Add(resource2);
+                ret.Add(resource1);
+            }
+        }
+
+        return ret;
+    }
+
 }
