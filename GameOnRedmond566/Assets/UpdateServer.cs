@@ -10,6 +10,8 @@ public class UpdateServer : MonoBehaviour {
     public GameObject Deactivate;
 
     public YellOnClaim myYellOnClaim;
+    public int retrycount = 3;
+    public int currentNumberOfRetries = 0;
 
     public void Start()
     {
@@ -21,8 +23,14 @@ public class UpdateServer : MonoBehaviour {
     {
         Debug.Log(_id + " Reason: " + reason + " " + text);
         UniClipboard.SetText(UniClipboard.GetText() + "\n" + System.DateTime.Now + " PutData failed " + _id + " Reason: " + reason + " " + text + " ");
-        //send again
-        StartCoroutine(WaitAndSendAgain());
+
+        currentNumberOfRetries++;
+        if(currentNumberOfRetries < retrycount)
+             StartCoroutine(WaitAndSendAgain());
+        else
+            StartCoroutine(WaitAndThenActivate());
+
+
     }
 
     public void OnPutData_Success(BitToys.Toy _toy)
@@ -33,6 +41,8 @@ public class UpdateServer : MonoBehaviour {
 
     private void OnEnable()
     {
+        currentNumberOfRetries = 0;
+
         if (myYellOnClaim.MyCurrentToy.bitToysId != "player1NUXtest")
             this.myYellOnClaim.MyCurrentToy.customData.SendAsync();
         else
