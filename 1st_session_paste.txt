@@ -1,0 +1,297 @@
+
+ Toy id = player1NUXtest
+ Owner id = 
+ Style id = 
+ SKU id = 
+ customData has: BitToys+CustomData
+ 07/25/2018 18:01:07
+ ******************************OnDeviceConnect
+BB:A0:50:32:74:27
+
+ ******************************
+ Player ID: player1NUXtest val is 29.12588/n 07/25/2018 18:01:09 : toy id = player1NUXtest
+ {"local":{"versionId":""}}/n 07/25/2018 18:01:09 : toy id = player1NUXtest
+ {"local":{"versionId":""}}/n 07/25/2018 18:01:09 : toy id = player1NUXtest
+ {"local":{"versionId":""}}/n 07/25/2018 18:01:10 : toy id = player1NUXtest
+ {"local":{"versionId":""}}/n 07/25/2018 18:01:10 : toy id = player1NUXtest
+ {"local":{"versionId":""}}
+07/25/2018 18:02:33 Connected!
+ 
+ Toy id = 66f55eb9-094b-46a6-a28a-53665139bd84
+ Owner id = 818eb5e48a02599f0221c20e66f4a6d9
+ Style id = gameon_red
+ SKU id = 
+ customData has: BitToys+CustomData
+ 07/25/2018 18:02:55
+ ******************************
+ Toy id = 66f55eb9-094b-46a6-a28a-53665139bd84
+ Owner id = 818eb5e48a02599f0221c20e66f4a6d9
+ Style id = gameon_red
+ SKU id = 
+ customData has: BitToys+CustomData
+ 07/25/2018 18:02:55
+ ******************************OnDeviceConnect
+BB:A0:50:32:74:27
+
+ ****************************** 07/25/2018 18:02:55 
+07/25/2018 18:03:06  data successfully updated on server 
+07/25/2018 18:13:26 Connected!
+ 
+ Toy id = bf8a3d53-42ea-41fb-919d-e9fb5b992cb2
+ Owner id = 818eb5e48a02599f0221c20e66f4a6d9
+ Style id = gameon_blue
+ SKU id = 
+ customData has: BitToys+CustomData
+ 07/25/2018 18:13:46
+ ******************************
+ Toy id = bf8a3d53-42ea-41fb-919d-e9fb5b992cb2
+ Owner id = 818eb5e48a02599f0221c20e66f4a6d9
+ Style id = gameon_blue
+ SKU id = 
+ customData has: BitToys+CustomData
+ 07/25/2018 18:13:46
+ ******************************OnDeviceConnect
+BB:A0:50:32:74:27
+
+ ****************************** 07/25/2018 18:13:46 
+ 07/25/2018 18:13:47 Tried to scan but the reader wasn't ready...
+07/25/2018 18:14:01  data successfully updated on server 
+07/25/2018 18:17:10 Connected!
+ 
+ Toy id = bf8a3d53-42ea-41fb-919d-e9fb5b992cb2
+ Owner id = 818eb5e48a02599f0221c20e66f4a6d9
+ Style id = gameon_blue
+ SKU id = 
+ customData has: BitToys+CustomData
+ 07/25/2018 18:17:15
+ ******************************
+ Toy id = bf8a3d53-42ea-41fb-919d-e9fb5b992cb2
+ Owner id = 818eb5e48a02599f0221c20e66f4a6d9
+ Style id = gameon_blue
+ SKU id = 
+ customData has: BitToys+CustomData
+ 07/25/2018 18:17:15
+ ******************************OnDeviceConnect
+BB:A0:50:32:74:27
+
+ ****************************** 07/25/2018 18:17:15 
+07/25/2018 18:17:35  data successfully updated on server 
+07/25/2018 18:20:58 Connected!
+07/25/2018 18:20:59 Connected!
+07/25/2018 18:21:00 Connected!
+ 
+ Toy id = 332d1a7b-444d-40bc-a9d9-f2fe31cf6d64
+ Owner id = 818eb5e48a02599f0221c20e66f4a6d9
+ Style id = gameon_red
+ SKU id = 
+ customData has: BitToys+CustomData
+ 07/25/2018 18:21:02
+ ******************************
+ Toy id = 332d1a7b-444d-40bc-a9d9-f2fe31cf6d64
+ Owner id = 818eb5e48a02599f0221c20e66f4a6d9
+ Style id = gameon_red
+ SKU id = 
+ customData has: BitToys+CustomData
+ 07/25/2018 18:21:02
+ ******************************
+ Toy id = bf8a3d53-42ea-41fb-919d-e9fb5b992cb2
+ Owner id = 818eb5e48a02599f0221c20e66f4a6d9
+ Style id = gameon_blue
+ SKU id = 
+ customData has: BitToys+CustomData
+ 07/25/2018 18:17:15
+ ******************************OnDeviceConnect
+BB:A0:50:32:74:27
+
+ ******************************
+ Player ID: bf8a3d53-42ea-41fb-919d-e9fb5b992cb2 val is 40.10542OnDeviceConnect
+BB:A0:50:32:74:27
+
+ ******************************OnDeviceConnect
+BB:A0:50:32:74:27
+
+ ******************************OnDeviceConnect
+BB:A0:50:32:74:27
+
+ ****************************** 07/25/2018 18:21:02 
+07/25/2018 18:21:13  data successfully updated on server 
+ 
+ Toy id = 332d1a7b-444d-40bc-a9d9-f2fe31cf6d64
+ Owner id = 818eb5e48a02599f0221c20e66f4a6d9
+ Style id = gameon_red
+ SKU id = 
+ customData has: BitToys+CustomData
+ 07/25/2018 18:23:41
+ ******************************
+ Toy id = 332d1a7b-444d-40bc-a9d9-f2fe31cf6d64
+ Owner id = 818eb5e48a02599f0221c20e66f4a6d9
+ Style id = gameon_red
+ SKU id = 
+ customData has: BitToys+CustomData
+ 07/25/2018 18:23:41
+ ******************************
+ Toy id = 332d1a7b-444d-40bc-a9d9-f2fe31cf6d64
+ Owner id = 818eb5e48a02599f0221c20e66f4a6d9
+ Style id = gameon_red
+ SKU id = 
+ customData has: BitToys+CustomData
+ 07/25/2018 18:21:02
+ ******************************
+ Toy id = bf8a3d53-42ea-41fb-919d-e9fb5b992cb2
+ Owner id = 818eb5e48a02599f0221c20e66f4a6d9
+ Style id = gameon_blue
+ SKU id = 
+ customData has: BitToys+CustomData
+ 07/25/2018 18:17:15
+ ******************************OnDeviceConnect
+BB:A0:50:32:74:27
+
+ ******************************
+ Player ID: bf8a3d53-42ea-41fb-919d-e9fb5b992cb2 val is 40.10542OnDeviceConnect
+BB:A0:50:32:74:27
+
+ ******************************OnDeviceConnect
+BB:A0:50:32:74:27
+
+ ******************************OnDeviceConnect
+BB:A0:50:32:74:27
+
+ ******************************
+ Player ID: bf8a3d53-42ea-41fb-919d-e9fb5b992cb2 val is 40.10542
+ Player ID: 332d1a7b-444d-40bc-a9d9-f2fe31cf6d64 val is 267.881
+ current time is 426.6095
+ Last scan in time for this id was  = 267.881
+ ******************************** 07/25/2018 18:23:41 
+07/25/2018 18:23:50  data successfully updated on server 
+ 
+ Toy id = 332d1a7b-444d-40bc-a9d9-f2fe31cf6d64
+ Owner id = 818eb5e48a02599f0221c20e66f4a6d9
+ Style id = gameon_red
+ SKU id = 
+ customData has: BitToys+CustomData
+ 07/25/2018 18:23:54
+ ******************************
+ Toy id = 332d1a7b-444d-40bc-a9d9-f2fe31cf6d64
+ Owner id = 818eb5e48a02599f0221c20e66f4a6d9
+ Style id = gameon_red
+ SKU id = 
+ customData has: BitToys+CustomData
+ 07/25/2018 18:23:54
+ ******************************
+ Toy id = 332d1a7b-444d-40bc-a9d9-f2fe31cf6d64
+ Owner id = 818eb5e48a02599f0221c20e66f4a6d9
+ Style id = gameon_red
+ SKU id = 
+ customData has: BitToys+CustomData
+ 07/25/2018 18:23:41
+ ******************************
+ Toy id = 332d1a7b-444d-40bc-a9d9-f2fe31cf6d64
+ Owner id = 818eb5e48a02599f0221c20e66f4a6d9
+ Style id = gameon_red
+ SKU id = 
+ customData has: BitToys+CustomData
+ 07/25/2018 18:21:02
+ ******************************
+ Toy id = bf8a3d53-42ea-41fb-919d-e9fb5b992cb2
+ Owner id = 818eb5e48a02599f0221c20e66f4a6d9
+ Style id = gameon_blue
+ SKU id = 
+ customData has: BitToys+CustomData
+ 07/25/2018 18:17:15
+ ******************************OnDeviceConnect
+BB:A0:50:32:74:27
+
+ ******************************
+ Player ID: bf8a3d53-42ea-41fb-919d-e9fb5b992cb2 val is 40.10542OnDeviceConnect
+BB:A0:50:32:74:27
+
+ ******************************OnDeviceConnect
+BB:A0:50:32:74:27
+
+ ******************************OnDeviceConnect
+BB:A0:50:32:74:27
+
+ ******************************
+ Player ID: bf8a3d53-42ea-41fb-919d-e9fb5b992cb2 val is 40.10542
+ Player ID: 332d1a7b-444d-40bc-a9d9-f2fe31cf6d64 val is 267.881
+ current time is 426.6095
+ Last scan in time for this id was  = 267.881
+ ********************************
+ Player ID: bf8a3d53-42ea-41fb-919d-e9fb5b992cb2 val is 40.10542
+ Player ID: 332d1a7b-444d-40bc-a9d9-f2fe31cf6d64 val is 426.6095
+ current time is 439.1384
+ Last scan in time for this id was  = 426.6095
+ ******************************** 07/25/2018 18:23:54 
+07/25/2018 18:24:03  data successfully updated on server 
+ 
+ Toy id = 332d1a7b-444d-40bc-a9d9-f2fe31cf6d64
+ Owner id = 818eb5e48a02599f0221c20e66f4a6d9
+ Style id = gameon_red
+ SKU id = 
+ customData has: BitToys+CustomData
+ 07/25/2018 18:25:21
+ ******************************
+ Toy id = 332d1a7b-444d-40bc-a9d9-f2fe31cf6d64
+ Owner id = 818eb5e48a02599f0221c20e66f4a6d9
+ Style id = gameon_red
+ SKU id = 
+ customData has: BitToys+CustomData
+ 07/25/2018 18:25:21
+ ******************************
+ Toy id = 332d1a7b-444d-40bc-a9d9-f2fe31cf6d64
+ Owner id = 818eb5e48a02599f0221c20e66f4a6d9
+ Style id = gameon_red
+ SKU id = 
+ customData has: BitToys+CustomData
+ 07/25/2018 18:23:54
+ ******************************
+ Toy id = 332d1a7b-444d-40bc-a9d9-f2fe31cf6d64
+ Owner id = 818eb5e48a02599f0221c20e66f4a6d9
+ Style id = gameon_red
+ SKU id = 
+ customData has: BitToys+CustomData
+ 07/25/2018 18:23:41
+ ******************************
+ Toy id = 332d1a7b-444d-40bc-a9d9-f2fe31cf6d64
+ Owner id = 818eb5e48a02599f0221c20e66f4a6d9
+ Style id = gameon_red
+ SKU id = 
+ customData has: BitToys+CustomData
+ 07/25/2018 18:21:02
+ ******************************
+ Toy id = bf8a3d53-42ea-41fb-919d-e9fb5b992cb2
+ Owner id = 818eb5e48a02599f0221c20e66f4a6d9
+ Style id = gameon_blue
+ SKU id = 
+ customData has: BitToys+CustomData
+ 07/25/2018 18:17:15
+ ******************************OnDeviceConnect
+BB:A0:50:32:74:27
+
+ ******************************
+ Player ID: bf8a3d53-42ea-41fb-919d-e9fb5b992cb2 val is 40.10542OnDeviceConnect
+BB:A0:50:32:74:27
+
+ ******************************OnDeviceConnect
+BB:A0:50:32:74:27
+
+ ******************************OnDeviceConnect
+BB:A0:50:32:74:27
+
+ ******************************
+ Player ID: bf8a3d53-42ea-41fb-919d-e9fb5b992cb2 val is 40.10542
+ Player ID: 332d1a7b-444d-40bc-a9d9-f2fe31cf6d64 val is 267.881
+ current time is 426.6095
+ Last scan in time for this id was  = 267.881
+ ********************************
+ Player ID: bf8a3d53-42ea-41fb-919d-e9fb5b992cb2 val is 40.10542
+ Player ID: 332d1a7b-444d-40bc-a9d9-f2fe31cf6d64 val is 426.6095
+ current time is 439.1384
+ Last scan in time for this id was  = 426.6095
+ ********************************
+ Player ID: bf8a3d53-42ea-41fb-919d-e9fb5b992cb2 val is 40.10542
+ Player ID: 332d1a7b-444d-40bc-a9d9-f2fe31cf6d64 val is 439.1384
+ current time is 523.8271
+ Last scan in time for this id was  = 439.1384
+ ******************************** 07/25/2018 18:25:21 
+07/25/2018 18:25:31  data successfully updated on server
