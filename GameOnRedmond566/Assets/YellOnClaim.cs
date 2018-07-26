@@ -101,6 +101,7 @@ public class YellOnClaim : MonoBehaviour
     public void ClearCard(BitToys.Toy cardtoclear)
     {
         cardtoclear.customData.ClearAll_Local();
+        cardtoclear.customData.SendAsync();
     }
 
     public void ClearCardButton()
@@ -176,10 +177,12 @@ public class YellOnClaim : MonoBehaviour
 
         Debug.Log("wrapper test = " + temp);
 
+        //scan messages
         BitToys.inst.onClaimToy_OK += this.OnClaimToy_Success;// when we scan a card and it works
         BitToys.inst.onClaimToy_Fail += this.OnClaimToy_Fail;
         BitToys.inst.onGetToy_Fail += this.OnGetToy_Fail;
 
+        //bluetooth messages
         BitToys.inst.ble_onDeviceConnected += this.OnDeviceConnect;
         BitToys.inst.ble_onDeviceLost += this.OnDeviceConnect;
         BitToys.inst.ble_onDeviceConnectFailed += this.OnDeviceConnect;
@@ -187,6 +190,19 @@ public class YellOnClaim : MonoBehaviour
         BitToys.inst.onFetchToyList_OK += this.OnFetchOwnedToys;
         BitToys.inst.onFetchToyList_Fail += this.OnFetchAllToysFailed;
 
+        //async messages (update server with our custom data)
+        BitToys.inst.onPutCustomData_Fail += OnPutData_Fail;
+        BitToys.inst.onPutCustomData_OK += OnPutData_Success;
+
+    }
+
+    public void OnPutData_Fail(string _id, BitToys.FailReason reason, string text)
+    {
+        WriteToErrorLog("Updating customData for id: " + _id + " failed: " + reason + " " + text);
+    }
+    public void OnPutData_Success(BitToys.Toy _toy)
+    {
+        WriteToErrorLog("Updating customData succeeded for toy: " + _toy.bitToysId);
     }
 
     public void WriteToErrorLog(string message)// new function for error logging, the old error logs are kinda a hack
