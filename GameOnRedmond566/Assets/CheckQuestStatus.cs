@@ -15,7 +15,7 @@ public class CheckQuestStatus : MonoBehaviour {
 
     private void OnEnable()
     {
-        int currentQuest = this.myYellOnClaim.MyCurrentToy.customData.GetInt("CurrentQuest", 0);
+        int currentQuest = this.myYellOnClaim.MyCurrentToy.customData.GetInt("CurrentQuest", -1);
 
         if (currentQuest == 0)//sanc
         {
@@ -55,7 +55,8 @@ public class CheckQuestStatus : MonoBehaviour {
                             myYellOnClaim.MyCurrentToy.customData.SetInt("QuestsCompleted", ++currentQuestsCompleted);
                         }
 
-                        this.myYellOnClaim.MyCurrentToy.customData.SetInt("CurrentQuest", 0);// reset the current quest to 'no quest'
+                        this.myYellOnClaim.MyCurrentToy.customData.SetInt("CurrentQuest", -1);// reset the current quest to 'no quest'
+                        this.myYellOnClaim.MyCurrentToy.customData.SetBool("DragonUpgraded", true);//true show dragon upgrade
 
                         this.Activate = this.ActivateQuestComplete;// player has completed quest
                         
@@ -88,7 +89,7 @@ public class CheckQuestStatus : MonoBehaviour {
 
     public List<string> GetQuestResourceStrings()// this function retruns a list of strings that are the quest resources for the current player
     {
-        int currentQuest = this.myYellOnClaim.MyCurrentToy.customData.GetInt("CurrentQuest", 0);
+        int currentQuest = this.myYellOnClaim.MyCurrentToy.customData.GetInt("CurrentQuest", -1);
 
         List<ResourceSpawner2> Regions = new List<ResourceSpawner2>(Resources.FindObjectsOfTypeAll<ResourceSpawner2>());// gets inactive objects
         bool fail = true;

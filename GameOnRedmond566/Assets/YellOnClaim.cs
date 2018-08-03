@@ -261,9 +261,11 @@ public class YellOnClaim : MonoBehaviour
             Debug.Log("NUX!");
             theToy.customData.AddBool("needsVars", false);
             theToy.customData.AddInt("QuestsCompleted", 0);
-            theToy.customData.AddInt("CurrentQuest", 0);
+            theToy.customData.AddInt("CurrentQuest", -1);
+            theToy.customData.AddBool("DragonUpgraded", false);//did i do a quest that could upgrade the dragon?
+            theToy.customData.AddBool("NewUser", true) ;// does the user need the NUX (New User eXperience)?
             //resources tracked in OnClickHarvest
-            
+
         }
     }
 

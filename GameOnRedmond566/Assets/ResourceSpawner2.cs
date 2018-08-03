@@ -36,7 +36,7 @@ public class ResourceSpawner2 : MonoBehaviour {
             {
                 //Debug.Log("boop");
 
-                if ((myYellOnClaim.MyCurrentToy.customData.GetInt("CurrentQuest",0) == (int)this.location) && (i < 2))//if current quest
+                if ((myYellOnClaim.MyCurrentToy.customData.GetInt("CurrentQuest",-1) == (int)this.location) && (i < 2))//if current quest
                 {
 
                     GameObject resource = Object.Instantiate(this.uniqueResource, SpawnPoints[i].transform);
