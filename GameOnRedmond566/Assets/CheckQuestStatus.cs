@@ -16,14 +16,16 @@ public class CheckQuestStatus : MonoBehaviour {
     private void OnEnable()
     {
         int currentQuest = this.myYellOnClaim.MyCurrentToy.customData.GetInt("CurrentQuest", -1);
-
-        if (currentQuest == 0)//sanc
+        Debug.Log("CheckQuestStatus currentQuest ="+currentQuest.ToString());
+        if (currentQuest <= 0)//sanc
         {
+            Debug.Log("get new quest");
             //assign a quest
             this.Activate = this.ActivateQuestNone;// player needs to get a quest!
         }
         else
         {
+            Debug.Log("fetching quest?");
             List<ResourceSpawner2> Regions = new List<ResourceSpawner2>(Resources.FindObjectsOfTypeAll<ResourceSpawner2>());// gets inactive objects
             bool fail = true;
             for (int i = 0; i < Regions.Count; i++)
