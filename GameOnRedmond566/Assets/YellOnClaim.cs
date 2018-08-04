@@ -66,7 +66,7 @@ public class YellOnClaim : MonoBehaviour
     public Text gathercompletetext;
 
     public ParticleSystem MegaScanInParticles;
-    public Dictionary<string,int> playerIDsForQuests; //string is playerid, int is quest they are on (0-1)
+    public Dictionary<string, int> playerIDsForQuests; //string is playerid, int is quest they are on (0-1)
     public Dictionary<string, Dictionary<string, int>> playerInventory; //inventory for players, items referred to as strings then count is int
     public Dictionary<string, int[]> playerIDQuestsProgress; //an array of bools, one for each location, if the player is done with that quest or not
     public Dictionary<string, float> playerScanInTimes;
@@ -75,6 +75,7 @@ public class YellOnClaim : MonoBehaviour
 
     public Text QuestCompleteText;
     public Text QuestProgressText;
+    public Text BluetoothLowBatteryText;
     public GameObject EstuaryQuestProgress;
     public GameObject SanctuaryQuestProgress;
     public GameObject MountainQuestProgress;
@@ -112,6 +113,7 @@ public class YellOnClaim : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        BluetoothLowBatteryText.gameObject.SetActive(false);
         ready2scan = true;
         particleMode = true;
         leftScanParticles.Play();
@@ -143,13 +145,13 @@ public class YellOnClaim : MonoBehaviour
 
         //dragon = GameObject.Find("dragon");
         //dragon.SetActive(false);
-       // gathercompletetext = GameObject.Find("GatherResourcesCompleteText").GetComponent<Text>();
-       // gathercompletetext.gameObject.SetActive(false);
-       // MegaScanInParticles = GameObject.Find("MegaScanInParticles").GetComponent<ParticleSystem>();
+        // gathercompletetext = GameObject.Find("GatherResourcesCompleteText").GetComponent<Text>();
+        // gathercompletetext.gameObject.SetActive(false);
+        // MegaScanInParticles = GameObject.Find("MegaScanInParticles").GetComponent<ParticleSystem>();
         //this is like the worst possible way of doing this, but ill fix it later
-       // ResourceSpawner = GameObject.Find("ResourceSpawner");
+        // ResourceSpawner = GameObject.Find("ResourceSpawner");
         //QuestButton = GameObject.Find("GoQuestButton").GetComponent<Button>();
-       // GatherButton = GameObject.Find("GoGatherResourcesButton").GetComponent<Button>();
+        // GatherButton = GameObject.Find("GoGatherResourcesButton").GetComponent<Button>();
         // shrek = GameObject.Find("shrek");//swamp
         //sanc = GameObject.Find("sanc");
         //forest = GameObject.Find("forest");
@@ -159,13 +161,13 @@ public class YellOnClaim : MonoBehaviour
 
         //ChangeBackground(0);
 
-       // redfireworks = GameObject.Find("redfireworks").GetComponent<ParticleSystem>();
-       // greenfireworks = GameObject.Find("greenfireworks").GetComponent<ParticleSystem>();
-       // bluefireworks = GameObject.Find("bluefireworks").GetComponent<ParticleSystem>();
+        // redfireworks = GameObject.Find("redfireworks").GetComponent<ParticleSystem>();
+        // greenfireworks = GameObject.Find("greenfireworks").GetComponent<ParticleSystem>();
+        // bluefireworks = GameObject.Find("bluefireworks").GetComponent<ParticleSystem>();
 
         //ScanText = GameObject.Find("ScanText").GetComponent<Text>();
-       // leftScanParticles = GameObject.Find("scantext_particles_left").GetComponent<ParticleSystem>();
-       // rightscanParticles = GameObject.Find("scantext_particles_right").GetComponent<ParticleSystem>();
+        // leftScanParticles = GameObject.Find("scantext_particles_left").GetComponent<ParticleSystem>();
+        // rightscanParticles = GameObject.Find("scantext_particles_right").GetComponent<ParticleSystem>();
 
         //UnhideQuestAndGatherItems(false);
 
@@ -187,6 +189,8 @@ public class YellOnClaim : MonoBehaviour
         BitToys.inst.ble_onDeviceLost += this.OnDeviceConnect;
         BitToys.inst.ble_onDeviceConnectFailed += this.OnDeviceConnect;
 
+        BitToys.inst.ble_onBatteryLow += this.OnBatteryLow;
+
         BitToys.inst.onFetchToyList_OK += this.OnFetchOwnedToys;
         BitToys.inst.onFetchToyList_Fail += this.OnFetchAllToysFailed;
 
@@ -194,6 +198,11 @@ public class YellOnClaim : MonoBehaviour
         BitToys.inst.onPutCustomData_Fail += OnPutData_Fail;
         BitToys.inst.onPutCustomData_OK += OnPutData_Success;
 
+    }
+
+    public void OnBatteryLow(string _id)
+    {
+        BluetoothLowBatteryText.gameObject.SetActive(true);
     }
 
     public void OnPutData_Fail(string _id, BitToys.FailReason reason, string text)
