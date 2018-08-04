@@ -77,10 +77,12 @@ public class ResourceSpawner2 : MonoBehaviour {
             }//spawning resources
 
             //check to spawn special resource
-            int roll2 = Random.Range(1, 101);//need to make less random HACK
+            //int roll2 = Random.Range(1, 101);//need to make less random HACK
 
-            if (roll2 < SpecialResourceSpawnPrecentage)
+            if (myYellOnClaim.isPlayerCurrentlyOnASpecialQuest) //if the player is on a quest, spawn an item
             {
+                //or if random chance use Random.value (0 to 1)
+
                 GameObject resource = Object.Instantiate(this.SpecialItem, this.SpecialItemSpawnPoint.transform);
                 OnClickHarvest temp = resource.GetComponent<OnClickHarvest>();
                 temp.mySpawner = this;

@@ -78,6 +78,36 @@ public class CheckQuestStatus : MonoBehaviour {
             }
         }
 
+        //for the special quest
+        if(myYellOnClaim.isPlayerCurrentlyOnASpecialQuest)
+        {
+            int specialquest = myYellOnClaim.MyCurrentToy.customData.GetInt("SpecialQuest", -999);
+            if ((specialquest == -999) || (specialquest == 0)) //
+            {
+                //shouldnt get here, somethieng is wrong
+                Debug.LogException(new MissingReferenceException("Player is Not on a Special Quest but we think they are!!1"));
+            }
+            else //special quest is now completed!
+            {
+                //what should we do here?
+                //Activate = ActivateSpecialQuestComplete;
+                //do some fireworks or something!
+
+                //we dont have a special quest anymore
+                myYellOnClaim.MyCurrentToy.customData.SetInt("SpecialQuest", 0);
+
+                int currentSpecialQuestsCompleted = myYellOnClaim.MyCurrentToy.customData.GetInt("SpecialQuestsCompleted", -999);
+                if (currentSpecialQuestsCompleted == -999)//if i havent completed any quests
+                    this.myYellOnClaim.MyCurrentToy.customData.AddInt("SpecialQuestsCompleted", 1);// update number of quests completed
+                else
+                {
+                    myYellOnClaim.MyCurrentToy.customData.SetInt("SpecialQuestsCompleted", ++currentSpecialQuestsCompleted);
+                }
+
+
+            }
+        }//else we dont need a special quest, there is a chance to assign them in getquest.cs
+
         StartCoroutine(WaitAndThenActivate());// bump players to next screen
     }
 

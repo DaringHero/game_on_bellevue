@@ -20,6 +20,8 @@ public class GetQuest : MonoBehaviour
 
     public List<InputField> inputWeights;
 
+    public float chanceForSpecialQuest;
+
     public int GetRandomWeightedQuest()
     {
         //    int[] weights = QuestWeights.ToArray();
@@ -57,6 +59,18 @@ public class GetQuest : MonoBehaviour
         return lastIndex;
     }
 
+    public void AssignSpecialQuest()
+    {
+        //random chance
+        if(Random.value > chanceForSpecialQuest) //random value returns between 0 and 1
+        {
+            this.myYellOnClaim.MyCurrentToy.customData.SetInt("SpecialQuest", 1); //WE NOW HAVE A SPECIAL QUEST
+
+                                                                                  //display some special text
+        }
+
+
+    }
 
     private void OnEnable()
     {
@@ -64,6 +78,13 @@ public class GetQuest : MonoBehaviour
         int nextQuest = GetRandomWeightedQuest();
 
         this.myYellOnClaim.MyCurrentToy.customData.SetInt("CurrentQuest", nextQuest);
+
+        int specialquest = myYellOnClaim.MyCurrentToy.customData.GetInt("SpecialQuest", -999);
+
+        if((specialquest == -999) || (specialquest == 0)) //no special quest, this should always happen because we only get to this page if we actually need a special quest
+        {
+            AssignSpecialQuest();
+        }
 
         this.DisplayText.text = this.QuestStrings[nextQuest];
 

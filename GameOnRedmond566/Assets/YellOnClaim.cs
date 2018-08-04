@@ -94,6 +94,9 @@ public class YellOnClaim : MonoBehaviour
 
     public bool particleMode;
 
+    public bool isPlayerCurrentlyOnASpecialQuest = false;
+
+
     //maybe move this stuff somewhere else
     public Dictionary<string, int> resourceCountForText;
 
@@ -365,25 +368,16 @@ public class YellOnClaim : MonoBehaviour
             MyText.text += "\n Player ID: " + entry.Key.ToString() + " val is " + entry.Value.ToString();
             // do something with entry.Value or entry.Key
         }
+            int specialquest = MyCurrentToy.customData.GetInt("SpecialQuest", -999);
+            if ((specialquest == -999) || (specialquest == 0)) //
+            {
+                isPlayerCurrentlyOnASpecialQuest = false;
+            }
+            else
+                isPlayerCurrentlyOnASpecialQuest = true;
 
-        //  somethingWasScanned = true;
-        //  MoveToQuestOrResourceScreen();
-        // MoveToActualGather();
 
-        /*
-        if (playerIDQuestsProgress[CurrentPlayerID][(int)currentLocation] == 3)// if players complete a quest they cant keep playing 
-        {
-            this.ShowQuestComplete();// shows completed quest screen
-
-            StartCoroutine(LateSetToScan());// starts coroutine to reset
-        }
-        else
-        {
-            ChangeFromScanToGather();
-        }*/
-
-          
-        //handle screen activations
+            //handle screen activations
             this.ScanScreen.SetActive(false);// deactivate scan screen
         }// valid scan
     }//end function
