@@ -12,6 +12,10 @@ public class ResourceSpawner2 : MonoBehaviour {
     public GameObject uniqueResource;
     public GameObject Resource1;
     public GameObject Resource2;
+    [Range(0,100)]
+    public int SpecialResourceSpawnPrecentage;
+    public GameObject SpecialItem;
+    public GameObject SpecialItemSpawnPoint;
 
     public int CollectedResource = 0;
     public int MaxResourcesToCollect = 4;
@@ -70,7 +74,20 @@ public class ResourceSpawner2 : MonoBehaviour {
                 }
 
                 
+            }//spawning resources
+
+            //check to spawn special resource
+            int roll2 = Random.Range(1, 101);//need to make less random HACK
+
+            if (roll2 < SpecialResourceSpawnPrecentage)
+            {
+                GameObject resource = Object.Instantiate(this.SpecialItem, this.SpecialItemSpawnPoint.transform);
+                OnClickHarvest temp = resource.GetComponent<OnClickHarvest>();
+                temp.mySpawner = this;
+                temp.myYellOnClaim = this.myYellOnClaim;
+                this.SpawnedResources.Add(resource);
             }
+
         }
     }
 
