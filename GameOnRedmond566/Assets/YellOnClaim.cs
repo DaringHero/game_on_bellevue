@@ -298,9 +298,9 @@ public class YellOnClaim : MonoBehaviour
             UniClipboard.SetText(UniClipboard.GetText() + "\n" + " " + System.DateTime.Now + " Tried to scan but the reader wasn't ready...");
             return;
         }
-            
 
-  
+
+
 
         ready2scan = false;
         //MyText.text += "\n current state is " + currentState.ToString();
@@ -322,7 +322,7 @@ public class YellOnClaim : MonoBehaviour
         {
             validscan = CheckForValidScanTime(CurrentPlayerID);
         }
-            
+
         if (!validscan)
         {
             this.ScanScreen.SetActive(false);
@@ -342,45 +342,40 @@ public class YellOnClaim : MonoBehaviour
             MegaScanInParticles.Play();
 
 
-        //at this point it will always contain the key, this is just to prevent nulls
-        if (playerScanInTimes.ContainsKey(CurrentPlayerID))
-        {
-            //playerIDsForQuests[CurrentPlayerID]++;
-            playerScanInTimes[CurrentPlayerID] = Time.time;
-        }
+            //at this point it will always contain the key, this is just to prevent nulls
+            if (playerScanInTimes.ContainsKey(CurrentPlayerID))
+            {
+                //playerIDsForQuests[CurrentPlayerID]++;
+                playerScanInTimes[CurrentPlayerID] = Time.time;
+            }
 
-        string tempDebug = "";
-        tempDebug += ""; //clear text
-        
-        tempDebug += "\n Toy id = " + theToy.bitToysId;
-        tempDebug += "\n Owner id = " + theToy.ownerId;
-        tempDebug += "\n Style id = " + theToy.styleId;
-        tempDebug += "\n SKU id = " + theToy.skuId;
-        tempDebug += "\n customData has: "+ theToy.customData.ToString();
+            string tempDebug = "";
+            tempDebug += ""; //clear text
+
+            tempDebug += "\n Toy id = " + theToy.bitToysId;
+            tempDebug += "\n Owner id = " + theToy.ownerId;
+            tempDebug += "\n Style id = " + theToy.styleId;
+            tempDebug += "\n SKU id = " + theToy.skuId;
+            tempDebug += "\n customData has: " + theToy.customData.ToString();
             tempDebug += "\n " + System.DateTime.Now;
-        tempDebug += "\n ******************************";
-        MyText.text = tempDebug + MyText.text;// debug at the top!
+            tempDebug += "\n ******************************";
+            MyText.text = tempDebug + MyText.text;// debug at the top!
 
             UniClipboard.SetText(UniClipboard.GetText() + "\n" + " " + tempDebug + MyText.text + " " + System.DateTime.Now + " ");
 
             foreach (KeyValuePair<string, float> entry in playerScanInTimes)
-        {
-            MyText.text += "\n Player ID: " + entry.Key.ToString() + " val is " + entry.Value.ToString();
-            // do something with entry.Value or entry.Key
-        }
-            int specialquest = MyCurrentToy.customData.GetInt("SpecialQuest", -999);
-            if ((specialquest == -999) || (specialquest == 0)) //
             {
-                isPlayerCurrentlyOnASpecialQuest = false;
-            }
-            else
-                isPlayerCurrentlyOnASpecialQuest = true;
+                MyText.text += "\n Player ID: " + entry.Key.ToString() + " val is " + entry.Value.ToString();
+                // do something with entry.Value or entry.Key
 
+                //reset the location timer back to 0 (dont get a new location)
+                GetComponent<PickLocationTimer>().ResetTimer();
 
-            //handle screen activations
-            this.ScanScreen.SetActive(false);// deactivate scan screen
-        }// valid scan
-    }//end function
+                //handle screen activations
+                this.ScanScreen.SetActive(false);// deactivate scan screen
+            }// valid scan
+        }//end of else
+    } // end of function
 
     IEnumerator EnableReady2Scan()
     {

@@ -24,6 +24,7 @@ public class ResourceSpawner2 : MonoBehaviour {
     public GameObject Deactivate;
 
     public Text resourceCountText;
+    public float chanceForSpecialQuest;
 
     public void OnEnable()
     {
@@ -36,11 +37,14 @@ public class ResourceSpawner2 : MonoBehaviour {
             myYellOnClaim.resourceCountForText.Clear();
             Debug.Log("******************************CorrectLocation");
             //spawn resources
+
+            int numOfSpecialItems = myYellOnClaim.MyCurrentToy.customData.GetInt("SpecialItem", 0);
+
             for (int i = 0; i < this.SpawnPoints.Count; i++)
             {
                 //Debug.Log("boop");
-
-                if ((myYellOnClaim.MyCurrentToy.customData.GetInt("CurrentQuest",-1) == (int)this.location) && (i < 2))//if current quest
+                //the i < 2 is for the spawn points
+                if ((myYellOnClaim.MyCurrentToy.customData.GetInt("CurrentQuest",-1) == (int)this.location) && (i < 2) && (numOfSpecialItems == 0))//if current quest
                 {
 
                     GameObject resource = Object.Instantiate(this.uniqueResource, SpawnPoints[i].transform);
@@ -76,19 +80,29 @@ public class ResourceSpawner2 : MonoBehaviour {
                 
             }//spawning resources
 
-            //check to spawn special resource
-            //int roll2 = Random.Range(1, 101);//need to make less random HACK
-
-            if (myYellOnClaim.isPlayerCurrentlyOnASpecialQuest) //if the player is on a quest, spawn an item
+            if ((numOfSpecialItems > 0) && (myYellOnClaim.MyCurrentToy.customData.GetInt("CurrentQuest", -1) == (int)this.location))
             {
-                //or if random chance use Random.value (0 to 1)
-
-                GameObject resource = Object.Instantiate(this.SpecialItem, this.SpecialItemSpawnPoint.transform);
-                OnClickHarvest temp = resource.GetComponent<OnClickHarvest>();
-                temp.mySpawner = this;
-                temp.myYellOnClaim = this.myYellOnClaim;
-                this.SpawnedResources.Add(resource);
+          
+                    GameObject resource = Object.Instantiate(this.SpecialItem, this.SpecialItemSpawnPoint.transform);
+                    OnClickHarvest temp = resource.GetComponent<OnClickHarvest>();
+                    temp.mySpawner = this;
+                    temp.myYellOnClaim = this.myYellOnClaim;
+                    this.SpawnedResources.Add(resource);
+          
             }
+            else if((numOfSpecialItems == 0) && (myYellOnClaim.MyCurrentToy.customData.GetInt("CurrentQuest", -1) == (int)this.location))
+            {
+                if(Random.value > chanceForSpecialQuest)
+                {
+                    GameObject resource = Object.Instantiate(this.SpecialItem, this.SpecialItemSpawnPoint.transform);
+                    OnClickHarvest temp = resource.GetComponent<OnClickHarvest>();
+                    temp.mySpawner = this;
+                    temp.myYellOnClaim = this.myYellOnClaim;
+                    this.SpawnedResources.Add(resource);
+                }
+            }
+
+
 
         }
     }

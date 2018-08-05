@@ -11,6 +11,8 @@ public class CheckQuestStatus : MonoBehaviour {
     private GameObject Activate;
     public GameObject Deactivate;
 
+    public GameObject ActivateSpecialQuestComplete;
+
     public YellOnClaim myYellOnClaim;
 
     private void OnEnable()
@@ -78,23 +80,16 @@ public class CheckQuestStatus : MonoBehaviour {
             }
         }
 
-        //for the special quest
-        if(myYellOnClaim.isPlayerCurrentlyOnASpecialQuest)
-        {
-            int specialquest = myYellOnClaim.MyCurrentToy.customData.GetInt("SpecialQuest", -999);
-            if ((specialquest == -999) || (specialquest == 0)) //
-            {
-                //shouldnt get here, somethieng is wrong
-                Debug.LogException(new MissingReferenceException("Player is Not on a Special Quest but we think they are!!1"));
-            }
-            else //special quest is now completed!
-            {
-                //what should we do here?
-                //Activate = ActivateSpecialQuestComplete;
-                //do some fireworks or something!
+        int numOfSpecialItems = myYellOnClaim.MyCurrentToy.customData.GetInt("SpecialItem", 0);
 
-                //we dont have a special quest anymore
-                myYellOnClaim.MyCurrentToy.customData.SetInt("SpecialQuest", 0);
+        //for the special quest
+        if (numOfSpecialItems > 2)
+        {
+
+            //what should we do here?
+            //Activate = ActivateSpecialQuestComplete;
+            //do some fireworks or something!
+            this.myYellOnClaim.MyCurrentToy.customData.SetInt("SpecialItem", 0);
 
                 int currentSpecialQuestsCompleted = myYellOnClaim.MyCurrentToy.customData.GetInt("SpecialQuestsCompleted", -999);
                 if (currentSpecialQuestsCompleted == -999)//if i havent completed any quests
@@ -104,9 +99,18 @@ public class CheckQuestStatus : MonoBehaviour {
                     myYellOnClaim.MyCurrentToy.customData.SetInt("SpecialQuestsCompleted", ++currentSpecialQuestsCompleted);
                 }
 
-
+            //in addition, add some questscompleted (5)
+            int currentQuestsCompleted = myYellOnClaim.MyCurrentToy.customData.GetInt("QuestsCompleted", -999);
+            if (currentQuestsCompleted == -999)//if i havent completed any quests
+                this.myYellOnClaim.MyCurrentToy.customData.AddInt("QuestsCompleted", 5);// update number of quests completed
+            else
+            {
+                myYellOnClaim.MyCurrentToy.customData.SetInt("QuestsCompleted", currentQuestsCompleted + 5);
             }
-        }//else we dont need a special quest, there is a chance to assign them in getquest.cs
+
+            this.Activate = ActivateSpecialQuestComplete;
+
+        }
 
         StartCoroutine(WaitAndThenActivate());// bump players to next screen
     }

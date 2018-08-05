@@ -20,7 +20,11 @@ public class GetQuest : MonoBehaviour
 
     public List<InputField> inputWeights;
 
+    public GameObject specialQuestStart;
+
     public float chanceForSpecialQuest;
+
+    public int currentAssignedLocation;
 
     public int GetRandomWeightedQuest()
     {
@@ -61,13 +65,11 @@ public class GetQuest : MonoBehaviour
 
     public void AssignSpecialQuest()
     {
-        //random chance
-        if(Random.value > chanceForSpecialQuest) //random value returns between 0 and 1
-        {
-            this.myYellOnClaim.MyCurrentToy.customData.SetInt("SpecialQuest", 1); //WE NOW HAVE A SPECIAL QUEST
 
-                                                                                  //display some special text
-        }
+        specialQuestStart.SetActive(true);
+        Deactivate.SetActive(false);
+      //display some special text
+
 
 
     }
@@ -75,16 +77,14 @@ public class GetQuest : MonoBehaviour
     private void OnEnable()
     {
         //  int nextQuest = Random.Range(1, QuestStrings.Count);
-        int nextQuest = GetRandomWeightedQuest();
+        //if its been 30 secs, get a random weighted quest
+        int nextQuest = currentAssignedLocation;
+        //else 
 
         this.myYellOnClaim.MyCurrentToy.customData.SetInt("CurrentQuest", nextQuest);
 
-        int specialquest = myYellOnClaim.MyCurrentToy.customData.GetInt("SpecialQuest", -999);
+        int numOfSpecialItems = myYellOnClaim.MyCurrentToy.customData.GetInt("SpecialItem", 0);
 
-        if((specialquest == -999) || (specialquest == 0)) //no special quest, this should always happen because we only get to this page if we actually need a special quest
-        {
-            AssignSpecialQuest();
-        }
 
         this.DisplayText.text = this.QuestStrings[nextQuest];
 
@@ -98,7 +98,13 @@ public class GetQuest : MonoBehaviour
     {
         yield return new WaitForSeconds(waittime);
 
+
         this.Activate.SetActive(true);
         this.Deactivate.SetActive(false);
+    }
+
+    public void ChooseANewRandomLocation()
+    {
+        currentAssignedLocation = GetRandomWeightedQuest();
     }
 }
