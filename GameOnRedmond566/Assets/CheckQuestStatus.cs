@@ -11,6 +11,8 @@ public class CheckQuestStatus : MonoBehaviour {
     private GameObject Activate;
     public GameObject Deactivate;
 
+    public GameObject ActivateSpecialQuestStarted;
+    public GameObject ActivateSpecialQuestContinue;
     public GameObject ActivateSpecialQuestComplete;
 
     public YellOnClaim myYellOnClaim;
@@ -82,6 +84,14 @@ public class CheckQuestStatus : MonoBehaviour {
 
         int numOfSpecialItems = myYellOnClaim.MyCurrentToy.customData.GetInt("SpecialItem", 0);
 
+        if (numOfSpecialItems == 1)
+        {
+            this.Activate = ActivateSpecialQuestStarted;
+        }
+        if (numOfSpecialItems == 2)
+        {
+            this.Activate = ActivateSpecialQuestContinue;
+        }
         //for the special quest
         if (numOfSpecialItems > 2)
         {
