@@ -43,6 +43,9 @@ public class UpdateServer : MonoBehaviour {
     {
         currentNumberOfRetries = 0;
 
+        //send to doug's server
+        GetComponent<JSONPost>().POST(myYellOnClaim.MyCurrentToy.customData.AsJSONString());
+
         if (myYellOnClaim.MyCurrentToy.bitToysId != "player1NUXtest")
             this.myYellOnClaim.MyCurrentToy.customData.SendAsync();
         else

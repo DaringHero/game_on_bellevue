@@ -5,18 +5,18 @@ using UnityEngine;
 
 public class JSONPost : MonoBehaviour {
 
-    private static readonly string POSTAddUserURL = "INSERTLATER";
+    private static readonly string POSTAddUserURL = "http://www.daringhero.com/redmond/park/sanctuary/test_insert.php";
 
 
 
 
-    public WWW POST()
+    public WWW POST(string jsonStr)
     {
         WWW www;
         Dictionary<string, string> postHeader = new Dictionary<string, string>();
         postHeader.Add("Content-Type", "application/json");
 
-        string jsonStr = "\"\" "; //dont put newlines
+        
 
 
     // convert json string to byte
