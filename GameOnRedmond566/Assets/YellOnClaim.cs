@@ -751,6 +751,18 @@ public class YellOnClaim : MonoBehaviour
         BitToys.inst.ble_SetLED_nfcTagOK(0, 255, 0, 0, 0, 0);
     }
 
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.A))
+        {
+            FakeScanNUX();
+            MyCurrentToy.customData.AddInt("testdata", 69);
+            TestJson();
+            
+        }
+           
+    }
+
     /* private void Update2()
       {
           if(debugstuff.activeSelf && (currentBackgroundIndex != MyDropdown.value))
@@ -845,6 +857,13 @@ public class YellOnClaim : MonoBehaviour
         ready2scan = false;
         StartCoroutine(EnableReady2Scan());
     }
+
+    public void TestJson()
+    {
+        //send to doug's server
+        GetComponent<JSONPost>().POST(MyCurrentToy.customData.AsJSONString());
+    }
+
     public void OnGetToy_Fail(BitToys.FailReason reason, string mytext)
     {
         this.MyText.text += "OnGetToy_Fail" + "\n"; //clear text

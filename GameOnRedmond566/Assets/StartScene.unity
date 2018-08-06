@@ -2951,7 +2951,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 625564188
+  randomSeed: 1326362603
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -26818,6 +26818,7 @@ GameObject:
   - component: {fileID: 1708775438}
   - component: {fileID: 1708775442}
   - component: {fileID: 1708775443}
+  - component: {fileID: 1708775444}
   m_Layer: 5
   m_Name: YellOnClaim
   m_TagString: Untagged
@@ -26981,6 +26982,17 @@ MonoBehaviour:
   currentTime: 0
   timeUntilReset: 0
   getQuestObject: {fileID: 0}
+--- !u!114 &1708775444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1708775437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 884f90705be433e419c657e35af0cd70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1712791683
 GameObject:
   m_ObjectHideFlags: 0

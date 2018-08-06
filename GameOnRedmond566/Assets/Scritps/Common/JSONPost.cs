@@ -16,13 +16,17 @@ public class JSONPost : MonoBehaviour {
         Dictionary<string, string> postHeader = new Dictionary<string, string>();
         postHeader.Add("Content-Type", "application/json");
 
+
+        Debug.Log("jsonstr is " + jsonStr) ;
+
+        // convert json string to byte
+        var formData = System.Text.Encoding.UTF8.GetBytes(jsonStr);
+        Debug.Log("form data is " + formData.ToString());
+        www = new WWW(POSTAddUserURL, formData, postHeader);
+
+        
         
 
-
-    // convert json string to byte
-    var formData = System.Text.Encoding.UTF8.GetBytes(jsonStr);
-
-        www = new WWW(POSTAddUserURL, formData, postHeader);
         StartCoroutine(WaitForRequest(www));
         return www;
     }
