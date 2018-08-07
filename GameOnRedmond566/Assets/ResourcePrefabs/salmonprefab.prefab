@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d06b75ea0f6666c4f8dd199090fbfcf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ResourceType: Apple
+  ResourceType: Salmon
   myYellOnClaim: {fileID: 0}
   mySpawner: {fileID: 0}
   soundeffect: {fileID: 8300000, guid: e45473bad6110b44a88796c2904bb263, type: 3}
