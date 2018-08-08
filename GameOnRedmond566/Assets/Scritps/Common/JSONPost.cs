@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class JSONPost : MonoBehaviour {
 
-    private static readonly string POSTAddUserURL = "http://www.daringhero.com/redmond/park/sanctuary/test_insert.php";
+    private static readonly string POSTAddUserURL = "http://www.daringhero.com/redmond/park/sanctuary/test_post.php";
 
 
 
