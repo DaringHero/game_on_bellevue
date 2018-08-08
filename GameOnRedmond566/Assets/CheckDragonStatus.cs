@@ -22,6 +22,9 @@ public class CheckDragonStatus : MonoBehaviour {
 
     private void OnEnable()
     {
+        Debug.Log("___ CheckDragonStatus Enabled ___");
+
+
         int QuestsCompleted = this.myYellOnClaim.MyCurrentToy.customData.GetInt("QuestsCompleted", 0);
 
         bool ShowUpgrade = this.myYellOnClaim.MyCurrentToy.customData.GetBool("DragonUpgraded", false);

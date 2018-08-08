@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CheckQuestStatus : MonoBehaviour {
-
     public float waittime = 3.0f;
     public GameObject ActivateQuestContinue;
     public GameObject ActivateQuestComplete;
@@ -19,6 +18,8 @@ public class CheckQuestStatus : MonoBehaviour {
 
     private void OnEnable()
     {
+        Debug.Log("___ CheckQuestStatus Enabled ___");
+
         int currentQuest = this.myYellOnClaim.MyCurrentToy.customData.GetInt("CurrentQuest", -1);
         Debug.Log("CheckQuestStatus currentQuest ="+currentQuest.ToString());
         if (currentQuest <= 0)//sanc
@@ -31,13 +32,13 @@ public class CheckQuestStatus : MonoBehaviour {
         {
             Debug.Log("fetching quest?");
             List<ResourceSpawner2> Regions = new List<ResourceSpawner2>(Resources.FindObjectsOfTypeAll<ResourceSpawner2>());// gets inactive objects
-            bool fail = true;
+            bool findlocationfailure = true;//assume we didn't find the location
             for (int i = 0; i < Regions.Count; i++)
             {
 
                 if ((int)Regions[i].location == currentQuest)//find region my quest is for
                 {
-                     fail = false;//we found the location
+                   findlocationfailure = false;//we found the location
                    string resource1 = Regions[i].Resource1.GetComponent<OnClickHarvest>().ResourceType;
                    string resource2 = Regions[i].Resource2.GetComponent<OnClickHarvest>().ResourceType;
                    string resource3 = Regions[i].uniqueResource.GetComponent<OnClickHarvest>().ResourceType;
@@ -52,6 +53,8 @@ public class CheckQuestStatus : MonoBehaviour {
                         this.myYellOnClaim.MyCurrentToy.customData.SetInt(resource1, resCount1 - 1);
                         this.myYellOnClaim.MyCurrentToy.customData.SetInt(resource2, resCount2 - 1);
                         this.myYellOnClaim.MyCurrentToy.customData.SetInt(resource3, resCount3 - 1);
+
+                        Debug.Log("___ Player Completed Quest ___");
 
                         int currentQuestsCompleted = myYellOnClaim.MyCurrentToy.customData.GetInt("QuestsCompleted", -999);
                         if(currentQuestsCompleted == -999)//if i havent completed any quests
@@ -75,13 +78,13 @@ public class CheckQuestStatus : MonoBehaviour {
 
                 }
             }
-            if (fail)// failed to find quest region
+            if (findlocationfailure)// failed to find quest location
             {
                 Debug.LogException( new MissingReferenceException("CheckQuestStatus did not find quest region!"));
                 myYellOnClaim.WriteToErrorLog("CheckQuestStatus did not find quest region!");
             }
         }
-
+        /*
         int numOfSpecialItems = myYellOnClaim.MyCurrentToy.customData.GetInt("SpecialItem", 0);
 
         if (numOfSpecialItems == 1)
@@ -120,7 +123,7 @@ public class CheckQuestStatus : MonoBehaviour {
 
             this.Activate = ActivateSpecialQuestComplete;
 
-        }
+        }*/
 
         StartCoroutine(WaitAndThenActivate());// bump players to next screen
     }
@@ -138,7 +141,7 @@ public class CheckQuestStatus : MonoBehaviour {
         int currentQuest = this.myYellOnClaim.MyCurrentToy.customData.GetInt("CurrentQuest", -1);
 
         List<ResourceSpawner2> Regions = new List<ResourceSpawner2>(Resources.FindObjectsOfTypeAll<ResourceSpawner2>());// gets inactive objects
-        bool fail = true;
+        //bool fail = true;
         List<string> ret = new List<string>();
 
         for (int i = 0; i < Regions.Count; i++)
@@ -146,7 +149,7 @@ public class CheckQuestStatus : MonoBehaviour {
 
             if ((int)Regions[i].location == currentQuest)//find region my quest is for
             {
-                fail = false;//we found the location
+                //fail = false;//we found the location
                 string resource1 = Regions[i].Resource1.GetComponent<OnClickHarvest>().ResourceType;
                 string resource2 = Regions[i].Resource2.GetComponent<OnClickHarvest>().ResourceType;
                 string resource3 = Regions[i].uniqueResource.GetComponent<OnClickHarvest>().ResourceType;

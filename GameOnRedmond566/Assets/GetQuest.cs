@@ -76,9 +76,10 @@ public class GetQuest : MonoBehaviour
 
     private void OnEnable()
     {
+        Debug.Log("___ GetQuest Enabled ___");
         //  int nextQuest = Random.Range(1, QuestStrings.Count);
         //if its been 30 secs, get a random weighted quest
-        int nextQuest = currentAssignedLocation;
+        int nextQuest = this.currentAssignedLocation;
         //else 
 
         this.myYellOnClaim.MyCurrentToy.customData.SetInt("CurrentQuest", nextQuest);
@@ -105,6 +106,7 @@ public class GetQuest : MonoBehaviour
 
     public void ChooseANewRandomLocation()
     {
-        currentAssignedLocation = GetRandomWeightedQuest();
+        this.currentAssignedLocation = GetRandomWeightedQuest();
+        Debug.Log(" currentAssignedLocation = " + this.currentAssignedLocation.ToString());
     }
 }

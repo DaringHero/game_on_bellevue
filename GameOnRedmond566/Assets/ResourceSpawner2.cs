@@ -28,7 +28,10 @@ public class ResourceSpawner2 : MonoBehaviour {
 
     public void OnEnable()
     {
-        Debug.Log("loc ="+ this.location.ToString()+ " currentLocation = "+ myYellOnClaim.currentLocation.ToString());
+        Debug.Log("___ ResourceSpawner2 Enabled ___");
+
+
+        Debug.Log("loc =" + this.location.ToString());//+ " currentLocation = "+ myYellOnClaim.currentLocation.ToString());
         this.CollectedResource = 0;
 
 
@@ -92,7 +95,7 @@ public class ResourceSpawner2 : MonoBehaviour {
             }
             else if((numOfSpecialItems == 0) && (myYellOnClaim.MyCurrentToy.customData.GetInt("CurrentQuest", -1) == (int)this.location))
             {
-                if(Random.value > chanceForSpecialQuest)
+                if(Random.value > 1.0f-chanceForSpecialQuest)
                 {
                     GameObject resource = Object.Instantiate(this.SpecialItem, this.SpecialItemSpawnPoint.transform);
                     OnClickHarvest temp = resource.GetComponent<OnClickHarvest>();

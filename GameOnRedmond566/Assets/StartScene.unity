@@ -1097,7 +1097,7 @@ GameObject:
   m_Component:
   - component: {fileID: 83889513}
   m_Layer: 5
-  m_Name: 3_QuestProgress
+  m_Name: 20_QuestProgress
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2648,7 +2648,7 @@ GameObject:
   m_Component:
   - component: {fileID: 232652767}
   m_Layer: 5
-  m_Name: 3_GetQuest
+  m_Name: 40_GetQuest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2662,12 +2662,12 @@ RectTransform:
   m_GameObject: {fileID: 232652766}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0000087, y: 1.0000087, z: 1.0000087}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 215506945}
   - {fileID: 687448441}
   m_Father: {fileID: 691639804}
-  m_RootOrder: 21
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -8504,7 +8504,7 @@ GameObject:
   m_Component:
   - component: {fileID: 464892082}
   m_Layer: 5
-  m_Name: 1_GatherResources
+  m_Name: 10_GatherResources
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10569,11 +10569,11 @@ RectTransform:
   - {fileID: 1422783833}
   - {fileID: 1078395710}
   - {fileID: 83889513}
-  - {fileID: 232652767}
   - {fileID: 1692272654}
   - {fileID: 1797637370}
   - {fileID: 1522575849}
   - {fileID: 1052586806}
+  - {fileID: 232652767}
   - {fileID: 860381146}
   - {fileID: 1145399895}
   - {fileID: 307884146}
@@ -17135,7 +17135,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1052586806}
   m_Layer: 5
-  m_Name: 4_DragonAdult
+  m_Name: 30_DragonAdult
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17154,7 +17154,7 @@ RectTransform:
   - {fileID: 1714635113}
   - {fileID: 1647070528}
   m_Father: {fileID: 691639804}
-  m_RootOrder: 25
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -17379,7 +17379,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1078395710}
   m_Layer: 5
-  m_Name: 2_ResourcesGathered
+  m_Name: 15_ResourcesGathered
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23681,7 +23681,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 65, y: 0}
   m_SizeDelta: {x: 60, y: -57}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1416554264
@@ -23773,7 +23773,7 @@ GameObject:
   - component: {fileID: 1422783833}
   - component: {fileID: 1422783834}
   m_Layer: 5
-  m_Name: 1_ComebackLater
+  m_Name: 10_ComebackLater
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24713,7 +24713,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1522575849}
   m_Layer: 5
-  m_Name: 4_DragonJuvinile
+  m_Name: 30_DragonJuvinile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24733,7 +24733,7 @@ RectTransform:
   - {fileID: 38441276}
   - {fileID: 1580397205}
   m_Father: {fileID: 691639804}
-  m_RootOrder: 24
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -24851,16 +24851,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1536058235}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4264741d2cc8d64881914d3dfd1a95f, type: 3}
+  m_Script: {fileID: 11500000, guid: 7839661149d1524409a1601b1821c2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StartOnEnable: 1
   waittime: 3
-  DragonHatch: {fileID: 1797637369}
-  DragonJuvinile: {fileID: 1522575848}
-  DragonAdult: {fileID: 1052586805}
-  DragonNothing: {fileID: 860381145}
+  Activate: {fileID: 860381145}
   Deactivate: {fileID: 83889512}
-  myYellOnClaim: {fileID: 1708775438}
 --- !u!1 &1545096665
 GameObject:
   m_ObjectHideFlags: 0
@@ -26660,7 +26657,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1692272654}
   m_Layer: 5
-  m_Name: 3_QuestComplete
+  m_Name: 20_QuestComplete
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26679,7 +26676,7 @@ RectTransform:
   - {fileID: 335619989}
   - {fileID: 93021386}
   m_Father: {fileID: 691639804}
-  m_RootOrder: 22
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -26967,8 +26964,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bc881b87a6d8604f9c98cd2d5366577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentTime: 0
-  timeUntilReset: 0
+  currentTime: 1
+  timeUntilReset: 1
   getQuestObject: {fileID: 687448440}
 --- !u!114 &1708775444
 MonoBehaviour:
@@ -27067,9 +27064,9 @@ RectTransform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.93000007, y: 1}
+  m_AnchoredPosition: {x: 38.5, y: 0}
+  m_SizeDelta: {x: 77, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1712791688
 MonoBehaviour:
@@ -27965,7 +27962,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1797637370}
   m_Layer: 5
-  m_Name: 4_DragonHatched
+  m_Name: 30_DragonHatched
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27985,7 +27982,7 @@ RectTransform:
   - {fileID: 932742024}
   - {fileID: 1873407026}
   m_Father: {fileID: 691639804}
-  m_RootOrder: 23
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -32509,7 +32506,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -62}
   m_SizeDelta: {x: -57, y: 60}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1960673749
@@ -32550,7 +32547,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1634669187}
   m_HandleRect: {fileID: 1634669186}
   m_Direction: 0
-  m_Value: 0
+  m_Value: 1
   m_Size: 0.9999999
   m_NumberOfSteps: 0
   m_OnValueChanged:

@@ -5,11 +5,11 @@ using UnityEngine;
 public class PickLocationTimer : MonoBehaviour {
 
     public float currentTime;
-    public float timeUntilReset; //30
+    public float timeUntilReset = 30; //30
     public GameObject getQuestObject;
 	// Use this for initialization
 	void Start () {
-		
+        this.ChooseLocation();// initialize to a quest
 	}
 	
 	// Update is called once per frame
