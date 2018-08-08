@@ -12,8 +12,8 @@ public class ResourceSpawner2 : MonoBehaviour {
     public GameObject uniqueResource;
     public GameObject Resource1;
     public GameObject Resource2;
-    [Range(0,100)]
-    public int SpecialResourceSpawnPrecentage;
+    //[Range(0,100)]
+    //public int SpecialResourceSpawnPrecentage;
     public GameObject SpecialItem;
     public GameObject SpecialItemSpawnPoint;
 
@@ -24,7 +24,7 @@ public class ResourceSpawner2 : MonoBehaviour {
     public GameObject Deactivate;
 
     public Text resourceCountText;
-    public float chanceForSpecialQuest;
+    public float chanceForSpecialQuest = -1.0f;// 0-1
 
     public void OnEnable()
     {
