@@ -756,7 +756,8 @@ public class YellOnClaim : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.A))
         {
             FakeScanNUX();
-            MyCurrentToy.customData.AddInt("testdata", 69);
+            MyCurrentToy.customData.AddInt("Amethyst", 69);
+            MyCurrentToy.customData.AddInt("Apple", 420);
             TestJson();
             
         }
