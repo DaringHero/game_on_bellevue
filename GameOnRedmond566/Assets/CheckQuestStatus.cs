@@ -52,7 +52,7 @@ public class CheckQuestStatus : MonoBehaviour {
                         //remove resources
                         this.myYellOnClaim.MyCurrentToy.customData.SetInt(resource1, resCount1 - 1);
                         this.myYellOnClaim.MyCurrentToy.customData.SetInt(resource2, resCount2 - 1);
-                        this.myYellOnClaim.MyCurrentToy.customData.SetInt(resource3, resCount3 - 1);
+                        this.myYellOnClaim.MyCurrentToy.customData.SetInt(resource3, 0);// set to zero to prevent double completion?
 
                         Debug.Log("___ Player Completed Quest ___");
 
@@ -64,11 +64,12 @@ public class CheckQuestStatus : MonoBehaviour {
                             myYellOnClaim.MyCurrentToy.customData.SetInt("QuestsCompleted", ++currentQuestsCompleted);
                         }
 
-                        this.myYellOnClaim.MyCurrentToy.customData.SetInt("CurrentQuest", -1);// reset the current quest to 'no quest'
+                        this.myYellOnClaim.MyCurrentToy.customData.SetInt("CurrentQuest", -999);// reset the current quest to 'no quest'
                         this.myYellOnClaim.MyCurrentToy.customData.SetBool("DragonUpgraded", true);//true show dragon upgrade
 
                         this.Activate = this.ActivateQuestComplete;// player has completed quest
-                        
+
+                        break;
                     }
                     else
                     {

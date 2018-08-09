@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CheckDragonStatus : MonoBehaviour {
 
-    public static int HatchOnQuest = 2;
-    public static int JuvinileOnQuest = 4;// -1 is never
+    public static int HatchOnQuest = 1;
+    public static int JuvinileOnQuest = 3;// -1 is never
     public static int AdultOnQuest = 6;
 
     public float waittime = 3.0f;

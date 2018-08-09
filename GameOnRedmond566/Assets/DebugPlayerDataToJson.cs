@@ -11,6 +11,7 @@ public class DebugPlayerDataToJson : MonoBehaviour {
     void FixedUpdate () {
         if(this.myYellOnClaim.MyCurrentToy != null)
         {
+            
             this.OutputText.text = this.myYellOnClaim.MyCurrentToy.customData.AsJSONString();
 
         }

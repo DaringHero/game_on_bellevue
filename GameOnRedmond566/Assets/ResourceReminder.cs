@@ -38,6 +38,9 @@ public class ResourceReminder : MonoBehaviour {
 
     public  void OnEnable()
     {
+        
+        //allResources = new List<GameObject>(Resources.LoadAll<GameObject>("Assets/Resources/ResourcePrefabs"));
+
         int currentQuest = this.myYellOnClaim.MyCurrentToy.customData.GetInt("CurrentQuest", -1);
 
         if ((int)this.myYellOnClaim.currentLocation == currentQuest)// are we in the right location for the player?
@@ -82,14 +85,17 @@ public class ResourceReminder : MonoBehaviour {
 
     public Sprite GetResourceSprite(string resoruceName)
     {
+        //Debug.Log("rr GetResourceSprite resoruce = "+ resoruceName);
         for (int i = 0; i < this.allResources.Count; i++)
         {
-            if (resoruceName.ToLower() == this.allResources[i].GetComponent<OnClickHarvest>().ResourceType)// get resource associated with the name
+            //Debug.Log(resoruceName + " == " + this.allResources[i].GetComponent<OnClickHarvest>().ResourceType);
+
+            if (resoruceName == this.allResources[i].GetComponent<OnClickHarvest>().ResourceType)// get resource associated with the name
             {
-                return this.allResources[i].GetComponent<Image>().sprite;
+                return this.allResources[i].GetComponent<SpriteRenderer>().sprite;
             }
         }
-
+        //Debug.Log("rr GetResourceSprite = null");
         return null;
     }
 

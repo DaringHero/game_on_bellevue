@@ -33,43 +33,55 @@ public class ShowCurrentQuestResources : MonoBehaviour {
 
     public void OnEnable()
     {
+        //allResources = new List<GameObject>(Resources.LoadAll<GameObject>("Assets/Resources/ResourcePrefabs"));
+
         int currentQuest = this.myYellOnClaim.MyCurrentToy.customData.GetInt("CurrentQuest", -1);
         this.DisableAllResourceReadouts();// turn off displays to be turned on as needed
         List<KeyValuePair<string, int>> temp = this.myCheckQuestStatus.GetPlayerQuestResourceData();
+        if (temp.Count > 0)
+        {
+            if (temp[1].Value < this.ResourcesRequiredForQuest)
+            {
+                ResourceText1.SetActive(true);
+                ResourceSprite1.SetActive(true);
+                ResourceText1.GetComponent<Text>().text = temp[1].Key + " X" + (this.ResourcesRequiredForQuest - temp[1].Value);
+                ResourceSprite1.GetComponent<Image>().sprite = this.GetResourceSprite(temp[1].Key);
+            }
+            if (temp[2].Value < this.ResourcesRequiredForQuest)
+            {
+                ResourceText2.SetActive(true);
+                ResourceSprite2.SetActive(true);
+                ResourceText2.GetComponent<Text>().text = temp[2].Key + " X" + (this.ResourcesRequiredForQuest - temp[2].Value); ;
+                ResourceSprite2.GetComponent<Image>().sprite = this.GetResourceSprite(temp[2].Key);
+            }
+            if (temp[3].Value < this.ResourcesRequiredForQuest)
+            {
+                ResourceText3.SetActive(true);
+                ResourceSprite3.SetActive(true);
+                ResourceText3.GetComponent<Text>().text = temp[3].Key + " X" + (this.ResourcesRequiredForQuest - temp[3].Value);
+                ResourceSprite3.GetComponent<Image>().sprite = this.GetResourceSprite(temp[3].Key);
+            }
+        }//temp not null
+        else
+        {
 
-        if (temp[1].Value < this.ResourcesRequiredForQuest)
-        {
-            ResourceText1.SetActive(true);
-            ResourceSprite1.SetActive(true);
-            ResourceText1.GetComponent<Text>().text = temp[1].Key +" X"+(this.ResourcesRequiredForQuest-temp[1].Value);
-            ResourceSprite1.GetComponent<Image>().sprite = this.GetResourceSprite(temp[1].Key);
         }
-        if (temp[2].Value < this.ResourcesRequiredForQuest)
-        {
-            ResourceText2.SetActive(true);
-            ResourceSprite2.SetActive(true);
-            ResourceText2.GetComponent<Text>().text = temp[2].Key + " X" + (this.ResourcesRequiredForQuest-temp[2].Value ); ;
-            ResourceSprite2.GetComponent<Image>().sprite = this.GetResourceSprite(temp[2].Key);
-        }
-        if (temp[3].Value < this.ResourcesRequiredForQuest)
-        {
-            ResourceText3.SetActive(true);
-            ResourceSprite3.SetActive(true);
-            ResourceText3.GetComponent<Text>().text = temp[3].Key + " X" + (this.ResourcesRequiredForQuest-temp[3].Value );
-            ResourceSprite3.GetComponent<Image>().sprite = this.GetResourceSprite(temp[3].Key);
-        }
+
     }
 
     public Sprite GetResourceSprite(string resoruceName)
     {
+        //Debug.Log("rr GetResourceSprite resoruce = "+ resoruceName);
         for (int i = 0; i < this.allResources.Count; i++)
         {
-            if (resoruceName.ToLower() == this.allResources[i].GetComponent<OnClickHarvest>().ResourceType)// get resource associated with the name
+            //Debug.Log(resoruceName + " == " + this.allResources[i].GetComponent<OnClickHarvest>().ResourceType);
+
+            if (resoruceName == this.allResources[i].GetComponent<OnClickHarvest>().ResourceType)// get resource associated with the name
             {
-                return this.allResources[i].GetComponent<Image>().sprite;
+                return this.allResources[i].GetComponent<SpriteRenderer>().sprite;
             }
         }
-
+        //Debug.Log("rr GetResourceSprite = null");
         return null;
     }
 
