@@ -8,6 +8,7 @@ public class ResourceReminder : MonoBehaviour {
     public YellOnClaim myYellOnClaim;
     public CheckQuestStatus myCheckQuestStatus;
 
+
     public List<GameObject> allResources;
 
     //ui elements
