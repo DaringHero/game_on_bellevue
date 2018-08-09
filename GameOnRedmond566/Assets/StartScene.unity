@@ -689,7 +689,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Scan \nyour card at\nthe Reader!"
+  m_Text: 'Waiting for
+
+    scan!'
 --- !u!222 &32423114
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -24703,7 +24705,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 58733118}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.99999994
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -34384,7 +34386,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1634669186}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.99999994
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
