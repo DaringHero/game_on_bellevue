@@ -881,9 +881,9 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Congrats!
 
-    Your Dragon
+    Your Dragon became
 
-    got older!'
+    more powerful!'
 --- !u!222 &38441282
 CanvasRenderer:
   m_ObjectHideFlags: 0

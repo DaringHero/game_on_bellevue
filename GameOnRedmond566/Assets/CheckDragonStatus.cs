@@ -41,7 +41,7 @@ public class CheckDragonStatus : MonoBehaviour {
             if (QuestsCompleted == JuvinileOnQuest)// time for the dragon to become an adult
             {
 
-                this.Activate = this.DragonAdult;//set correct next page
+                this.Activate = this.DragonJuvinile;//set correct next page
                 this.myYellOnClaim.MyCurrentToy.customData.SetBool("DragonUpgraded", false);
             }
             if (QuestsCompleted == AdultOnQuest)// time for the dragon to become an adult
