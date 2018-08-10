@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1010,7 +1010,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1311,7 +1311,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartOnEnable: 1
   waittime: 4
-  Activate: {fileID: 232652766}
+  Activate: {fileID: 2079067063}
   Deactivate: {fileID: 847572599}
 --- !u!114 &93460183
 MonoBehaviour:
@@ -1578,7 +1578,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartOnEnable: 1
   waittime: 4
-  Activate: {fileID: 232652766}
+  Activate: {fileID: 317366805}
   Deactivate: {fileID: 1203484466}
 --- !u!114 &130057617
 MonoBehaviour:
@@ -2611,6 +2611,7 @@ RectTransform:
   m_Children:
   - {fileID: 370352542}
   - {fileID: 1467054619}
+  - {fileID: 685356693}
   m_Father: {fileID: 691639804}
   m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2739,7 +2740,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartOnEnable: 1
   waittime: 4
-  Activate: {fileID: 232652766}
+  Activate: {fileID: 1982862053}
   Deactivate: {fileID: 2079067063}
 --- !u!114 &245802643
 MonoBehaviour:
@@ -6596,7 +6597,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &307884146
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7023,7 +7024,7 @@ MonoBehaviour:
   SpecialItemSpawnPoint: {fileID: 859455766}
   CollectedResource: 0
   MaxResourcesToCollect: 4
-  Nextpage: {fileID: 1078395709}
+  Nextpage: {fileID: 527069303}
   Deactivate: {fileID: 1160724283}
   resourceCountText: {fileID: 2016165498}
   chanceForSpecialQuest: 0
@@ -7056,7 +7057,7 @@ MonoBehaviour:
   SpecialItemSpawnPoint: {fileID: 859455766}
   CollectedResource: 0
   MaxResourcesToCollect: 4
-  Nextpage: {fileID: 1078395709}
+  Nextpage: {fileID: 527069303}
   Deactivate: {fileID: 1160724283}
   resourceCountText: {fileID: 2016165498}
   chanceForSpecialQuest: 0
@@ -7089,7 +7090,7 @@ MonoBehaviour:
   SpecialItemSpawnPoint: {fileID: 859455766}
   CollectedResource: 0
   MaxResourcesToCollect: 4
-  Nextpage: {fileID: 1078395709}
+  Nextpage: {fileID: 527069303}
   Deactivate: {fileID: 1160724283}
   resourceCountText: {fileID: 2016165498}
   chanceForSpecialQuest: 0
@@ -7122,7 +7123,7 @@ MonoBehaviour:
   SpecialItemSpawnPoint: {fileID: 859455766}
   CollectedResource: 0
   MaxResourcesToCollect: 4
-  Nextpage: {fileID: 1078395709}
+  Nextpage: {fileID: 527069303}
   Deactivate: {fileID: 1160724283}
   resourceCountText: {fileID: 2016165498}
   chanceForSpecialQuest: 0
@@ -7155,7 +7156,7 @@ MonoBehaviour:
   SpecialItemSpawnPoint: {fileID: 859455766}
   CollectedResource: 0
   MaxResourcesToCollect: 4
-  Nextpage: {fileID: 1078395709}
+  Nextpage: {fileID: 527069303}
   Deactivate: {fileID: 1160724283}
   resourceCountText: {fileID: 2016165498}
   chanceForSpecialQuest: 0
@@ -7188,7 +7189,7 @@ MonoBehaviour:
   SpecialItemSpawnPoint: {fileID: 859455766}
   CollectedResource: 0
   MaxResourcesToCollect: 4
-  Nextpage: {fileID: 1078395709}
+  Nextpage: {fileID: 527069303}
   Deactivate: {fileID: 1160724283}
   resourceCountText: {fileID: 2016165498}
   chanceForSpecialQuest: 0
@@ -7770,7 +7771,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waittime: 3
-  Activate: {fileID: 860381145}
+  Activate: {fileID: 221851995}
   Deactivate: {fileID: 1182301654}
   myYellOnClaim: {fileID: 1708775438}
   QuestStrings:
@@ -9709,7 +9710,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartOnEnable: 1
   waittime: 4
-  Activate: {fileID: 232652766}
+  Activate: {fileID: 1160724283}
   Deactivate: {fileID: 190582870}
 --- !u!114 &609742758
 MonoBehaviour:
@@ -9823,35 +9824,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 611042689}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3553687b669249949afa9f8100c01117, type: 3}
+  m_Script: {fileID: 11500000, guid: 0728fd1540b511642abd39386faca3e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waittime: 3
-  Activate: {fileID: 860381145}
-  Deactivate: {fileID: 1182301654}
-  myYellOnClaim: {fileID: 1708775438}
-  QuestStrings:
-  - Sanctuary (error!)
-  - Go to the Wetlands
-  - Go to the Mountain
-  - Go to the Forest
-  - Go to the Lake
-  - Go to the Windmill
-  - Go to the Farm
-  DisplayText: {fileID: 611042694}
-  NumberOfQuestableAreas: 7
-  QuestWeights: 00000000010000000100000001000000010000000100000001000000
-  inputWeights:
-  - {fileID: 1492986045}
-  - {fileID: 1625207792}
-  - {fileID: 906515407}
-  - {fileID: 695733637}
-  - {fileID: 345579207}
-  - {fileID: 956989381}
-  - {fileID: 2142920153}
-  specialQuestStart: {fileID: 0}
-  chanceForSpecialQuest: 0
-  currentAssignedLocation: 0
+  myGetQuest: {fileID: 357420527}
+  myText: {fileID: 611042694}
 --- !u!114 &611042692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10514,6 +10491,122 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &685356692
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 685356693}
+  - component: {fileID: 685356698}
+  - component: {fileID: 685356697}
+  - component: {fileID: 685356696}
+  - component: {fileID: 685356695}
+  - component: {fileID: 685356694}
+  m_Layer: 5
+  m_Name: QuestGetTextNUX (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &685356693
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 685356692}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.0000257, y: 1.0000257, z: 1.0000257}
+  m_Children:
+  - {fileID: 1090108356}
+  m_Father: {fileID: 221851996}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -1228.0284, y: -475.01096}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &685356694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 685356692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0728fd1540b511642abd39386faca3e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myGetQuest: {fileID: 357420527}
+  myText: {fileID: 685356697}
+--- !u!114 &685356695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 685356692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4d1dad057c63114d9ed5fb2638d6e47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &685356696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 685356692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 5, y: -6}
+  m_UseGraphicAlpha: 1
+--- !u!114 &685356697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 685356692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 175
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 175
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: Go to the WWWWW
+--- !u!222 &685356698
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 685356692}
 --- !u!1 &687448440
 GameObject:
   m_ObjectHideFlags: 0
@@ -12385,7 +12478,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &860381146
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18250,6 +18343,39 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1090108355
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1090108356}
+  m_Layer: 5
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1090108356
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1090108355}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 685356693}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1092463400
 GameObject:
   m_ObjectHideFlags: 0
@@ -19225,7 +19351,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartOnEnable: 1
   waittime: 4
-  Activate: {fileID: 232652766}
+  Activate: {fileID: 534476071}
   Deactivate: {fileID: 1982862053}
 --- !u!114 &1174529135
 MonoBehaviour:
@@ -20782,6 +20908,7 @@ GameObject:
   - component: {fileID: 1341224132}
   - component: {fileID: 1341224131}
   - component: {fileID: 1341224130}
+  - component: {fileID: 1341224134}
   m_Layer: 5
   m_Name: GatherResourcesCompleteText
   m_TagString: Untagged
@@ -20872,6 +20999,21 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1341224128}
+--- !u!114 &1341224134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1341224128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7839661149d1524409a1601b1821c2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StartOnEnable: 1
+  waittime: 3
+  Activate: {fileID: 1182301654}
+  Deactivate: {fileID: 1226745559}
 --- !u!1 &1352318225
 GameObject:
   m_ObjectHideFlags: 0
@@ -25461,7 +25603,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartOnEnable: 1
   waittime: 4
-  Activate: {fileID: 232652766}
+  Activate: {fileID: 847572599}
   Deactivate: {fileID: 221851995}
 --- !u!114 &1467054621
 MonoBehaviour:
@@ -26804,8 +26946,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1580397204}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1480.0083, y: -935.04, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 2.3125129}
+  m_LocalPosition: {x: -1480.0083, y: -924.2, z: 0}
+  m_LocalScale: {x: 20, y: 20, z: 2.3125129}
   m_Children: []
   m_Father: {fileID: 1522575849}
   m_RootOrder: 2
@@ -27837,7 +27979,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.9999999, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -28602,6 +28744,7 @@ MonoBehaviour:
   ScanScreen: {fileID: 517703138}
   ScanCardSuccess: {fileID: 822795096}
   ScanCardTooRecent: {fileID: 1422783832}
+  ScanCardNUX: {fileID: 1203484466}
   MyText: {fileID: 1712791684}
   myLastToyText: {fileID: 253844092}
   debugstuff: {fileID: 307884145}
@@ -28842,7 +28985,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0.93000007, y: 1}
   m_AnchoredPosition: {x: 38.5, y: 0}
-  m_SizeDelta: {x: 77, y: 67.481865}
+  m_SizeDelta: {x: 77, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1712791688
 MonoBehaviour:
@@ -42714,7 +42857,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartOnEnable: 1
   waittime: 4
-  Activate: {fileID: 232652766}
+  Activate: {fileID: 190582870}
   Deactivate: {fileID: 317366805}
 --- !u!114 &2144634396
 MonoBehaviour:

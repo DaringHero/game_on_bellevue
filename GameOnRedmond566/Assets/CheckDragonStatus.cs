@@ -8,6 +8,7 @@ public class CheckDragonStatus : MonoBehaviour {
     public static int JuvinileOnQuest = 3;// -1 is never
     public static int AdultOnQuest = 6;
 
+
     public float waittime = 3.0f;
     public GameObject DragonHatch;
     public GameObject DragonJuvinile;

@@ -12,6 +12,7 @@ public class YellOnClaim : MonoBehaviour
     public GameObject ScanScreen;
     public GameObject ScanCardSuccess;
     public GameObject ScanCardTooRecent;
+    public GameObject ScanCardNUX;
     //for debug text
     public Text MyText;
     public Text myLastToyText;
@@ -334,7 +335,16 @@ public class YellOnClaim : MonoBehaviour
         }
         else
         {
-            this.ScanCardSuccess.SetActive(true);
+            if (this.MyCurrentToy.customData.GetBool("NewUser", true))
+            {
+                this.MyCurrentToy.customData.AddBool("NewUser", false);// flag as an old user
+                this.ScanCardNUX.SetActive(true);
+            }
+            else
+            {
+                this.ScanCardSuccess.SetActive(true);
+            }
+            
 
             leftScanParticles.gameObject.SetActive(false);
             rightscanParticles.gameObject.SetActive(false);
