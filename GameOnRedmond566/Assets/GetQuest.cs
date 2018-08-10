@@ -95,6 +95,16 @@ public class GetQuest : MonoBehaviour
 
     }
 
+    public string GetQuestReminderText()
+    {
+        int temp = this.myYellOnClaim.MyCurrentToy.customData.GetInt("CurrentQuest", -1);
+        if (temp > 0)
+        {
+            return this.QuestStrings[temp];
+        }
+        return "";
+    }
+
     IEnumerator WaitAndThenActivate()
     {
         yield return new WaitForSeconds(waittime);
