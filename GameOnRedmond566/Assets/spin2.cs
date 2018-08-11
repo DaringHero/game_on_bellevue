@@ -9,7 +9,7 @@ public class spin2 : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        speed = Random.Range(0, 69);
+        speed = 40;
     }
 
     // Update is called once per frame
