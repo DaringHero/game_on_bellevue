@@ -39,7 +39,7 @@ public class WaitAndActivate : MonoBehaviour {
         }
     }
 
-    IEnumerator virtual WaitAndThenActivate()
+    public virtual IEnumerator WaitAndThenActivate()
     {
         yield return new WaitForSeconds(waittime);
 
@@ -47,7 +47,7 @@ public class WaitAndActivate : MonoBehaviour {
         this.Deactivate.SetActive(false);
     }
 
-    IEnumerator virtual WaitAndThenActivateTouch()
+    public virtual IEnumerator WaitAndThenActivateTouch()
     {
 
         while (timer < this.waittime && !DoubleTap)// waiting and hasnt doubletapped
