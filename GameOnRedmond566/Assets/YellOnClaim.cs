@@ -98,11 +98,38 @@ public class YellOnClaim : MonoBehaviour
 
     public bool isPlayerCurrentlyOnASpecialQuest = false;
 
+    //setup page data
+    public List<GameObject> StampCards;
+    public List<GameObject> RegionResources;
+    public List<GameObject> DragonObjects;
+    public List<GameObject> ProgressBars;
+
+
 
     //maybe move this stuff somewhere else
     public Dictionary<string, int> resourceCountForText;
 
     public static string ErrorLog = "";
+
+    public void SetPageinfo()
+    {
+        foreach (GameObject stampCard in StampCards)
+        {
+
+        }
+        foreach (GameObject regionResource in RegionResources)
+        {
+
+        }
+        foreach (GameObject dragonObject in DragonObjects)
+        {
+
+        }
+        foreach (GameObject progressBar in ProgressBars)
+        {
+
+        }
+    }
 
     public void ClearCard(BitToys.Toy cardtoclear)
     {
