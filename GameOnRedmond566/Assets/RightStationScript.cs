@@ -9,6 +9,12 @@ public class RightStationScript : WaitAndActivate {
     {
 
         base.OnEnable();// do on enable
+
+        //get new list of stations based off custom data
+        YellOnClaim.Location location;
+        //
+
+
     }
 
     public override IEnumerator WaitAndThenActivate()
