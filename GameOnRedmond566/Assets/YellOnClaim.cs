@@ -100,7 +100,7 @@ public class YellOnClaim : MonoBehaviour
 
     //setup page data
     public List<GameObject> StampCards;
-    public List<GameObject> RegionResources;
+    public List<GameObject> StationResource;
     public List<GameObject> DragonObjects;
     public List<GameObject> ProgressBars;
 
@@ -111,13 +111,16 @@ public class YellOnClaim : MonoBehaviour
 
     public static string ErrorLog = "";
 
-    public void SetPageinfo()
+    public void SetPageinfo()// updates the pages with player information
     {
+        SetStationPages tempSetStationPages = this.gameObject.GetComponent<SetStationPages>();
+
         foreach (GameObject stampCard in StampCards)
         {
 
         }
-        foreach (GameObject regionResource in RegionResources)
+        tempSetStationPages.SetAllStationResoruces(tempSetStationPages.GetStationResource());
+        foreach (GameObject stationResource in StationResource)
         {
 
         }

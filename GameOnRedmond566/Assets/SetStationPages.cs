@@ -11,12 +11,14 @@ public class SetStationPages : MonoBehaviour {
 
 
 
-    public void SetAllStationPages()
+    public GameObject GetStationResource()
     {
+        //TODO: get the resource associated with this station!!!
 
+        return new GameObject();
     }
 
-    public void SetAllStationResoruces(GameObject setto)
+    public void SetAllStationResoruces(GameObject setto)// set all station resource sprites to specific resource
     {
         foreach (GameObject stationresource in myStationResources)
         {
@@ -24,6 +26,7 @@ public class SetStationPages : MonoBehaviour {
             mySprite.sprite = setto.GetComponent<SpriteRenderer>().sprite;
         }
     }
+
     public void SetAllStationResoruces(BitToys.Toy myToy)
     {
         for (int i =0; i< this.myResourceCards.Count; i++) 
