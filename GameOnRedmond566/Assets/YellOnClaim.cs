@@ -7,6 +7,7 @@ using UnityEngine.UI;
 //[RequireComponent(typeof(Text))]
 public class YellOnClaim : MonoBehaviour
 {
+    public bool ShowNUX = true;
     public float TimeBeforeNextScan;
     const int TIME_DELAY_FOR_QUEST = 6;
     public GameObject ScanScreen;
@@ -335,7 +336,7 @@ public class YellOnClaim : MonoBehaviour
         }
         else
         {
-            if (this.MyCurrentToy.customData.GetBool("NewUser", true))
+            if ( this.ShowNUX && this.MyCurrentToy.customData.GetBool("NewUser", true))
             {
                 this.MyCurrentToy.customData.AddBool("NewUser", false);// flag as an old user
                 this.ScanCardNUX.SetActive(true);
