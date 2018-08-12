@@ -47,6 +47,9 @@ public class YellOnClaim : MonoBehaviour
     public List<GameObject> Backgrounds;
     public enum Location { SANC, SWAMP, MOUNTAIN, FOREST, LAKE, WIND, FARM };
 
+    public enum Regions { CLEVELAND, RTCWEST, RTCEAST};
+    public Regions currentRegion;
+
     public Location questLocation = Location.SANC;//default to sanc for now
     //pages
     public GameObject ScanPage_0;// defualt scan page
@@ -424,6 +427,10 @@ public class YellOnClaim : MonoBehaviour
         ready2scan = true;
     }
 
+    public void ChangeRegion(int index)
+    {
+        currentRegion = (Regions)index;
+    }
 
     public void ChangeBackground(int index)
     {
