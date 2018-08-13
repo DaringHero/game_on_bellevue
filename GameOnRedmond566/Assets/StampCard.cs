@@ -50,7 +50,7 @@ public class StampCard : MonoBehaviour {
 
     }
 
-    public List<GameObject> GetStamp(int i)// gets all parts for a stamp
+    public List<GameObject> GetStamp(int i)// gets all parts for a stamp 1-8
     {
         List<GameObject> ret = new List<GameObject>();
 
