@@ -438,7 +438,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &11233555
 RectTransform:
   m_ObjectHideFlags: 0
@@ -26196,7 +26196,6 @@ GameObject:
   - component: {fileID: 1267790894}
   - component: {fileID: 1267790893}
   - component: {fileID: 1267790892}
-  - component: {fileID: 1267790891}
   m_Layer: 5
   m_Name: QuestProgressText (2)
   m_TagString: Untagged
@@ -26223,24 +26222,6 @@ RectTransform:
   m_AnchoredPosition: {x: 3.000122, y: -604}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1267790891
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1267790889}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7839661149d1524409a1601b1821c2fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CanTouchToSkip: 1
-  StartOnEnable: 1
-  waittime: 10
-  Activate: {fileID: 517703138}
-  Deactivate: {fileID: 1109577604}
-  TouchToSkipMessage: {fileID: 2144809349}
-  timer: 0
 --- !u!114 &1267790892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32947,7 +32928,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1462165230
 RectTransform:
   m_ObjectHideFlags: 0
@@ -35652,7 +35633,7 @@ MonoBehaviour:
   CanTouchToSkip: 1
   StartOnEnable: 1
   waittime: 10
-  Activate: {fileID: 517703138}
+  Activate: {fileID: 1462165229}
   Deactivate: {fileID: 1109577604}
   TouchToSkipMessage: {fileID: 2144809349}
   timer: 0
@@ -36301,7 +36282,6 @@ GameObject:
   - component: {fileID: 1647331803}
   - component: {fileID: 1647331802}
   - component: {fileID: 1647331801}
-  - component: {fileID: 1647331800}
   m_Layer: 5
   m_Name: QuestProgressText (2)
   m_TagString: Untagged
@@ -36328,24 +36308,6 @@ RectTransform:
   m_AnchoredPosition: {x: 3.000122, y: -604}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1647331800
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1647331798}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7839661149d1524409a1601b1821c2fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CanTouchToSkip: 1
-  StartOnEnable: 1
-  waittime: 10
-  Activate: {fileID: 517703138}
-  Deactivate: {fileID: 1462165229}
-  TouchToSkipMessage: {fileID: 89070543}
-  timer: 0
 --- !u!114 &1647331801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37408,7 +37370,6 @@ MonoBehaviour:
   myLastToyText: {fileID: 253844092}
   debugstuff: {fileID: 307884145}
   debugtogglebutton: {fileID: 1145399894}
-  MyDropdown: {fileID: 0}
   currentBackgroundIndex: 0
   ResourceSpawner: {fileID: 0}
   redfireworks: {fileID: 0}
@@ -37417,9 +37378,6 @@ MonoBehaviour:
   leftScanParticles: {fileID: 1969127526}
   rightscanParticles: {fileID: 2101647281}
   ScanText: {fileID: 0}
-  somethingWasScanned: 0
-  QuestButton: {fileID: 0}
-  GatherButton: {fileID: 0}
   Backgrounds:
   - {fileID: 1436556726}
   - {fileID: 1671273765}
@@ -37446,10 +37404,6 @@ MonoBehaviour:
   QuestCompleteText: {fileID: 0}
   QuestProgressText: {fileID: 0}
   BluetoothLowBatteryText: {fileID: 1616314910}
-  EstuaryQuestProgress: {fileID: 0}
-  SanctuaryQuestProgress: {fileID: 0}
-  MountainQuestProgress: {fileID: 0}
-  ForestQuestProgress: {fileID: 0}
   currentLocation: 0
   mountain: {fileID: 0}
   debugmode: 0
@@ -49651,7 +49605,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 51946127
+  randomSeed: -557224197
   InitialModule:
     serializedVersion: 3
     enabled: 1
