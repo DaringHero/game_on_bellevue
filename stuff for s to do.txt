@@ -1,0 +1,6 @@
+stuff for s to do
+
+add more particles
+fix all warnings (warnings should be errors)
+fix unity text corruption bug
+actually get the sanctuary json thing working
