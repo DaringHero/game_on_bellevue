@@ -5,3 +5,8 @@ fix all warnings (warnings should be errors)
 fix unity text corruption bug
 actually get the sanctuary json thing working
 make getlocation more extensible
+
+notes:
+ YellOnClaim.cs SetPageinfo()// updates the pages with player information
+ SetStationPages.cs //Contains function stubs for setting pages
+ StampCard.cs // contains data for stampcards/ QuestTrackingUI
