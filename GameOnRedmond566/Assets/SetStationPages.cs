@@ -9,7 +9,18 @@ public class SetStationPages : MonoBehaviour {
     public List<GameObject> myProgressBars;//progress bar
     public List<GameObject> myDragons;// dragon
 
+    public Dictionary<YellOnClaim.Location, string> Location2ResourceDic;
 
+    public void Start()
+    {
+        Location2ResourceDic = new Dictionary<YellOnClaim.Location, string>();
+        Location2ResourceDic.Add(YellOnClaim.Location.FARM, "PINECONE");
+        Location2ResourceDic.Add(YellOnClaim.Location.WIND, "FEATHER");
+        Location2ResourceDic.Add(YellOnClaim.Location.LAKE, "ICE");
+        Location2ResourceDic.Add(YellOnClaim.Location.FOREST, "WOOD");
+        Location2ResourceDic.Add(YellOnClaim.Location.MOUNTAIN, "ROCK");
+        Location2ResourceDic.Add(YellOnClaim.Location.SWAMP, "MUSHROOM");
+    }
 
     public GameObject GetStationResource()
     {
