@@ -349,11 +349,343 @@ public class YellOnClaim : MonoBehaviour
         }//end of else
     } // end of function
 
-    void SetNewQuestCard()
+    //do later
+    List<int> GetListOfInts(int range)
     {
-        SetStationPages mystationpages = this.gameObject.GetComponent<SetStationPages>();
+        List<int> returnthis = new List<int>();
+        return returnthis;
+    }
 
-        List < KeyValuePair<YellOnClaim.Location, bool> > temp = this.gameObject.GetComponent<GetLocation>().GetNewLocation();
+    void SetNewQuestCard(int levelofdragon)
+    {
+
+        if(currentRegion == Regions.CLEVELAND)
+        {
+            if(levelofdragon == 0)
+            {
+                //choose 1 random of 6
+               int quest = Random.Range(1, 7);
+
+                int wood = MyCurrentToy.customData.GetInt("WOOD", -999);
+
+                if (wood == -999)
+                {
+                    MyCurrentToy.customData.AddInt("WOOD", 0);
+                }
+                else
+                {
+                    MyCurrentToy.customData.SetInt("WOOD", 0);
+                }
+
+            }
+            else if(levelofdragon == 1)
+            {
+                //choose 2 random of 6
+                int quest = Random.Range(1, 7);
+                int quest2 = Random.Range(1, 7);
+
+                int wood = MyCurrentToy.customData.GetInt("WOOD", -999);
+
+                if (wood == -999)
+                {
+                    MyCurrentToy.customData.AddInt("WOOD", 0);
+                }
+                else
+                {
+                    MyCurrentToy.customData.SetInt("WOOD", 0);
+                }
+
+                int mush = MyCurrentToy.customData.GetInt("MUSH", -999);
+
+                if (mush == -999)
+                {
+                    MyCurrentToy.customData.AddInt("MUSH", 0);
+                }
+                else
+                {
+                    MyCurrentToy.customData.SetInt("MUSH", 0);
+                }
+
+            }
+            else if(levelofdragon == 2)
+            {
+                //choose 4 random of 6
+                int wood = MyCurrentToy.customData.GetInt("WOOD", -999);
+
+                if (wood == -999)
+                {
+                    MyCurrentToy.customData.AddInt("WOOD", 0);
+                }
+                else
+                {
+                    MyCurrentToy.customData.SetInt("WOOD", 0);
+                }
+
+                int mush = MyCurrentToy.customData.GetInt("MUSH", -999);
+
+                if (mush == -999)
+                {
+                    MyCurrentToy.customData.AddInt("MUSH", 0);
+                }
+                else
+                {
+                    MyCurrentToy.customData.SetInt("MUSH", 0);
+                }
+
+                int rock = MyCurrentToy.customData.GetInt("ROCK", -999);
+
+                if (rock == -999)
+                {
+                    MyCurrentToy.customData.AddInt("ROCK", 0);
+                }
+                else
+                {
+                    MyCurrentToy.customData.SetInt("ROCK", 0);
+                }
+
+                int ice = MyCurrentToy.customData.GetInt("ICE", -999);
+
+                if (ice == -999)
+                {
+                    MyCurrentToy.customData.AddInt("ICE", 0);
+                }
+                else
+                {
+                    MyCurrentToy.customData.SetInt("ICE", 0);
+                }
+
+
+
+
+
+            }
+            else if(levelofdragon == 3)
+            {
+                //go to sanctuary
+                int scale = MyCurrentToy.customData.GetInt("SCALE", -999);
+
+                if (scale == -999)
+                {
+                    MyCurrentToy.customData.AddInt("SCALE", 0);
+                }
+                else
+                {
+                    MyCurrentToy.customData.SetInt("SCALE", 0);
+                }
+            }
+        }
+        else if(currentRegion == Regions.RTCWEST)
+        {
+            if (levelofdragon == 0)
+            {
+                //choose 1 random of 6
+                int wood = MyCurrentToy.customData.GetInt("WOOD", -999);
+
+                if (wood == -999)
+                {
+                    MyCurrentToy.customData.AddInt("WOOD", 0);
+                }
+                else
+                {
+                    MyCurrentToy.customData.SetInt("WOOD", 0);
+                }
+            }
+            else if (levelofdragon == 1)
+            {
+                //choose 2 random of 6
+                //choose 4 of 4 (rtc west)
+                int ice = MyCurrentToy.customData.GetInt("ICE", -999);
+
+                if (ice == -999)
+                {
+                    MyCurrentToy.customData.AddInt("ICE", 0);
+                }
+                else
+                {
+                    MyCurrentToy.customData.SetInt("ICE", 0);
+                }
+
+                int mush = MyCurrentToy.customData.GetInt("MUSH", -999);
+
+                if (mush == -999)
+                {
+                    MyCurrentToy.customData.AddInt("MUSH", 0);
+                }
+                else
+                {
+                    MyCurrentToy.customData.SetInt("MUSH", 0);
+                }
+
+            }
+            else if (levelofdragon == 2)
+            {
+                //choose 4 random of 6
+                //choose 4 of 4 (rtc west)
+                int ice = MyCurrentToy.customData.GetInt("ICE", -999);
+
+                if (ice == -999)
+                {
+                    MyCurrentToy.customData.AddInt("ICE", 0);
+                }
+                else
+                {
+                    MyCurrentToy.customData.SetInt("ICE", 0);
+                }
+
+                int mush = MyCurrentToy.customData.GetInt("MUSH", -999);
+
+                if (mush == -999)
+                {
+                    MyCurrentToy.customData.AddInt("MUSH", 0);
+                }
+                else
+                {
+                    MyCurrentToy.customData.SetInt("MUSH", 0);
+                }
+
+                int rock = MyCurrentToy.customData.GetInt("ROCK", -999);
+
+                if (rock == -999)
+                {
+                    MyCurrentToy.customData.AddInt("ROCK", 0);
+                }
+                else
+                {
+                    MyCurrentToy.customData.SetInt("ROCK", 0);
+                }
+
+                if (wood == -999)
+                {
+                    MyCurrentToy.customData.AddInt("WOOD", 0);
+                }
+                else
+                {
+                    MyCurrentToy.customData.SetInt("WOOD", 0);
+                }
+            }
+            else if (levelofdragon == 3)
+            {
+                //go to sanctuary
+                int quest = 0;
+
+                int scale = MyCurrentToy.customData.GetInt("SCALE", -999);
+
+                if (scale == -999)
+                {
+                    MyCurrentToy.customData.AddInt("SCALE", 0);
+                }
+                else
+                {
+                    MyCurrentToy.customData.SetInt("SCALE", 0);
+                }
+                
+            }
+        }
+        else if(currentRegion == Regions.RTCEAST)
+        {
+            if (levelofdragon == 0)
+            {
+                //choose 1 random of 2 (rtc east)
+                int mush = MyCurrentToy.customData.GetInt("MUSH", -999);
+
+                if (mush == -999)
+                {
+                    MyCurrentToy.customData.AddInt("MUSH", 0);
+                }
+                else
+                {
+                    MyCurrentToy.customData.SetInt("MUSH", 0);
+                }
+
+            }
+            else if (levelofdragon == 1)
+            {
+                //choose 2 random of 4 (rtc west)
+                int mush = MyCurrentToy.customData.GetInt("MUSH", -999);
+
+                if (mush == -999)
+                {
+                    MyCurrentToy.customData.AddInt("MUSH", 0);
+                }
+                else
+                {
+                    MyCurrentToy.customData.SetInt("MUSH", 0);
+                }
+
+                int rock = MyCurrentToy.customData.GetInt("ROCK", -999);
+
+                if (rock == -999)
+                {
+                    MyCurrentToy.customData.AddInt("ROCK", 0);
+                }
+                else
+                {
+                    MyCurrentToy.customData.SetInt("ROCK", 0);
+                }
+
+            }
+            else if (levelofdragon == 2)
+            {
+                //choose 4 of 4 (rtc west)
+                int ice = MyCurrentToy.customData.GetInt("ICE", -999);
+
+                if (ice == -999)
+                {
+                    MyCurrentToy.customData.AddInt("ICE", 0);
+                }
+                else
+                {
+                    MyCurrentToy.customData.SetInt("ICE", 0);
+                }
+
+                int mush = MyCurrentToy.customData.GetInt("MUSH", -999);
+
+                if (mush == -999)
+                {
+                    MyCurrentToy.customData.AddInt("MUSH", 0);
+                }
+                else
+                {
+                    MyCurrentToy.customData.SetInt("MUSH", 0);
+                }
+
+                int rock = MyCurrentToy.customData.GetInt("ROCK", -999);
+
+                if (rock == -999)
+                {
+                    MyCurrentToy.customData.AddInt("ROCK", 0);
+                }
+                else
+                {
+                    MyCurrentToy.customData.SetInt("ROCK", 0);
+                }
+
+                if (wood == -999)
+                {
+                    MyCurrentToy.customData.AddInt("WOOD", 0);
+                }
+                else
+                {
+                    MyCurrentToy.customData.SetInt("WOOD", 0);
+                }
+
+
+            }
+            else if (levelofdragon == 3)
+            {
+                //go to sanctuary
+                int scale = MyCurrentToy.customData.GetInt("SCALE", -999);
+
+                if (scale == -999)
+                {
+                    MyCurrentToy.customData.AddInt("SCALE", 0);
+                }
+                else
+                {
+                    MyCurrentToy.customData.SetInt("SCALE", 0);
+                }
+            }
+        }
 
 
     }
