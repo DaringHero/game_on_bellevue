@@ -351,6 +351,8 @@ public class YellOnClaim : MonoBehaviour
 
     //do later
     List<int> GetListOfInts(int range)
+    void SetNewQuestCard()
+    void SetNewQuestCard()
     {
         List<int> returnthis = new List<int>();
         return returnthis;
