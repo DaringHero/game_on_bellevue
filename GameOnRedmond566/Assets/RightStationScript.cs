@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class RightStationScript : WaitAndActivate {
 
+    public bool debugnewquests = false;
+    public GameObject NewQuestsActivate;
 
     public override void OnEnable()
     {
 
+
+        if (debugnewquests)//check if i need to show new quests
+        {
+            this.Activate = this.NewQuestsActivate;
+        }
+
         base.OnEnable();// do on enable
 
-        //get new list of stations based off custom data
-        YellOnClaim.Location location;
-        //
+   
 
 
     }
