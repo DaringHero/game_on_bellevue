@@ -1,5 +1,9 @@
 stuff for s to do
 
+stampcard
+display stuff
+display dragon
+
 add more particles
 fix all warnings (warnings should be errors)
 fix unity text corruption bug
