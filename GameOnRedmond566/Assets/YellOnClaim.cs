@@ -372,6 +372,17 @@ public class YellOnClaim : MonoBehaviour
                     MyCurrentToy.customData.SetInt("WOOD", 0);
                 }
 
+                int dragonlevel = MyCurrentToy.customData.GetInt("DragonLevel", -999);
+
+                if (dragonlevel == -999)
+                {
+                    MyCurrentToy.customData.AddInt("DragonLevel", 0);
+                }
+                else
+                {
+                    MyCurrentToy.customData.SetInt("DragonLevel", 0);
+                }
+
             }
             else if(levelofdragon == 1)
             {
@@ -483,6 +494,19 @@ public class YellOnClaim : MonoBehaviour
                 else
                 {
                     MyCurrentToy.customData.SetInt("WOOD", 0);
+
+
+                }
+
+                int dragonlevel = MyCurrentToy.customData.GetInt("DragonLevel", -999);
+
+                if (dragonlevel == -999)
+                {
+                    MyCurrentToy.customData.AddInt("DragonLevel", 0);
+                }
+                else
+                {
+                    MyCurrentToy.customData.SetInt("DragonLevel", 0);
                 }
             }
             else if (levelofdragon == 1)
@@ -593,6 +617,17 @@ public class YellOnClaim : MonoBehaviour
                 else
                 {
                     MyCurrentToy.customData.SetInt("MUSH", 0);
+                }
+
+                int dragonlevel = MyCurrentToy.customData.GetInt("DragonLevel", -999);
+
+                if (dragonlevel == -999)
+                {
+                    MyCurrentToy.customData.AddInt("DragonLevel", 0);
+                }
+                else
+                {
+                    MyCurrentToy.customData.SetInt("DragonLevel", 0);
                 }
 
             }
