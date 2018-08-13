@@ -87,14 +87,6 @@ public class YellOnClaim : MonoBehaviour
 
     public bool isPlayerCurrentlyOnASpecialQuest = false;
 
-    //setup page data
-    public List<GameObject> StampCards;
-    public List<GameObject> StationResource;
-    public List<GameObject> DragonObjects;
-    public List<GameObject> ProgressBars;
-
-
-
     //maybe move this stuff somewhere else
     public Dictionary<string, int> resourceCountForText;
 
@@ -104,20 +96,20 @@ public class YellOnClaim : MonoBehaviour
     {
         SetStationPages tempSetStationPages = this.gameObject.GetComponent<SetStationPages>();
 
-        foreach (GameObject stampCard in StampCards)
+        foreach (GameObject stampCard in tempSetStationPages.myResourceCards)
         {
 
         }
         tempSetStationPages.SetAllStationResoruces(tempSetStationPages.GetStationResource());
-        foreach (GameObject stationResource in StationResource)
+        foreach (GameObject stationResource in tempSetStationPages.myStationResources)
         {
 
         }
-        foreach (GameObject dragonObject in DragonObjects)
+        foreach (GameObject dragonObject in tempSetStationPages.myDragons)
         {
 
         }
-        foreach (GameObject progressBar in ProgressBars)
+        foreach (GameObject progressBar in tempSetStationPages.myProgressBars)
         {
 
         }

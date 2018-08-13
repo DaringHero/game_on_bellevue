@@ -10,16 +10,12 @@ public class RightStationScript : WaitAndActivate {
     public override void OnEnable()
     {
 
-
         if (debugnewquests)//check if i need to show new quests
         {
             this.Activate = this.NewQuestsActivate;
         }
 
         base.OnEnable();// do on enable
-
-   
-
 
     }
 
