@@ -93,6 +93,9 @@ public class YellOnClaim : MonoBehaviour
 
     public static string ErrorLog = "";
 
+    public Dictionary<string, string> Resource2Location;
+    public Dictionary<string, string> Location2Resource;
+
     public void SetPageinfo()// updates the pages with player information
     {
         SetStationPages tempSetStationPages = this.gameObject.GetComponent<SetStationPages>();
@@ -130,6 +133,24 @@ public class YellOnClaim : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        Resource2Location = new Dictionary<string, string>();
+        Location2Resource = new Dictionary<string, string>();
+
+        Resource2Location.Add("PINECONE", "FARM");
+        Resource2Location.Add("REED", "WIND");
+        Resource2Location.Add("ICE", "LAKE");
+        Resource2Location.Add("WOOD", "FOREST");
+        Resource2Location.Add("MUSH", "SWAMP");
+        Resource2Location.Add("ROCK", "MOUNTAIN");
+
+        Location2Resource.Add("FARM", "PINECONE");
+        Location2Resource.Add("WIND", "REED");
+        Location2Resource.Add("LAKE", "ICE");
+        Location2Resource.Add("FOREST", "WOOD");
+        Location2Resource.Add("SWAMP", "MUSH");
+        Location2Resource.Add("MOUNTAIN", "ROCK");
+
+
         BluetoothLowBatteryText.gameObject.SetActive(false);
         ready2scan = true;
         particleMode = true;
