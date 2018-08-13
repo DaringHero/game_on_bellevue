@@ -301,7 +301,7 @@ public class YellOnClaim : MonoBehaviour
                 this.MyCurrentToy.customData.AddBool("NewUser", false);// flag as an old user
                 this.ScanCardNUX.SetActive(true);
 
-                SetNewQuestCard();
+                SetNewQuestCard(0);
             }
             else
             {
@@ -349,14 +349,7 @@ public class YellOnClaim : MonoBehaviour
         }//end of else
     } // end of function
 
-    //do later
-    List<int> GetListOfInts(int range)
-    void SetNewQuestCard()
-    void SetNewQuestCard()
-    {
-        List<int> returnthis = new List<int>();
-        return returnthis;
-    }
+    
 
     void SetNewQuestCard(int levelofdragon)
     {
@@ -518,9 +511,9 @@ public class YellOnClaim : MonoBehaviour
                     MyCurrentToy.customData.SetInt("MUSH", 0);
                 }
 
-<<<<<<< HEAD
+
         List <KeyValuePair<YellOnClaim.Location, bool>> temp = this.gameObject.GetComponent<GetLocation>().GetNewLocation();
-=======
+
             }
             else if (levelofdragon == 2)
             {
@@ -558,7 +551,7 @@ public class YellOnClaim : MonoBehaviour
                 {
                     MyCurrentToy.customData.SetInt("ROCK", 0);
                 }
-
+                int wood = MyCurrentToy.customData.GetInt("WOOD", -999);
                 if (wood == -999)
                 {
                     MyCurrentToy.customData.AddInt("WOOD", 0);
@@ -664,6 +657,7 @@ public class YellOnClaim : MonoBehaviour
                 {
                     MyCurrentToy.customData.SetInt("ROCK", 0);
                 }
+                int wood = MyCurrentToy.customData.GetInt("WOOD", -999);
 
                 if (wood == -999)
                 {
@@ -691,7 +685,6 @@ public class YellOnClaim : MonoBehaviour
                 }
             }
         }
->>>>>>> 164ee88e4ad8169192a4218be4ce3ce63d13d333
 
 
     }
