@@ -13,6 +13,8 @@ public class YellOnClaim : MonoBehaviour
     public GameObject ScanCardTooRecent;
     public GameObject ScanCardNUX;
     public GameObject ScanCardFail;
+    public GameObject ScanCardWrong;
+    public GameObject ScanCardNewQuests;
     //for debug text
     public Text MyText;
     public Text myLastToyText;
@@ -326,7 +328,32 @@ public class YellOnClaim : MonoBehaviour
             }
             else
             {
-                this.ScanCardSuccess.SetActive(true);
+                QuestProgress myQuestProgress = this.gameObject.GetComponent<QuestProgress>();
+
+                // which state are we in?
+
+                if (myQuestProgress.CompletedAllQuests())
+                {
+                    this.ScanCardNewQuests.SetActive(true);
+                    //update cards ui?
+                    //update dragon ui?
+                    //get new quests?
+                    //get next dragon?
+                    //update new quest ui?
+                    //update new dragon?
+                }
+                else if (myQuestProgress.StationIsForQuest())
+                {
+                    this.ScanCardSuccess.SetActive(true);
+                    //update cards ui?
+                    //update dragon ui?
+                }
+                else
+                {
+                    this.ScanCardWrong.SetActive(true);
+                    //update cards ui?
+                    //update dragon ui?
+                }
             }
             
 

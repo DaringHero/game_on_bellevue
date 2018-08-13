@@ -6,17 +6,24 @@ public class QuestProgress : MonoBehaviour {
 
     public YellOnClaim myYellOnClaim;
 
-    bool StationIsForQuest()// scale for sanctuary
+    public bool StationIsForQuest()// scale for sanctuary
     {
         string myCurrentResource = myYellOnClaim.Location2Resource[this.myYellOnClaim.currentLocation.ToString()];
+
+        int temp = myYellOnClaim.MyCurrentToy.customData.GetInt(myCurrentResource, -1);
+
+        if (temp == 0)// already been there or dont need to go there
+        {
+            return true;
+        }
 
         return false;
     }
 
 
-    bool CompletedAllQuests()
+    public bool CompletedAllQuests()
     {
-        int ice = myYellOnClaim.MyCurrentToy.customData.GetInt("ICE", -1);
+        int ice  = myYellOnClaim.MyCurrentToy.customData.GetInt("ICE", -1);
         int rock = myYellOnClaim.MyCurrentToy.customData.GetInt("ROCK", -1);
         int wood = myYellOnClaim.MyCurrentToy.customData.GetInt("WOOD", -1);
         int mush = myYellOnClaim.MyCurrentToy.customData.GetInt("MUSH", -1);
