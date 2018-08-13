@@ -291,11 +291,11 @@ public class YellOnClaim : MonoBehaviour
     {
         //debug for erasing cards
         SetLastToyScanned(theToy);
-        Debug.Log("penis");
+  
         if (!ready2scan)
         {
             UniClipboard.SetText(UniClipboard.GetText() + "\n" + " " + System.DateTime.Now + " Tried to scan but the reader wasn't ready...");
-            Debug.Log("penis2");
+        
             return;
         }
 
@@ -312,12 +312,12 @@ public class YellOnClaim : MonoBehaviour
         {
             playerScanInTimes.Add(CurrentPlayerID, Time.time);
             validscan = true;
-            Debug.Log("penis3");
+      
         }
         else
         {
             validscan = CheckForValidScanTime(CurrentPlayerID);
-            Debug.Log("penis4");
+          
         }
 
         if (!validscan)
@@ -328,11 +328,11 @@ public class YellOnClaim : MonoBehaviour
                                                     //no need for return here, this goes to the end of the function just the same
             UniClipboard.SetText(UniClipboard.GetText() + "\n" + " " + System.DateTime.Now + " Tried to scan but it was too soon...");
             StartCoroutine(EnableReady2Scan());
-            Debug.Log("penis5");
+          
         }
         else// if valid scan
         {
-            Debug.Log("penis6");
+
 
             if ( this.ShowNUX && this.MyCurrentToy.customData.GetBool("NewUser", true))
             {
@@ -344,7 +344,7 @@ public class YellOnClaim : MonoBehaviour
             else
             {
 
-                Debug.Log("penis7");
+
                 QuestProgress myQuestProgress = this.gameObject.GetComponent<QuestProgress>();
 
                 // which state are we in?
