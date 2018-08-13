@@ -6,6 +6,14 @@ public class QuestProgress : MonoBehaviour {
 
     public YellOnClaim myYellOnClaim;
 
+    bool StationIsForQuest()// scale for sanctuary
+    {
+        string myCurrentResource = myYellOnClaim.Location2Resource[this.myYellOnClaim.currentLocation.ToString()];
+
+        return false;
+    }
+
+
     bool CompletedAllQuests()
     {
         int ice = myYellOnClaim.MyCurrentToy.customData.GetInt("ICE", -1);

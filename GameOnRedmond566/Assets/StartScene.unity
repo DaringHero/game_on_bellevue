@@ -43798,6 +43798,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce2e2710592be444fb0cc266c374457f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myYellOnClaim: {fileID: 1708775438}
 --- !u!1 &1712791683
 GameObject:
   m_ObjectHideFlags: 0
