@@ -410,6 +410,49 @@ public class YellOnClaim : MonoBehaviour
         }//end of else
     } // end of function
 
+    /// <summary>
+    /// this function will do n choose k
+    /// </summary>
+    /// the number [exclusive] that is the max of your range
+    /// <param name="maxrange"></param>
+    /// the number of intns you need
+    /// <param name="numberyouneed"></param>
+    /// <returns></returns>
+    List<int> GetRandomUniqueNumbers(int maxrange, int numberyouneed)
+    {
+        if (numberyouneed >= maxrange)
+            throw new System.Exception();
+
+        List<int> list2return = new List<int>();
+        List<int> originallist = new List<int>();
+        for(int i = 1; i < maxrange; ++i)
+        {
+           originallist.Add(i);
+        }
+
+        for(int i = 0; i < numberyouneed; ++i)
+        {
+            bool removed = false;
+            while(!removed)
+            {
+                int removethis = Random.Range(1, maxrange);
+                if (originallist.Contains(removethis))
+                {
+                    originallist.Remove(removethis);
+                    list2return.Add(removethis);
+                    removed = true;
+                }
+                else
+                {
+                    continue;
+                }
+            }     
+        }
+      
+        
+
+        return list2return;
+    }
     
 
     void SetNewQuestCard(int levelofdragon)
@@ -420,17 +463,19 @@ public class YellOnClaim : MonoBehaviour
             if(levelofdragon == 0)
             {
                 //choose 1 random of 6
-               int quest = Random.Range(1, 7);
+                int randomone = Random.Range(1, 7);
 
-                int wood = MyCurrentToy.customData.GetInt("WOOD", -999);
+                string resource = EnumLocation2Resource[(Location)randomone];
+                
+                int wood = MyCurrentToy.customData.GetInt(resource, -999);
 
                 if (wood == -999)
                 {
-                    MyCurrentToy.customData.AddInt("WOOD", 0);
+                    MyCurrentToy.customData.AddInt(resource, 0);
                 }
                 else
                 {
-                    MyCurrentToy.customData.SetInt("WOOD", 0);
+                    MyCurrentToy.customData.SetInt(resource, 0);
                 }
 
                 int dragonlevel = MyCurrentToy.customData.GetInt("DragonLevel", -999);
@@ -448,83 +493,45 @@ public class YellOnClaim : MonoBehaviour
             else if(levelofdragon == 1)
             {
                 //choose 2 random of 6
-                int quest = Random.Range(1, 7);
-                int quest2 = Random.Range(1, 7);
+                List<int> randomlist = GetRandomUniqueNumbers(7, 2);
 
-                int wood = MyCurrentToy.customData.GetInt("WOOD", -999);
+                foreach(int i in randomlist)
+                {
+                    string resource = EnumLocation2Resource[(Location)i];
 
-                if (wood == -999)
-                {
-                    MyCurrentToy.customData.AddInt("WOOD", 0);
-                }
-                else
-                {
-                    MyCurrentToy.customData.SetInt("WOOD", 0);
-                }
+                    int resint = MyCurrentToy.customData.GetInt(resource, -999);
 
-                int mush = MyCurrentToy.customData.GetInt("MUSH", -999);
-
-                if (mush == -999)
-                {
-                    MyCurrentToy.customData.AddInt("MUSH", 0);
-                }
-                else
-                {
-                    MyCurrentToy.customData.SetInt("MUSH", 0);
+                    if (resint == -999)
+                    {
+                        MyCurrentToy.customData.AddInt(resource, 0);
+                    }
+                    else
+                    {
+                        MyCurrentToy.customData.SetInt(resource, 0);
+                    }
                 }
 
             }
             else if(levelofdragon == 2)
             {
                 //choose 4 random of 6
-                int wood = MyCurrentToy.customData.GetInt("WOOD", -999);
+                List<int> randomlist = GetRandomUniqueNumbers(7, 4);
 
-                if (wood == -999)
+                foreach (int i in randomlist)
                 {
-                    MyCurrentToy.customData.AddInt("WOOD", 0);
+                    string resource = EnumLocation2Resource[(Location)i];
+
+                    int resint = MyCurrentToy.customData.GetInt(resource, -999);
+
+                    if (resint == -999)
+                    {
+                        MyCurrentToy.customData.AddInt(resource, 0);
+                    }
+                    else
+                    {
+                        MyCurrentToy.customData.SetInt(resource, 0);
+                    }
                 }
-                else
-                {
-                    MyCurrentToy.customData.SetInt("WOOD", 0);
-                }
-
-                int mush = MyCurrentToy.customData.GetInt("MUSH", -999);
-
-                if (mush == -999)
-                {
-                    MyCurrentToy.customData.AddInt("MUSH", 0);
-                }
-                else
-                {
-                    MyCurrentToy.customData.SetInt("MUSH", 0);
-                }
-
-                int rock = MyCurrentToy.customData.GetInt("ROCK", -999);
-
-                if (rock == -999)
-                {
-                    MyCurrentToy.customData.AddInt("ROCK", 0);
-                }
-                else
-                {
-                    MyCurrentToy.customData.SetInt("ROCK", 0);
-                }
-
-                int ice = MyCurrentToy.customData.GetInt("ICE", -999);
-
-                if (ice == -999)
-                {
-                    MyCurrentToy.customData.AddInt("ICE", 0);
-                }
-                else
-                {
-                    MyCurrentToy.customData.SetInt("ICE", 0);
-                }
-
-
-
-
-
             }
             else if(levelofdragon == 3)
             {
@@ -546,17 +553,19 @@ public class YellOnClaim : MonoBehaviour
             if (levelofdragon == 0)
             {
                 //choose 1 random of 6
-                int wood = MyCurrentToy.customData.GetInt("WOOD", -999);
+                int randomone = Random.Range(1, 7);
+
+                string resource = EnumLocation2Resource[(Location)randomone];
+
+                int wood = MyCurrentToy.customData.GetInt(resource, -999);
 
                 if (wood == -999)
                 {
-                    MyCurrentToy.customData.AddInt("WOOD", 0);
+                    MyCurrentToy.customData.AddInt(resource, 0);
                 }
                 else
                 {
-                    MyCurrentToy.customData.SetInt("WOOD", 0);
-
-
+                    MyCurrentToy.customData.SetInt(resource, 0);
                 }
 
                 int dragonlevel = MyCurrentToy.customData.GetInt("DragonLevel", -999);
@@ -573,77 +582,44 @@ public class YellOnClaim : MonoBehaviour
             else if (levelofdragon == 1)
             {
                 //choose 2 random of 6
-                //choose 4 of 4 (rtc west)
-                int ice = MyCurrentToy.customData.GetInt("ICE", -999);
+                List<int> randomlist = GetRandomUniqueNumbers(7, 2);
 
-                if (ice == -999)
+                foreach (int i in randomlist)
                 {
-                    MyCurrentToy.customData.AddInt("ICE", 0);
-                }
-                else
-                {
-                    MyCurrentToy.customData.SetInt("ICE", 0);
-                }
+                    string resource = EnumLocation2Resource[(Location)i];
 
-                int mush = MyCurrentToy.customData.GetInt("MUSH", -999);
+                    int resint = MyCurrentToy.customData.GetInt(resource, -999);
 
-                if (mush == -999)
-                {
-                    MyCurrentToy.customData.AddInt("MUSH", 0);
+                    if (resint == -999)
+                    {
+                        MyCurrentToy.customData.AddInt(resource, 0);
+                    }
+                    else
+                    {
+                        MyCurrentToy.customData.SetInt(resource, 0);
+                    }
                 }
-                else
-                {
-                    MyCurrentToy.customData.SetInt("MUSH", 0);
-                }
-
-
-        List <KeyValuePair<YellOnClaim.Location, bool>> temp = this.gameObject.GetComponent<GetLocation>().GetNewLocation();
 
             }
             else if (levelofdragon == 2)
             {
                 //choose 4 random of 6
-                //choose 4 of 4 (rtc west)
-                int ice = MyCurrentToy.customData.GetInt("ICE", -999);
+                List<int> randomlist = GetRandomUniqueNumbers(7, 4);
 
-                if (ice == -999)
+                foreach (int i in randomlist)
                 {
-                    MyCurrentToy.customData.AddInt("ICE", 0);
-                }
-                else
-                {
-                    MyCurrentToy.customData.SetInt("ICE", 0);
-                }
+                    string resource = EnumLocation2Resource[(Location)i];
 
-                int mush = MyCurrentToy.customData.GetInt("MUSH", -999);
+                    int resint = MyCurrentToy.customData.GetInt(resource, -999);
 
-                if (mush == -999)
-                {
-                    MyCurrentToy.customData.AddInt("MUSH", 0);
-                }
-                else
-                {
-                    MyCurrentToy.customData.SetInt("MUSH", 0);
-                }
-
-                int rock = MyCurrentToy.customData.GetInt("ROCK", -999);
-
-                if (rock == -999)
-                {
-                    MyCurrentToy.customData.AddInt("ROCK", 0);
-                }
-                else
-                {
-                    MyCurrentToy.customData.SetInt("ROCK", 0);
-                }
-                int wood = MyCurrentToy.customData.GetInt("WOOD", -999);
-                if (wood == -999)
-                {
-                    MyCurrentToy.customData.AddInt("WOOD", 0);
-                }
-                else
-                {
-                    MyCurrentToy.customData.SetInt("WOOD", 0);
+                    if (resint == -999)
+                    {
+                        MyCurrentToy.customData.AddInt(resource, 0);
+                    }
+                    else
+                    {
+                        MyCurrentToy.customData.SetInt(resource, 0);
+                    }
                 }
             }
             else if (levelofdragon == 3)
@@ -669,16 +645,33 @@ public class YellOnClaim : MonoBehaviour
             if (levelofdragon == 0)
             {
                 //choose 1 random of 2 (rtc east)
-                int mush = MyCurrentToy.customData.GetInt("MUSH", -999);
+                if(currentLocation == Location.MOUNTAIN)
+                {
+                    int mush = MyCurrentToy.customData.GetInt("MUSH", -999);
 
-                if (mush == -999)
-                {
-                    MyCurrentToy.customData.AddInt("MUSH", 0);
+                    if (mush == -999)
+                    {
+                        MyCurrentToy.customData.AddInt("MUSH", 0);
+                    }
+                    else
+                    {
+                        MyCurrentToy.customData.SetInt("MUSH", 0);
+                    }
                 }
-                else
+                else if(currentLocation == Location.SWAMP)
                 {
-                    MyCurrentToy.customData.SetInt("MUSH", 0);
+                    int mush = MyCurrentToy.customData.GetInt("ROCK", -999);
+
+                    if (mush == -999)
+                    {
+                        MyCurrentToy.customData.AddInt("ROCK", 0);
+                    }
+                    else
+                    {
+                        MyCurrentToy.customData.SetInt("ROCK", 0);
+                    }
                 }
+
 
                 int dragonlevel = MyCurrentToy.customData.GetInt("DragonLevel", -999);
 
@@ -694,27 +687,23 @@ public class YellOnClaim : MonoBehaviour
             }
             else if (levelofdragon == 1)
             {
-                //choose 2 random of 4 (rtc west)
-                int mush = MyCurrentToy.customData.GetInt("MUSH", -999);
+                //choose 2 of 4 from RTC WEST
+                List<int> randomlist = GetRandomUniqueNumbers(5, 2);
 
-                if (mush == -999)
+                foreach (int i in randomlist)
                 {
-                    MyCurrentToy.customData.AddInt("MUSH", 0);
-                }
-                else
-                {
-                    MyCurrentToy.customData.SetInt("MUSH", 0);
-                }
+                    string resource = EnumLocation2Resource[(Location)i];
 
-                int rock = MyCurrentToy.customData.GetInt("ROCK", -999);
+                    int resint = MyCurrentToy.customData.GetInt(resource, -999);
 
-                if (rock == -999)
-                {
-                    MyCurrentToy.customData.AddInt("ROCK", 0);
-                }
-                else
-                {
-                    MyCurrentToy.customData.SetInt("ROCK", 0);
+                    if (resint == -999)
+                    {
+                        MyCurrentToy.customData.AddInt(resource, 0);
+                    }
+                    else
+                    {
+                        MyCurrentToy.customData.SetInt(resource, 0);
+                    }
                 }
 
             }
