@@ -97,6 +97,7 @@ public class YellOnClaim : MonoBehaviour
 
     public Dictionary<string, string> Resource2Location;
     public Dictionary<string, string> Location2Resource;
+    public Dictionary<Location, string> EnumLocation2Resource;
 
     public void SetPageinfo()// updates the pages with player information
     {
@@ -137,6 +138,7 @@ public class YellOnClaim : MonoBehaviour
     {
         Resource2Location = new Dictionary<string, string>();
         Location2Resource = new Dictionary<string, string>();
+        EnumLocation2Resource = new Dictionary<Location, string>();
 
         Resource2Location.Add("PINECONE", "FARM");
         Resource2Location.Add("REED", "WIND");
@@ -152,6 +154,13 @@ public class YellOnClaim : MonoBehaviour
         Location2Resource.Add("SWAMP", "MUSH");
         Location2Resource.Add("MOUNTAIN", "ROCK");
 
+        //this is needed because we can give it an int, cast it to a location, and get the resource
+        EnumLocation2Resource.Add(Location.FARM,     "PINECONE");
+        EnumLocation2Resource.Add(Location.WIND,     "REED");
+        EnumLocation2Resource.Add(Location.LAKE,     "ICE");
+        EnumLocation2Resource.Add(Location.FOREST,   "WOOD");
+        EnumLocation2Resource.Add(Location.SWAMP,    "MUSH");
+        EnumLocation2Resource.Add(Location.MOUNTAIN, "ROCK");
 
         BluetoothLowBatteryText.gameObject.SetActive(false);
         ready2scan = true;
