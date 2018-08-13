@@ -14,9 +14,14 @@ public class GetLocation : MonoBehaviour {
 		
 	}
 
-    //public List<YellOnClaim.Location> GetNewLocation(int numberoflocation)
-    //{
-    //    get a list of stations located in region we want
-    //    if(YellOnClaim.Regions
-    //}
+    public List<YellOnClaim.Location> GetNewLocation(int numberoflocation)
+    {
+        List<YellonClaim.Location> list2return = new List<YellonClaim.Location>();
+       // get a list of stations located in region we want
+        if (YellOnClaim.Regions
+
+
+
+                return list2return;
+    }
 }
