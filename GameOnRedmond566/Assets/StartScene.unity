@@ -14019,7 +14019,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &517703139
 RectTransform:
   m_ObjectHideFlags: 0
@@ -54364,7 +54364,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1634669186}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.9999999
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -54563,7 +54563,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -2107068931
+  randomSeed: -45021976
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -60155,7 +60155,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 9877877
+  randomSeed: 1976169584
   InitialModule:
     serializedVersion: 3
     enabled: 1
