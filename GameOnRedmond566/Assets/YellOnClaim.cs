@@ -294,12 +294,14 @@ public class YellOnClaim : MonoBehaviour
             UniClipboard.SetText(UniClipboard.GetText() + "\n" + " " + System.DateTime.Now + " Tried to scan but it was too soon...");
             StartCoroutine(EnableReady2Scan());
         }
-        else
+        else// if valid scan
         {
             if ( this.ShowNUX && this.MyCurrentToy.customData.GetBool("NewUser", true))
             {
                 this.MyCurrentToy.customData.AddBool("NewUser", false);// flag as an old user
                 this.ScanCardNUX.SetActive(true);
+
+                SetNewQuestCard();
             }
             else
             {
@@ -346,6 +348,15 @@ public class YellOnClaim : MonoBehaviour
             }// valid scan
         }//end of else
     } // end of function
+
+    void SetNewQuestCard()
+    {
+        SetStationPages mystationpages = this.gameObject.GetComponent<SetStationPages>();
+
+        List < KeyValuePair<YellOnClaim.Location, bool> > temp = this.gameObject.GetComponent<GetLocation>().GetNewLocation();
+
+
+    }
 
     IEnumerator EnableReady2Scan()
     {
