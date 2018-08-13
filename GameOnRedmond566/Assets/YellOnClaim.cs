@@ -291,10 +291,11 @@ public class YellOnClaim : MonoBehaviour
     {
         //debug for erasing cards
         SetLastToyScanned(theToy);
-
+        Debug.Log("penis");
         if (!ready2scan)
         {
             UniClipboard.SetText(UniClipboard.GetText() + "\n" + " " + System.DateTime.Now + " Tried to scan but the reader wasn't ready...");
+            Debug.Log("penis2");
             return;
         }
 
@@ -311,10 +312,12 @@ public class YellOnClaim : MonoBehaviour
         {
             playerScanInTimes.Add(CurrentPlayerID, Time.time);
             validscan = true;
+            Debug.Log("penis3");
         }
         else
         {
             validscan = CheckForValidScanTime(CurrentPlayerID);
+            Debug.Log("penis4");
         }
 
         if (!validscan)
@@ -325,9 +328,12 @@ public class YellOnClaim : MonoBehaviour
                                                     //no need for return here, this goes to the end of the function just the same
             UniClipboard.SetText(UniClipboard.GetText() + "\n" + " " + System.DateTime.Now + " Tried to scan but it was too soon...");
             StartCoroutine(EnableReady2Scan());
+            Debug.Log("penis5");
         }
         else// if valid scan
         {
+            Debug.Log("penis6");
+
             if ( this.ShowNUX && this.MyCurrentToy.customData.GetBool("NewUser", true))
             {
                 this.MyCurrentToy.customData.AddBool("NewUser", false);// flag as an old user
@@ -337,6 +343,8 @@ public class YellOnClaim : MonoBehaviour
             }
             else
             {
+
+                Debug.Log("penis7");
                 QuestProgress myQuestProgress = this.gameObject.GetComponent<QuestProgress>();
 
                 // which state are we in?
@@ -401,13 +409,15 @@ public class YellOnClaim : MonoBehaviour
                 MyText.text += "\n Player ID: " + entry.Key.ToString() + " val is " + entry.Value.ToString();
                 // do something with entry.Value or entry.Key
 
-                //reset the location timer back to 0 (dont get a new location)
-                GetComponent<PickLocationTimer>().ResetTimer();
+                
 
-                //handle screen activations
-                this.ScanScreen.SetActive(false);// deactivate scan screen
-            }// valid scan
-        }//end of else
+               
+            }//end for each
+             //reset the location timer back to 0 (dont get a new location)
+            GetComponent<PickLocationTimer>().ResetTimer();
+            //handle screen activations
+            this.ScanScreen.SetActive(false);// deactivate scan screen
+        }//end of else valid scan
     } // end of function
 
     /// <summary>

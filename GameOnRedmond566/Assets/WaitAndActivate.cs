@@ -77,6 +77,9 @@ public class WaitAndActivate : MonoBehaviour {
 
         this.Activate.SetActive(true);
         this.Deactivate.SetActive(false);
-
+        if(GetComponent<setready2scantrue>())
+        {
+            GetComponent<setready2scantrue>().setit(true);
+        }
     }
 }

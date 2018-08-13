@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -949,7 +949,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8da4b5d28991319429a3f9cc81a16cfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myYellOnClaim: {fileID: 0}
+  myYellOnClaim: {fileID: 1708775438}
 --- !u!1 &32747079
 GameObject:
   m_ObjectHideFlags: 0
@@ -1532,7 +1532,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5194,7 +5194,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -31982798
+  randomSeed: -192742636
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -9570,7 +9570,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &307884146
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17079,7 +17079,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Wow
+  m_Text: 'Wow!
 
     Your Dragon is now a...
 
@@ -17690,7 +17690,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &693340761
@@ -24592,7 +24592,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 420129156
+  randomSeed: -1097549085
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -43635,7 +43635,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.9999999, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -43928,7 +43928,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Juvinile
+  m_Text: Juvenile
 --- !u!222 &1639924555
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -45884,7 +45884,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0.93000007, y: 1}
   m_AnchoredPosition: {x: 38.5, y: 0}
-  m_SizeDelta: {x: 77, y: 69.375}
+  m_SizeDelta: {x: 77, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1712791688
 MonoBehaviour:
@@ -54364,7 +54364,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1634669186}
   m_Direction: 0
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.9999999
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -54563,7 +54563,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1238051887
+  randomSeed: -2107068931
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -59383,6 +59383,7 @@ GameObject:
   - component: {fileID: 2078022987}
   - component: {fileID: 2078022986}
   - component: {fileID: 2078022985}
+  - component: {fileID: 2078022990}
   m_Layer: 5
   m_Name: QuestProgressText
   m_TagString: Untagged
@@ -59495,6 +59496,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2078022983}
+--- !u!114 &2078022990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2078022983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51e7d2ddceb28ef478623b5471ca2baa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myYellOnClaim: {fileID: 1708775438}
 --- !u!1 &2078350209
 GameObject:
   m_ObjectHideFlags: 0
@@ -60142,7 +60155,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -597164788
+  randomSeed: 9877877
   InitialModule:
     serializedVersion: 3
     enabled: 1
