@@ -9,6 +9,8 @@ public class SetStationPages : MonoBehaviour {
     public List<GameObject> myProgressBars;//progress bar
     public List<GameObject> myDragons;// dragon
 
+    public List<GameObject> myLevelUpResourceCards;// corner case for levelup
+
     public Dictionary<YellOnClaim.Location, string> Location2ResourceDic;
 
     public void Start()
@@ -28,6 +30,22 @@ public class SetStationPages : MonoBehaviour {
 
         return new GameObject();
     }
+
+    public void UpdateAllCards(BitToys.Toy myToy)
+    {
+        foreach (GameObject card in myResourceCards)
+        {
+            card.GetComponent<StampCard>().SetStampCard(-1, "???");// TODO// call functions to update stampcards
+        }
+    }
+    public void LevelUpCards()// special case for cards on level up
+    {
+        foreach (GameObject card in myLevelUpResourceCards)
+        {
+
+        }
+    }
+
 
     public void SetAllStationResoruces(GameObject setto)// set all station resource sprites to specific resource
     {
