@@ -12,6 +12,7 @@ public class YellOnClaim : MonoBehaviour
     public GameObject ScanCardSuccess;
     public GameObject ScanCardTooRecent;
     public GameObject ScanCardNUX;
+    public GameObject ScanCardFail;
     //for debug text
     public Text MyText;
     public Text myLastToyText;
@@ -534,6 +535,10 @@ public class YellOnClaim : MonoBehaviour
 
         ready2scan = false;
         StartCoroutine(EnableReady2Scan());
+
+        this.ScanCardFail.SetActive(true);
+        this.leftScanParticles.gameObject.SetActive(false);
+        this.rightscanParticles.gameObject.SetActive(false);
     }
 
     public void TestJson()
