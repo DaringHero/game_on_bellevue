@@ -354,6 +354,10 @@ public class YellOnClaim : MonoBehaviour
                     //update cards ui?
                     //update dragon ui?
                 }
+
+                //TODO sanctuary too early
+
+                //TODO sanctuary
             }
             
 
