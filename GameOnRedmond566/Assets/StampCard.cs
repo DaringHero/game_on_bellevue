@@ -36,19 +36,21 @@ public class StampCard : MonoBehaviour {
     public GameObject stampBack8;
     public GameObject complete_8;
 
-    public void SetStampCard(int i, string questdata)
+    public void SetStamp(int i, string questdata)//TODO// not even sure if it should take string data
     {
-        List<GameObject> Stamp = GetStampCard(i);
+        List<GameObject> Stamp = GetStamp(i);
 
         //sample data
 
         if (questdata.Contains("temp"))
         {
-            Stamp[1].GetComponent<SpriteRenderer>();
+            Stamp[0].GetComponent<SpriteRenderer>();//change resource
+            Stamp[2].SetActive(true);//is complete
         }
+
     }
 
-    public List<GameObject> GetStampCard(int i)
+    public List<GameObject> GetStamp(int i)// gets all parts for a stamp
     {
         List<GameObject> ret = new List<GameObject>();
 

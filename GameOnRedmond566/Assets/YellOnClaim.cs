@@ -353,7 +353,7 @@ public class YellOnClaim : MonoBehaviour
     {
         SetStationPages mystationpages = this.gameObject.GetComponent<SetStationPages>();
 
-        List < KeyValuePair<YellOnClaim.Location, bool> > temp = this.gameObject.GetComponent<GetLocation>().GetNewLocation();
+        List <KeyValuePair<YellOnClaim.Location, bool>> temp = this.gameObject.GetComponent<GetLocation>().GetNewLocation();
 
 
     }

@@ -41,11 +41,15 @@ public class SetStationPages : MonoBehaviour {
         return new GameObject();
     }
 
-    public void UpdateAllCards(BitToys.Toy myToy)
+    public void UpdateAllCards(BitToys.Toy myToy)//TODO
     {
         foreach (GameObject card in myResourceCards)
         {
-            card.GetComponent<StampCard>().SetStampCard(-1, "???");// TODO// call functions to update stampcards
+            //update each stamp on each card
+            for (int i = 0; i < 8; i++)
+            {
+                card.GetComponent<StampCard>().SetStamp(i, "temp");
+            }
         }
     }
     public void LevelUpCards()// special case for cards on level up
@@ -66,7 +70,7 @@ public class SetStationPages : MonoBehaviour {
         }
     }
 
-    public void SetAllStationResoruces(BitToys.Toy myToy)
+    public void SetAllStationResoruces(BitToys.Toy myToy)//TODO
     {
         for (int i =0; i< this.myResourceCards.Count; i++) 
         {
@@ -77,7 +81,11 @@ public class SetStationPages : MonoBehaviour {
             {
                 StampCard myStampCard = this.myResourceCards[i].GetComponent<StampCard>();
 
-                myStampCard.SetStampCard(i,temp);
+                //update each stamp on each card
+                for (int j = 0; j < 8; j++)
+                {
+                    myStampCard.GetComponent<StampCard>().SetStamp(i, "temp");
+                }
             }
         }
     }
