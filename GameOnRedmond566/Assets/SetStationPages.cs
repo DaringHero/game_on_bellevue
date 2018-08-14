@@ -9,6 +9,8 @@ public class SetStationPages : MonoBehaviour {
     public List<GameObject> myProgressBars;//progress bar
     public List<GameObject> myDragons;// dragon
 
+ 
+
     public List<GameObject> myLevelUpResourceCards;// corner case for levelup
 
     public Dictionary<YellOnClaim.Location, string> Location2ResourceDic;

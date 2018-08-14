@@ -103,6 +103,8 @@ public class YellOnClaim : MonoBehaviour
     {
         SetStationPages tempSetStationPages = this.gameObject.GetComponent<SetStationPages>();
 
+        float ratio = 0; //use this for progress ratio
+
         foreach (GameObject stampCard in tempSetStationPages.myResourceCards)
         {
 
@@ -118,7 +120,7 @@ public class YellOnClaim : MonoBehaviour
         }
         foreach (GameObject progressBar in tempSetStationPages.myProgressBars)
         {
-
+            progressBar.GetComponent<EnergyBar>().SetValueF(ratio);
         }
     }
 
