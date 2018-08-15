@@ -98,9 +98,20 @@ public class YellOnClaim : MonoBehaviour
     public Dictionary<string, string> Resource2Location;
     public Dictionary<string, string> Location2Resource;
     public Dictionary<Location, string> EnumLocation2Resource;
+    public Dictionary<Location, GameObject> Location2ResourceObject;
 
+    public GameObject[] resourceobjects;
+    
     public ParticleSystem idleparticles1;
     public ParticleSystem idleparticles2;
+
+    public GameObject GetResourceFromLocation(Location loc)
+    {
+        if (Location2ResourceObject.ContainsKey(loc))
+            return Location2ResourceObject[loc];
+        else
+            return null;
+    }
 
     public void SetPageinfo()// updates the pages with player information
     {
@@ -144,6 +155,15 @@ public class YellOnClaim : MonoBehaviour
         Resource2Location = new Dictionary<string, string>();
         Location2Resource = new Dictionary<string, string>();
         EnumLocation2Resource = new Dictionary<Location, string>();
+        Location2ResourceObject = new Dictionary<Location, GameObject>();
+
+        int i = 0;
+        foreach(GameObject a in resourceobjects)
+        {
+            Location2ResourceObject.Add((Location)i, a);
+            i++;
+        }
+
 
         Resource2Location.Add("PINECONE", "FARM");
         Resource2Location.Add("REED", "WIND");
@@ -151,6 +171,7 @@ public class YellOnClaim : MonoBehaviour
         Resource2Location.Add("WOOD", "FOREST");
         Resource2Location.Add("MUSH", "SWAMP");
         Resource2Location.Add("ROCK", "MOUNTAIN");
+        Resource2Location.Add("SCALE", "SANC");
 
         Location2Resource.Add("FARM", "PINECONE");
         Location2Resource.Add("WIND", "REED");
@@ -158,6 +179,7 @@ public class YellOnClaim : MonoBehaviour
         Location2Resource.Add("FOREST", "WOOD");
         Location2Resource.Add("SWAMP", "MUSH");
         Location2Resource.Add("MOUNTAIN", "ROCK");
+        Location2Resource.Add("SANC", "SCALE");
 
         //this is needed because we can give it an int, cast it to a location, and get the resource
         EnumLocation2Resource.Add(Location.FARM,     "PINECONE");
@@ -166,6 +188,7 @@ public class YellOnClaim : MonoBehaviour
         EnumLocation2Resource.Add(Location.FOREST,   "WOOD");
         EnumLocation2Resource.Add(Location.SWAMP,    "MUSH");
         EnumLocation2Resource.Add(Location.MOUNTAIN, "ROCK");
+        EnumLocation2Resource.Add(Location.SANC, "SCALE");
 
         BluetoothLowBatteryText.gameObject.SetActive(false);
         ready2scan = true;
