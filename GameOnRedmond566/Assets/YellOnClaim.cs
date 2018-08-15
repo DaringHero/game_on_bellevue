@@ -99,6 +99,9 @@ public class YellOnClaim : MonoBehaviour
     public Dictionary<string, string> Location2Resource;
     public Dictionary<Location, string> EnumLocation2Resource;
 
+    public ParticleSystem idleparticles1;
+    public ParticleSystem idleparticles2;
+
     public void SetPageinfo()// updates the pages with player information
     {
         SetStationPages tempSetStationPages = this.gameObject.GetComponent<SetStationPages>();
@@ -202,6 +205,21 @@ public class YellOnClaim : MonoBehaviour
         BitToys.inst.onPutCustomData_Fail += OnPutData_Fail;
         BitToys.inst.onPutCustomData_OK += OnPutData_Success;
 
+       BitToys.inst.ble_onSawTag += OnSawTag;
+
+    }
+
+    public void ParticlesPlay()
+    {
+        idleparticles1.gameObject.SetActive(true);
+        idleparticles2.gameObject.SetActive(true);
+        idleparticles1.Play();
+        idleparticles2.Play();
+    }
+
+    public void OnSawTag(string _id)
+    {
+        ParticlesPlay();
     }
 
     public void OnBatteryLow(string _id)
@@ -382,6 +400,8 @@ public class YellOnClaim : MonoBehaviour
 
             leftScanParticles.gameObject.SetActive(false);
             rightscanParticles.gameObject.SetActive(false);
+            idleparticles1.gameObject.SetActive(false);
+            idleparticles2.gameObject.SetActive(false);
             // if(MegaScanInParticles.gameObject.activeSelf)
             MegaScanInParticles.Play();
 
