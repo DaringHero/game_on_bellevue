@@ -220,6 +220,7 @@ public class YellOnClaim : MonoBehaviour
     public void OnSawTag(string _id)
     {
         ParticlesPlay();
+        WriteToErrorLog("Saw tag id="+_id);
     }
 
     public void OnBatteryLow(string _id)
@@ -238,21 +239,21 @@ public class YellOnClaim : MonoBehaviour
 
     public void WriteToErrorLog(string message)// new function for error logging, the old error logs are kinda a hack
     {
-        ErrorLog = ("/n" + " "+(System.DateTime.Now).ToString() + " : " + message) + ErrorLog;
+        ErrorLog = ("\n" + " "+(System.DateTime.Now).ToString() + " : " + message) + ErrorLog;
         UniClipboard.SetText(UniClipboard.GetText() + "\n" + " " + System.DateTime.Now + " : " + message);
-
-        MyText.text += ("/n" + " " + (System.DateTime.Now).ToString() + " : " + message);//write to old debug
+        Debug.Log(ErrorLog);
+        MyText.text += ("\n" + " " + (System.DateTime.Now).ToString() + " : " + message);//write to old debug
     }
 
     public string WriteToErrorLog(string message, bool returnString)// new function for error logging, the old error logs are kinda a hack
     {
-        ErrorLog = ("/n" + " " + (System.DateTime.Now).ToString() + " : " + message) + ErrorLog;
+        ErrorLog = ("\n" + " " + (System.DateTime.Now).ToString() + " : " + message) + ErrorLog;
         UniClipboard.SetText(UniClipboard.GetText() + "\n" + " " + System.DateTime.Now + " : " + message);
-
-        MyText.text += ("/n" + " " + (System.DateTime.Now).ToString() + " : " + message);//write to old debug
+        Debug.Log(ErrorLog);
+        MyText.text += ("\n" + " " + (System.DateTime.Now).ToString() + " : " + message);//write to old debug
 
         if (returnString)
-            return ("/n" + " " + (System.DateTime.Now).ToString() + " : " + message);
+            return ("n" + " " + (System.DateTime.Now).ToString() + " : " + message);
         else
             return null;
     }
@@ -309,9 +310,12 @@ public class YellOnClaim : MonoBehaviour
 
     public void OnClaimToy_Success(BitToys.Toy theToy, bool val)
     {
+        WriteToErrorLog("ClaimToySuccess");
+
         //debug for erasing cards
         SetLastToyScanned(theToy);
-  
+
+        ready2scan = true;// override ready to scan non-sense
         if (!ready2scan)
         {
             UniClipboard.SetText(UniClipboard.GetText() + "\n" + " " + System.DateTime.Now + " Tried to scan but the reader wasn't ready...");
@@ -326,8 +330,8 @@ public class YellOnClaim : MonoBehaviour
 
         CurrentPlayerID = theToy.bitToysId;
 
-        bool validscan = false;
-
+        bool validscan = true;//was false
+        /*
         if (!playerScanInTimes.ContainsKey(CurrentPlayerID))
         {
             playerScanInTimes.Add(CurrentPlayerID, Time.time);
@@ -338,7 +342,7 @@ public class YellOnClaim : MonoBehaviour
         {
             validscan = CheckForValidScanTime(CurrentPlayerID);
           
-        }
+        }*/
 
         if (!validscan)
         {
@@ -352,14 +356,17 @@ public class YellOnClaim : MonoBehaviour
         }
         else// if valid scan
         {
-
+            WriteToErrorLog("GotValidScan");
 
             if ( this.ShowNUX && this.MyCurrentToy.customData.GetBool("NewUser", true))
             {
                 this.MyCurrentToy.customData.AddBool("NewUser", false);// flag as an old user
                 this.ScanCardNUX.SetActive(true);
+                //first set of quests
+                this.MyCurrentToy.customData.AddInt("DragonLevel", 0);
+                this.SetNewQuestCard(this.MyCurrentToy.customData.GetInt("DragonLevel", 0));//rando some quests?
 
-                SetNewQuestCard(0);
+                WriteToErrorLog("Scan = New User Experience");
             }
             else
             {
@@ -369,25 +376,40 @@ public class YellOnClaim : MonoBehaviour
 
                 // which state are we in?
 
-                if (myQuestProgress.CompletedAllQuests())
+                if (myQuestProgress.StationIsForQuest())
                 {
-                    this.ScanCardNewQuests.SetActive(true);
-                    //update cards ui?
+                    //increment data for going to this station// ie collecting the resource
+                    this.MyCurrentToy.customData.SetInt(this.Location2Resource[this.currentLocation.ToString()], 1);
+
+
+                    if (myQuestProgress.CompletedAllQuests())
+                    {
+                        this.ScanCardNewQuests.SetActive(true);
+
+                        //HACK for getting new locations
+                        //this.GetComponent<QuestProgress>().SetQuests(this.LocationsListHack());
+                        this.SetNewQuestCard(this.MyCurrentToy.customData.GetInt("DragonLevel", 0));
+                        //update new quest ui?
+                        //update new dragon?
+                        //get new quests?
+                        //get next dragon?
+                        WriteToErrorLog("Scan = New Quests");
+                    }
+                    else
+                    {
+                        this.ScanCardSuccess.SetActive(true);
+                        WriteToErrorLog("Scan = Progress Quests");
+                    }
+
+                    //update cards ui?// (animate the same resoruce as the current region
                     //update dragon ui?
-                    //get new quests?
-                    //get next dragon?
-                    //update new quest ui?
-                    //update new dragon?
-                }
-                else if (myQuestProgress.StationIsForQuest())
-                {
-                    this.ScanCardSuccess.SetActive(true);
-                    //update cards ui?
-                    //update dragon ui?
+
+
                 }
                 else
                 {
                     this.ScanCardWrong.SetActive(true);
+                    WriteToErrorLog("Scan = Wrong Station");
                     //update cards ui?
                     //update dragon ui?
                 }
@@ -422,13 +444,13 @@ public class YellOnClaim : MonoBehaviour
             tempDebug += "\n customData has: " + theToy.customData.ToString();
             tempDebug += "\n " + System.DateTime.Now;
             tempDebug += "\n ******************************";
-            MyText.text = tempDebug + MyText.text;// debug at the top!
+            this.WriteToErrorLog(tempDebug);
 
             UniClipboard.SetText(UniClipboard.GetText() + "\n" + " " + tempDebug + MyText.text + " " + System.DateTime.Now + " ");
 
             foreach (KeyValuePair<string, float> entry in playerScanInTimes)
             {
-                MyText.text += "\n Player ID: " + entry.Key.ToString() + " val is " + entry.Value.ToString();
+                this.WriteToErrorLog( "\n Player ID: " + entry.Key.ToString() + " val is " + entry.Value.ToString());
                 // do something with entry.Value or entry.Key
 
                 
@@ -439,8 +461,25 @@ public class YellOnClaim : MonoBehaviour
             GetComponent<PickLocationTimer>().ResetTimer();
             //handle screen activations
             this.ScanScreen.SetActive(false);// deactivate scan screen
+
+            //UPDATE CUSTOM DATA!!!
+
+            this.MyCurrentToy.customData.SendAsync();//update that toy data!
+
         }//end of else valid scan
     } // end of function
+
+    List<Location> LocationsListHack()
+    {
+        List<YellOnClaim.Location> temp = new List<Location>();
+        temp.Add(Location.FARM);
+        temp.Add(Location.LAKE);
+        temp.Add(Location.WIND);
+        temp.Add(Location.FOREST);
+
+        return temp;
+    }
+
 
     /// <summary>
     /// this function will do n choose k
@@ -826,6 +865,7 @@ public class YellOnClaim : MonoBehaviour
         this.currentLocation = (Location)index;
 
         Debug.Log("Background = "+this.currentLocation.ToString());
+        WriteToErrorLog("Background = " + this.currentLocation.ToString());
         
     }
     public void TurnOffAllBackgrounds()
@@ -842,10 +882,9 @@ public class YellOnClaim : MonoBehaviour
         {
             //time must be at least x secs after last scan
             float validtime = playerScanInTimes[CurrentPlayerID] + TimeBeforeNextScan;
-
-            MyText.text += "\n current time is " + Time.time.ToString();
-            MyText.text += "\n Last scan in time for this id was  = " + playerScanInTimes[CurrentPlayerID].ToString();
-            MyText.text += "\n ********************************";
+            WriteToErrorLog("\n current time is " + Time.time.ToString());
+            WriteToErrorLog("\n Last scan in time for this id was  = " + playerScanInTimes[CurrentPlayerID].ToString());
+            WriteToErrorLog("\n ********************************");
 
             if (validtime > Time.time)
             {
@@ -923,23 +962,31 @@ public class YellOnClaim : MonoBehaviour
         this.MyCurrentToy = new BitToys.Toy();
         this.MyCurrentToy.customData.ClearAll_Local();// clear all data?
         this.MyCurrentToy.bitToysId = this.CurrentPlayerID;
+
+        //first set of quests
+        this.MyCurrentToy.customData.AddInt("DragonLevel", 0);
+        this.SetNewQuestCard(this.MyCurrentToy.customData.GetInt("DragonLevel", 0));//rando some quests?
+
         //this.MyCurrentToy.customData.SendAsync();
 
         this.OnClaimToy_Success(this.MyCurrentToy, true);// fake the scan
+        WriteToErrorLog("Fake NUX");
     }
 
     public void FakeFailScan()
     {
         this.OnClaimToy_Fail(BitToys.FailReason.NETWORK_ERROR, "test fail");
+        WriteToErrorLog("Fake Fail");
     }
 
     public void FakeScan()
     {
-        
-        //this.MyCurrentToy.customData.ClearAll_Local();// clear all data?
+        this.CurrentPlayerID = "player1NUXtest";
         this.MyCurrentToy.bitToysId = this.CurrentPlayerID;
 
         this.OnClaimToy_Success(this.MyCurrentToy, true);// fake the scan
+
+        WriteToErrorLog("Fake Scan");
     }
     public void ResetFakeScan()
     {
@@ -949,6 +996,8 @@ public class YellOnClaim : MonoBehaviour
         this.MyCurrentToy.bitToysId = this.CurrentPlayerID;
         this.MyCurrentToy.customData.ClearAll_Local();// clear all data?
         this.MyCurrentToy.customData.SendAsync();
+
+        WriteToErrorLog("Reset Fake Scan");
     }
 
     public void SetLEDs()
@@ -970,8 +1019,8 @@ public class YellOnClaim : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.A))
         {
             FakeScanNUX();
-            MyCurrentToy.customData.AddInt("Amethyst", 69);
-            MyCurrentToy.customData.AddInt("Apple", 420);
+            MyCurrentToy.customData.AddInt("Amethyst", 30);
+            MyCurrentToy.customData.AddInt("Apple", 30);
             TestJson();
             
         }
@@ -986,7 +1035,7 @@ public class YellOnClaim : MonoBehaviour
         debugstring += mytext + "\n";
         debugstring += "\n ******************************";
 
-        this.MyText.text += debugstring;
+        WriteToErrorLog( debugstring);
         UniClipboard.SetText(UniClipboard.GetText() + "\n" + System.DateTime.Now + " " + debugstring);
 
         if (!ready2scan)
@@ -1008,17 +1057,18 @@ public class YellOnClaim : MonoBehaviour
 
     public void OnGetToy_Fail(BitToys.FailReason reason, string mytext)
     {
-        this.MyText.text += "OnGetToy_Fail" + "\n"; //clear text
-        this.MyText.text += reason.ToString() + "\n";
-        this.MyText.text += mytext + "\n";
-        this.MyText.text += "\n ******************************";
-    }
+        string text = "OnGetToy_Fail" + "\n"; //clear text
+       text += reason.ToString() + "\n";
+       text += mytext + "\n";
+       text += "\n ******************************";
+        WriteToErrorLog(text);
+    }               
     public void OnDeviceConnect( string mytext)//used for connected/lost/failed (will break into seperate functions if needed)
     {
-        this.MyText.text += "OnDeviceConnect" + "\n"; //clear text
-        this.MyText.text += mytext + "\n";
-        this.MyText.text += "\n ******************************";
-
+        string text = "OnDeviceConnect" + "\n"; //clear text
+       text += mytext + "\n";
+       text += "\n ******************************";
+        WriteToErrorLog(text);
         UniClipboard.SetText(UniClipboard.GetText() + "\n" + System.DateTime.Now + " Connected!");
     }
 
@@ -1027,11 +1077,12 @@ public class YellOnClaim : MonoBehaviour
         foreach (BitToys.Toy toy in myToys)
         {
             
-            MyText.text += "\n Toy id = " + toy.bitToysId;
-            MyText.text += "\n Owner id = " + toy.ownerId;
-            MyText.text += "\n Style id = " + toy.styleId;
-            MyText.text += "\n SKU id = " + toy.skuId;
-            MyText.text += "\n ***********************";
+            string text = "\n Toy id = " + toy.bitToysId;
+            text += "\n Owner id = " + toy.ownerId;
+            text += "\n Style id = " + toy.styleId;
+            text += "\n SKU id = " + toy.skuId;
+            text += "\n ***********************";
+            WriteToErrorLog(text);
         }
     }
 

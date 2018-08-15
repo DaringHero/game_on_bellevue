@@ -40,4 +40,13 @@ public class QuestProgress : MonoBehaviour {
         }
         return true;
     }
+    
+    public void SetQuests(List<YellOnClaim.Location> locations)
+    {
+        foreach(YellOnClaim.Location loc in locations)
+        {
+            //set resource to 0, meaning it needs to be collected (-1 means not considered, 1 is collected)
+            myYellOnClaim.MyCurrentToy.customData.SetInt(myYellOnClaim.Location2Resource[myYellOnClaim.currentLocation.ToString()], 0);
+        }
+    }
 }

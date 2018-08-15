@@ -8,22 +8,14 @@ public class GetLocation : MonoBehaviour {
     /// </summary>
     public int RangeForEgg;
     public int RangeForBaby;
-    public int RangeForYoungAdult;
+    //public int RangeForYoungAdult;
     public int RangeForAdult;
     public int RangeForSanctuary;
 
     public YellOnClaim myYellOnClaim;
 
     
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
     //future: use haversian distance to calc closest station based on lat and longitude
     //could also use the dictionary in setstationpages to get locations instead of hardcoding them
     public  List<KeyValuePair<YellOnClaim.Location, bool>> GetNewLocation()
