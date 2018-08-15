@@ -95,23 +95,12 @@ public class YellOnClaim : MonoBehaviour
 
     public static string ErrorLog = "";
 
-    public Dictionary<string, string> Resource2Location;
-    public Dictionary<string, string> Location2Resource;
-    public Dictionary<Location, string> EnumLocation2Resource;
-    public Dictionary<Location, GameObject> Location2ResourceObject;
 
-    public GameObject[] resourceobjects;
     
     public ParticleSystem idleparticles1;
     public ParticleSystem idleparticles2;
 
-    public GameObject GetResourceFromLocation(Location loc)
-    {
-        if (Location2ResourceObject.ContainsKey(loc))
-            return Location2ResourceObject[loc];
-        else
-            return null;
-    }
+
 
     public void SetPageinfo()// updates the pages with player information
     {
@@ -152,43 +141,7 @@ public class YellOnClaim : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        Resource2Location = new Dictionary<string, string>();
-        Location2Resource = new Dictionary<string, string>();
-        EnumLocation2Resource = new Dictionary<Location, string>();
-        Location2ResourceObject = new Dictionary<Location, GameObject>();
-
-        int i = 0;
-        foreach(GameObject a in resourceobjects)
-        {
-            Location2ResourceObject.Add((Location)i, a);
-            i++;
-        }
-
-
-        Resource2Location.Add("PINECONE", "FARM");
-        Resource2Location.Add("REED", "WIND");
-        Resource2Location.Add("ICE", "LAKE");
-        Resource2Location.Add("WOOD", "FOREST");
-        Resource2Location.Add("MUSH", "SWAMP");
-        Resource2Location.Add("ROCK", "MOUNTAIN");
-        Resource2Location.Add("SCALE", "SANC");
-
-        Location2Resource.Add("FARM", "PINECONE");
-        Location2Resource.Add("WIND", "REED");
-        Location2Resource.Add("LAKE", "ICE");
-        Location2Resource.Add("FOREST", "WOOD");
-        Location2Resource.Add("SWAMP", "MUSH");
-        Location2Resource.Add("MOUNTAIN", "ROCK");
-        Location2Resource.Add("SANC", "SCALE");
-
-        //this is needed because we can give it an int, cast it to a location, and get the resource
-        EnumLocation2Resource.Add(Location.FARM,     "PINECONE");
-        EnumLocation2Resource.Add(Location.WIND,     "REED");
-        EnumLocation2Resource.Add(Location.LAKE,     "ICE");
-        EnumLocation2Resource.Add(Location.FOREST,   "WOOD");
-        EnumLocation2Resource.Add(Location.SWAMP,    "MUSH");
-        EnumLocation2Resource.Add(Location.MOUNTAIN, "ROCK");
-        EnumLocation2Resource.Add(Location.SANC, "SCALE");
+       
 
         BluetoothLowBatteryText.gameObject.SetActive(false);
         ready2scan = true;
@@ -402,7 +355,7 @@ public class YellOnClaim : MonoBehaviour
                 if (myQuestProgress.StationIsForQuest())
                 {
                     //increment data for going to this station// ie collecting the resource
-                    this.MyCurrentToy.customData.SetInt(this.Location2Resource[this.currentLocation.ToString()], 1);
+                    this.MyCurrentToy.customData.SetInt(this.GetComponent<DictionariesForThings>().Location2Resource[this.currentLocation.ToString()], 1);
 
 
                     if (myQuestProgress.CompletedAllQuests())
@@ -559,7 +512,7 @@ public class YellOnClaim : MonoBehaviour
                 //choose 1 random of 6
                 int randomone = Random.Range(1, 7);
 
-                string resource = EnumLocation2Resource[(Location)randomone];
+                string resource = this.GetComponent<DictionariesForThings>().EnumLocation2Resource[(Location)randomone];
                 
                 int wood = MyCurrentToy.customData.GetInt(resource, -999);
 
@@ -591,7 +544,7 @@ public class YellOnClaim : MonoBehaviour
 
                 foreach(int i in randomlist)
                 {
-                    string resource = EnumLocation2Resource[(Location)i];
+                    string resource = GetComponent<DictionariesForThings>().EnumLocation2Resource[(Location)i];
 
                     int resint = MyCurrentToy.customData.GetInt(resource, -999);
 
@@ -613,7 +566,7 @@ public class YellOnClaim : MonoBehaviour
 
                 foreach (int i in randomlist)
                 {
-                    string resource = EnumLocation2Resource[(Location)i];
+                    string resource = GetComponent<DictionariesForThings>().EnumLocation2Resource[(Location)i];
 
                     int resint = MyCurrentToy.customData.GetInt(resource, -999);
 
@@ -649,7 +602,7 @@ public class YellOnClaim : MonoBehaviour
                 //choose 1 random of 6
                 int randomone = Random.Range(1, 7);
 
-                string resource = EnumLocation2Resource[(Location)randomone];
+                string resource = GetComponent<DictionariesForThings>().EnumLocation2Resource[(Location)randomone];
 
                 int wood = MyCurrentToy.customData.GetInt(resource, -999);
 
@@ -680,7 +633,7 @@ public class YellOnClaim : MonoBehaviour
 
                 foreach (int i in randomlist)
                 {
-                    string resource = EnumLocation2Resource[(Location)i];
+                    string resource = GetComponent<DictionariesForThings>().EnumLocation2Resource[(Location)i];
 
                     int resint = MyCurrentToy.customData.GetInt(resource, -999);
 
@@ -702,7 +655,7 @@ public class YellOnClaim : MonoBehaviour
 
                 foreach (int i in randomlist)
                 {
-                    string resource = EnumLocation2Resource[(Location)i];
+                    string resource = GetComponent<DictionariesForThings>().EnumLocation2Resource[(Location)i];
 
                     int resint = MyCurrentToy.customData.GetInt(resource, -999);
 
@@ -786,7 +739,7 @@ public class YellOnClaim : MonoBehaviour
 
                 foreach (int i in randomlist)
                 {
-                    string resource = EnumLocation2Resource[(Location)i];
+                    string resource = GetComponent<DictionariesForThings>().EnumLocation2Resource[(Location)i];
 
                     int resint = MyCurrentToy.customData.GetInt(resource, -999);
 

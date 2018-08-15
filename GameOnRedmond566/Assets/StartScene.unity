@@ -52328,6 +52328,8 @@ GameObject:
   - component: {fileID: 1708775445}
   - component: {fileID: 1708775446}
   - component: {fileID: 1708775447}
+  - component: {fileID: 1708775449}
+  - component: {fileID: 1708775448}
   m_Layer: 5
   m_Name: YellOnClaim
   m_TagString: Untagged
@@ -52402,15 +52404,6 @@ MonoBehaviour:
   ready2scan: 0
   particleMode: 0
   isPlayerCurrentlyOnASpecialQuest: 0
-  resourceobjects:
-  - {fileID: 1924356310734834, guid: 821eb0a5aea458441a3d4229d40e3b9e, type: 2}
-  - {fileID: 1671120011900604, guid: 9decad1d2b70a6f4b85cbfa8d38cd090, type: 2}
-  - {fileID: 1891148697864034, guid: c0b4aea551da0d548a6b73987b4c7001, type: 2}
-  - {fileID: 1391647267622146, guid: b04026a082df2804bb690aca805d4e56, type: 2}
-  - {fileID: 1501098847658922, guid: 4c27bebbcb937ee499510fc3ff9c2626, type: 2}
-  - {fileID: 1924356310734834, guid: c5520a87874007c4c9524d70e7d1bea1, type: 2}
-  - {fileID: 1924356310734834, guid: d4672fd737edca449a92d0a13569e456, type: 2}
-  - {fileID: 0}
   idleparticles1: {fileID: 1253744258}
   idleparticles2: {fileID: 1498807979}
 --- !u!114 &1708775439
@@ -52571,6 +52564,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myYellOnClaim: {fileID: 1708775438}
+--- !u!114 &1708775448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1708775437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64615b0eba8aed148bdb6093abba7c75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resourceobjects:
+  - {fileID: 1924356310734834, guid: 821eb0a5aea458441a3d4229d40e3b9e, type: 2}
+  - {fileID: 1671120011900604, guid: 9decad1d2b70a6f4b85cbfa8d38cd090, type: 2}
+  - {fileID: 1891148697864034, guid: c0b4aea551da0d548a6b73987b4c7001, type: 2}
+  - {fileID: 1391647267622146, guid: b04026a082df2804bb690aca805d4e56, type: 2}
+  - {fileID: 1501098847658922, guid: 4c27bebbcb937ee499510fc3ff9c2626, type: 2}
+  - {fileID: 1924356310734834, guid: c5520a87874007c4c9524d70e7d1bea1, type: 2}
+  - {fileID: 1924356310734834, guid: d4672fd737edca449a92d0a13569e456, type: 2}
+--- !u!114 &1708775449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1708775437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25ec9c6714cdc0141b05703a99faee56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objects:
+  - {fileID: 1821715646249606, guid: 8ef0116a1d6254240b260acba8a9a559, type: 2}
+  - {fileID: 1131624955531160, guid: 0471d25a80edc164e90d558a52eb0ca9, type: 2}
+  - {fileID: 1146732715104544, guid: 77791428c651f0a469420dbdc1afa6be, type: 2}
+  - {fileID: 1335182976440664, guid: 508c032db29393348a6a043646472c20, type: 2}
 --- !u!1 &1712791683
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,7 +8,7 @@ public class QuestProgress : MonoBehaviour {
 
     public bool StationIsForQuest()// scale for sanctuary
     {
-        string myCurrentResource = myYellOnClaim.Location2Resource[this.myYellOnClaim.currentLocation.ToString()];
+        string myCurrentResource = myYellOnClaim.gameObject.GetComponent<DictionariesForThings>().Location2Resource[this.myYellOnClaim.currentLocation.ToString()];
 
         int temp = myYellOnClaim.MyCurrentToy.customData.GetInt(myCurrentResource, -1);
 
@@ -46,7 +46,7 @@ public class QuestProgress : MonoBehaviour {
         foreach(YellOnClaim.Location loc in locations)
         {
             //set resource to 0, meaning it needs to be collected (-1 means not considered, 1 is collected)
-            myYellOnClaim.MyCurrentToy.customData.SetInt(myYellOnClaim.Location2Resource[myYellOnClaim.currentLocation.ToString()], 0);
+            myYellOnClaim.MyCurrentToy.customData.SetInt(myYellOnClaim.gameObject.GetComponent<DictionariesForThings>().Location2Resource[myYellOnClaim.currentLocation.ToString()], 0);
         }
     }
 }

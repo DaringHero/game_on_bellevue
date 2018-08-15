@@ -32,7 +32,7 @@ public class GetLocation : MonoBehaviour {
             list2return.Add(new KeyValuePair<YellOnClaim.Location, bool>(YellOnClaim.Location.LAKE, false));
 
             //figure out what resources/quests are done or dont need and cross those off the list (1 or -1, we only want the 0s)
-            int ice = myYellOnClaim.MyCurrentToy.customData.GetInt(myYellOnClaim.Location2Resource["LAKE"], -1);
+            int ice = myYellOnClaim.MyCurrentToy.customData.GetInt(myYellOnClaim.GetComponent<DictionariesForThings>().Location2Resource["LAKE"], -1);
             int rock = myYellOnClaim.MyCurrentToy.customData.GetInt("ROCK", -1);
             int wood = myYellOnClaim.MyCurrentToy.customData.GetInt("WOOD", -1);
             int mush = myYellOnClaim.MyCurrentToy.customData.GetInt("MUSH", -1);
