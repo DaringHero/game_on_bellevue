@@ -14,7 +14,12 @@ public class GetLocation : MonoBehaviour {
 
     public YellOnClaim myYellOnClaim;
 
-    
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.B))
+            TestFunctions();
+    }
+
 
     //future: use haversian distance to calc closest station based on lat and longitude
     //could also use the dictionary in setstationpages to get locations instead of hardcoding them
@@ -199,8 +204,21 @@ public class GetLocation : MonoBehaviour {
          return list2return;
     }
 
+    public void TestFunctions()
+    {
+        Debug.Log("**************************");
+        Debug.Log("**************************");
+        List<YellOnClaim.Location> newlist = (GetNewLocation(false));
+        foreach(YellOnClaim.Location a in newlist)
+        {
+            Debug.Log(a);
+        }
+        Debug.Log("**************************");
+        Debug.Log("**************************");
+    }
+
     //use this for each new quest time, i.e. when we get an egg, we will call this function and get what locations we need ("you have new quests")
-    public List<YellOnClaim.Location> GetNewLocation(bool finalquest)
+    public List<YellOnClaim.Location> GetNewLocation(bool finalquest) //for now its 3
     {
         //can also have a list of resources, but whoever uses this function can use the location to index into the dictionary and get the resource
         List<YellOnClaim.Location> ret = new List<YellOnClaim.Location>();
@@ -211,32 +229,63 @@ public class GetLocation : MonoBehaviour {
             ret.Add(loc);
         }
 
+        //remove our current location (we dont want the situation where they get new quests and then have to scan in again immediately)
+        ret.Remove(myYellOnClaim.currentLocation);
+
+
         //if its the final quest, remove the scale
         if (finalquest)
         {
             ret.Clear();
             ret.Add((YellOnClaim.Location)0);
+            return ret;
+        }
+        else
+        {
+            if(ret.Contains(YellOnClaim.Location.SANC))
+            ret.Remove(YellOnClaim.Location.SANC);
         }
 
         //for each location, remove the ones we dont want
         if (myYellOnClaim.currentRegion == YellOnClaim.Regions.RTCEAST) //only 2 stations, so 1 and 2 (swamp and mountain)
-        {
-            //take away the far ones
+        {        
+            //take away the far ones (by setting max range to 4)
             ret.Remove(YellOnClaim.Location.FARM);
             ret.Remove(YellOnClaim.Location.WIND);
+
+
+
+         //   List<int> convertlist = myYellOnClaim.GetRandomUniqueNumbers(4, 2, (int)myYellOnClaim.currentLocation);
+        //    foreach(int i in convertlist)
+        //    {
+        //        if(ret.Contains((YellOnClaim.Location)i))
+        //            ret.Remove((YellOnClaim.Location)i);
+        //    }
+            
 
         }
         else if (myYellOnClaim.currentRegion == YellOnClaim.Regions.RTCWEST)
         {
-            //dont take away any
+            //take away 2 randomly
+            List<int> convertlist = myYellOnClaim.GetRandomUniqueNumbers(6, 2, (int)myYellOnClaim.currentLocation);
+            foreach (int i in convertlist)
+            {
+                if (ret.Contains((YellOnClaim.Location)i))
+                    ret.Remove((YellOnClaim.Location)i);
+            }
         }
         else if (myYellOnClaim.currentRegion == YellOnClaim.Regions.CLEVELAND)
         {
-            //dont take away any
+            //take away 2 randomly
+            List<int> convertlist = myYellOnClaim.GetRandomUniqueNumbers(6, 2, (int)myYellOnClaim.currentLocation);
+            foreach (int i in convertlist)
+            {
+                if (ret.Contains((YellOnClaim.Location)i))
+                    ret.Remove((YellOnClaim.Location)i);
+            }
         }
 
-        //remove our current location (we dont want the situation where they get new quests and then have to scan in again immediately)
-        ret.Remove(myYellOnClaim.currentLocation);
+
 
         return ret;
     }

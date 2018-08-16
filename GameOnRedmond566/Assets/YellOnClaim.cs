@@ -471,7 +471,7 @@ public class YellOnClaim : MonoBehaviour
     /// the number of intns you need
     /// <param name="numberyouneed"></param>
     /// <returns></returns>
-    List<int> GetRandomUniqueNumbers(int maxrange, int numberyouneed)
+    public List<int> GetRandomUniqueNumbers(int maxrange, int numberyouneed)
     {
         if (numberyouneed >= maxrange)
             throw new System.Exception();
@@ -506,7 +506,45 @@ public class YellOnClaim : MonoBehaviour
 
         return list2return;
     }
-    
+    //version with removing 1 so that we dont have our own location
+    public List<int> GetRandomUniqueNumbers(int maxrange, int numberyouneed, int dontincludethisone)
+    {
+        if (numberyouneed >= maxrange)
+            throw new System.Exception();
+
+        List<int> list2return = new List<int>();
+        List<int> originallist = new List<int>();
+        //starting from 1 because we dont want the sanctuary
+        for (int i = 1; i < maxrange; ++i)
+        {
+            if(i != dontincludethisone)
+            originallist.Add(i);
+        }
+
+        for (int i = 0; i < numberyouneed; ++i)
+        {
+            bool removed = false;
+            while (!removed)
+            {
+                int removethis = Random.Range(1, maxrange);
+                if (originallist.Contains(removethis))
+                {
+                    originallist.Remove(removethis);
+                    list2return.Add(removethis);
+                    removed = true;
+                }
+                else
+                {
+                    continue;
+                }
+            }
+        }
+
+
+
+        return list2return;
+    }
+
 
     void SetNewQuestCard(int levelofdragon)
     {
