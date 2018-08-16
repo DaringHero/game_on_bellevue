@@ -18,7 +18,7 @@ public class GetLocation : MonoBehaviour {
 
     //future: use haversian distance to calc closest station based on lat and longitude
     //could also use the dictionary in setstationpages to get locations instead of hardcoding them
-    public  List<KeyValuePair<YellOnClaim.Location, bool>> GetNewLocation()
+    public  List<KeyValuePair<YellOnClaim.Location, bool>> GetUpdatedLocation()
     {
         List<KeyValuePair<YellOnClaim.Location, bool>> list2return = new List<KeyValuePair<YellOnClaim.Location, bool>>();
 
@@ -198,4 +198,47 @@ public class GetLocation : MonoBehaviour {
 
          return list2return;
     }
+
+    //use this for each new quest time, i.e. when we get an egg, we will call this function and get what locations we need ("you have new quests")
+    public List<YellOnClaim.Location> GetNewLocation(bool finalquest)
+    {
+        //can also have a list of resources, but whoever uses this function can use the location to index into the dictionary and get the resource
+        List<YellOnClaim.Location> ret = new List<YellOnClaim.Location>();
+
+        //add all locations
+        foreach (YellOnClaim.Location loc in System.Enum.GetValues(typeof(YellOnClaim.Location)))
+        {
+            ret.Add(loc);
+        }
+
+        //if its the final quest, remove the scale
+        if (finalquest)
+        {
+            ret.Clear();
+            ret.Add((YellOnClaim.Location)0);
+        }
+
+        //for each location, remove the ones we dont want
+        if (myYellOnClaim.currentRegion == YellOnClaim.Regions.RTCEAST) //only 2 stations, so 1 and 2 (swamp and mountain)
+        {
+            //take away the far ones
+            ret.Remove(YellOnClaim.Location.FARM);
+            ret.Remove(YellOnClaim.Location.WIND);
+
+        }
+        else if (myYellOnClaim.currentRegion == YellOnClaim.Regions.RTCWEST)
+        {
+            //dont take away any
+        }
+        else if (myYellOnClaim.currentRegion == YellOnClaim.Regions.CLEVELAND)
+        {
+            //dont take away any
+        }
+
+        //remove our current location (we dont want the situation where they get new quests and then have to scan in again immediately)
+        ret.Remove(myYellOnClaim.currentLocation);
+
+        return ret;
+    }
+
 }

@@ -54,9 +54,12 @@ public class SetStationPages : MonoBehaviour {
 
     public GameObject GetStationResource()
     {
-        //TODO: get the resource associated with this station!!!
+        // get the resource associated with this station!!!
+        YellOnClaim myYellOnClaim = this.gameObject.GetComponent<YellOnClaim>();
+        DictionariesForThings d = this.gameObject.GetComponent<DictionariesForThings>();
 
-        return new GameObject();
+
+        return d.GetResourceFromLocation(myYellOnClaim.currentLocation);
     }
 
     public void UpdateAllCards(BitToys.Toy myToy)//TODO
