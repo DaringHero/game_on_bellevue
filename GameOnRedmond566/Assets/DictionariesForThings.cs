@@ -8,6 +8,7 @@ public class DictionariesForThings : MonoBehaviour {
     public Dictionary<string, string> Location2Resource;
     public Dictionary<YellOnClaim.Location, string> EnumLocation2Resource;
     public Dictionary<YellOnClaim.Location, GameObject> Location2ResourceObject;
+    public Dictionary<string, GameObject> Resource2ResourceObject;
 
     public GameObject[] resourceobjects;
 
@@ -20,11 +21,12 @@ public class DictionariesForThings : MonoBehaviour {
     }
 
     // Use this for initialization
-    void Start () {
+    void Start() {
         Resource2Location = new Dictionary<string, string>();
         Location2Resource = new Dictionary<string, string>();
         EnumLocation2Resource = new Dictionary<YellOnClaim.Location, string>();
         Location2ResourceObject = new Dictionary<YellOnClaim.Location, GameObject>();
+        Resource2ResourceObject = new Dictionary<string, GameObject>();
 
         int i = 0;
         foreach (GameObject a in resourceobjects)
@@ -32,6 +34,15 @@ public class DictionariesForThings : MonoBehaviour {
             Location2ResourceObject.Add((YellOnClaim.Location)i, a);
             i++;
         }
+
+        Resource2ResourceObject.Add("SCALE", resourceobjects[0]);
+        Resource2ResourceObject.Add("MUSH", resourceobjects[1]);
+        Resource2ResourceObject.Add("ROCK", resourceobjects[2]);
+        Resource2ResourceObject.Add("WOOD", resourceobjects[3]);
+        Resource2ResourceObject.Add("ICE", resourceobjects[4]);
+        Resource2ResourceObject.Add("REED", resourceobjects[5]);
+        Resource2ResourceObject.Add("PINECONE", resourceobjects[6]);
+ 
 
 
         Resource2Location.Add("PINECONE", "FARM");

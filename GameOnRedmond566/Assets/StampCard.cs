@@ -36,6 +36,8 @@ public class StampCard : MonoBehaviour {
     public GameObject stampBack8;
     public GameObject complete_8;
 
+    public YellOnClaim myYellOnClaim;
+
 	public void SetStamp(int i, string resource)//TODO// not even sure if it should take string data
     {
         List<GameObject> Stamp = GetStamp(i);
@@ -47,6 +49,20 @@ public class StampCard : MonoBehaviour {
             Stamp[2].SetActive(true);//is complete
 
     }
+
+    public void SetStampBasedOnLocation(int stampindex, YellOnClaim.Location loc)
+    {
+        List<GameObject> Stamp = GetStamp(stampindex);
+        Stamp[0] = myYellOnClaim.gameObject.GetComponent<DictionariesForThings>().Location2ResourceObject[loc];
+
+    }
+
+    public void SetStampBasedOnResource(int stampindex, string resource)
+    {
+        List<GameObject> Stamp = GetStamp(stampindex);
+        Stamp[0] = myYellOnClaim.gameObject.GetComponent<DictionariesForThings>().Resource2ResourceObject[resource];
+    }
+
 
     public List<GameObject> GetStamp(int i)// gets all parts for a stamp 1-8
     {
