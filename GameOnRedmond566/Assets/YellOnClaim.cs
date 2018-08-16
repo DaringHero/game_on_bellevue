@@ -100,7 +100,43 @@ public class YellOnClaim : MonoBehaviour
     public ParticleSystem idleparticles1;
     public ParticleSystem idleparticles2;
 
+    public void SetPageInfoEX()
+    {
+        SetStationPages tempSetStationPages = this.gameObject.GetComponent<SetStationPages>();
 
+        float ratio = 0; //use this for progress ratio
+
+        for (int i = 0; i < tempSetStationPages.myResourceCards.Count; ++i)
+        {
+            tempSetStationPages.myResourceCards[i] = GetComponent<DictionariesForThings>().Location2ResourceObject[currentLocation];
+            //might have to instantiate
+            //te
+            // tempSetStationPages.myDragons[i] = GameObject.Instantiate(GetComponent<getdragonbasedonlevel>().dragonlevel2Object[dragonlevel]);
+            //if above doesnt work can also try setting rotation to Quaternion.identity and transform to 0 0 0 (vector3.zero)
+        }
+
+
+        tempSetStationPages.SetAllStationResoruces(tempSetStationPages.GetStationResource());
+
+
+        for(int i = 0; i < tempSetStationPages.myDragons.Count; ++i)
+        {
+            int dragonlevel = MyCurrentToy.customData.GetInt("DragonLevel", 0);
+            tempSetStationPages.myDragons[i] = GetComponent<getdragonbasedonlevel>().dragonlevel2Object[dragonlevel];
+            //might have to instantiate
+            //te
+           // tempSetStationPages.myDragons[i] = GameObject.Instantiate(GetComponent<getdragonbasedonlevel>().dragonlevel2Object[dragonlevel]);
+           //if above doesnt work can also try setting rotation to Quaternion.identity and transform to 0 0 0 (vector3.zero)
+        }
+
+
+
+
+        foreach (GameObject progressBar in tempSetStationPages.myProgressBars)
+        {
+            progressBar.GetComponent<EnergyBar>().SetValueF(ratio);
+        }
+    }
 
     public void SetPageinfo()// updates the pages with player information
     {
@@ -119,7 +155,8 @@ public class YellOnClaim : MonoBehaviour
         }
         foreach (GameObject dragonObject in tempSetStationPages.myDragons)
         {
-
+            int dragonlevel = MyCurrentToy.customData.GetInt("DragonLevel", 0);
+      //      dragonObject = GetComponent<getdragonbasedonlevel>().dragonlevel2Object[dragonlevel];
         }
         foreach (GameObject progressBar in tempSetStationPages.myProgressBars)
         {

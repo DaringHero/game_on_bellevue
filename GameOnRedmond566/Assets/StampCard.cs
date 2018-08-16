@@ -54,6 +54,7 @@ public class StampCard : MonoBehaviour {
     {
         List<GameObject> Stamp = GetStamp(stampindex);
         Stamp[0] = myYellOnClaim.gameObject.GetComponent<DictionariesForThings>().Location2ResourceObject[loc];
+        //might have to instantiate
 
     }
 
@@ -61,6 +62,7 @@ public class StampCard : MonoBehaviour {
     {
         List<GameObject> Stamp = GetStamp(stampindex);
         Stamp[0] = myYellOnClaim.gameObject.GetComponent<DictionariesForThings>().Resource2ResourceObject[resource];
+        //might have to instantiate
     }
 
 
