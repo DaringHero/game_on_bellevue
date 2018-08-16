@@ -377,6 +377,12 @@ public class YellOnClaim : MonoBehaviour
                         WriteToErrorLog("Scan = Progress Quests");
                     }
 
+					//set card
+					this.gameObject.GetComponent<SetStationPages>().UpdateAllCards(this.MyCurrentToy);
+
+					//this.gameObject.GetComponent<getdragonbasedonlevel>().dragonlevel2Object[this.MyCurrentToy.customData.GetInt("DragonLevel", 0)];
+
+				
                     //update cards ui?// (animate the same resoruce as the current region
                     //update dragon ui?
 

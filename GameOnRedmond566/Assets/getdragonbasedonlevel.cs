@@ -8,7 +8,7 @@ public class getdragonbasedonlevel : MonoBehaviour {
     //YellOnClaim.gameObject.GetComponent<getdragonbasedonlevel>().dragonlevel2Object[dragonlevel];
 
     public GameObject[] objects;
-    Dictionary<int, GameObject> dragonlevel2Object;
+    public Dictionary<int, GameObject> dragonlevel2Object;
 	// Use this for initialization
 	void Start () {
 
@@ -25,9 +25,5 @@ public class getdragonbasedonlevel : MonoBehaviour {
 
 
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
 }

@@ -36,6 +36,22 @@ public class SetStationPages : MonoBehaviour {
         Location2ResourceDic.Add(YellOnClaim.Location.SWAMP, "MUSHROOM");
     }
 
+	public List<KeyValuePair<string, int>> GetQuestData()
+	{
+		List<KeyValuePair<string, int>> ret = new List<KeyValuePair<string, int>>();
+
+		YellOnClaim myYellOnClaim = this.gameObject.GetComponent<YellOnClaim>();
+		ret.Add( new KeyValuePair<string, int>(Location2ResourceDic[YellOnClaim.Location.FARM], 		myYellOnClaim.MyCurrentToy.customData.GetInt(Location2ResourceDic[YellOnClaim.Location.FARM],-1)));
+		ret.Add( new KeyValuePair<string, int>(Location2ResourceDic[YellOnClaim.Location.WIND], 		myYellOnClaim.MyCurrentToy.customData.GetInt(Location2ResourceDic[YellOnClaim.Location.WIND],-1)));
+		ret.Add( new KeyValuePair<string, int>(Location2ResourceDic[YellOnClaim.Location.LAKE],	 	myYellOnClaim.MyCurrentToy.customData.GetInt(Location2ResourceDic[YellOnClaim.Location.LAKE],-1)));	
+		ret.Add( new KeyValuePair<string, int>(Location2ResourceDic[YellOnClaim.Location.FOREST], 		myYellOnClaim.MyCurrentToy.customData.GetInt(Location2ResourceDic[YellOnClaim.Location.FOREST],-1)));
+		ret.Add( new KeyValuePair<string, int>(Location2ResourceDic[YellOnClaim.Location.MOUNTAIN], 	myYellOnClaim.MyCurrentToy.customData.GetInt(Location2ResourceDic[YellOnClaim.Location.MOUNTAIN],-1)));	
+		ret.Add( new KeyValuePair<string, int>(Location2ResourceDic[YellOnClaim.Location.SWAMP], 		myYellOnClaim.MyCurrentToy.customData.GetInt(Location2ResourceDic[YellOnClaim.Location.SWAMP],-1)));
+
+		return ret;
+
+	}
+
     public GameObject GetStationResource()
     {
         //TODO: get the resource associated with this station!!!
@@ -45,19 +61,40 @@ public class SetStationPages : MonoBehaviour {
 
     public void UpdateAllCards(BitToys.Toy myToy)//TODO
     {
+		List<KeyValuePair<string, int>> questData = this.GetQuestData();
+
         foreach (GameObject card in myResourceCards)
         {
+			int d = 0;
             //update each stamp on each card
             for (int i = 0; i < 8; i++)
             {
-                card.GetComponent<StampCard>().SetStamp(i, "temp");
+				StampCard myStampcard = card.GetComponent<StampCard>();
+
+				if(questData[d].Value > -1)
+				{
+					//display correct resource
+					myStampcard.SetStamp(d, questData[d].Key);
+
+					//display stamp if obtained
+
+					d++;
+				}
+				else
+				{
+					d++;
+				}
             }
         }
     }
     public void LevelUpCards()// special case for cards on level up
     {
+		YellOnClaim myYellOnClaim = this.gameObject.GetComponent<YellOnClaim>();
+
         foreach (GameObject card in myLevelUpResourceCards)
         {
+			StampCard myStampCard = card.GetComponent<StampCard>();
+
 
         }
     }

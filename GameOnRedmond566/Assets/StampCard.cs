@@ -36,17 +36,15 @@ public class StampCard : MonoBehaviour {
     public GameObject stampBack8;
     public GameObject complete_8;
 
-    public void SetStamp(int i, string questdata)//TODO// not even sure if it should take string data
+	public void SetStamp(int i, string resource)//TODO// not even sure if it should take string data
     {
         List<GameObject> Stamp = GetStamp(i);
 
         //sample data
 
-        if (questdata.Contains("temp"))
-        {
+
             Stamp[0].GetComponent<SpriteRenderer>();//change resource
             Stamp[2].SetActive(true);//is complete
-        }
 
     }
 
