@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -270,6 +270,7 @@ GameObject:
   - component: {fileID: 4809603}
   - component: {fileID: 4809605}
   - component: {fileID: 4809604}
+  - component: {fileID: 4809606}
   m_Layer: 0
   m_Name: questgiver
   m_TagString: Untagged
@@ -342,6 +343,19 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+--- !u!114 &4809606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 4809602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b116f3971d646ba439aaab9a5079ae4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 0.5
+  frequency: 1
 --- !u!1 &8800061
 GameObject:
   m_ObjectHideFlags: 0
@@ -352,6 +366,7 @@ GameObject:
   - component: {fileID: 8800062}
   - component: {fileID: 8800064}
   - component: {fileID: 8800063}
+  - component: {fileID: 8800065}
   m_Layer: 0
   m_Name: questgiver
   m_TagString: Untagged
@@ -424,6 +439,19 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+--- !u!114 &8800065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 8800061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b116f3971d646ba439aaab9a5079ae4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 0.5
+  frequency: 1
 --- !u!1 &11233554
 GameObject:
   m_ObjectHideFlags: 0
@@ -473,6 +501,7 @@ GameObject:
   - component: {fileID: 14323494}
   - component: {fileID: 14323496}
   - component: {fileID: 14323495}
+  - component: {fileID: 14323497}
   m_Layer: 0
   m_Name: questgiver
   m_TagString: Untagged
@@ -545,6 +574,19 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+--- !u!114 &14323497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 14323493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b116f3971d646ba439aaab9a5079ae4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 0.5
+  frequency: 1
 --- !u!1 &15037913
 GameObject:
   m_ObjectHideFlags: 0
@@ -1908,6 +1950,7 @@ GameObject:
   - component: {fileID: 72657257}
   - component: {fileID: 72657259}
   - component: {fileID: 72657258}
+  - component: {fileID: 72657260}
   m_Layer: 0
   m_Name: questgiver
   m_TagString: Untagged
@@ -1980,6 +2023,19 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+--- !u!114 &72657260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 72657256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b116f3971d646ba439aaab9a5079ae4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 0.5
+  frequency: 1
 --- !u!1 &77431759
 GameObject:
   m_ObjectHideFlags: 0
@@ -3022,6 +3078,7 @@ GameObject:
   - component: {fileID: 140055005}
   - component: {fileID: 140055007}
   - component: {fileID: 140055006}
+  - component: {fileID: 140055008}
   m_Layer: 0
   m_Name: questgiver
   m_TagString: Untagged
@@ -3094,6 +3151,19 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+--- !u!114 &140055008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 140055004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b116f3971d646ba439aaab9a5079ae4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 0.5
+  frequency: 1
 --- !u!1 &140579093
 GameObject:
   m_ObjectHideFlags: 0
@@ -3441,6 +3511,7 @@ GameObject:
   - component: {fileID: 158676624}
   - component: {fileID: 158676626}
   - component: {fileID: 158676625}
+  - component: {fileID: 158676627}
   m_Layer: 0
   m_Name: questgiver
   m_TagString: Untagged
@@ -3513,6 +3584,19 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+--- !u!114 &158676627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 158676623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b116f3971d646ba439aaab9a5079ae4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 0.5
+  frequency: 1
 --- !u!1 &164904877
 GameObject:
   m_ObjectHideFlags: 0
@@ -3860,6 +3944,7 @@ GameObject:
   - component: {fileID: 183936540}
   - component: {fileID: 183936542}
   - component: {fileID: 183936541}
+  - component: {fileID: 183936543}
   m_Layer: 0
   m_Name: questgiver
   m_TagString: Untagged
@@ -3932,6 +4017,19 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+--- !u!114 &183936543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 183936539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b116f3971d646ba439aaab9a5079ae4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 0.5
+  frequency: 1
 --- !u!1 &186542495
 GameObject:
   m_ObjectHideFlags: 0
@@ -4289,6 +4387,7 @@ GameObject:
   - component: {fileID: 215506945}
   - component: {fileID: 215506947}
   - component: {fileID: 215506946}
+  - component: {fileID: 215506948}
   m_Layer: 0
   m_Name: questgiver
   m_TagString: Untagged
@@ -4361,6 +4460,19 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+--- !u!114 &215506948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 215506944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b116f3971d646ba439aaab9a5079ae4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 0.5
+  frequency: 1
 --- !u!1 &219413972
 GameObject:
   m_ObjectHideFlags: 0
@@ -9032,6 +9144,7 @@ GameObject:
   - component: {fileID: 288098570}
   - component: {fileID: 288098572}
   - component: {fileID: 288098571}
+  - component: {fileID: 288098573}
   m_Layer: 0
   m_Name: questgiver
   m_TagString: Untagged
@@ -9104,6 +9217,19 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+--- !u!114 &288098573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 288098569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b116f3971d646ba439aaab9a5079ae4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 0.5
+  frequency: 1
 --- !u!1 &292794253
 GameObject:
   m_ObjectHideFlags: 0
@@ -10616,6 +10742,7 @@ GameObject:
   - component: {fileID: 335619989}
   - component: {fileID: 335619988}
   - component: {fileID: 335619987}
+  - component: {fileID: 335619990}
   m_Layer: 0
   m_Name: questgiver
   m_TagString: Untagged
@@ -10688,6 +10815,19 @@ Transform:
   m_Father: {fileID: 1692272654}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &335619990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 335619986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b116f3971d646ba439aaab9a5079ae4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 0.5
+  frequency: 1
 --- !u!1 &343568769
 GameObject:
   m_ObjectHideFlags: 0
@@ -11108,6 +11248,7 @@ GameObject:
   - component: {fileID: 360951000}
   - component: {fileID: 360951002}
   - component: {fileID: 360951001}
+  - component: {fileID: 360951003}
   m_Layer: 0
   m_Name: questgiver
   m_TagString: Untagged
@@ -11180,6 +11321,19 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+--- !u!114 &360951003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 360950999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b116f3971d646ba439aaab9a5079ae4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 0.5
+  frequency: 1
 --- !u!1 &363347858
 GameObject:
   m_ObjectHideFlags: 0
@@ -11367,6 +11521,7 @@ GameObject:
   - component: {fileID: 370352542}
   - component: {fileID: 370352544}
   - component: {fileID: 370352543}
+  - component: {fileID: 370352545}
   m_Layer: 0
   m_Name: questgiver
   m_TagString: Untagged
@@ -11439,6 +11594,19 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+--- !u!114 &370352545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 370352541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b116f3971d646ba439aaab9a5079ae4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 0.5
+  frequency: 1
 --- !u!1 &374483737
 GameObject:
   m_ObjectHideFlags: 0
@@ -13038,6 +13206,7 @@ GameObject:
   - component: {fileID: 446492915}
   - component: {fileID: 446492917}
   - component: {fileID: 446492916}
+  - component: {fileID: 446492918}
   m_Layer: 0
   m_Name: questgiver
   m_TagString: Untagged
@@ -13110,6 +13279,19 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+--- !u!114 &446492918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 446492914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b116f3971d646ba439aaab9a5079ae4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 0.5
+  frequency: 1
 --- !u!1 &446682406
 GameObject:
   m_ObjectHideFlags: 0
@@ -13929,6 +14111,7 @@ GameObject:
   - component: {fileID: 493594162}
   - component: {fileID: 493594164}
   - component: {fileID: 493594163}
+  - component: {fileID: 493594165}
   m_Layer: 0
   m_Name: questgiver
   m_TagString: Untagged
@@ -14001,6 +14184,19 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+--- !u!114 &493594165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 493594161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b116f3971d646ba439aaab9a5079ae4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 0.5
+  frequency: 1
 --- !u!1 &495546617
 GameObject:
   m_ObjectHideFlags: 0
@@ -14289,6 +14485,7 @@ GameObject:
   - component: {fileID: 531502102}
   - component: {fileID: 531502104}
   - component: {fileID: 531502103}
+  - component: {fileID: 531502105}
   m_Layer: 0
   m_Name: questgiver
   m_TagString: Untagged
@@ -14361,6 +14558,19 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+--- !u!114 &531502105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 531502101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b116f3971d646ba439aaab9a5079ae4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 0.5
+  frequency: 1
 --- !u!1 &534476071
 GameObject:
   m_ObjectHideFlags: 0
@@ -20724,6 +20934,7 @@ GameObject:
   - component: {fileID: 822804095}
   - component: {fileID: 822804097}
   - component: {fileID: 822804096}
+  - component: {fileID: 822804098}
   m_Layer: 0
   m_Name: questgiver
   m_TagString: Untagged
@@ -20796,6 +21007,19 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+--- !u!114 &822804098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 822804094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b116f3971d646ba439aaab9a5079ae4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 0.5
+  frequency: 1
 --- !u!1 &828346872
 GameObject:
   m_ObjectHideFlags: 0
@@ -20913,6 +21137,7 @@ GameObject:
   - component: {fileID: 838121423}
   - component: {fileID: 838121425}
   - component: {fileID: 838121424}
+  - component: {fileID: 838121426}
   m_Layer: 0
   m_Name: questgiver
   m_TagString: Untagged
@@ -20985,6 +21210,19 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+--- !u!114 &838121426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 838121422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b116f3971d646ba439aaab9a5079ae4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 0.5
+  frequency: 1
 --- !u!1 &842174359
 GameObject:
   m_ObjectHideFlags: 0
@@ -22460,6 +22698,7 @@ GameObject:
   - component: {fileID: 926295917}
   - component: {fileID: 926295919}
   - component: {fileID: 926295918}
+  - component: {fileID: 926295920}
   m_Layer: 0
   m_Name: questgiver
   m_TagString: Untagged
@@ -22532,6 +22771,19 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+--- !u!114 &926295920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 926295916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b116f3971d646ba439aaab9a5079ae4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 0.5
+  frequency: 1
 --- !u!1 &926519921
 GameObject:
   m_ObjectHideFlags: 0
@@ -30179,6 +30431,7 @@ GameObject:
   - component: {fileID: 1137198503}
   - component: {fileID: 1137198505}
   - component: {fileID: 1137198504}
+  - component: {fileID: 1137198506}
   m_Layer: 0
   m_Name: questgiver
   m_TagString: Untagged
@@ -30251,6 +30504,19 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+--- !u!114 &1137198506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1137198502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b116f3971d646ba439aaab9a5079ae4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 0.5
+  frequency: 1
 --- !u!1 &1138382443
 GameObject:
   m_ObjectHideFlags: 0
@@ -30487,6 +30753,7 @@ GameObject:
   - component: {fileID: 1146217248}
   - component: {fileID: 1146217250}
   - component: {fileID: 1146217249}
+  - component: {fileID: 1146217251}
   m_Layer: 0
   m_Name: questgiver
   m_TagString: Untagged
@@ -30559,6 +30826,19 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+--- !u!114 &1146217251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1146217247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b116f3971d646ba439aaab9a5079ae4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 0.5
+  frequency: 1
 --- !u!1 &1152376198
 GameObject:
   m_ObjectHideFlags: 0
@@ -37124,6 +37404,7 @@ GameObject:
   - component: {fileID: 1321496951}
   - component: {fileID: 1321496953}
   - component: {fileID: 1321496952}
+  - component: {fileID: 1321496954}
   m_Layer: 0
   m_Name: questgiver (1)
   m_TagString: Untagged
@@ -37196,6 +37477,19 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+--- !u!114 &1321496954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1321496950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b116f3971d646ba439aaab9a5079ae4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 0.5
+  frequency: 1
 --- !u!1 &1322590096
 GameObject:
   m_ObjectHideFlags: 0
@@ -41746,6 +42040,7 @@ GameObject:
   - component: {fileID: 1383315593}
   - component: {fileID: 1383315595}
   - component: {fileID: 1383315594}
+  - component: {fileID: 1383315596}
   m_Layer: 0
   m_Name: questgiver
   m_TagString: Untagged
@@ -41818,6 +42113,19 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+--- !u!114 &1383315596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1383315592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b116f3971d646ba439aaab9a5079ae4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 0.5
+  frequency: 1
 --- !u!1 &1385270728
 GameObject:
   m_ObjectHideFlags: 0
@@ -42129,6 +42437,7 @@ GameObject:
   - component: {fileID: 1397087565}
   - component: {fileID: 1397087567}
   - component: {fileID: 1397087566}
+  - component: {fileID: 1397087568}
   m_Layer: 0
   m_Name: questgiver
   m_TagString: Untagged
@@ -42201,6 +42510,19 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+--- !u!114 &1397087568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1397087564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b116f3971d646ba439aaab9a5079ae4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 0.5
+  frequency: 1
 --- !u!1 &1402148219
 GameObject:
   m_ObjectHideFlags: 0
@@ -42535,6 +42857,7 @@ GameObject:
   - component: {fileID: 1411976982}
   - component: {fileID: 1411976984}
   - component: {fileID: 1411976983}
+  - component: {fileID: 1411976985}
   m_Layer: 0
   m_Name: questgiver
   m_TagString: Untagged
@@ -42607,6 +42930,19 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+--- !u!114 &1411976985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1411976981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b116f3971d646ba439aaab9a5079ae4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 0.5
+  frequency: 1
 --- !u!1 &1416267801
 GameObject:
   m_ObjectHideFlags: 0
@@ -43594,6 +43930,7 @@ GameObject:
   - component: {fileID: 1464535975}
   - component: {fileID: 1464535977}
   - component: {fileID: 1464535976}
+  - component: {fileID: 1464535978}
   m_Layer: 0
   m_Name: questgiver
   m_TagString: Untagged
@@ -43666,6 +44003,19 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+--- !u!114 &1464535978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1464535974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b116f3971d646ba439aaab9a5079ae4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 0.5
+  frequency: 1
 --- !u!1 &1466637306
 GameObject:
   m_ObjectHideFlags: 0
@@ -43942,6 +44292,7 @@ GameObject:
   - component: {fileID: 1468932982}
   - component: {fileID: 1468932984}
   - component: {fileID: 1468932983}
+  - component: {fileID: 1468932985}
   m_Layer: 0
   m_Name: questgiver
   m_TagString: Untagged
@@ -44014,6 +44365,19 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+--- !u!114 &1468932985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1468932981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b116f3971d646ba439aaab9a5079ae4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 0.5
+  frequency: 1
 --- !u!1 &1470664201
 GameObject:
   m_ObjectHideFlags: 0
@@ -55281,6 +55645,7 @@ GameObject:
   - component: {fileID: 1822355222}
   - component: {fileID: 1822355224}
   - component: {fileID: 1822355223}
+  - component: {fileID: 1822355225}
   m_Layer: 0
   m_Name: questgiver
   m_TagString: Untagged
@@ -55353,6 +55718,19 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+--- !u!114 &1822355225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1822355221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b116f3971d646ba439aaab9a5079ae4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 0.5
+  frequency: 1
 --- !u!1 &1829573840
 GameObject:
   m_ObjectHideFlags: 0
@@ -55363,6 +55741,7 @@ GameObject:
   - component: {fileID: 1829573841}
   - component: {fileID: 1829573843}
   - component: {fileID: 1829573842}
+  - component: {fileID: 1829573844}
   m_Layer: 0
   m_Name: questgiver
   m_TagString: Untagged
@@ -55435,6 +55814,19 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+--- !u!114 &1829573844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1829573840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b116f3971d646ba439aaab9a5079ae4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 0.5
+  frequency: 1
 --- !u!1 &1843416843
 GameObject:
   m_ObjectHideFlags: 0
@@ -59240,6 +59632,7 @@ GameObject:
   - component: {fileID: 1881858105}
   - component: {fileID: 1881858107}
   - component: {fileID: 1881858106}
+  - component: {fileID: 1881858108}
   m_Layer: 0
   m_Name: questgiver
   m_TagString: Untagged
@@ -59312,6 +59705,19 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+--- !u!114 &1881858108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1881858104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b116f3971d646ba439aaab9a5079ae4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 0.5
+  frequency: 1
 --- !u!1 &1881986777
 GameObject:
   m_ObjectHideFlags: 0
@@ -59392,6 +59798,7 @@ GameObject:
   - component: {fileID: 1884209516}
   - component: {fileID: 1884209518}
   - component: {fileID: 1884209517}
+  - component: {fileID: 1884209519}
   m_Layer: 0
   m_Name: questgiver (1)
   m_TagString: Untagged
@@ -59464,6 +59871,19 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+--- !u!114 &1884209519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1884209515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b116f3971d646ba439aaab9a5079ae4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 0.5
+  frequency: 1
 --- !u!4 &1884654979 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4744847020568956, guid: 71f5ed862276d4a40abcd5d0114dedcf,
@@ -65478,6 +65898,7 @@ GameObject:
   - component: {fileID: 2001836215}
   - component: {fileID: 2001836217}
   - component: {fileID: 2001836216}
+  - component: {fileID: 2001836218}
   m_Layer: 0
   m_Name: questgiver
   m_TagString: Untagged
@@ -65550,6 +65971,19 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+--- !u!114 &2001836218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2001836214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b116f3971d646ba439aaab9a5079ae4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 0.5
+  frequency: 1
 --- !u!1001 &2003645304
 Prefab:
   m_ObjectHideFlags: 0
@@ -65814,6 +66248,7 @@ GameObject:
   - component: {fileID: 2029464220}
   - component: {fileID: 2029464222}
   - component: {fileID: 2029464221}
+  - component: {fileID: 2029464223}
   m_Layer: 0
   m_Name: questgiver
   m_TagString: Untagged
@@ -65886,6 +66321,19 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+--- !u!114 &2029464223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2029464219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b116f3971d646ba439aaab9a5079ae4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 0.5
+  frequency: 1
 --- !u!1 &2031096561
 GameObject:
   m_ObjectHideFlags: 0
@@ -65971,6 +66419,7 @@ GameObject:
   - component: {fileID: 2036319177}
   - component: {fileID: 2036319179}
   - component: {fileID: 2036319178}
+  - component: {fileID: 2036319180}
   m_Layer: 0
   m_Name: questgiver
   m_TagString: Untagged
@@ -66043,6 +66492,19 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+--- !u!114 &2036319180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2036319176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b116f3971d646ba439aaab9a5079ae4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 0.5
+  frequency: 1
 --- !u!1 &2042849168
 GameObject:
   m_ObjectHideFlags: 0
@@ -66348,6 +66810,7 @@ GameObject:
   - component: {fileID: 2063336293}
   - component: {fileID: 2063336295}
   - component: {fileID: 2063336294}
+  - component: {fileID: 2063336296}
   m_Layer: 0
   m_Name: questgiver
   m_TagString: Untagged
@@ -66420,6 +66883,19 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+--- !u!114 &2063336296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2063336292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b116f3971d646ba439aaab9a5079ae4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 0.5
+  frequency: 1
 --- !u!1 &2067050860
 GameObject:
   m_ObjectHideFlags: 0
@@ -66777,6 +67253,7 @@ GameObject:
   - component: {fileID: 2101312204}
   - component: {fileID: 2101312206}
   - component: {fileID: 2101312205}
+  - component: {fileID: 2101312207}
   m_Layer: 0
   m_Name: questgiver (2)
   m_TagString: Untagged
@@ -66849,6 +67326,19 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+--- !u!114 &2101312207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2101312203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b116f3971d646ba439aaab9a5079ae4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 0.5
+  frequency: 1
 --- !u!1 &2101485918
 GameObject:
   m_ObjectHideFlags: 0
@@ -70759,6 +71249,7 @@ GameObject:
   - component: {fileID: 2138082201}
   - component: {fileID: 2138082203}
   - component: {fileID: 2138082202}
+  - component: {fileID: 2138082204}
   m_Layer: 0
   m_Name: questgiver (1)
   m_TagString: Untagged
@@ -70831,6 +71322,19 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+--- !u!114 &2138082204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2138082200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b116f3971d646ba439aaab9a5079ae4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 0.5
+  frequency: 1
 --- !u!1 &2138138259
 GameObject:
   m_ObjectHideFlags: 0
