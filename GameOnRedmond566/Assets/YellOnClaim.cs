@@ -414,8 +414,13 @@ public class YellOnClaim : MonoBehaviour
                         WriteToErrorLog("Scan = Progress Quests");
                     }
 
-					//set card
-					this.gameObject.GetComponent<SetStationPages>().UpdateAllCards(this.MyCurrentToy);
+
+
+					//set cards and dragons
+					this.SetPageInfoEX();
+
+
+					//this.gameObject.GetComponent<SetStationPages>().UpdateAllCards(this.MyCurrentToy);
 
 					//this.gameObject.GetComponent<getdragonbasedonlevel>().dragonlevel2Object[this.MyCurrentToy.customData.GetInt("DragonLevel", 0)];
 
