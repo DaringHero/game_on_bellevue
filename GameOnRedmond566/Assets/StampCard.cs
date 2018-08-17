@@ -38,36 +38,66 @@ public class StampCard : MonoBehaviour {
 
     public YellOnClaim myYellOnClaim;
 
-	public void SetStamp(int i, string resource)//TODO// not even sure if it should take string data
-    {
+	public void SetCompletedStamp(int i, string resource)//Sets a completed resoruce stamp
+    {/*
         List<GameObject> Stamp = GetStamp(i);
 
         //sample data
-
+		GetComponent<DictionariesForThings>().Resource2ResourceObject[resource];
 
             Stamp[0].GetComponent<SpriteRenderer>();//change resource
-            Stamp[2].SetActive(true);//is complete
+            Stamp[2].SetActive(true);//is complete*/
+		
+		this.SetStampBasedOnResource(i, resource);
+
+		//show completed resource
+		List<GameObject> Stamp = GetStamp(i);
+		Stamp[2].SetActive(true);//is complete*/
 
     }
 
     public void SetStampBasedOnLocation(int stampindex, YellOnClaim.Location loc)
     {
-        List<GameObject> Stamp = GetStamp(stampindex);
-        Stamp[0] = myYellOnClaim.gameObject.GetComponent<DictionariesForThings>().Location2ResourceObject[loc];
+		List<GameObject> Stamp = GetStamp(stampindex);
+		Stamp[1].SetActive(true);
+		Stamp[0].GetComponent<SpriteRenderer>().sprite = myYellOnClaim.gameObject.GetComponent<DictionariesForThings>().Location2ResourceObject[loc].GetComponent<SpriteRenderer>().sprite;
+		Stamp[0].SetActive(true);
         //might have to instantiate
 
     }
 
-    public void SetStampBasedOnResource(int stampindex, string resource)
+    public void SetStampBasedOnResource(int stampindex, string resource)// sets uncompleted resource
     {
         List<GameObject> Stamp = GetStamp(stampindex);
-        Stamp[0] = myYellOnClaim.gameObject.GetComponent<DictionariesForThings>().Resource2ResourceObject[resource];
+		Stamp[1].SetActive(true);
+		//Stamp[0].SetActive(true);
+		//GameObject old = Stamp[0];
+		Stamp[0].GetComponent<SpriteRenderer>().sprite = myYellOnClaim.gameObject.GetComponent<DictionariesForThings>().Resource2ResourceObject[resource].GetComponent<SpriteRenderer>().sprite;
+		//Destroy(old);
+		Stamp[0].SetActive(true);
         //might have to instantiate
     }
+
+	public void TurnOffAllStamps()
+	{
+
+		for (int i = 0; i<8; i++)
+		{
+
+			List<GameObject> temp = this.GetStamp(i);
+
+			foreach(GameObject go in temp)
+			{
+				go.SetActive(false);
+			}
+		}
+	}
 
 
     public List<GameObject> GetStamp(int i)// gets all parts for a stamp 1-8
     {
+		i++;// I started at 1 instead of 0
+
         List<GameObject> ret = new List<GameObject>();
 
         switch (i)

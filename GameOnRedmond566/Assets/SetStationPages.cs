@@ -33,7 +33,9 @@ public class SetStationPages : MonoBehaviour {
         Location2ResourceDic.Add(YellOnClaim.Location.LAKE, "ICE");
         Location2ResourceDic.Add(YellOnClaim.Location.FOREST, "WOOD");
         Location2ResourceDic.Add(YellOnClaim.Location.MOUNTAIN, "ROCK");
-        Location2ResourceDic.Add(YellOnClaim.Location.SWAMP, "MUSHROOM");
+        //Location2ResourceDic.Add(YellOnClaim.Location.SWAMP, "MUSHROOM");//bug?
+		Location2ResourceDic.Add(YellOnClaim.Location.SWAMP, "MUSH");
+
     }
 
 	public List<KeyValuePair<string, int>> GetQuestData()
@@ -43,7 +45,7 @@ public class SetStationPages : MonoBehaviour {
 		YellOnClaim myYellOnClaim = this.gameObject.GetComponent<YellOnClaim>();
 		ret.Add( new KeyValuePair<string, int>(Location2ResourceDic[YellOnClaim.Location.FARM], 		myYellOnClaim.MyCurrentToy.customData.GetInt(Location2ResourceDic[YellOnClaim.Location.FARM],-1)));
 		ret.Add( new KeyValuePair<string, int>(Location2ResourceDic[YellOnClaim.Location.WIND], 		myYellOnClaim.MyCurrentToy.customData.GetInt(Location2ResourceDic[YellOnClaim.Location.WIND],-1)));
-		ret.Add( new KeyValuePair<string, int>(Location2ResourceDic[YellOnClaim.Location.LAKE],	 	myYellOnClaim.MyCurrentToy.customData.GetInt(Location2ResourceDic[YellOnClaim.Location.LAKE],-1)));	
+		ret.Add( new KeyValuePair<string, int>(Location2ResourceDic[YellOnClaim.Location.LAKE],	 		myYellOnClaim.MyCurrentToy.customData.GetInt(Location2ResourceDic[YellOnClaim.Location.LAKE],-1)));	
 		ret.Add( new KeyValuePair<string, int>(Location2ResourceDic[YellOnClaim.Location.FOREST], 		myYellOnClaim.MyCurrentToy.customData.GetInt(Location2ResourceDic[YellOnClaim.Location.FOREST],-1)));
 		ret.Add( new KeyValuePair<string, int>(Location2ResourceDic[YellOnClaim.Location.MOUNTAIN], 	myYellOnClaim.MyCurrentToy.customData.GetInt(Location2ResourceDic[YellOnClaim.Location.MOUNTAIN],-1)));	
 		ret.Add( new KeyValuePair<string, int>(Location2ResourceDic[YellOnClaim.Location.SWAMP], 		myYellOnClaim.MyCurrentToy.customData.GetInt(Location2ResourceDic[YellOnClaim.Location.SWAMP],-1)));
@@ -62,6 +64,16 @@ public class SetStationPages : MonoBehaviour {
         return d.GetResourceFromLocation(myYellOnClaim.currentLocation);
     }
 
+	public void TunOffAllStampsOnAllCards()
+	{
+		foreach (GameObject card in myResourceCards)
+		{
+			StampCard myStampcard = card.GetComponent<StampCard>();
+			myStampcard.TurnOffAllStamps();
+		}
+
+	}
+
     public void UpdateAllCards(BitToys.Toy myToy)//TODO
     {
 		List<KeyValuePair<string, int>> questData = this.GetQuestData();
@@ -77,7 +89,7 @@ public class SetStationPages : MonoBehaviour {
 				if(questData[d].Value > -1)
 				{
 					//display correct resource
-					myStampcard.SetStamp(d, questData[d].Key);
+					myStampcard.SetCompletedStamp(d, questData[d].Key);
 
 					//display stamp if obtained
 
@@ -126,7 +138,7 @@ public class SetStationPages : MonoBehaviour {
                 //update each stamp on each card
                 for (int j = 0; j < 8; j++)
                 {
-                    myStampCard.GetComponent<StampCard>().SetStamp(i, "temp");
+                    myStampCard.GetComponent<StampCard>().SetCompletedStamp(i, "temp");
                 }
             }
         }

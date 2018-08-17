@@ -104,15 +104,54 @@ public class YellOnClaim : MonoBehaviour
     {
         SetStationPages tempSetStationPages = this.gameObject.GetComponent<SetStationPages>();
 
+		tempSetStationPages.TunOffAllStampsOnAllCards();// turn off all the stamps, setting them will turn them back on
+
         float ratio = 0; //use this for progress ratio
 
-        for (int i = 0; i < tempSetStationPages.myResourceCards.Count; ++i)
+        for (int i = 0; i < tempSetStationPages.myResourceCards.Count; ++i)// for each page
         {
-            tempSetStationPages.myResourceCards[i] = GetComponent<DictionariesForThings>().Location2ResourceObject[currentLocation];
-            //might have to instantiate
-            //te
-            // tempSetStationPages.myDragons[i] = GameObject.Instantiate(GetComponent<getdragonbasedonlevel>().dragonlevel2Object[dragonlevel]);
-            //if above doesnt work can also try setting rotation to Quaternion.identity and transform to 0 0 0 (vector3.zero)
+			List<KeyValuePair<string, int>> questData = tempSetStationPages.GetQuestData();// get all quest data
+
+			StampCard myStampcard = tempSetStationPages.myResourceCards[i].GetComponent<StampCard>();// stampcard
+
+			int d = 0;
+			//update each stamp on each card
+			for (int j = 0; j < 8; j++)
+			{
+				if(d < questData.Count)// dont try to grab questdata that doesn't exist
+				{
+					Debug.Log("d = "+d.ToString() +"\t questData[d].Key = "+questData[d].Key);
+					if(questData[d].Value > -1)
+					{
+						//display correct resource
+						if (questData[d].Value == 1)
+						{
+							myStampcard.SetCompletedStamp(d, questData[d].Key);
+						}
+						if (questData[d].Value == 0)
+						{
+							myStampcard.SetStampBasedOnResource(d, questData[d].Key);
+
+						}
+
+						//display stamp if obtained
+
+						d++;
+					}
+					else
+					{
+						//myStampcard.SetStampBasedOnResource(d, questData[d].Key);
+						d++;
+					}
+				}
+			}
+            
+
+			//instantiate correct dragon
+			int dragonlevel = MyCurrentToy.customData.GetInt("DragonLevel", 0);
+			GameObject old = tempSetStationPages.myDragons[i];
+			tempSetStationPages.myDragons[i] = GameObject.Instantiate(GetComponent<getdragonbasedonlevel>().dragonlevel2Object[dragonlevel], tempSetStationPages.myDragons[i].transform);
+			Destroy(old);
         }
 
 
@@ -137,6 +176,49 @@ public class YellOnClaim : MonoBehaviour
             progressBar.GetComponent<EnergyBar>().SetValueF(ratio);
         }
     }
+
+
+	public void SetNewResourceCards()//level up resource cards
+	{
+		SetStationPages tempSetStationPages = this.gameObject.GetComponent<SetStationPages>();
+
+		tempSetStationPages.TunOffAllStampsOnAllCards();// turn off all the stamps, setting them will turn them back on
+
+		float ratio = 0; //use this for progress ratio
+
+		for (int i = 0; i < tempSetStationPages.myLevelUpResourceCards.Count; ++i)// for each page
+		{
+			List<KeyValuePair<string, int>> questData = tempSetStationPages.GetQuestData();// get all quest data
+
+			StampCard myStampcard = tempSetStationPages.myLevelUpResourceCards[i].GetComponent<StampCard>();// stampcard
+
+			int d = 0;
+			//update each stamp on each card
+			for (int j = 0; j < 8; j++)
+			{
+				if(d < questData.Count)// dont try to grab questdata that doesn't exist
+				{
+					Debug.Log("d = "+d.ToString() +"\t questData[d].Key = "+questData[d].Key);
+					if(questData[d].Value > -1)
+					{
+						//display correct resource
+						myStampcard.SetCompletedStamp(d, questData[d].Key);
+
+						//display stamp if obtained
+
+						d++;
+					}
+					else
+					{
+						//myStampcard.SetStampBasedOnResource(d, questData[d].Key);
+						d++;
+					}
+				}
+			}
+
+		}
+	}
+
 
     public void SetPageinfo()// updates the pages with player information
     {
@@ -371,6 +453,9 @@ public class YellOnClaim : MonoBehaviour
         {
             WriteToErrorLog("GotValidScan");
 
+
+
+
             if ( this.ShowNUX && this.MyCurrentToy.customData.GetBool("NewUser", true))
             {
                 this.MyCurrentToy.customData.AddBool("NewUser", false);// flag as an old user
@@ -380,6 +465,7 @@ public class YellOnClaim : MonoBehaviour
                 this.SetNewQuestCard(this.MyCurrentToy.customData.GetInt("DragonLevel", 0));//rando some quests?
 
                 WriteToErrorLog("Scan = New User Experience");
+				this.SetPageInfoEX();// we need to set 
             }
             else
             {
@@ -389,11 +475,15 @@ public class YellOnClaim : MonoBehaviour
 
                 // which state are we in?
 
+
                 if (myQuestProgress.StationIsForQuest())
                 {
+					
+
                     //increment data for going to this station// ie collecting the resource
                     this.MyCurrentToy.customData.SetInt(this.GetComponent<DictionariesForThings>().Location2Resource[this.currentLocation.ToString()], 1);
 
+					this.SetPageInfoEX();// we need to set cards after new resource
 
                     if (myQuestProgress.CompletedAllQuests())
                     {
@@ -410,6 +500,7 @@ public class YellOnClaim : MonoBehaviour
                     }
                     else
                     {
+						this.SetPageInfoEX();// we need to set up cards even if not right
                         this.ScanCardSuccess.SetActive(true);
                         WriteToErrorLog("Scan = Progress Quests");
                     }
@@ -417,7 +508,7 @@ public class YellOnClaim : MonoBehaviour
 
 
 					//set cards and dragons
-					this.SetPageInfoEX();
+
 
 
 					//this.gameObject.GetComponent<SetStationPages>().UpdateAllCards(this.MyCurrentToy);
