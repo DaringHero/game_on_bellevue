@@ -139,26 +139,25 @@ public class YellOnClaim : MonoBehaviour
 
 			}
             
-
-			//instantiate correct dragon
-			int dragonlevel = MyCurrentToy.customData.GetInt("DragonLevel", 0);
-			GameObject old = tempSetStationPages.myDragons[i];
-			tempSetStationPages.myDragons[i] = GameObject.Instantiate(GetComponent<getdragonbasedonlevel>().dragonlevel2Object[dragonlevel], tempSetStationPages.myDragons[i].transform);
-			Destroy(old);
         }
 
 
         tempSetStationPages.SetAllStationResoruces(tempSetStationPages.GetStationResource());
 
 
-        for(int i = 0; i < tempSetStationPages.myDragons.Count; ++i)
+		//TODO// DRAGON LEVELS
+        for(int i = 999; i < tempSetStationPages.myDragons.Count; ++i)
         {
             int dragonlevel = MyCurrentToy.customData.GetInt("DragonLevel", 0);
-            tempSetStationPages.myDragons[i] = GetComponent<getdragonbasedonlevel>().dragonlevel2Object[dragonlevel];
-            //might have to instantiate
-            //te
-           // tempSetStationPages.myDragons[i] = GameObject.Instantiate(GetComponent<getdragonbasedonlevel>().dragonlevel2Object[dragonlevel]);
-           //if above doesnt work can also try setting rotation to Quaternion.identity and transform to 0 0 0 (vector3.zero)
+
+			foreach(GameObject dragon in tempSetStationPages.myDragons)
+			{
+
+				//AgeOfDragon temp = dragon.GetComponent<AgeOfDragon>();
+
+				//temp.reset();
+				//temp.DragonLevels[dragonlevel];
+			}
         }
 
 
