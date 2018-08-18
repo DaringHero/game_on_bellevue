@@ -46,13 +46,23 @@ public class DictionariesForThings : MonoBehaviour {
         Resource2ResourceObject.Add("REED", resourceobjects[5]);
         Resource2ResourceObject.Add("PINECONE", resourceobjects[6]);
  
-		Resource2Sprite.Add("SCALE", Resources.Load<Sprite>("Assets/Resources/ResourcePrefabs/Sprites/ScintScales"));
-		Resource2Sprite.Add("MUSH", Resources.Load<Sprite>("Assets/Resources/ResourcePrefabs/Sprites/MystMushroom"));
-		Resource2Sprite.Add("ROCK", Resources.Load<Sprite>("Assets/Resources/ResourcePrefabs/Sprites/RollingRocks"));
-		Resource2Sprite.Add("WOOD", Resources.Load<Sprite>("Assets/Resources/ResourcePrefabs/Sprites/SuperCedar"));
-		Resource2Sprite.Add("ICE", Resources.Load<Sprite>("Assets/Resources/ResourcePrefabs/Sprites/glacier_ice"));
-		Resource2Sprite.Add("REED", Resources.Load<Sprite>("Assets/Resources/ResourcePrefabs/Sprites/Reeds"));
+		/*
+		Resource2Sprite.Add("SCALE", 	Resources.Load<Sprite>("Assets/Resources/ResourcePrefabs/Sprites/ScintScales"));
+		Resource2Sprite.Add("MUSH", 	Resources.Load<Sprite>("Assets/Resources/ResourcePrefabs/Sprites/MystMushroom"));
+		Resource2Sprite.Add("ROCK", 	Resources.Load<Sprite>("Assets/Resources/ResourcePrefabs/Sprites/RollingRocks"));
+		Resource2Sprite.Add("WOOD", 	Resources.Load<Sprite>("Assets/Resources/ResourcePrefabs/Sprites/SuperCedar"));
+		Resource2Sprite.Add("ICE", 		Resources.Load<Sprite>("Assets/Resources/ResourcePrefabs/Sprites/glacier_ice"));
+		Resource2Sprite.Add("REED", 	Resources.Load<Sprite>("Assets/Resources/ResourcePrefabs/Sprites/Reeds"));
 		Resource2Sprite.Add("PINECONE", Resources.Load<Sprite>("Assets/Resources/ResourcePrefabs/Sprites/PricklyPinecone"));
+		*/
+
+		Resource2Sprite.Add("SCALE", 	Resources.Load<Sprite>("ResourcePrefabs/Sprites/ScintScales"));
+		Resource2Sprite.Add("MUSH", 	Resources.Load<Sprite>("ResourcePrefabs/Sprites/MystMushroom"));
+		Resource2Sprite.Add("ROCK", 	Resources.Load<Sprite>("ResourcePrefabs/Sprites/RollingRocks"));
+		Resource2Sprite.Add("WOOD", 	Resources.Load<Sprite>("ResourcePrefabs/Sprites/SuperCedar"));
+		Resource2Sprite.Add("ICE", 		Resources.Load<Sprite>("ResourcePrefabs/Sprites/glacier_ice"));
+		Resource2Sprite.Add("REED", 	Resources.Load<Sprite>("ResourcePrefabs/Sprites/Reeds"));
+		Resource2Sprite.Add("PINECONE", Resources.Load<Sprite>("ResourcePrefabs/Sprites/PricklyPinecone"));
 
 
         Resource2Location.Add("PINECONE", "FARM");

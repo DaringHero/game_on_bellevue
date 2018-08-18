@@ -114,37 +114,29 @@ public class YellOnClaim : MonoBehaviour
 
 			StampCard myStampcard = tempSetStationPages.myResourceCards[i].GetComponent<StampCard>();// stampcard
 
-			int d = 0;
+			int s = 0;
 			//update each stamp on each card
-			for (int j = 0; j < 8; j++)
+			for (int d = 0; d < questData.Count; d++)// for all card datas
 			{
-				if(d < questData.Count)// dont try to grab questdata that doesn't exist
+
+				Debug.Log("stamp = "+s.ToString() +"\t d = "+d.ToString() +"\t questData[d].Key = "+questData[d].Key);
+
+				if(questData[d].Value > -1)
 				{
-					Debug.Log("j = "+j.ToString() +"\t d = "+d.ToString() +"\t questData[j].Key = "+questData[j].Key);
-					if(questData[j].Value > -1)
+					//display correct resource
+					if (questData[d].Value == 1)
 					{
-						//display correct resource
-						if (questData[j].Value == 1)
-						{
-							myStampcard.SetCompletedStamp(d, questData[j].Key);
-						}
-						if (questData[j].Value == 0)
-						{
-							myStampcard.SetStampBasedOnResource(d, questData[j].Key);
-
-						}
-
-						//display stamp if obtained
-
-						d++;
-
-						Debug.Log("Set Data on::"+myStampcard.gameObject.name +" questData["+d.ToString()+"].Key = "+questData[d].Key);
+						myStampcard.SetCompletedStamp(s, questData[d].Key);
 					}
-					else
+					if (questData[d].Value == 0)
 					{
-						//d++;
+						myStampcard.SetStampBasedOnResource(s, questData[d].Key);
 					}
+					
+					Debug.Log("Set Data on::"+myStampcard.gameObject.name +" questData["+d.ToString()+"].Key = "+questData[d].Key);
+					s++; //next stamp
 				}
+
 			}
             
 
