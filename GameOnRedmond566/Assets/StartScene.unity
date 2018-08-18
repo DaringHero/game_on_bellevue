@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -35862,7 +35862,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1253744256}
   m_LocalRotation: {x: -0.99995524, y: -0, z: -0, w: -0.009467006}
-  m_LocalPosition: {x: -5.65, y: 4.93, z: -6.065}
+  m_LocalPosition: {x: -5.65, y: 17, z: -6.065}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -43061,7 +43061,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 58733118}
   m_Direction: 2
   m_Value: 1
-  m_Size: 1
+  m_Size: 0.9999999
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -48137,7 +48137,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1498807977}
   m_LocalRotation: {x: -0.99995524, y: -0, z: -0, w: -0.009467006}
-  m_LocalPosition: {x: 5.45, y: 4.93, z: -6.065}
+  m_LocalPosition: {x: 5.45, y: 17, z: -6.065}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -62137,7 +62137,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -45021976
+  randomSeed: 1134539990
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -65233,7 +65233,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1969127524}
   m_LocalRotation: {x: -0, y: -0, z: 0.81915206, w: 0.57357645}
-  m_LocalPosition: {x: -1501, y: -924.0001, z: 723.00006}
+  m_LocalPosition: {x: -1501, y: -868.7, z: 723.00006}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 691639804}
@@ -67588,7 +67588,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1976169584
+  randomSeed: 490182915
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -70684,7 +70684,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2101647279}
   m_LocalRotation: {x: -0, y: -0, z: -0.5735764, w: 0.8191521}
-  m_LocalPosition: {x: -1461.0001, y: -924.0001, z: 723.0001}
+  m_LocalPosition: {x: -1461.0001, y: -868.70013, z: 723.0001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 691639804}
