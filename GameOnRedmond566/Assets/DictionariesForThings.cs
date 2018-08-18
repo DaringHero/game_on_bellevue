@@ -9,6 +9,7 @@ public class DictionariesForThings : MonoBehaviour {
     public Dictionary<YellOnClaim.Location, string> EnumLocation2Resource;
     public Dictionary<YellOnClaim.Location, GameObject> Location2ResourceObject;
     public Dictionary<string, GameObject> Resource2ResourceObject;
+	public Dictionary<string, Sprite> Resource2Sprite;//
 
     public GameObject[] resourceobjects;
 
@@ -28,6 +29,8 @@ public class DictionariesForThings : MonoBehaviour {
         Location2ResourceObject = new Dictionary<YellOnClaim.Location, GameObject>();
         Resource2ResourceObject = new Dictionary<string, GameObject>();
 
+		Resource2Sprite = new Dictionary<string, Sprite>();
+
         int i = 0;
         foreach (GameObject a in resourceobjects)
         {
@@ -43,6 +46,13 @@ public class DictionariesForThings : MonoBehaviour {
         Resource2ResourceObject.Add("REED", resourceobjects[5]);
         Resource2ResourceObject.Add("PINECONE", resourceobjects[6]);
  
+		Resource2Sprite.Add("SCALE", Resources.Load<Sprite>("Assets/Resources/ResourcePrefabs/Sprites/ScintScales"));
+		Resource2Sprite.Add("MUSH", Resources.Load<Sprite>("Assets/Resources/ResourcePrefabs/Sprites/MystMushroom"));
+		Resource2Sprite.Add("ROCK", Resources.Load<Sprite>("Assets/Resources/ResourcePrefabs/Sprites/RollingRocks"));
+		Resource2Sprite.Add("WOOD", Resources.Load<Sprite>("Assets/Resources/ResourcePrefabs/Sprites/SuperCedar"));
+		Resource2Sprite.Add("ICE", Resources.Load<Sprite>("Assets/Resources/ResourcePrefabs/Sprites/glacier_ice"));
+		Resource2Sprite.Add("REED", Resources.Load<Sprite>("Assets/Resources/ResourcePrefabs/Sprites/Reeds"));
+		Resource2Sprite.Add("PINECONE", Resources.Load<Sprite>("Assets/Resources/ResourcePrefabs/Sprites/PricklyPinecone"));
 
 
         Resource2Location.Add("PINECONE", "FARM");

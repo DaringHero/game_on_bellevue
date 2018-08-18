@@ -120,28 +120,29 @@ public class YellOnClaim : MonoBehaviour
 			{
 				if(d < questData.Count)// dont try to grab questdata that doesn't exist
 				{
-					Debug.Log("d = "+d.ToString() +"\t questData[d].Key = "+questData[d].Key);
-					if(questData[d].Value > -1)
+					Debug.Log("j = "+j.ToString() +"\t d = "+d.ToString() +"\t questData[j].Key = "+questData[j].Key);
+					if(questData[j].Value > -1)
 					{
 						//display correct resource
-						if (questData[d].Value == 1)
+						if (questData[j].Value == 1)
 						{
-							myStampcard.SetCompletedStamp(d, questData[d].Key);
+							myStampcard.SetCompletedStamp(d, questData[j].Key);
 						}
-						if (questData[d].Value == 0)
+						if (questData[j].Value == 0)
 						{
-							myStampcard.SetStampBasedOnResource(d, questData[d].Key);
+							myStampcard.SetStampBasedOnResource(d, questData[j].Key);
 
 						}
 
 						//display stamp if obtained
 
 						d++;
+
+						Debug.Log("Set Data on::"+myStampcard.gameObject.name +" questData["+d.ToString()+"].Key = "+questData[d].Key);
 					}
 					else
 					{
-						//myStampcard.SetStampBasedOnResource(d, questData[d].Key);
-						d++;
+						//d++;
 					}
 				}
 			}
