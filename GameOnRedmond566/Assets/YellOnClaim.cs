@@ -480,21 +480,25 @@ public class YellOnClaim : MonoBehaviour
 
                     //increment data for going to this station// ie collecting the resource
                     this.MyCurrentToy.customData.SetInt(this.GetComponent<DictionariesForThings>().Location2Resource[this.currentLocation.ToString()], 1);
-
-					this.SetPageInfoEX();// we need to set cards after new resource
-
+	
+                    this.SetPageInfoEX();// we need to set cards after new resource
                     if (myQuestProgress.CompletedAllQuests())
                     {
                         this.ScanCardNewQuests.SetActive(true);
+
+                        int currentDragonLevel = this.MyCurrentToy.customData.GetInt("DragonLevel", 0);
+                        MyCurrentToy.customData.SetInt("DragonLevel", currentDragonLevel++);
 
                         //HACK for getting new locations
                         //this.GetComponent<QuestProgress>().SetQuests(this.LocationsListHack());
                         this.SetNewQuestCard(this.MyCurrentToy.customData.GetInt("DragonLevel", 0));
                         //update new quest ui?
-                        //update new dragon?
+                        //update new dragon?              
                         //get new quests?
                         //get next dragon?
                         WriteToErrorLog("Scan = New Quests");
+
+                       
                     }
                     else// haven't completed all quests
                     {
@@ -547,16 +551,9 @@ public class YellOnClaim : MonoBehaviour
             tempDebug += "\n ******************************";
             this.WriteToErrorLog(tempDebug);
 
-            UniClipboard.SetText(UniClipboard.GetText() + "\n" + " " + tempDebug + MyText.text + " " + System.DateTime.Now + " ");
-
             foreach (KeyValuePair<string, float> entry in playerScanInTimes)
             {
                 this.WriteToErrorLog( "\n Player ID: " + entry.Key.ToString() + " val is " + entry.Value.ToString());
-                // do something with entry.Value or entry.Key
-
-                
-
-               
             }//end for each
              //reset the location timer back to 0 (dont get a new location)
             GetComponent<PickLocationTimer>().ResetTimer();
@@ -664,19 +661,22 @@ public class YellOnClaim : MonoBehaviour
         return list2return;
     }
 
-
+    /// <summary>
+    /// this function sets the custom data for whatever quests we want to 0 (-1 is not used, 1 is complete, 0 is need to complete)
+    /// </summary>
+    /// <param name="levelofdragon"></param>
     void SetNewQuestCard(int levelofdragon)
     {
 
-        if(currentRegion == Regions.CLEVELAND)
+        if (currentRegion == Regions.CLEVELAND)
         {
-            if(levelofdragon == 0)
+            if (levelofdragon == 0) //egg, we need 4 scans to get to hatchling
             {
                 //choose 1 random of 6
                 int randomone = Random.Range(1, 7);
 
                 string resource = this.GetComponent<DictionariesForThings>().EnumLocation2Resource[(Location)randomone];
-                
+
                 int wood = MyCurrentToy.customData.GetInt(resource, -999);
 
                 if (wood == -999)
@@ -700,32 +700,10 @@ public class YellOnClaim : MonoBehaviour
                 }
 
             }
-            else if(levelofdragon == 1)
+            else if (levelofdragon == 1) //hatchling, we now need 4 scans
             {
                 //choose 2 random of 6
                 List<int> randomlist = GetRandomUniqueNumbers(7, 2);
-
-                foreach(int i in randomlist)
-                {
-                    string resource = GetComponent<DictionariesForThings>().EnumLocation2Resource[(Location)i];
-
-                    int resint = MyCurrentToy.customData.GetInt(resource, -999);
-
-                    if (resint == -999)
-                    {
-                        MyCurrentToy.customData.AddInt(resource, 0);
-                    }
-                    else
-                    {
-                        MyCurrentToy.customData.SetInt(resource, 0);
-                    }
-                }
-
-            }
-            else if(levelofdragon == 2)
-            {
-                //choose 4 random of 6
-                List<int> randomlist = GetRandomUniqueNumbers(7, 4);
 
                 foreach (int i in randomlist)
                 {
@@ -742,10 +720,10 @@ public class YellOnClaim : MonoBehaviour
                         MyCurrentToy.customData.SetInt(resource, 0);
                     }
                 }
+
             }
-            else if(levelofdragon == 3)
+            else if (levelofdragon == 2) //adult, it is now time to release at the sanctuary
             {
-                //go to sanctuary
                 int scale = MyCurrentToy.customData.GetInt("SCALE", -999);
 
                 if (scale == -999)
@@ -758,7 +736,7 @@ public class YellOnClaim : MonoBehaviour
                 }
             }
         }
-        else if(currentRegion == Regions.RTCWEST)
+        else if (currentRegion == Regions.RTCWEST)
         {
             if (levelofdragon == 0)
             {
@@ -814,28 +792,7 @@ public class YellOnClaim : MonoBehaviour
             else if (levelofdragon == 2)
             {
                 //choose 4 random of 6
-                List<int> randomlist = GetRandomUniqueNumbers(7, 4);
-
-                foreach (int i in randomlist)
-                {
-                    string resource = GetComponent<DictionariesForThings>().EnumLocation2Resource[(Location)i];
-
-                    int resint = MyCurrentToy.customData.GetInt(resource, -999);
-
-                    if (resint == -999)
-                    {
-                        MyCurrentToy.customData.AddInt(resource, 0);
-                    }
-                    else
-                    {
-                        MyCurrentToy.customData.SetInt(resource, 0);
-                    }
-                }
-            }
-            else if (levelofdragon == 3)
-            {
                 //go to sanctuary
-                int quest = 0;
 
                 int scale = MyCurrentToy.customData.GetInt("SCALE", -999);
 
@@ -847,15 +804,14 @@ public class YellOnClaim : MonoBehaviour
                 {
                     MyCurrentToy.customData.SetInt("SCALE", 0);
                 }
-                
             }
         }
-        else if(currentRegion == Regions.RTCEAST)
+        else if (currentRegion == Regions.RTCEAST)
         {
             if (levelofdragon == 0)
             {
                 //choose 1 random of 2 (rtc east)
-                if(currentLocation == Location.MOUNTAIN)
+                if (currentLocation == Location.MOUNTAIN)
                 {
                     int mush = MyCurrentToy.customData.GetInt("MUSH", -999);
 
@@ -868,7 +824,7 @@ public class YellOnClaim : MonoBehaviour
                         MyCurrentToy.customData.SetInt("MUSH", 0);
                     }
                 }
-                else if(currentLocation == Location.SWAMP)
+                else if (currentLocation == Location.SWAMP)
                 {
                     int mush = MyCurrentToy.customData.GetInt("ROCK", -999);
 
@@ -917,56 +873,9 @@ public class YellOnClaim : MonoBehaviour
                 }
 
             }
-            else if (levelofdragon == 2)
+            else if (levelofdragon == 2) // adult, go to sanctuary
             {
                 //choose 4 of 4 (rtc west)
-                int ice = MyCurrentToy.customData.GetInt("ICE", -999);
-
-                if (ice == -999)
-                {
-                    MyCurrentToy.customData.AddInt("ICE", 0);
-                }
-                else
-                {
-                    MyCurrentToy.customData.SetInt("ICE", 0);
-                }
-
-                int mush = MyCurrentToy.customData.GetInt("MUSH", -999);
-
-                if (mush == -999)
-                {
-                    MyCurrentToy.customData.AddInt("MUSH", 0);
-                }
-                else
-                {
-                    MyCurrentToy.customData.SetInt("MUSH", 0);
-                }
-
-                int rock = MyCurrentToy.customData.GetInt("ROCK", -999);
-
-                if (rock == -999)
-                {
-                    MyCurrentToy.customData.AddInt("ROCK", 0);
-                }
-                else
-                {
-                    MyCurrentToy.customData.SetInt("ROCK", 0);
-                }
-                int wood = MyCurrentToy.customData.GetInt("WOOD", -999);
-
-                if (wood == -999)
-                {
-                    MyCurrentToy.customData.AddInt("WOOD", 0);
-                }
-                else
-                {
-                    MyCurrentToy.customData.SetInt("WOOD", 0);
-                }
-
-
-            }
-            else if (levelofdragon == 3)
-            {
                 //go to sanctuary
                 int scale = MyCurrentToy.customData.GetInt("SCALE", -999);
 
@@ -978,12 +887,17 @@ public class YellOnClaim : MonoBehaviour
                 {
                     MyCurrentToy.customData.SetInt("SCALE", 0);
                 }
+
+
             }
+
         }
-
-
     }
 
+    /// <summary>
+    /// this function enables the bool ready2scan in yellonclaim, which was designed to prevent "double" scans and other prorblems like that
+    /// </summary>
+    /// <returns></returns>
     IEnumerator EnableReady2Scan()
     {
         yield return new WaitForSeconds(3.0f);
@@ -1104,8 +1018,7 @@ public class YellOnClaim : MonoBehaviour
 
         //first set of quests
         this.MyCurrentToy.customData.AddInt("DragonLevel", 0);
-        this.SetNewQuestCard(this.MyCurrentToy.customData.GetInt("DragonLevel", 0));//rando some quests?
-
+       // this.MyCurrentToy.customData.AddInt("")
         //this.MyCurrentToy.customData.SendAsync();
 
         this.OnClaimToy_Success(this.MyCurrentToy, true);// fake the scan
