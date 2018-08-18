@@ -22251,7 +22251,7 @@ Transform:
   m_GameObject: {fileID: 905019943}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1479.045, y: -863.5, z: 25}
-  m_LocalScale: {x: 3.53, y: 3.6, z: 1}
+  m_LocalScale: {x: 8.5, y: 8.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1864480521}
   m_RootOrder: 0
@@ -23230,7 +23230,7 @@ Transform:
   m_GameObject: {fileID: 938624704}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1479.045, y: -863.5, z: 25}
-  m_LocalScale: {x: 3.53, y: 3.6, z: 1}
+  m_LocalScale: {x: 8.5, y: 8.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1998077933}
   m_RootOrder: 0
@@ -50007,7 +50007,7 @@ Transform:
   m_GameObject: {fileID: 1604053431}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1479.045, y: -863.5, z: 25}
-  m_LocalScale: {x: 3.53, y: 3.6, z: 1}
+  m_LocalScale: {x: 8.5, y: 8.5, z: 1}
   m_Children: []
   m_Father: {fileID: 31915946}
   m_RootOrder: 0
@@ -53378,6 +53378,7 @@ GameObject:
   - component: {fileID: 1712791684}
   - component: {fileID: 1712791685}
   - component: {fileID: 1712791688}
+  - component: {fileID: 1712791689}
   m_Layer: 5
   m_Name: DebugLog
   m_TagString: Untagged
@@ -53469,6 +53470,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 2
+--- !u!114 &1712791689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1712791683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5152f572e4c4d5b4094192e6ffd11283, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxLength: 5000
+  myText: {fileID: 1712791684}
 --- !u!1 &1713539952
 GameObject:
   m_ObjectHideFlags: 0
@@ -61694,7 +61708,7 @@ Transform:
   m_GameObject: {fileID: 1952315975}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1479.045, y: -863.5, z: 25}
-  m_LocalScale: {x: 3.53, y: 3.6, z: 1}
+  m_LocalScale: {x: 8.5, y: 8.5, z: 1}
   m_Children: []
   m_Father: {fileID: 480540697}
   m_RootOrder: 0
@@ -71360,7 +71374,7 @@ Transform:
   m_GameObject: {fileID: 2138138259}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1479.045, y: -863.5, z: 25}
-  m_LocalScale: {x: 3.53, y: 3.6, z: 1}
+  m_LocalScale: {x: 8.53, y: 8.6, z: 1}
   m_Children: []
   m_Father: {fileID: 395193092}
   m_RootOrder: 0

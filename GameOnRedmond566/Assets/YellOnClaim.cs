@@ -103,6 +103,7 @@ public class YellOnClaim : MonoBehaviour
     public void SetPageInfoEX()
     {
         SetStationPages tempSetStationPages = this.gameObject.GetComponent<SetStationPages>();
+		DictionariesForThings tempConverstions = this.gameObject.GetComponent<DictionariesForThings>();
 
 		tempSetStationPages.TunOffAllStampsOnAllCards();// turn off all the stamps, setting them will turn them back on
 
@@ -119,7 +120,7 @@ public class YellOnClaim : MonoBehaviour
 			for (int d = 0; d < questData.Count; d++)// for all card datas
 			{
 
-				Debug.Log("stamp = "+s.ToString() +"\t d = "+d.ToString() +"\t questData[d].Key = "+questData[d].Key);
+				//Debug.Log("stamp = "+s.ToString() +"\t d = "+d.ToString() +"\t questData[d].Key = "+questData[d].Key);
 
 				if(questData[d].Value > -1)
 				{
@@ -133,7 +134,7 @@ public class YellOnClaim : MonoBehaviour
 						myStampcard.SetStampBasedOnResource(s, questData[d].Key);
 					}
 					
-					Debug.Log("Set Data on::"+myStampcard.gameObject.name +" questData["+d.ToString()+"].Key = "+questData[d].Key);
+					//Debug.Log("Set Data on::"+myStampcard.gameObject.name +" questData["+d.ToString()+"].Key = "+questData[d].Key);
 					s++; //next stamp
 				}
 
@@ -141,8 +142,8 @@ public class YellOnClaim : MonoBehaviour
             
         }
 
+		//
 
-        tempSetStationPages.SetAllStationResoruces(tempSetStationPages.GetStationResource());
 
 
 		//TODO// DRAGON LEVELS
@@ -212,7 +213,7 @@ public class YellOnClaim : MonoBehaviour
 	}
 
 
-    public void SetPageinfo()// updates the pages with player information
+    public void SetPageinfo2()// updates the pages with player information
     {
         SetStationPages tempSetStationPages = this.gameObject.GetComponent<SetStationPages>();
 
@@ -222,7 +223,7 @@ public class YellOnClaim : MonoBehaviour
         {
 
         }
-        tempSetStationPages.SetAllStationResoruces(tempSetStationPages.GetStationResource());
+        //tempSetStationPages.SetAllStationResoruces(tempSetStationPages.GetStationResource());
         foreach (GameObject stationResource in tempSetStationPages.myStationResources)
         {
 
@@ -445,8 +446,13 @@ public class YellOnClaim : MonoBehaviour
         {
             WriteToErrorLog("GotValidScan");
 
-
-
+			//we always need to update the station resources!
+			SetStationPages tempSetStationPages = this.gameObject.GetComponent<SetStationPages>();
+			DictionariesForThings tempConverstions = this.gameObject.GetComponent<DictionariesForThings>();
+			Debug.Log("location = " + this.currentLocation.ToString() + "\t Location2ResourceDic = "+tempSetStationPages.Location2ResourceDic[this.currentLocation].ToString());
+			Debug.Log("location = " + this.currentLocation.ToString() + "\t Location2Resource = "+tempConverstions.Location2Resource[this.currentLocation.ToString()].ToString());
+			tempSetStationPages.SetAllStationResoruces(tempConverstions.Resource2Sprite[tempConverstions.Location2Resource[this.currentLocation.ToString()]]);
+			//
 
             if ( this.ShowNUX && this.MyCurrentToy.customData.GetBool("NewUser", true))
             {
@@ -457,7 +463,7 @@ public class YellOnClaim : MonoBehaviour
                 this.SetNewQuestCard(this.MyCurrentToy.customData.GetInt("DragonLevel", 0));//rando some quests?
 
                 WriteToErrorLog("Scan = New User Experience");
-				this.SetPageInfoEX();// we need to set 
+				this.SetPageInfoEX();// we need to set page infor for a correct scan
             }
             else
             {
@@ -490,7 +496,7 @@ public class YellOnClaim : MonoBehaviour
                         //get next dragon?
                         WriteToErrorLog("Scan = New Quests");
                     }
-                    else
+                    else// haven't completed all quests
                     {
 						this.SetPageInfoEX();// we need to set up cards even if not right
                         this.ScanCardSuccess.SetActive(true);
@@ -499,22 +505,10 @@ public class YellOnClaim : MonoBehaviour
 
 
 
-					//set cards and dragons
-
-
-
-					//this.gameObject.GetComponent<SetStationPages>().UpdateAllCards(this.MyCurrentToy);
-
-					//this.gameObject.GetComponent<getdragonbasedonlevel>().dragonlevel2Object[this.MyCurrentToy.customData.GetInt("DragonLevel", 0)];
-
-				
-                    //update cards ui?// (animate the same resoruce as the current region
-                    //update dragon ui?
-
-
                 }
-                else
+                else// wrong station
                 {
+					this.SetPageInfoEX();// we need to set up cards even if not right
                     this.ScanCardWrong.SetActive(true);
                     WriteToErrorLog("Scan = Wrong Station");
                     //update cards ui?

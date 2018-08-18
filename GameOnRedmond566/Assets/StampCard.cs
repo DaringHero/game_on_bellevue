@@ -39,14 +39,7 @@ public class StampCard : MonoBehaviour {
     public YellOnClaim myYellOnClaim;
 
 	public void SetCompletedStamp(int i, string resource)//Sets a completed resoruce stamp
-    {/*
-        List<GameObject> Stamp = GetStamp(i);
-
-        //sample data
-		GetComponent<DictionariesForThings>().Resource2ResourceObject[resource];
-
-            Stamp[0].GetComponent<SpriteRenderer>();//change resource
-            Stamp[2].SetActive(true);//is complete*/
+    {
 		
 		this.SetStampBasedOnResource(i, resource);
 

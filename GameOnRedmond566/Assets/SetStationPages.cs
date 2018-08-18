@@ -115,16 +115,16 @@ public class SetStationPages : MonoBehaviour {
     }
 
 
-    public void SetAllStationResoruces(GameObject setto)// set all station resource sprites to specific resource
+	public void SetAllStationResoruces(Sprite setto)// set all station resource sprites to specific sprite
     {
         foreach (GameObject stationresource in myStationResources)
         {
             SpriteRenderer mySprite = stationresource.GetComponent<SpriteRenderer>();
-            mySprite.sprite = setto.GetComponent<SpriteRenderer>().sprite;
+			mySprite.sprite = setto;
         }
     }
 
-    public void SetAllStationResoruces(BitToys.Toy myToy)//TODO
+    public void SetAllStationResoruces2(BitToys.Toy myToy)//unused?
     {
         for (int i =0; i< this.myResourceCards.Count; i++) 
         {
