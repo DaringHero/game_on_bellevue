@@ -44,7 +44,7 @@ public class YellOnClaim : MonoBehaviour
     public enum Location { SANC, SWAMP, MOUNTAIN, FOREST, LAKE, WIND, FARM };
 
     public enum CLEVELAND_Locations { LUMBER, ORCHARD};
-    public enum RTCEAST_Locations { MMARKET, WIND};
+    public enum RTCEAST_Locations { MARKET, WIND};
     public enum RTCWEST_Locations { MOUNTAIN, LAKE };
     public enum RANDOM_Locations {  HUNTING, FARM, SWAMP, FOREST };
 
@@ -706,44 +706,52 @@ public class YellOnClaim : MonoBehaviour
 
             if ((levelofdragon == 0) || (levelofdragon == 1)) //egg, we need 4 scans to get to hatchling
             {
-                //get 1 quest from each region, and 1 from random
-                
-                //choose 4 random of 6
-                List<int> randomlist = GetRandomUniqueNumbers(7, 4);
+            //get 1 quest from each region, and 1 from random
+            int clevelandChoice = Random.Range(0, 2);
 
-                foreach (int i in randomlist)
+            int rtceastChoice = Random.Range(0, 2);
+
+            int rtcwestChoice = Random.Range(0, 2);
+
+            int randoChoic = Random.Range(0, 4);
+
+            List<string> listofstrings = new List<string>();
+
+            listofstrings.Add(GetComponent<DictionariesForThings>().CLEVELAND_EnumLocation2Resource[(CLEVELAND_Locations)clevelandChoice]);
+            listofstrings.Add(GetComponent<DictionariesForThings>().RTCEAST_EnumLocation2Resource[(RTCEAST_Locations)rtceastChoice]);
+            listofstrings.Add(GetComponent<DictionariesForThings>().RTCWEST_EnumLocation2Resource[(RTCWEST_Locations)rtcwestChoice]);
+            listofstrings.Add(GetComponent<DictionariesForThings>().RANDOM_EnumLocation2Resource[(RANDOM_Locations)randoChoic]);
+
+            foreach (string i in listofstrings)
                 {
-                    string resource = GetComponent<DictionariesForThings>().EnumLocation2Resource[(Location)i];
-
-                    int resint = MyCurrentToy.customData.GetInt(resource, -999);
+                    int resint = MyCurrentToy.customData.GetInt(i, -999);
 
                     if (resint == -999)
                     {
-                        MyCurrentToy.customData.AddInt(resource, 0);
+                        MyCurrentToy.customData.AddInt(i, 0);
                     }
                     else
                     {
-                        MyCurrentToy.customData.SetInt(resource, 0);
+                        MyCurrentToy.customData.SetInt(i, 0);
                     }
                 }
 
             }
             else if (levelofdragon == 2) //adult, it is now time to release at the sanctuary
             {
-                int scale = MyCurrentToy.customData.GetInt("SCALE", -999);
+                int scale = MyCurrentToy.customData.GetInt("AMETHYST", -999);
 
                 if (scale == -999)
                 {
-                    MyCurrentToy.customData.AddInt("SCALE", 0);
+                    MyCurrentToy.customData.AddInt("AMETHYST", 0);
                 }
                 else
                 {
-                    MyCurrentToy.customData.SetInt("SCALE", 0);
+                    MyCurrentToy.customData.SetInt("AMETHYST", 0);
                 }
             }
 
         }
-    }
 
     /// <summary>
     /// this function enables the bool ready2scan in yellonclaim, which was designed to prevent "double" scans and other prorblems like that
