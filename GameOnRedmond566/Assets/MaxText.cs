@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class MaxText : MonoBehaviour {
 
-	public int MaxLength = 5000;
+	public int MaxLength = 1000;
 	public Text myText;
 
 	// Update is called once per frame
