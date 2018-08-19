@@ -53,10 +53,14 @@ public class SetStationPages : MonoBehaviour {
 		
 		foreach(GameObject DragonP in this.myDragons)
 		{
-			Transform[] temp = DragonP.GetComponentsInChildren<Transform>();
+			List<Transform> temp = new List<Transform>();
+			for (int i = 0; i < DragonP.transform.childCount;i++)
+			{
+				temp.Add(DragonP.transform.GetChild(i));
+			}
 
 			DragonP.SetActive(true);//somehow this got turned off???
-			Debug.Log(DragonP.name+" model transforms = "+temp.Length.ToString());
+			Debug.Log(DragonP.name+" model transforms = "+temp.Count.ToString());
 
 			foreach (Transform dragonTrans in temp)
 			{
