@@ -65,7 +65,7 @@ public class DictionariesForThings : MonoBehaviour {
         }
 
         {
-            RTCWEST_EnumLocation2Resource.Add(YellOnClaim.RTCWEST_Locations.MOUNTAIN, "ICE");
+            RTCWEST_EnumLocation2Resource.Add(YellOnClaim.RTCWEST_Locations.MOUNTAIN, "SNOW");
             RTCWEST_EnumLocation2Resource.Add(YellOnClaim.RTCWEST_Locations.LAKE, "SALMON");
         }
 
@@ -91,7 +91,7 @@ public class DictionariesForThings : MonoBehaviour {
 
         Resource2ResourceObject.Add("AMETHYST", resourceobjects[0]);
         Resource2ResourceObject.Add("REED", resourceobjects[1]);
-        Resource2ResourceObject.Add("ICE", resourceobjects[2]);
+        Resource2ResourceObject.Add("SNOW", resourceobjects[2]);
         Resource2ResourceObject.Add("PINECONE", resourceobjects[3]);
         Resource2ResourceObject.Add("SALMON", resourceobjects[4]);
         Resource2ResourceObject.Add("FEATHER", resourceobjects[5]);
@@ -143,7 +143,7 @@ public class DictionariesForThings : MonoBehaviour {
         Resource2Location.Add("SALMON", "LAKE");
         Resource2Location.Add("PINECONE", "FOREST");
         Resource2Location.Add("REED", "SWAMP");
-        Resource2Location.Add("ICE", "MOUNTAIN");
+        Resource2Location.Add("SNOW", "MOUNTAIN");
         Resource2Location.Add("AMETHYST", "SANC");
         Resource2Location.Add("SCALE", "HUNTING");
         Resource2Location.Add("BASKET", "MARKET");
@@ -157,7 +157,7 @@ public class DictionariesForThings : MonoBehaviour {
         EnumLocation2Resource.Add(YellOnClaim.Location.LAKE, "SALMON");
         EnumLocation2Resource.Add(YellOnClaim.Location.FOREST, "PINECONE");
         EnumLocation2Resource.Add(YellOnClaim.Location.SWAMP, "REED");
-        EnumLocation2Resource.Add(YellOnClaim.Location.MOUNTAIN, "ICE");
+        EnumLocation2Resource.Add(YellOnClaim.Location.MOUNTAIN, "SNOW");
         EnumLocation2Resource.Add(YellOnClaim.Location.SANC, "AMETHYST");
         EnumLocation2Resource.Add(YellOnClaim.Location.HUNTING, "SCALE");
         EnumLocation2Resource.Add(YellOnClaim.Location.MARKET, "BASKET");

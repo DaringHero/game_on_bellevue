@@ -23,20 +23,12 @@ public class QuestProgress : MonoBehaviour {
 
     public bool CompletedAllQuests()
     {
-        int ice  = myYellOnClaim.MyCurrentToy.customData.GetInt("ICE", -1);
-        int rock = myYellOnClaim.MyCurrentToy.customData.GetInt("ROCK", -1);
-        int wood = myYellOnClaim.MyCurrentToy.customData.GetInt("WOOD", -1);
-        int mush = myYellOnClaim.MyCurrentToy.customData.GetInt("MUSH", -1);
-        int reed = myYellOnClaim.MyCurrentToy.customData.GetInt("REED", -1);
-        int pinecone = myYellOnClaim.MyCurrentToy.customData.GetInt("PINECONE", -1);
-
-        if (ice == 0 || rock == 0 || wood == 0)
+        foreach(YellOnClaim.Location loc in (YellOnClaim.Location[])System.Enum.GetValues(typeof(YellOnClaim.Location)))
         {
-            return false;
-        }
-        if (mush == 0 || reed == 0 || pinecone == 0)
-        {
-            return false;
+            string res = myYellOnClaim.GetComponent<DictionariesForThings>().EnumLocation2Resource[loc];
+            int questinfo = myYellOnClaim.MyCurrentToy.customData.GetInt(res, -1);
+            if (questinfo == 0)
+                return false;
         }
         return true;
     }
