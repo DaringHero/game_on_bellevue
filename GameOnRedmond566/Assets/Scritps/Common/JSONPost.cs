@@ -24,9 +24,9 @@ public class JSONPost : MonoBehaviour {
         Debug.Log("jsonstr is " + jsonStr) ;
 
         string newstring =  "{ \"name\":\"amethyst\",\"amount\":\"1\"}, { \"name\":\"apples\",\"amount\":\"1\"}, { \"name\":\"berries\",\"amount\":\"1\"}";
-
+        string ultrastring = "apple";
         // convert json string to byte
-        var formData = System.Text.Encoding.UTF8.GetBytes(newstring);
+        var formData = System.Text.Encoding.UTF8.GetBytes(ultrastring);
         Debug.Log("form data is " + formData.ToString());
         www = new WWW(POSTAddUserURL, formData, postHeader);
         
