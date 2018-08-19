@@ -28,13 +28,17 @@ public class SetStationPages : MonoBehaviour {
     public void Start()
     {
         Location2ResourceDic = new Dictionary<YellOnClaim.Location, string>();
-        Location2ResourceDic.Add(YellOnClaim.Location.FARM, "PINECONE");
-        Location2ResourceDic.Add(YellOnClaim.Location.WIND, "REED");
-        Location2ResourceDic.Add(YellOnClaim.Location.LAKE, "ICE");
-        Location2ResourceDic.Add(YellOnClaim.Location.FOREST, "WOOD");
-        Location2ResourceDic.Add(YellOnClaim.Location.MOUNTAIN, "ROCK");
-        //Location2ResourceDic.Add(YellOnClaim.Location.SWAMP, "MUSHROOM");//bug?
-		Location2ResourceDic.Add(YellOnClaim.Location.SWAMP, "MUSH");
+        Location2ResourceDic.Add(YellOnClaim.Location.FARM, "GRASS");
+        Location2ResourceDic.Add(YellOnClaim.Location.WIND, "FEATHER");
+        Location2ResourceDic.Add(YellOnClaim.Location.LAKE, "SALMON");
+        Location2ResourceDic.Add(YellOnClaim.Location.FOREST, "PINECONE");
+        Location2ResourceDic.Add(YellOnClaim.Location.MOUNTAIN, "ICE");
+		Location2ResourceDic.Add(YellOnClaim.Location.SWAMP, "REED");
+        Location2ResourceDic.Add(YellOnClaim.Location.HUNTING, "SCALE");
+        Location2ResourceDic.Add(YellOnClaim.Location.SANC, "AMETHYST");
+        Location2ResourceDic.Add(YellOnClaim.Location.ORCHARD, "APPLE");
+        Location2ResourceDic.Add(YellOnClaim.Location.MARKET, "BASKET");
+        Location2ResourceDic.Add(YellOnClaim.Location.LUMBER, "WOOD");
 
     }
 
