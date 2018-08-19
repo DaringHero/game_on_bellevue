@@ -112,7 +112,6 @@ public class DictionariesForThings : MonoBehaviour {
 		*/
 
         Resource2Sprite.Add("SCALE", 	Resources.Load<Sprite>("ResourcePrefabs/Sprites/ScintScales"));
-		Resource2Sprite.Add("MUSH", 	Resources.Load<Sprite>("ResourcePrefabs/Sprites/MystMushroom"));
 		Resource2Sprite.Add("ROCK", 	Resources.Load<Sprite>("ResourcePrefabs/Sprites/RollingRocks"));
 		Resource2Sprite.Add("WOOD", 	Resources.Load<Sprite>("ResourcePrefabs/Sprites/SuperCedar"));
 		Resource2Sprite.Add("ICE", 		Resources.Load<Sprite>("ResourcePrefabs/Sprites/glacier_ice"));
@@ -123,7 +122,7 @@ public class DictionariesForThings : MonoBehaviour {
         Resource2Sprite.Add("FEATHER", Resources.Load<Sprite>("ResourcePrefabs/Sprites/eagle_feather"));
         Resource2Sprite.Add("GRASS", Resources.Load<Sprite>("ResourcePrefabs/Sprites/braidedgrass"));
         Resource2Sprite.Add("AMETHYST", Resources.Load<Sprite>("ResourcePrefabs/Sprites/amazingamethyst"));
-
+        Resource2Sprite.Add("BASKET", Resources.Load<Sprite>("ResourcePrefabs/Sprites/Basket"));
 
         Location2Resource.Add("FARM", "GRASS");
         Location2Resource.Add("WIND", "FEATHER");
