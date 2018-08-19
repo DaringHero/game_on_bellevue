@@ -147,29 +147,20 @@ public class YellOnClaim : MonoBehaviour
 			}
             
         }
+			
 
-		//
-
-
-
-		//TODO// DRAGON LEVELS
-        for(int i = 999; i < tempSetStationPages.myDragons.Count; ++i)
+		// DRAGON LEVELS
+        for(int i = 0; i < tempSetStationPages.myDragons.Count; ++i)
         {
             int dragonlevel = MyCurrentToy.customData.GetInt("DragonLevel", 0);
 
-			foreach(GameObject dragon in tempSetStationPages.myDragons)
-			{
+			tempSetStationPages.SetDragonLevelColor(dragonlevel);
 
-				//AgeOfDragon temp = dragon.GetComponent<AgeOfDragon>();
-
-				//temp.reset();
-				//temp.DragonLevels[dragonlevel];
-			}
         }
 
 
 
-
+		//does this even work? ~Tom
         foreach (GameObject progressBar in tempSetStationPages.myProgressBars)
         {
             progressBar.GetComponent<EnergyBar>().SetValueF(ratio);

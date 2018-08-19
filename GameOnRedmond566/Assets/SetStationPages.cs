@@ -47,6 +47,55 @@ public class SetStationPages : MonoBehaviour {
 
     }
 
+	public void SetDragonLevelColor(int level)
+	{
+		foreach(GameObject DragonP in this.myDragons)
+		{
+			Transform[] temp = DragonP.GetComponentsInChildren<Transform>();
+
+			foreach (Transform dragonTrans in temp)
+			{
+
+				if (level == 0)//egg
+				{
+					if(dragonTrans.gameObject.name.ToLower().Contains("egg"))
+					{
+						dragonTrans.gameObject.SetActive(true);
+					}
+					else
+					{
+						dragonTrans.gameObject.SetActive(false);
+					}
+				}
+				if (level == 1)//hatchling
+				{
+					if(dragonTrans.gameObject.name.ToLower().Contains("red"))
+					{
+						dragonTrans.gameObject.SetActive(true);
+					}
+					else
+					{
+						dragonTrans.gameObject.SetActive(false);
+					}
+				}
+				if (level == 2)//adult
+				{
+					if(dragonTrans.gameObject.name.ToLower().Contains("green"))
+					{
+						dragonTrans.gameObject.SetActive(true);
+					}
+					else
+					{
+						dragonTrans.gameObject.SetActive(false);
+					}
+				}
+
+			}
+
+		}
+
+	}
+
 	public List<KeyValuePair<string, int>> GetQuestData()
 	{
 		List<KeyValuePair<string, int>> ret = new List<KeyValuePair<string, int>>();
