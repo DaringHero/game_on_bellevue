@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -5485,7 +5485,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1847505481
+  randomSeed: -1930638195
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -55278,7 +55278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5152f572e4c4d5b4094192e6ffd11283, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxLength: 5000
+  MaxLength: 1000
   myText: {fileID: 1712791684}
 --- !u!1 &1713539952
 GameObject:
@@ -57491,7 +57491,7 @@ MonoBehaviour:
   resource_8: {fileID: 718767942}
   stampBack8: {fileID: 1301864085}
   complete_8: {fileID: 1110618968}
-  myYellOnClaim: {fileID: 0}
+  myYellOnClaim: {fileID: 1708775438}
 --- !u!212 &1794032880
 SpriteRenderer:
   m_ObjectHideFlags: 0
