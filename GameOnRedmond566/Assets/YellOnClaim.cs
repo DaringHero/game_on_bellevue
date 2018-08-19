@@ -41,7 +41,7 @@ public class YellOnClaim : MonoBehaviour
 
     //all background screens
     public List<GameObject> Backgrounds;
-    public enum Location { SANC, SWAMP, MOUNTAIN, FOREST, LAKE, WIND, FARM };
+    public enum Location { SANC, SWAMP, MOUNTAIN, FOREST, LAKE, WIND, FARM, LUMBER, ORCHARD, MARKET, HUNTING };
 
     public enum CLEVELAND_Locations { LUMBER, ORCHARD};
     public enum RTCEAST_Locations { MARKET, WIND};

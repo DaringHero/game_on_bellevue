@@ -89,15 +89,19 @@ public class DictionariesForThings : MonoBehaviour {
             i++;
         }
 
-        Resource2ResourceObject.Add("SCALE", resourceobjects[0]);
-        Resource2ResourceObject.Add("MUSH", resourceobjects[1]);
-        Resource2ResourceObject.Add("ROCK", resourceobjects[2]);
-        Resource2ResourceObject.Add("WOOD", resourceobjects[3]);
-        Resource2ResourceObject.Add("ICE", resourceobjects[4]);
-        Resource2ResourceObject.Add("REED", resourceobjects[5]);
-        Resource2ResourceObject.Add("PINECONE", resourceobjects[6]);
- 
-		/*
+        Resource2ResourceObject.Add("AMETHYST", resourceobjects[0]);
+        Resource2ResourceObject.Add("REED", resourceobjects[1]);
+        Resource2ResourceObject.Add("ICE", resourceobjects[2]);
+        Resource2ResourceObject.Add("PINECONE", resourceobjects[3]);
+        Resource2ResourceObject.Add("SALMON", resourceobjects[4]);
+        Resource2ResourceObject.Add("FEATHER", resourceobjects[5]);
+        Resource2ResourceObject.Add("GRASS", resourceobjects[6]);
+
+        Resource2ResourceObject.Add("WOOD", resourceobjects[7]);
+        Resource2ResourceObject.Add("APPLE", resourceobjects[8]);
+        Resource2ResourceObject.Add("BASKET", resourceobjects[9]);
+        Resource2ResourceObject.Add("SCALE", resourceobjects[10]);
+        /*
 		Resource2Sprite.Add("SCALE", 	Resources.Load<Sprite>("Assets/Resources/ResourcePrefabs/Sprites/ScintScales"));
 		Resource2Sprite.Add("MUSH", 	Resources.Load<Sprite>("Assets/Resources/ResourcePrefabs/Sprites/MystMushroom"));
 		Resource2Sprite.Add("ROCK", 	Resources.Load<Sprite>("Assets/Resources/ResourcePrefabs/Sprites/RollingRocks"));
@@ -107,39 +111,59 @@ public class DictionariesForThings : MonoBehaviour {
 		Resource2Sprite.Add("PINECONE", Resources.Load<Sprite>("Assets/Resources/ResourcePrefabs/Sprites/PricklyPinecone"));
 		*/
 
-		Resource2Sprite.Add("SCALE", 	Resources.Load<Sprite>("ResourcePrefabs/Sprites/ScintScales"));
+        Resource2Sprite.Add("SCALE", 	Resources.Load<Sprite>("ResourcePrefabs/Sprites/ScintScales"));
 		Resource2Sprite.Add("MUSH", 	Resources.Load<Sprite>("ResourcePrefabs/Sprites/MystMushroom"));
 		Resource2Sprite.Add("ROCK", 	Resources.Load<Sprite>("ResourcePrefabs/Sprites/RollingRocks"));
 		Resource2Sprite.Add("WOOD", 	Resources.Load<Sprite>("ResourcePrefabs/Sprites/SuperCedar"));
 		Resource2Sprite.Add("ICE", 		Resources.Load<Sprite>("ResourcePrefabs/Sprites/glacier_ice"));
 		Resource2Sprite.Add("REED", 	Resources.Load<Sprite>("ResourcePrefabs/Sprites/Reeds"));
-		Resource2Sprite.Add("PINECONE", Resources.Load<Sprite>("ResourcePrefabs/Sprites/PricklyPinecone"));
+
+		Resource2Sprite.Add("APPLE", Resources.Load<Sprite>("ResourcePrefabs/Sprites/AppealingApple"));
+        Resource2Sprite.Add("SALMON", Resources.Load<Sprite>("ResourcePrefabs/Sprites/slipperysalmon"));
+        Resource2Sprite.Add("FEATHER", Resources.Load<Sprite>("ResourcePrefabs/Sprites/eagle_feather"));
+        Resource2Sprite.Add("GRASS", Resources.Load<Sprite>("ResourcePrefabs/Sprites/braidedgrass"));
+        Resource2Sprite.Add("AMETHYST", Resources.Load<Sprite>("ResourcePrefabs/Sprites/amazingamethyst"));
 
 
-        Resource2Location.Add("PINECONE", "FARM");
-        Resource2Location.Add("REED", "WIND");
-        Resource2Location.Add("ICE", "LAKE");
-        Resource2Location.Add("WOOD", "FOREST");
-        Resource2Location.Add("MUSH", "SWAMP");
-        Resource2Location.Add("ROCK", "MOUNTAIN");
-        Resource2Location.Add("SCALE", "SANC");
+        Location2Resource.Add("FARM", "GRASS");
+        Location2Resource.Add("WIND", "FEATHER");
+        Location2Resource.Add("LAKE", "SALMON");
+        Location2Resource.Add("FOREST", "PINECONE");
+        Location2Resource.Add("SWAMP", "REED");
+        Location2Resource.Add("MOUNTAIN", "ICE");
+        Location2Resource.Add("SANC", "AMETHYST");
+        Location2Resource.Add("HUNTING", "SCALE");
+        Location2Resource.Add("MARKET" , "BASKET");
+        Location2Resource.Add("LUMBER" , "WOOD");
+        Location2Resource.Add("ORCHARD", "APPLE");
 
-        Location2Resource.Add("FARM", "PINECONE");
-        Location2Resource.Add("WIND", "REED");
-        Location2Resource.Add("LAKE", "ICE");
-        Location2Resource.Add("FOREST", "WOOD");
-        Location2Resource.Add("SWAMP", "MUSH");
-        Location2Resource.Add("MOUNTAIN", "ROCK");
-        Location2Resource.Add("SANC", "SCALE");
+        Resource2Location.Add("GRASS", "FARM");
+        Resource2Location.Add("FEATHER", "WIND");
+        Resource2Location.Add("SALMON", "LAKE");
+        Resource2Location.Add("PINECONE", "FOREST");
+        Resource2Location.Add("REED", "SWAMP");
+        Resource2Location.Add("ICE", "MOUNTAIN");
+        Resource2Location.Add("AMETHYST", "SANC");
+        Resource2Location.Add("SCALE", "HUNTING");
+        Resource2Location.Add("BASKET", "MARKET");
+        Resource2Location.Add("WOOD", "LUMBER");
+        Resource2Location.Add("APPLE", "ORCHARD");
+
 
         //this is needed because we can give it an int, cast it to a location, and get the resource
-        EnumLocation2Resource.Add(YellOnClaim.Location.FARM, "PINECONE");
-        EnumLocation2Resource.Add(YellOnClaim.Location.WIND, "REED");
-        EnumLocation2Resource.Add(YellOnClaim.Location.LAKE, "ICE");
-        EnumLocation2Resource.Add(YellOnClaim.Location.FOREST, "WOOD");
-        EnumLocation2Resource.Add(YellOnClaim.Location.SWAMP, "MUSH");
-        EnumLocation2Resource.Add(YellOnClaim.Location.MOUNTAIN, "ROCK");
-        EnumLocation2Resource.Add(YellOnClaim.Location.SANC, "SCALE");
+        EnumLocation2Resource.Add(YellOnClaim.Location.FARM, "GRASS");
+        EnumLocation2Resource.Add(YellOnClaim.Location.WIND, "FEATHER");
+        EnumLocation2Resource.Add(YellOnClaim.Location.LAKE, "SALMON");
+        EnumLocation2Resource.Add(YellOnClaim.Location.FOREST, "PINECONE");
+        EnumLocation2Resource.Add(YellOnClaim.Location.SWAMP, "REED");
+        EnumLocation2Resource.Add(YellOnClaim.Location.MOUNTAIN, "ICE");
+        EnumLocation2Resource.Add(YellOnClaim.Location.SANC, "AMETHYST");
+        EnumLocation2Resource.Add(YellOnClaim.Location.HUNTING, "SCALE");
+        EnumLocation2Resource.Add(YellOnClaim.Location.MARKET, "BASKET");
+        EnumLocation2Resource.Add(YellOnClaim.Location.LUMBER, "WOOD");
+        EnumLocation2Resource.Add(YellOnClaim.Location.ORCHARD, "APPLE");
+
+
     }
 	
 	// Update is called once per frame
