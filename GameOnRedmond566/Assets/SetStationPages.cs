@@ -54,7 +54,13 @@ public class SetStationPages : MonoBehaviour {
 		ret.Add( new KeyValuePair<string, int>(Location2ResourceDic[YellOnClaim.Location.MOUNTAIN], 	myYellOnClaim.MyCurrentToy.customData.GetInt(Location2ResourceDic[YellOnClaim.Location.MOUNTAIN],-1)));	
 		ret.Add( new KeyValuePair<string, int>(Location2ResourceDic[YellOnClaim.Location.SWAMP], 		myYellOnClaim.MyCurrentToy.customData.GetInt(Location2ResourceDic[YellOnClaim.Location.SWAMP],-1)));
 
-		return ret;
+        ret.Add(new KeyValuePair<string, int>(Location2ResourceDic[YellOnClaim.Location.ORCHARD], myYellOnClaim.MyCurrentToy.customData.GetInt(Location2ResourceDic[YellOnClaim.Location.ORCHARD], -1)));
+        ret.Add(new KeyValuePair<string, int>(Location2ResourceDic[YellOnClaim.Location.HUNTING], myYellOnClaim.MyCurrentToy.customData.GetInt(Location2ResourceDic[YellOnClaim.Location.HUNTING], -1)));
+        ret.Add(new KeyValuePair<string, int>(Location2ResourceDic[YellOnClaim.Location.MARKET], myYellOnClaim.MyCurrentToy.customData.GetInt(Location2ResourceDic[YellOnClaim.Location.MARKET], -1)));
+        ret.Add(new KeyValuePair<string, int>(Location2ResourceDic[YellOnClaim.Location.LUMBER], myYellOnClaim.MyCurrentToy.customData.GetInt(Location2ResourceDic[YellOnClaim.Location.LUMBER], -1)));
+
+        ret.Add(new KeyValuePair<string, int>(Location2ResourceDic[YellOnClaim.Location.SANC], myYellOnClaim.MyCurrentToy.customData.GetInt(Location2ResourceDic[YellOnClaim.Location.SANC], -1)));
+        return ret;
 
 	}
 
