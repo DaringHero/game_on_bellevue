@@ -49,18 +49,26 @@ public class SetStationPages : MonoBehaviour {
 
 	public void SetDragonLevelColor(int level)
 	{
+		Debug.Log("SetDragonLevelColor="+level.ToString());
+		
 		foreach(GameObject DragonP in this.myDragons)
 		{
 			Transform[] temp = DragonP.GetComponentsInChildren<Transform>();
+
+			DragonP.SetActive(true);//somehow this got turned off???
+			Debug.Log(DragonP.name+" model transforms = "+temp.Length.ToString());
 
 			foreach (Transform dragonTrans in temp)
 			{
 
 				if (level == 0)//egg
 				{
+					Debug.Log("is an egg");
+
 					if(dragonTrans.gameObject.name.ToLower().Contains("egg"))
 					{
 						dragonTrans.gameObject.SetActive(true);
+						Debug.Log("set an egg");
 					}
 					else
 					{
@@ -69,9 +77,11 @@ public class SetStationPages : MonoBehaviour {
 				}
 				if (level == 1)//hatchling
 				{
+					Debug.Log("is a hatchling");
 					if(dragonTrans.gameObject.name.ToLower().Contains("red"))
 					{
 						dragonTrans.gameObject.SetActive(true);
+						Debug.Log("set a hatchling");
 					}
 					else
 					{
@@ -80,9 +90,11 @@ public class SetStationPages : MonoBehaviour {
 				}
 				if (level == 2)//adult
 				{
+					Debug.Log("is an adult");
 					if(dragonTrans.gameObject.name.ToLower().Contains("green"))
 					{
 						dragonTrans.gameObject.SetActive(true);
+						Debug.Log("set an adult");
 					}
 					else
 					{

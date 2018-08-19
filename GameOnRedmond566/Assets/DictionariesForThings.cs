@@ -123,6 +123,8 @@ public class DictionariesForThings : MonoBehaviour {
         Resource2Sprite.Add("GRASS", Resources.Load<Sprite>("ResourcePrefabs/Sprites/braidedgrass"));
         Resource2Sprite.Add("AMETHYST", Resources.Load<Sprite>("ResourcePrefabs/Sprites/amazingamethyst"));
         Resource2Sprite.Add("BASKET", Resources.Load<Sprite>("ResourcePrefabs/Sprites/Basket"));
+		Resource2Sprite.Add("PINECONE", Resources.Load<Sprite>("ResourcePrefabs/Sprites/PricklyPinecone"));//pinecones are important!
+
 
         Location2Resource.Add("FARM", "GRASS");
         Location2Resource.Add("WIND", "FEATHER");

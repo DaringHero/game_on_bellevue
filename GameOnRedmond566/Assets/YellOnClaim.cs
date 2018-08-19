@@ -150,13 +150,14 @@ public class YellOnClaim : MonoBehaviour
 			
 
 		// DRAGON LEVELS
-        for(int i = 0; i < tempSetStationPages.myDragons.Count; ++i)
-        {
-            int dragonlevel = MyCurrentToy.customData.GetInt("DragonLevel", 0);
 
-			tempSetStationPages.SetDragonLevelColor(dragonlevel);
+        int dragonlevel = MyCurrentToy.customData.GetInt("DragonLevel", 0);
+		Debug.Log("setting DragonLevel = "+dragonlevel.ToString());
+		tempSetStationPages.SetDragonLevelColor(dragonlevel);
 
-        }
+
+
+
 
 
 
@@ -209,7 +210,7 @@ public class YellOnClaim : MonoBehaviour
 		}
 	}
 
-
+	/*
     public void SetPageinfo2()// updates the pages with player information
     {
         SetStationPages tempSetStationPages = this.gameObject.GetComponent<SetStationPages>();
@@ -234,7 +235,7 @@ public class YellOnClaim : MonoBehaviour
         {
             progressBar.GetComponent<EnergyBar>().SetValueF(ratio);
         }
-    }
+    }*/
 
     public void ClearCard(BitToys.Toy cardtoclear)
     {

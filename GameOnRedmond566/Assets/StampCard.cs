@@ -66,8 +66,9 @@ public class StampCard : MonoBehaviour {
 		//Stamp[0].SetActive(true);
 		//GameObject old = Stamp[0];
 		//Stamp[0].GetComponent<SpriteRenderer>().sprite = myYellOnClaim.gameObject.GetComponent<DictionariesForThings>().Resource2ResourceObject[resource].GetComponent<SpriteRenderer>().sprite;
+		//Debug.Log("resource = "+resource);
 		Sprite temp = myYellOnClaim.gameObject.GetComponent<DictionariesForThings>().Resource2Sprite[resource];
-		Debug.Log("Get Sprite = "+temp.name);
+		//Debug.Log("Get Sprite = "+temp.name);
 		Stamp[0].GetComponent<SpriteRenderer>().sprite = temp;
 
 		//Destroy(old);
