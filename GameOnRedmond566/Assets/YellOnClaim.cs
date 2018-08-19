@@ -270,8 +270,6 @@ public class YellOnClaim : MonoBehaviour
 
         debugmode = true;
         //origDebugPosition = debugstuff.transform.position;
-        currentLocation = Location.SWAMP;
-
         playerScanInTimes = new Dictionary<string, float>();
       
   
@@ -775,6 +773,8 @@ public class YellOnClaim : MonoBehaviour
         Backgrounds[index].SetActive(true);
 
         this.currentLocation = (Location)index;
+
+    
 
         Debug.Log("Background = "+this.currentLocation.ToString());
         WriteToErrorLog("Background = " + this.currentLocation.ToString());

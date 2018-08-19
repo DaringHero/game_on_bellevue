@@ -17,12 +17,17 @@ public class SetStationPages : MonoBehaviour {
 
     public enum Resource {
 
+        AMETHYST,
+        REED,
+        SNOW,
+        PINECONE,
+        SALMON,
+        FEATHER,
+        GRASS,
         WOOD,
-        MUSH,
-    REED,
-    ROCK,
-    PINECONE,
-    ICE,
+        APPLE,
+        BASKET,
+        SCALE,
     };
 
     public void Start()
@@ -32,7 +37,7 @@ public class SetStationPages : MonoBehaviour {
         Location2ResourceDic.Add(YellOnClaim.Location.WIND, "FEATHER");
         Location2ResourceDic.Add(YellOnClaim.Location.LAKE, "SALMON");
         Location2ResourceDic.Add(YellOnClaim.Location.FOREST, "PINECONE");
-        Location2ResourceDic.Add(YellOnClaim.Location.MOUNTAIN, "ICE");
+        Location2ResourceDic.Add(YellOnClaim.Location.MOUNTAIN, "SNOW");
 		Location2ResourceDic.Add(YellOnClaim.Location.SWAMP, "REED");
         Location2ResourceDic.Add(YellOnClaim.Location.HUNTING, "SCALE");
         Location2ResourceDic.Add(YellOnClaim.Location.SANC, "AMETHYST");
