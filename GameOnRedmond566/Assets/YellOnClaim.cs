@@ -43,6 +43,12 @@ public class YellOnClaim : MonoBehaviour
     public List<GameObject> Backgrounds;
     public enum Location { SANC, SWAMP, MOUNTAIN, FOREST, LAKE, WIND, FARM };
 
+    public enum CLEVELAND_Locations { LUMBER, ORCHARD};
+    public enum RTCEAST_Locations { MARKET, WIND};
+    public enum RTCWEST_Locations { MOUNTAIN, LAKE };
+    public enum RANDOM_Locations {  HUNTING, FARM, SWAMP, FOREST };
+
+
     public enum Regions { CLEVELAND, RTCWEST, RTCEAST};
     public Regions currentRegion;
 
@@ -491,7 +497,7 @@ public class YellOnClaim : MonoBehaviour
 
                         //HACK for getting new locations
                         //this.GetComponent<QuestProgress>().SetQuests(this.LocationsListHack());
-                        this.SetNewQuestCard(this.MyCurrentToy.customData.GetInt("DragonLevel", 0));
+                        this.SetNewQuestCard(currentDragonLevel);
                         //update new quest ui?
                         //update new dragon?              
                         //get new quests?
@@ -580,6 +586,42 @@ public class YellOnClaim : MonoBehaviour
 
 
     /// <summary>
+    /// this function is exactly like the other functions but we now include 0 (we didnt before beaucse of the sanctuary)
+    /// </summary>
+    /// <param name="maxrange"></param>
+    /// <param name="numberyouneed"></param>
+    /// <returns></returns>
+    public List<int> GetRandomUniqueNumbers0Indexed(int maxrange, int numberyouneed)
+    {
+        List<int> list2return = new List<int>();
+        List<int> originallist = new List<int>();
+        for (int i = 0; i < maxrange; ++i)
+        {
+            originallist.Add(i);
+        }
+
+        for (int i = 0; i < numberyouneed; ++i)
+        {
+            bool removed = false;
+            while (!removed)
+            {
+                int removethis = Random.Range(0, maxrange);
+                if (originallist.Contains(removethis))
+                {
+                    originallist.Remove(removethis);
+                    list2return.Add(removethis);
+                    removed = true;
+                }
+                else
+                {
+                    continue;
+                }
+            }
+        }
+        return list2return;
+    }
+
+    /// <summary>
     /// this function will do n choose k
     /// </summary>
     /// the number [exclusive] that is the max of your range
@@ -615,11 +657,8 @@ public class YellOnClaim : MonoBehaviour
                 {
                     continue;
                 }
-            }     
-        }
-      
-        
-
+            }     //end while
+        } //end for
         return list2return;
     }
     //version with removing 1 so that we dont have our own location
@@ -653,11 +692,8 @@ public class YellOnClaim : MonoBehaviour
                 {
                     continue;
                 }
-            }
-        }
-
-
-
+            }//end while
+        }//end for
         return list2return;
     }
 
@@ -668,231 +704,54 @@ public class YellOnClaim : MonoBehaviour
     void SetNewQuestCard(int levelofdragon)
     {
 
-        if (currentRegion == Regions.CLEVELAND)
-        {
-            if (levelofdragon == 0) //egg, we need 4 scans to get to hatchling
+            if ((levelofdragon == 0) || (levelofdragon == 1)) //egg, we need 4 scans to get to hatchling
             {
-                //choose 1 random of 6
-                int randomone = Random.Range(1, 7);
+            //get 1 quest from each region, and 1 from random
+            int clevelandChoice = Random.Range(0, 2);
 
-                string resource = this.GetComponent<DictionariesForThings>().EnumLocation2Resource[(Location)randomone];
+            int rtceastChoice = Random.Range(0, 2);
 
-                int wood = MyCurrentToy.customData.GetInt(resource, -999);
+            int rtcwestChoice = Random.Range(0, 2);
 
-                if (wood == -999)
+            int randoChoic = Random.Range(0, 4);
+
+            List<string> listofstrings = new List<string>();
+
+            listofstrings.Add(GetComponent<DictionariesForThings>().CLEVELAND_EnumLocation2Resource[(CLEVELAND_Locations)clevelandChoice]);
+            listofstrings.Add(GetComponent<DictionariesForThings>().RTCEAST_EnumLocation2Resource[(RTCEAST_Locations)rtceastChoice]);
+            listofstrings.Add(GetComponent<DictionariesForThings>().RTCWEST_EnumLocation2Resource[(RTCWEST_Locations)rtcwestChoice]);
+            listofstrings.Add(GetComponent<DictionariesForThings>().RANDOM_EnumLocation2Resource[(RANDOM_Locations)randoChoic]);
+
+            foreach (string i in listofstrings)
                 {
-                    MyCurrentToy.customData.AddInt(resource, 0);
-                }
-                else
-                {
-                    MyCurrentToy.customData.SetInt(resource, 0);
-                }
-
-                int dragonlevel = MyCurrentToy.customData.GetInt("DragonLevel", -999);
-
-                if (dragonlevel == -999)
-                {
-                    MyCurrentToy.customData.AddInt("DragonLevel", 0);
-                }
-                else
-                {
-                    MyCurrentToy.customData.SetInt("DragonLevel", 0);
-                }
-
-            }
-            else if (levelofdragon == 1) //hatchling, we now need 4 scans
-            {
-                //choose 2 random of 6
-                List<int> randomlist = GetRandomUniqueNumbers(7, 2);
-
-                foreach (int i in randomlist)
-                {
-                    string resource = GetComponent<DictionariesForThings>().EnumLocation2Resource[(Location)i];
-
-                    int resint = MyCurrentToy.customData.GetInt(resource, -999);
+                    int resint = MyCurrentToy.customData.GetInt(i, -999);
 
                     if (resint == -999)
                     {
-                        MyCurrentToy.customData.AddInt(resource, 0);
+                        MyCurrentToy.customData.AddInt(i, 0);
                     }
                     else
                     {
-                        MyCurrentToy.customData.SetInt(resource, 0);
+                        MyCurrentToy.customData.SetInt(i, 0);
                     }
                 }
 
             }
             else if (levelofdragon == 2) //adult, it is now time to release at the sanctuary
             {
-                int scale = MyCurrentToy.customData.GetInt("SCALE", -999);
+                int scale = MyCurrentToy.customData.GetInt("AMETHYST", -999);
 
                 if (scale == -999)
                 {
-                    MyCurrentToy.customData.AddInt("SCALE", 0);
+                    MyCurrentToy.customData.AddInt("AMETHYST", 0);
                 }
                 else
                 {
-                    MyCurrentToy.customData.SetInt("SCALE", 0);
+                    MyCurrentToy.customData.SetInt("AMETHYST", 0);
                 }
-            }
-        }
-        else if (currentRegion == Regions.RTCWEST)
-        {
-            if (levelofdragon == 0)
-            {
-                //choose 1 random of 6
-                int randomone = Random.Range(1, 7);
-
-                string resource = GetComponent<DictionariesForThings>().EnumLocation2Resource[(Location)randomone];
-
-                int wood = MyCurrentToy.customData.GetInt(resource, -999);
-
-                if (wood == -999)
-                {
-                    MyCurrentToy.customData.AddInt(resource, 0);
-                }
-                else
-                {
-                    MyCurrentToy.customData.SetInt(resource, 0);
-                }
-
-                int dragonlevel = MyCurrentToy.customData.GetInt("DragonLevel", -999);
-
-                if (dragonlevel == -999)
-                {
-                    MyCurrentToy.customData.AddInt("DragonLevel", 0);
-                }
-                else
-                {
-                    MyCurrentToy.customData.SetInt("DragonLevel", 0);
-                }
-            }
-            else if (levelofdragon == 1)
-            {
-                //choose 2 random of 6
-                List<int> randomlist = GetRandomUniqueNumbers(7, 2);
-
-                foreach (int i in randomlist)
-                {
-                    string resource = GetComponent<DictionariesForThings>().EnumLocation2Resource[(Location)i];
-
-                    int resint = MyCurrentToy.customData.GetInt(resource, -999);
-
-                    if (resint == -999)
-                    {
-                        MyCurrentToy.customData.AddInt(resource, 0);
-                    }
-                    else
-                    {
-                        MyCurrentToy.customData.SetInt(resource, 0);
-                    }
-                }
-
-            }
-            else if (levelofdragon == 2)
-            {
-                //choose 4 random of 6
-                //go to sanctuary
-
-                int scale = MyCurrentToy.customData.GetInt("SCALE", -999);
-
-                if (scale == -999)
-                {
-                    MyCurrentToy.customData.AddInt("SCALE", 0);
-                }
-                else
-                {
-                    MyCurrentToy.customData.SetInt("SCALE", 0);
-                }
-            }
-        }
-        else if (currentRegion == Regions.RTCEAST)
-        {
-            if (levelofdragon == 0)
-            {
-                //choose 1 random of 2 (rtc east)
-                if (currentLocation == Location.MOUNTAIN)
-                {
-                    int mush = MyCurrentToy.customData.GetInt("MUSH", -999);
-
-                    if (mush == -999)
-                    {
-                        MyCurrentToy.customData.AddInt("MUSH", 0);
-                    }
-                    else
-                    {
-                        MyCurrentToy.customData.SetInt("MUSH", 0);
-                    }
-                }
-                else if (currentLocation == Location.SWAMP)
-                {
-                    int mush = MyCurrentToy.customData.GetInt("ROCK", -999);
-
-                    if (mush == -999)
-                    {
-                        MyCurrentToy.customData.AddInt("ROCK", 0);
-                    }
-                    else
-                    {
-                        MyCurrentToy.customData.SetInt("ROCK", 0);
-                    }
-                }
-
-
-                int dragonlevel = MyCurrentToy.customData.GetInt("DragonLevel", -999);
-
-                if (dragonlevel == -999)
-                {
-                    MyCurrentToy.customData.AddInt("DragonLevel", 0);
-                }
-                else
-                {
-                    MyCurrentToy.customData.SetInt("DragonLevel", 0);
-                }
-
-            }
-            else if (levelofdragon == 1)
-            {
-                //choose 2 of 4 from RTC WEST
-                List<int> randomlist = GetRandomUniqueNumbers(5, 2);
-
-                foreach (int i in randomlist)
-                {
-                    string resource = GetComponent<DictionariesForThings>().EnumLocation2Resource[(Location)i];
-
-                    int resint = MyCurrentToy.customData.GetInt(resource, -999);
-
-                    if (resint == -999)
-                    {
-                        MyCurrentToy.customData.AddInt(resource, 0);
-                    }
-                    else
-                    {
-                        MyCurrentToy.customData.SetInt(resource, 0);
-                    }
-                }
-
-            }
-            else if (levelofdragon == 2) // adult, go to sanctuary
-            {
-                //choose 4 of 4 (rtc west)
-                //go to sanctuary
-                int scale = MyCurrentToy.customData.GetInt("SCALE", -999);
-
-                if (scale == -999)
-                {
-                    MyCurrentToy.customData.AddInt("SCALE", 0);
-                }
-                else
-                {
-                    MyCurrentToy.customData.SetInt("SCALE", 0);
-                }
-
-
             }
 
         }
-    }
 
     /// <summary>
     /// this function enables the bool ready2scan in yellonclaim, which was designed to prevent "double" scans and other prorblems like that
