@@ -55278,7 +55278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5152f572e4c4d5b4094192e6ffd11283, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxLength: 5000
+  MaxLength: 1000
   myText: {fileID: 1712791684}
 --- !u!1 &1713539952
 GameObject:

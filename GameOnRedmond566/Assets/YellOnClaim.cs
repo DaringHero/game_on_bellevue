@@ -747,7 +747,8 @@ public class YellOnClaim : MonoBehaviour
 
             int rtcwestChoice = Random.Range(0, 2);
 
-            int randoChoic = Random.Range(0, 4);
+            //int randoChoic = Random.Range(0, 4);
+            int randoChoic = 2;
 
             List<string> listofstrings = new List<string>();
 
