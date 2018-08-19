@@ -153,6 +153,15 @@ public class SetStationPages : MonoBehaviour {
 		}
 
 	}
+	public void TunOffAllStampsOnAllNewCards()// turn off all the stamps, setting them will turn them back on
+	{
+		foreach (GameObject card in myLevelUpResourceCards)
+		{
+			StampCard myStampcard = card.GetComponent<StampCard>();
+			myStampcard.TurnOffAllStamps();
+		}
+
+	}
 
     public void UpdateAllCards(BitToys.Toy myToy)//TODO
     {

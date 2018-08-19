@@ -168,8 +168,50 @@ public class YellOnClaim : MonoBehaviour
         }
     }
 
+	public void SetNewResourceCards()
+	{
+		SetStationPages tempSetStationPages = this.gameObject.GetComponent<SetStationPages>();
+		DictionariesForThings tempConverstions = this.gameObject.GetComponent<DictionariesForThings>();
 
-	public void SetNewResourceCards()//level up resource cards
+		tempSetStationPages.TunOffAllStampsOnAllNewCards();// turn off all the stamps, setting them will turn them back on
+
+		float ratio = 0; //use this for progress ratio
+
+		for (int i = 0; i < tempSetStationPages.myLevelUpResourceCards.Count; ++i)// for each page
+		{
+			List<KeyValuePair<string, int>> questData = tempSetStationPages.GetQuestData();// get all quest data
+
+			StampCard myStampcard = tempSetStationPages.myLevelUpResourceCards[i].GetComponent<StampCard>();// stampcard
+
+			int s = 0;
+			//update each stamp on each card
+			for (int d = 0; d < questData.Count; d++)// for all card datas
+			{
+
+				//Debug.Log("stamp = "+s.ToString() +"\t d = "+d.ToString() +"\t questData[d].Key = "+questData[d].Key);
+
+				if(questData[d].Value > -1)
+				{
+					//display correct resource
+					if (questData[d].Value == 1)
+					{
+						myStampcard.SetCompletedStamp(s, questData[d].Key);
+					}
+					if (questData[d].Value == 0)
+					{
+						myStampcard.SetStampBasedOnResource(s, questData[d].Key);
+					}
+
+					//Debug.Log("Set Data on::"+myStampcard.gameObject.name +" questData["+d.ToString()+"].Key = "+questData[d].Key);
+					s++; //next stamp
+				}
+
+			}
+
+		}
+
+	}
+	public void SetNewResourceCards2()//level up resource cards
 	{
 		SetStationPages tempSetStationPages = this.gameObject.GetComponent<SetStationPages>();
 
@@ -488,11 +530,13 @@ public class YellOnClaim : MonoBehaviour
                         //HACK for getting new locations
                         //this.GetComponent<QuestProgress>().SetQuests(this.LocationsListHack());
                         this.SetNewQuestCard(currentDragonLevel);
+						SetNewResourceCards();// should update the new cards with new quests
                         //update new quest ui?
                         //update new dragon?              
                         //get new quests?
                         //get next dragon?
                         WriteToErrorLog("Scan = New Quests");
+
 
                        
                     }
