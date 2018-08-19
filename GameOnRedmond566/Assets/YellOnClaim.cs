@@ -151,7 +151,7 @@ public class YellOnClaim : MonoBehaviour
 
 		// DRAGON LEVELS
 
-        int dragonlevel = MyCurrentToy.customData.GetInt("DragonLevel", 0);
+		int dragonlevel = MyCurrentToy.customData.GetInt("DragonLevel", 0);
 		Debug.Log("setting DragonLevel = "+dragonlevel.ToString());
 		tempSetStationPages.SetDragonLevelColor(dragonlevel);
 
@@ -912,7 +912,7 @@ public class YellOnClaim : MonoBehaviour
         this.MyCurrentToy.bitToysId = this.CurrentPlayerID;
 
         //first set of quests
-        this.MyCurrentToy.customData.AddInt("DragonLevel", 0);
+        //this.MyCurrentToy.customData.AddInt("DragonLevel", 0);
        // this.MyCurrentToy.customData.AddInt("")
         //this.MyCurrentToy.customData.SendAsync();
 
