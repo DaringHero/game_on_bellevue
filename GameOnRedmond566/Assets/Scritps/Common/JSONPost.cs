@@ -1,36 +1,76 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Networking;
 
 public class JSONPost : MonoBehaviour {
 
-    private static readonly string POSTAddUserURL = "http://www.daringhero.com/redmond/park/sanctuary/post_update_resources.php";
+    private static readonly string POSTAddUserURL = "http://www.daringhero.com/redmond/park/sanctuary/display_data.php";
 
 
-
+    public string convertjson(string jsonstr)
+    {
+        string a = "";
+        return a;
+    }
 
     public WWW POST(string jsonStr)
     {
         WWW www;
         Dictionary<string, string> postHeader = new Dictionary<string, string>();
-        postHeader.Add("Content-Type", "application/json");
+     //   postHeader.Add("Content-Type", "text/plain");
 
 
         Debug.Log("jsonstr is " + jsonStr) ;
 
+        string newstring =  "{ \"name\":\"amethyst\",\"amount\":\"1\"}, { \"name\":\"apples\",\"amount\":\"1\"}, { \"name\":\"berries\",\"amount\":\"1\"}";
+
         // convert json string to byte
-        var formData = System.Text.Encoding.UTF8.GetBytes(jsonStr);
+        var formData = System.Text.Encoding.UTF8.GetBytes(newstring);
         Debug.Log("form data is " + formData.ToString());
         www = new WWW(POSTAddUserURL, formData, postHeader);
-
         
         
 
         StartCoroutine(WaitForRequest(www));
         return www;
     }
+    
+    public void Post2()
+    {
 
+            StartCoroutine(Upload());
+   
+
+    }
+
+
+    IEnumerator Upload()
+    {
+        WWWForm form = new WWWForm();
+        form.AddField("gameData", "myData");
+        string newstring = "[{ \"name\":\"amethyst\",\"amount\":\"1\"}, { \"name\":\"apples\",\"amount\":\"1\"}, { \"name\":\"berries\",\"amount\":\"1\"}]";
+
+
+        //  using (UnityWebRequest www = UnityWebRequest.Post(POSTAddUserURL, form))
+        using (UnityWebRequest www = UnityWebRequest.Put(POSTAddUserURL, System.Text.Encoding.UTF8.GetBytes(newstring)))
+        {
+            www.method = "POST";
+            www.SetRequestHeader("Content-Type", "text/plain");
+            www.chunkedTransfer = false;
+            yield return www.Send();
+            
+            if (www.error != null)
+            {
+                Debug.Log(www.error);
+            }
+            else
+            {
+                Debug.Log("Form upload complete!");
+                Debug.Log(www.downloadHandler.text);
+            }
+        }
+    }
 
     IEnumerator WaitForRequest(WWW data)
     {
