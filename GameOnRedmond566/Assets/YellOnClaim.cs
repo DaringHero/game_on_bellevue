@@ -15,6 +15,10 @@ public class YellOnClaim : MonoBehaviour
     public GameObject ScanCardFail;
     public GameObject ScanCardWrong;
     public GameObject ScanCardNewQuests;
+
+    public GameObject SanctuaryTooSoon;
+    public GameObject SanctuaryPage;
+
     //for debug text
     public Text MyText;
     public Text myLastToyText;
@@ -494,6 +498,7 @@ public class YellOnClaim : MonoBehaviour
 
             if ( this.ShowNUX && this.MyCurrentToy.customData.GetBool("NewUser", true))
             {
+                this.MyCurrentToy.customData.AddInt("DragonsReleased", 0);
                 this.MyCurrentToy.customData.AddBool("NewUser", false);// flag as an old user
                 this.ScanCardNUX.SetActive(true);
                 //first set of quests
@@ -512,7 +517,7 @@ public class YellOnClaim : MonoBehaviour
                 // which state are we in?
 
 
-                if (myQuestProgress.StationIsForQuest())
+                if (myQuestProgress.StationIsForQuest() && currentLocation != Location.SANC)
                 {
 					
 
@@ -550,7 +555,7 @@ public class YellOnClaim : MonoBehaviour
 
 
                 }
-                else// wrong station
+                else if(currentLocation != Location.SANC)// wrong station
                 {
 					this.SetPageInfoEX();// we need to set up cards even if not right
                     this.ScanCardWrong.SetActive(true);
@@ -560,7 +565,31 @@ public class YellOnClaim : MonoBehaviour
                 }
 
                 //TODO sanctuary too early
+                if (currentLocation == Location.SANC)
+                {
+                    int currentDragonLevel = this.MyCurrentToy.customData.GetInt("DragonLevel", 0);
 
+                    //release it
+                    if(currentDragonLevel > 1)
+                    {
+                       int currentDragonsReleased =  this.MyCurrentToy.customData.GetInt("DragonsReleased", 0);
+                        //
+                        this.MyCurrentToy.customData.SetInt("DragonsReleased", currentDragonsReleased++);
+
+                        MyCurrentToy.customData.Remove("NewUser");
+                        MyCurrentToy.customData.Remove("DragonLevel");
+
+                        //setactive
+                        SanctuaryPage.SetActive(true);
+
+                    }
+                    else if(currentDragonLevel < 2)//too early
+                    {
+                        SanctuaryTooSoon.SetActive(true);
+                    }
+
+
+                }
                 //TODO sanctuary
             }
             
@@ -751,6 +780,19 @@ public class YellOnClaim : MonoBehaviour
             int randoChoic = 2;
 
             List<string> listofstrings = new List<string>();
+
+            //clear all the previous quests
+            foreach(string resources in GetComponent<DictionariesForThings>().Resource2Location.Keys)
+            {
+                int resint = MyCurrentToy.customData.GetInt(resources, -999);
+
+                if (resint != -999)
+                {
+                    MyCurrentToy.customData.SetInt(resources, -1);
+                }
+            }
+
+            //TODO-make it so that players do not repeat quests
 
             listofstrings.Add(GetComponent<DictionariesForThings>().CLEVELAND_EnumLocation2Resource[(CLEVELAND_Locations)clevelandChoice]);
             listofstrings.Add(GetComponent<DictionariesForThings>().RTCEAST_EnumLocation2Resource[(RTCEAST_Locations)rtceastChoice]);
