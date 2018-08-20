@@ -79,6 +79,15 @@ public class SetStationPages : MonoBehaviour {
 						dragonTrans.gameObject.SetActive(false);
 					}
 				}
+				else//turn off if not my level
+				{
+					if(dragonTrans.gameObject.name.ToLower().Contains("egg"))
+					{
+						dragonTrans.gameObject.SetActive(false);
+						Debug.Log("set egg to off");
+					}
+				}
+
 				if (level == 1)//hatchling
 				{
 					Debug.Log("is a hatchling");
@@ -92,6 +101,15 @@ public class SetStationPages : MonoBehaviour {
 						dragonTrans.gameObject.SetActive(false);
 					}
 				}
+				else//turn off if not my level
+				{
+					if(dragonTrans.gameObject.name.ToLower().Contains("red"))
+					{
+						dragonTrans.gameObject.SetActive(false);
+						Debug.Log("set red to off");
+					}
+				}
+
 				if (level == 2)//adult
 				{
 					Debug.Log("is an adult");
@@ -103,6 +121,14 @@ public class SetStationPages : MonoBehaviour {
 					else
 					{
 						dragonTrans.gameObject.SetActive(false);
+					}
+				}
+				else//turn off if not my level
+				{
+					if(dragonTrans.gameObject.name.ToLower().Contains("green"))
+					{
+						dragonTrans.gameObject.SetActive(false);
+						Debug.Log("set green to off");
 					}
 				}
 
