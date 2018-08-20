@@ -4513,7 +4513,7 @@ GameObject:
   - component: {fileID: 205136078}
   - component: {fileID: 205136079}
   m_Layer: 5
-  m_Name: StationResource (1)
+  m_Name: StationResource210
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17954,7 +17954,7 @@ GameObject:
   - component: {fileID: 663482777}
   - component: {fileID: 663482778}
   m_Layer: 5
-  m_Name: StationResource (1)
+  m_Name: StationResource300
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25491,7 +25491,7 @@ GameObject:
   - component: {fileID: 1005120642}
   - component: {fileID: 1005120643}
   m_Layer: 5
-  m_Name: StationResource
+  m_Name: StationResource105
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39731,7 +39731,7 @@ GameObject:
   - component: {fileID: 1342364121}
   - component: {fileID: 1342364122}
   m_Layer: 5
-  m_Name: StationResource (1)
+  m_Name: StationResource 410
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44954,7 +44954,7 @@ GameObject:
   - component: {fileID: 1423570189}
   - component: {fileID: 1423570190}
   m_Layer: 5
-  m_Name: StationResource
+  m_Name: StationResource100
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55078,6 +55078,7 @@ MonoBehaviour:
   - {fileID: 1342364120}
   - {fileID: 663482776}
   - {fileID: 205136077}
+  - {fileID: 1005120641}
   myResourceCards:
   - {fileID: 442804292}
   - {fileID: 926519921}
@@ -56511,7 +56512,7 @@ GameObject:
   - component: {fileID: 1759515969}
   - component: {fileID: 1759515970}
   m_Layer: 5
-  m_Name: StationResource
+  m_Name: StationResource200
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
