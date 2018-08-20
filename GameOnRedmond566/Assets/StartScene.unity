@@ -5485,7 +5485,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1930638195
+  randomSeed: 985194315
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -31342,7 +31342,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1120781033
 RectTransform:
   m_ObjectHideFlags: 0
@@ -53067,6 +53067,7 @@ GameObject:
   - component: {fileID: 1639924553}
   - component: {fileID: 1639924552}
   - component: {fileID: 1639924551}
+  - component: {fileID: 1639924556}
   m_Layer: 5
   m_Name: DragonText
   m_TagString: Untagged
@@ -53175,6 +53176,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1639924549}
+--- !u!114 &1639924556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1639924549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9fc4023d437f5b43934cb5847aaf029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myYellOnClaim: {fileID: 1708775438}
+  t: {fileID: 1639924554}
 --- !u!1 &1640301227
 GameObject:
   m_ObjectHideFlags: 0
@@ -55096,6 +55110,7 @@ MonoBehaviour:
   - {fileID: 1157333465}
   - {fileID: 955693454}
   - {fileID: 1014326067}
+  - {fileID: 855523470}
   myLevelUpResourceCards:
   - {fileID: 1794032877}
   - {fileID: 64958688}

@@ -530,7 +530,8 @@ public class YellOnClaim : MonoBehaviour
                         this.ScanCardNewQuests.SetActive(true);
 
                         int currentDragonLevel = this.MyCurrentToy.customData.GetInt("DragonLevel", 0);
-                        MyCurrentToy.customData.SetInt("DragonLevel", currentDragonLevel++);
+                        currentDragonLevel += 1;
+                        MyCurrentToy.customData.SetInt("DragonLevel", currentDragonLevel);
 
                         //HACK for getting new locations
                         //this.GetComponent<QuestProgress>().SetQuests(this.LocationsListHack());
@@ -574,7 +575,8 @@ public class YellOnClaim : MonoBehaviour
                     {
                        int currentDragonsReleased =  this.MyCurrentToy.customData.GetInt("DragonsReleased", 0);
                         //
-                        this.MyCurrentToy.customData.SetInt("DragonsReleased", currentDragonsReleased++);
+                        currentDragonsReleased += 1;
+                        this.MyCurrentToy.customData.SetInt("DragonsReleased", currentDragonsReleased);
 
                         MyCurrentToy.customData.Remove("NewUser");
                         MyCurrentToy.customData.Remove("DragonLevel");
@@ -630,7 +632,7 @@ public class YellOnClaim : MonoBehaviour
             this.ScanScreen.SetActive(false);// deactivate scan screen
 
             //UPDATE CUSTOM DATA!!!
-
+            int currentDragonLevel2 = this.MyCurrentToy.customData.GetInt("DragonLevel", 0);
             this.MyCurrentToy.customData.SendAsync();//update that toy data!
 
         }//end of else valid scan
@@ -776,8 +778,8 @@ public class YellOnClaim : MonoBehaviour
 
             int rtcwestChoice = Random.Range(0, 2);
 
-            //int randoChoic = Random.Range(0, 4);
-            int randoChoic = 2;
+            int randoChoic = Random.Range(0, 4);
+           // int randoChoic = 2;
 
             List<string> listofstrings = new List<string>();
 
@@ -816,7 +818,18 @@ public class YellOnClaim : MonoBehaviour
             }
             else if (levelofdragon == 2) //adult, it is now time to release at the sanctuary
             {
-                int scale = MyCurrentToy.customData.GetInt("AMETHYST", -999);
+            //clear all the previous quests
+            foreach (string resources in GetComponent<DictionariesForThings>().Resource2Location.Keys)
+            {
+                int resint = MyCurrentToy.customData.GetInt(resources, -999);
+
+                if (resint != -999)
+                {
+                    MyCurrentToy.customData.SetInt(resources, -1);
+                }
+            }
+
+            int scale = MyCurrentToy.customData.GetInt("AMETHYST", -999);
 
                 if (scale == -999)
                 {
