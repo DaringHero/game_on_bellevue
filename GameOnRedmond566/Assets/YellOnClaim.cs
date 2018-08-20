@@ -445,22 +445,20 @@ public class YellOnClaim : MonoBehaviour
         //debug for erasing cards
         SetLastToyScanned(theToy);
 
-        ready2scan = true;// override ready to scan non-sense
+        //ready2scan = true;// override ready to scan non-sense
         if (!ready2scan)
         {
-            UniClipboard.SetText(UniClipboard.GetText() + "\n" + " " + System.DateTime.Now + " Tried to scan but the reader wasn't ready...");
-        
+            //UniClipboard.SetText(UniClipboard.GetText() + "\n" + " " + System.DateTime.Now + " Tried to scan but the reader wasn't ready...");
+			this.WriteToErrorLog("ClaimToySuccess but was not ready");
             return;
         }
-
-
-        ready2scan = false;
+        ready2scan = false;// only take one scan at a time// reset in SetIsReadyForScan.cs
   
         this.MyCurrentToy = theToy;
 
         CurrentPlayerID = theToy.bitToysId;
 
-        bool validscan = true;//was false
+		bool validscan = true;//was false// Scans always Active (unless a player is in progress)
         /*
         if (!playerScanInTimes.ContainsKey(CurrentPlayerID))
         {
