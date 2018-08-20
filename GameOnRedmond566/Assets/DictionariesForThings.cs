@@ -113,7 +113,7 @@ public class DictionariesForThings : MonoBehaviour {
 
         Resource2Sprite.Add("SCALE", 	Resources.Load<Sprite>("ResourcePrefabs/Sprites/ScintScales"));
 		Resource2Sprite.Add("WOOD", 	Resources.Load<Sprite>("ResourcePrefabs/Sprites/SuperCedar"));
-		Resource2Sprite.Add("SNOW", 		Resources.Load<Sprite>("ResourcePrefabs/Sprites/Snow"));
+		Resource2Sprite.Add("SNOW", 	Resources.Load<Sprite>("ResourcePrefabs/Sprites/Snow"));
 		Resource2Sprite.Add("REED", 	Resources.Load<Sprite>("ResourcePrefabs/Sprites/Reeds"));
 
 		Resource2Sprite.Add("APPLE", Resources.Load<Sprite>("ResourcePrefabs/Sprites/AppealingApple"));

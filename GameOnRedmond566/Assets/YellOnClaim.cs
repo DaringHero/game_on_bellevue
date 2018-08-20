@@ -349,7 +349,7 @@ public class YellOnClaim : MonoBehaviour
 
     public void OnSawTag(string _id)
     {
-        ParticlesPlay();
+        //ParticlesPlay();
         WriteToErrorLog("Saw tag id="+_id);
     }
 

@@ -6,7 +6,7 @@ PlayerSettings:
   serializedVersion: 11
   productGUID: f8a18fcd0e0004a49aded3b932563000
   AndroidProfiler: 0
-  defaultScreenOrientation: 2
+  defaultScreenOrientation: 3
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
@@ -124,7 +124,17 @@ PlayerSettings:
     16:9: 1
     Others: 1
   bundleVersion: 1.0
-  preloadedAssets: []
+  preloadedAssets:
+  - {fileID: 2800000, guid: de2ffe76fe409c540826b06b7062a5ef, type: 3}
+  - {fileID: 2800000, guid: ca58508f7e1ef0a4a8a6c581886fbc41, type: 3}
+  - {fileID: 2800000, guid: f833f39f60913f04bba4218e8cc7aa7a, type: 3}
+  - {fileID: 2800000, guid: 857fe12edc741de4eaf42a2b2e080c2e, type: 3}
+  - {fileID: 2800000, guid: 4b3bf66cfc0708d4f9ab6946f7fa2438, type: 3}
+  - {fileID: 2800000, guid: 04e2b7a04df8059478629c1e553f9c4b, type: 3}
+  - {fileID: 2800000, guid: 6f918780eb2d0ea4db86bd5dd11c89ab, type: 3}
+  - {fileID: 2800000, guid: aee93d4832a10064e826905825d7b9fe, type: 3}
+  - {fileID: 2800000, guid: 67d971b00d837824a81a74f1d2116336, type: 3}
+  - {fileID: 2800000, guid: 33583a002af0b6e4ba8fa26ec270235a, type: 3}
   metroInputSource: 0
   m_HolographicPauseOnTrackingLoss: 1
   xboxOneDisableKinectGpuReservation: 0
