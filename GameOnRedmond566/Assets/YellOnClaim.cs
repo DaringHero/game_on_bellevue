@@ -1003,7 +1003,7 @@ public class YellOnClaim : MonoBehaviour
     }
 
     public void SetLEDs()
-    {
+    {/*
         // Method: SetLED_Connected(Red, Green, Blue, Red Pulse, Green Pulse, Blue Pulse).
                 // When device is connected and idle, the light is solid bright blue.
         BitToys.inst.ble_SetLED_Connected(0, 0, 255, 0, 0, 0);
@@ -1014,7 +1014,7 @@ public class YellOnClaim : MonoBehaviour
        // If a tag is read correctly, change the light to bright solid green.
 
         BitToys.inst.ble_SetLED_nfcTagOK(0, 255, 0, 0, 0, 0);
-    }
+    */}
 
     private void Update()
     {

@@ -21469,7 +21469,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Parting is such sweet sorrow...
+  m_Text: It can be hard to say goodbye...
 --- !u!222 &762195679
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -22991,7 +22991,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &852869020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25685,7 +25685,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 457fd85cc0ebb9845b760ed25fb73105, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initializeBitToys: 1
+  initializeBitToys: 0
 --- !u!114 &961672627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53778,7 +53778,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 457fd85cc0ebb9845b760ed25fb73105, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initializeBitToys: 0
+  initializeBitToys: 1
 --- !u!114 &1630171069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54405,9 +54405,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'But I''m proudest when
-
-    I can see them fly away on their own.'
+  m_Text: "But I'm proudest when I can \nwatch a dragon fly away on its own."
 --- !u!222 &1647331804
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -65631,7 +65629,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1134539990
+  randomSeed: -1315829636
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -69820,7 +69818,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2027975446
 RectTransform:
   m_ObjectHideFlags: 0
@@ -71433,7 +71431,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1289677548
+  randomSeed: -528866663
   InitialModule:
     serializedVersion: 3
     enabled: 1
