@@ -90,7 +90,8 @@ public class GetQuest : MonoBehaviour
         this.DisplayText.text = this.QuestStrings[nextQuest];
 
         Debug.Log("Quest = "+ ((YellOnClaim.Location)nextQuest).ToString());
-        UniClipboard.SetText(UniClipboard.GetText() + "\n" + System.DateTime.Now + " " + "Quest is " + ((YellOnClaim.Location)nextQuest).ToString());
+        //commenting out to test freeze bug
+     //   UniClipboard.SetText(UniClipboard.GetText() + "\n" + System.DateTime.Now + " " + "Quest is " + ((YellOnClaim.Location)nextQuest).ToString());
         StartCoroutine(WaitAndThenActivate());
 
     }

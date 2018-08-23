@@ -370,7 +370,7 @@ public class YellOnClaim : MonoBehaviour
     public void WriteToErrorLog(string message)// new function for error logging, the old error logs are kinda a hack
     {
         ErrorLog = ("\n" + " "+(System.DateTime.Now).ToString() + " : " + message) + ErrorLog;
-        UniClipboard.SetText(UniClipboard.GetText() + "\n" + " " + System.DateTime.Now + " : " + message);
+       // UniClipboard.SetText(UniClipboard.GetText() + "\n" + " " + System.DateTime.Now + " : " + message);
         Debug.Log(ErrorLog);
         MyText.text += ("\n" + " " + (System.DateTime.Now).ToString() + " : " + message);//write to old debug
     }
@@ -378,7 +378,7 @@ public class YellOnClaim : MonoBehaviour
     public string WriteToErrorLog(string message, bool returnString)// new function for error logging, the old error logs are kinda a hack
     {
         ErrorLog = ("\n" + " " + (System.DateTime.Now).ToString() + " : " + message) + ErrorLog;
-        UniClipboard.SetText(UniClipboard.GetText() + "\n" + " " + System.DateTime.Now + " : " + message);
+    //    UniClipboard.SetText(UniClipboard.GetText() + "\n" + " " + System.DateTime.Now + " : " + message);
         Debug.Log(ErrorLog);
         MyText.text += ("\n" + " " + (System.DateTime.Now).ToString() + " : " + message);//write to old debug
 
@@ -406,12 +406,12 @@ public class YellOnClaim : MonoBehaviour
     public void CopyErrorLog()// should tie to button for copy buffer?
     {
         GUIUtility.systemCopyBuffer = ErrorLog;
-        UniClipboard.SetText(ErrorLog);
+ //       UniClipboard.SetText(ErrorLog);
     }
     public void Copytext()// should tie to button for copy buffer?
     {
         GUIUtility.systemCopyBuffer = this.MyText.text;
-        UniClipboard.SetText(this.MyText.text);
+ //       UniClipboard.SetText(this.MyText.text);
     }
 
     public void SetNewToyVars(BitToys.Toy theToy, bool val)
@@ -478,7 +478,7 @@ public class YellOnClaim : MonoBehaviour
             this.ScanCardTooRecent.SetActive(true); //weve seen this player before, and the time
                                                     //hasnt expired yet, so they need to come back later
                                                     //no need for return here, this goes to the end of the function just the same
-            UniClipboard.SetText(UniClipboard.GetText() + "\n" + " " + System.DateTime.Now + " Tried to scan but it was too soon...");
+         //   UniClipboard.SetText(UniClipboard.GetText() + "\n" + " " + System.DateTime.Now + " Tried to scan but it was too soon...");
             StartCoroutine(EnableReady2Scan());
           
         }
@@ -1038,7 +1038,7 @@ public class YellOnClaim : MonoBehaviour
         debugstring += "\n ******************************";
 
         WriteToErrorLog( debugstring);
-        UniClipboard.SetText(UniClipboard.GetText() + "\n" + System.DateTime.Now + " " + debugstring);
+  //      UniClipboard.SetText(UniClipboard.GetText() + "\n" + System.DateTime.Now + " " + debugstring);
 
         if (!ready2scan)
             return;
@@ -1071,7 +1071,7 @@ public class YellOnClaim : MonoBehaviour
        text += mytext + "\n";
        text += "\n ******************************";
         WriteToErrorLog(text);
-        UniClipboard.SetText(UniClipboard.GetText() + "\n" + System.DateTime.Now + " Connected!");
+  //      UniClipboard.SetText(UniClipboard.GetText() + "\n" + System.DateTime.Now + " Connected!");
     }
 
     public void OnFetchOwnedToys(List<BitToys.Toy> myToys, bool mybool)

@@ -22,7 +22,7 @@ public class UpdateServer : MonoBehaviour {
     public void OnPutData_Fail(string _id, BitToys.FailReason reason, string text)
     {
         Debug.Log(_id + " Reason: " + reason + " " + text);
-        UniClipboard.SetText(UniClipboard.GetText() + "\n" + System.DateTime.Now + " PutData failed " + _id + " Reason: " + reason + " " + text + " ");
+   //     UniClipboard.SetText(UniClipboard.GetText() + "\n" + System.DateTime.Now + " PutData failed " + _id + " Reason: " + reason + " " + text + " ");
 
         currentNumberOfRetries++;
         if(currentNumberOfRetries < retrycount)
@@ -35,7 +35,7 @@ public class UpdateServer : MonoBehaviour {
 
     public void OnPutData_Success(BitToys.Toy _toy)
     {
-        UniClipboard.SetText(UniClipboard.GetText() + "\n" + System.DateTime.Now + " " + " data successfully updated on server ");
+   //     UniClipboard.SetText(UniClipboard.GetText() + "\n" + System.DateTime.Now + " " + " data successfully updated on server ");
         StartCoroutine(WaitAndThenActivate());// bump players to next screen
     }
 
