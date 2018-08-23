@@ -254,8 +254,8 @@ MonoBehaviour:
     y: 0
     width: 217
     height: 896
-  m_MinSize: {x: 204, y: 221}
-  m_MaxSize: {x: 4004, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -665,10 +665,10 @@ MonoBehaviour:
     width: 213
     height: 875
   m_TreeViewState:
-    scrollPos: {x: 0, y: 467.0769}
+    scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: e6fbffff000000002e3600003a3800004a3a0000963c0000
+    m_ExpandedIDs: 90effeff9af0feff1cf2feff26f2feff2ef2feffe6fbffff000000003a380000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
