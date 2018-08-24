@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class MaxText : MonoBehaviour {
 
-	public int MaxLength = 1000;
+	public int MaxLength = 500;
 	public Text myText;
 
 	// Update is called once per frame
@@ -14,7 +14,7 @@ public class MaxText : MonoBehaviour {
 
 		if(myText.text.Length> this.MaxLength)
 		{
-			myText.text = Reverse(Reverse(myText.text).Remove(myText.text.Length-this.MaxLength));//remove off the front
+			myText.text = ClampText( myText.text, MaxLength);
 		}
 		
 	}
@@ -24,6 +24,19 @@ public class MaxText : MonoBehaviour {
 	    char[] charArray = s.ToCharArray();
 	    Array.Reverse( charArray );
 	    return new string( charArray );
+	}
+
+	public static string ClampText(string s, int max)
+	{
+		if(s.Length> max)
+		{
+			return Reverse(Reverse(s).Remove(s.Length-max));//remove off the top
+		}
+		else
+		{
+			return s;
+		}
+
 	}
 
 }

@@ -373,6 +373,8 @@ public class YellOnClaim : MonoBehaviour
        // UniClipboard.SetText(UniClipboard.GetText() + "\n" + " " + System.DateTime.Now + " : " + message);
         Debug.Log(ErrorLog);
         MyText.text += ("\n" + " " + (System.DateTime.Now).ToString() + " : " + message);//write to old debug
+
+		ErrorLog = MaxText.ClampText(ErrorLog, 2000);// clamp text to prevent too much in the error log
     }
 
     public string WriteToErrorLog(string message, bool returnString)// new function for error logging, the old error logs are kinda a hack
@@ -381,6 +383,8 @@ public class YellOnClaim : MonoBehaviour
     //    UniClipboard.SetText(UniClipboard.GetText() + "\n" + " " + System.DateTime.Now + " : " + message);
         Debug.Log(ErrorLog);
         MyText.text += ("\n" + " " + (System.DateTime.Now).ToString() + " : " + message);//write to old debug
+
+		ErrorLog = MaxText.ClampText(ErrorLog, 2000);// clamp text to prevent too much in the error log
 
         if (returnString)
             return ("n" + " " + (System.DateTime.Now).ToString() + " : " + message);

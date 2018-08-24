@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class pulse : MonoBehaviour {
 
-    float maxSize = 2.5f;
-    float minSize = 1.5f;
+    public float maxSize = 2.5f;
+    public float minSize = 1.5f;
     float speed = 2.0f;
 
     // Use this for initialization
