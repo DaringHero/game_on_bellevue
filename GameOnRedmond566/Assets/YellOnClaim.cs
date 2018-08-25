@@ -577,7 +577,7 @@ public class YellOnClaim : MonoBehaviour
                     {
                        int currentDragonsReleased =  this.MyCurrentToy.customData.GetInt("DragonsReleased", 0);
                         //
-                        GetComponent<JSONPost>().POST(null);
+                        GetComponent<JSONPost>().POST(MyCurrentToy.customData.AsJSONString());
                         currentDragonsReleased += 1;
                         this.MyCurrentToy.customData.SetInt("DragonsReleased", currentDragonsReleased);
 

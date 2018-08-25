@@ -6,7 +6,7 @@ using UnityEngine.Networking;
 public class JSONPost : MonoBehaviour {
 
     private static readonly string POSTAddUserURL = "http://www.daringhero.com/redmond/park/sanctuary/display_data.php";
-
+    //private static readonly string POSTAddUserURL = "http://www.daringhero.com/redmond/park/sanctuary/update_resources.php";
 
     public string convertjson(string jsonstr)
     {
@@ -18,13 +18,76 @@ public class JSONPost : MonoBehaviour {
     {
         WWW www;
         Dictionary<string, string> postHeader = new Dictionary<string, string>();
-     //   postHeader.Add("Content-Type", "text/plain");
+        //   postHeader.Add("Content-Type", "text/plain");
+
+        string ultrastring = "";
+
+        //  Debug.Log("jsonstr is " + jsonStr) ;
+        //pull out all the things
+        if (jsonStr.Contains("GRASS"))
+        {
+            ultrastring += "GRASS:1,";
+        }
+
+        if (jsonStr.Contains("FEATHER"))
+        {
+            ultrastring += "FEATHER:1,";
+        }
+
+        if (jsonStr.Contains("SALMON"))
+        {
+            ultrastring += "SALMON:1,";
+        }
+
+        if (jsonStr.Contains("PINECONE"))
+        {
+            ultrastring += "PINECONE:1,";
+        }
+
+        if (jsonStr.Contains("REED"))
+        {
+            ultrastring += "REED:1,";
+        }
+
+        if (jsonStr.Contains("SNOW"))
+        {
+            ultrastring += "SNOW:1,";
+        }
+
+        if (jsonStr.Contains("AMETHYST"))
+        {
+            ultrastring += "AMETHYST:1,";
+        }
+
+        if (jsonStr.Contains("SCALE"))
+        {
+            ultrastring += "SCALE:1,";
+        }
+
+        if (jsonStr.Contains("BASKET"))
+        {
+            ultrastring += "BASKET:1,";
+        }
+
+        if (jsonStr.Contains("WOOD"))
+        {
+            ultrastring += "WOOD:1,";
+        }
+
+        if (jsonStr.Contains("APPLE"))
+        {
+            ultrastring += "APPLE:1";
+        }
+
+        if (ultrastring.EndsWith(","))
+            ultrastring.TrimEnd(',');
 
 
-        Debug.Log("jsonstr is " + jsonStr) ;
+
+
 
         string newstring =  "{ \"name\":\"amethyst\",\"amount\":\"1\"}, { \"name\":\"apples\",\"amount\":\"1\"}, { \"name\":\"berries\",\"amount\":\"1\"}";
-        string ultrastring = "APPLE:1";
+
         // convert json string to byte
         var formData = System.Text.Encoding.UTF8.GetBytes(ultrastring);
         Debug.Log("form data is " + formData.ToString());
