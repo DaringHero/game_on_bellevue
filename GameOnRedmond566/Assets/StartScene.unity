@@ -14503,7 +14503,7 @@ MonoBehaviour:
   CanTouchToSkip: 1
   StartOnEnable: 1
   waittime: 10
-  Activate: {fileID: 517703138}
+  Activate: {fileID: 846155835}
   Deactivate: {fileID: 821806675}
   TouchToSkipMessage: {fileID: 576279755}
   timer: 0
