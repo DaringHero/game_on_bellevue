@@ -55,7 +55,7 @@ public class DictionariesForThings : MonoBehaviour {
         RANDOM_EnumLocation2Resource = new Dictionary<YellOnClaim.RANDOM_Locations, string>();
 
         {
-            CLEVELAND_EnumLocation2Resource.Add(YellOnClaim.CLEVELAND_Locations.ORCHARD, "APPLE");
+            CLEVELAND_EnumLocation2Resource.Add(YellOnClaim.CLEVELAND_Locations.MOUNTAIN, "SNOW");
             CLEVELAND_EnumLocation2Resource.Add(YellOnClaim.CLEVELAND_Locations.LUMBER, "WOOD");
         }
 
@@ -65,7 +65,7 @@ public class DictionariesForThings : MonoBehaviour {
         }
 
         {
-            RTCWEST_EnumLocation2Resource.Add(YellOnClaim.RTCWEST_Locations.MOUNTAIN, "SNOW");
+            RTCWEST_EnumLocation2Resource.Add(YellOnClaim.RTCWEST_Locations.ORCHARD, "APPLE");
             RTCWEST_EnumLocation2Resource.Add(YellOnClaim.RTCWEST_Locations.LAKE, "SALMON");
         }
 

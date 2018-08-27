@@ -47,9 +47,9 @@ public class YellOnClaim : MonoBehaviour
     public List<GameObject> Backgrounds;
     public enum Location { SANC, SWAMP, MOUNTAIN, FOREST, LAKE, WIND, FARM, LUMBER, ORCHARD, MARKET, HUNTING };
 
-    public enum CLEVELAND_Locations { LUMBER, ORCHARD};
+    public enum CLEVELAND_Locations { LUMBER, MOUNTAIN};
     public enum RTCEAST_Locations { MARKET, WIND};
-    public enum RTCWEST_Locations { MOUNTAIN, LAKE };
+    public enum RTCWEST_Locations { ORCHARD, LAKE };
     public enum RANDOM_Locations {  HUNTING, FARM, SWAMP, FOREST };
 
 
@@ -1025,8 +1025,8 @@ public class YellOnClaim : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.A))
         {
             FakeScanNUX();
-            MyCurrentToy.customData.AddInt("Amethyst", 30);
-            MyCurrentToy.customData.AddInt("Apple", 30);
+            MyCurrentToy.customData.AddInt("AMETHYST", 1);
+            MyCurrentToy.customData.AddInt("APPLE", 1);
             TestJson();
             
         }
