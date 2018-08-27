@@ -38,6 +38,7 @@ public class YellOnClaim : MonoBehaviour
     public ParticleSystem rightscanParticles;
     public Text ScanText;
 
+    public bool OnlyCleveland; //use this after 3pm to only do cleveland quests
 
     public enum State { ScanIn, QuestProgress, ActualGather, QuestComplete };
 
@@ -109,6 +110,12 @@ public class YellOnClaim : MonoBehaviour
     
     public ParticleSystem idleparticles1;
     public ParticleSystem idleparticles2;
+
+    public void ToggleClevelandOnly()
+    {
+        OnlyCleveland = !OnlyCleveland;
+        Debug.Log("OnlyCleveland is " + OnlyCleveland);
+    }
 
     public void SetPageInfoEX()
     {
@@ -297,8 +304,8 @@ public class YellOnClaim : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-       
 
+        OnlyCleveland = false;
         BluetoothLowBatteryText.gameObject.SetActive(false);
         ready2scan = true;
         particleMode = true;
@@ -442,6 +449,31 @@ public class YellOnClaim : MonoBehaviour
 
     }
 
+    //this function should happen before sendasync, so right after onclaimtoy success
+    public void AddLocationData()
+    {
+        if (MyCurrentToy == null)
+            return;
+
+        string thestring = currentLocation.ToString();
+        thestring += " ";
+        thestring += currentRegion.ToString();
+        thestring += " ";
+        thestring += System.DateTime.UtcNow.ToString();
+
+        MyCurrentToy.customData.AddString("LocationTimes", thestring);
+
+    }
+
+    public void SetDebugCard()
+    {
+        if (MyCurrentToy == null)
+            return;
+
+        MyCurrentToy.customData.SetBool("DebugCard", true);
+        MyCurrentToy.customData.SendAsync();
+    }
+
     public void OnClaimToy_Success(BitToys.Toy theToy, bool val)
     {
         WriteToErrorLog("ClaimToySuccess");
@@ -488,6 +520,16 @@ public class YellOnClaim : MonoBehaviour
         }
         else// if valid scan
         {
+            bool isThisADebugCard = MyCurrentToy.customData.GetBool("DebugCard", false);
+
+            if(isThisADebugCard)
+            {
+                debugmode = false;
+                ToggleDebugStuff();
+            }
+
+            AddLocationData();
+
             WriteToErrorLog("GotValidScan");
 
 			//we always need to update the station resources!
@@ -799,10 +841,25 @@ public class YellOnClaim : MonoBehaviour
 
             //TODO-make it so that players do not repeat quests
 
+            if(!OnlyCleveland)
+            {
             listofstrings.Add(GetComponent<DictionariesForThings>().CLEVELAND_EnumLocation2Resource[(CLEVELAND_Locations)clevelandChoice]);
             listofstrings.Add(GetComponent<DictionariesForThings>().RTCEAST_EnumLocation2Resource[(RTCEAST_Locations)rtceastChoice]);
             listofstrings.Add(GetComponent<DictionariesForThings>().RTCWEST_EnumLocation2Resource[(RTCWEST_Locations)rtcwestChoice]);
             listofstrings.Add(GetComponent<DictionariesForThings>().RANDOM_EnumLocation2Resource[(RANDOM_Locations)randoChoic]);
+            }
+            else //only cleveland
+            {
+
+                int newr1 = (randoChoic + 1) % 4;
+                int newr2 = (randoChoic + 2) % 4;
+                int newr3 = (randoChoic + 3) % 4;
+                listofstrings.Add(GetComponent<DictionariesForThings>().RANDOM_EnumLocation2Resource[(RANDOM_Locations)newr1]);
+                listofstrings.Add(GetComponent<DictionariesForThings>().RANDOM_EnumLocation2Resource[(RANDOM_Locations)newr2]);
+                listofstrings.Add(GetComponent<DictionariesForThings>().RANDOM_EnumLocation2Resource[(RANDOM_Locations)newr3]);
+                listofstrings.Add(GetComponent<DictionariesForThings>().CLEVELAND_EnumLocation2Resource[(CLEVELAND_Locations)clevelandChoice]);
+            }
+
 
             foreach (string i in listofstrings)
                 {
@@ -1031,6 +1088,12 @@ public class YellOnClaim : MonoBehaviour
             
         }
            
+        //Comment this out if you dont want the clock to matter 3pm
+        if(!OnlyCleveland && System.DateTime.Now.Hour > 15)
+        {
+            OnlyCleveland = true;
+        }
+
     }
 
     public void OnClaimToy_Fail(BitToys.FailReason reason, string mytext)
