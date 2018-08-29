@@ -38,6 +38,25 @@ public class StampCard : MonoBehaviour {
 
     public YellOnClaim myYellOnClaim;
 
+	public void OnEnable()
+	{
+
+		string resource = myYellOnClaim.gameObject.GetComponent<DictionariesForThings>().Location2Resource[YellOnClaim.Location.SANC.ToString()];
+
+		if(myYellOnClaim.MyCurrentToy.customData.GetInt(resource, -1) == 0 )//is my dragon an adult?
+		{
+			SpriteRenderer temp = this.gameObject.GetComponent<SpriteRenderer>();
+			temp.enabled = false;
+		}
+		else
+		{
+			SpriteRenderer temp = this.gameObject.GetComponent<SpriteRenderer>();
+			temp.enabled = true;
+		}
+			
+
+	}
+
 	public void SetCompletedStamp(int i, string resource)//Sets a completed resoruce stamp
     {
 		

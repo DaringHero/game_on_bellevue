@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -4006,9 +4006,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Which one should
+  m_Text: 'Where should
 
-    you get next?'
+    you go next?'
 --- !u!222 &179756055
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5550,7 +5550,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 502659289
+  randomSeed: -312366932
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -9129,7 +9129,7 @@ MonoBehaviour:
   waittime: 10
   Activate: {fileID: 1733023829}
   Deactivate: {fileID: 412805325}
-  TouchToSkipMessage: {fileID: 431040031}
+  TouchToSkipMessage: {fileID: 0}
   timer: 0
 --- !u!1 &279369885
 GameObject:
@@ -9430,7 +9430,7 @@ MonoBehaviour:
   waittime: 10
   Activate: {fileID: 2126137117}
   Deactivate: {fileID: 332330605}
-  TouchToSkipMessage: {fileID: 565034790}
+  TouchToSkipMessage: {fileID: 0}
   timer: 0
 --- !u!114 &284689874
 MonoBehaviour:
@@ -14641,7 +14641,7 @@ MonoBehaviour:
   waittime: 10
   Activate: {fileID: 846155835}
   Deactivate: {fileID: 821806675}
-  TouchToSkipMessage: {fileID: 576279755}
+  TouchToSkipMessage: {fileID: 0}
   timer: 0
 --- !u!1 &458005727
 GameObject:
@@ -14969,14 +14969,14 @@ RectTransform:
   m_GameObject: {fileID: 469382986}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 15.801687, y: 3.5618253, z: 0.9999883}
+  m_LocalScale: {x: 15.801687, y: 1.9942034, z: 0.9999883}
   m_Children: []
   m_Father: {fileID: 2126137118}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -9.999939, y: 566}
+  m_AnchoredPosition: {x: -9.999939, y: 641}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &469382988
@@ -15381,7 +15381,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4174387697298366, guid: 537d2fa8cde385d41a7b19e3cf391a57, type: 2}
       propertyPath: m_RootOrder
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1881858705138426, guid: 537d2fa8cde385d41a7b19e3cf391a57, type: 2}
       propertyPath: m_Name
@@ -16856,7 +16856,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4762195260910510, guid: 4ff2be6d06c30f44bb63e15741e0bf40, type: 2}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1585314872884150, guid: 4ff2be6d06c30f44bb63e15741e0bf40, type: 2}
       propertyPath: m_Name
@@ -21945,7 +21945,7 @@ MonoBehaviour:
   waittime: 10
   Activate: {fileID: 517703138}
   Deactivate: {fileID: 1462165229}
-  TouchToSkipMessage: {fileID: 89070543}
+  TouchToSkipMessage: {fileID: 0}
   timer: 0
 --- !u!114 &762195676
 MonoBehaviour:
@@ -27974,7 +27974,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1336761274
+  randomSeed: -12714043
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -32600,7 +32600,7 @@ MonoBehaviour:
   waittime: 10
   Activate: {fileID: 517703138}
   Deactivate: {fileID: 11233554}
-  TouchToSkipMessage: {fileID: 629601190}
+  TouchToSkipMessage: {fileID: 0}
   timer: 0
 --- !u!114 &1110177304
 MonoBehaviour:
@@ -34673,7 +34673,7 @@ MonoBehaviour:
   waittime: 10
   Activate: {fileID: 821806675}
   Deactivate: {fileID: 400125806}
-  TouchToSkipMessage: {fileID: 1199754834}
+  TouchToSkipMessage: {fileID: 0}
   timer: 0
 --- !u!1 &1174529132
 GameObject:
@@ -41167,7 +41167,7 @@ MonoBehaviour:
   waittime: 4
   Activate: {fileID: 1395220434}
   Deactivate: {fileID: 496673279}
-  TouchToSkipMessage: {fileID: 712886882}
+  TouchToSkipMessage: {fileID: 0}
   timer: 0
 --- !u!114 &1330288243
 MonoBehaviour:
@@ -41856,7 +41856,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1769062748
+  randomSeed: 536415302
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -46454,7 +46454,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 58733119}
   m_HandleRect: {fileID: 58733118}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -53996,7 +53996,7 @@ MonoBehaviour:
   waittime: 10
   Activate: {fileID: 1462165229}
   Deactivate: {fileID: 1109577604}
-  TouchToSkipMessage: {fileID: 2144809349}
+  TouchToSkipMessage: {fileID: 0}
   timer: 0
 --- !u!114 &1612610726
 MonoBehaviour:
@@ -55754,7 +55754,7 @@ MonoBehaviour:
   waittime: 4
   Activate: {fileID: 496673279}
   Deactivate: {fileID: 1395220434}
-  TouchToSkipMessage: {fileID: 1419983279}
+  TouchToSkipMessage: {fileID: 0}
   timer: 0
 --- !u!114 &1664848302
 MonoBehaviour:
@@ -58584,7 +58584,7 @@ MonoBehaviour:
   waittime: 10
   Activate: {fileID: 517703138}
   Deactivate: {fileID: 1881552510}
-  TouchToSkipMessage: {fileID: 1948110572}
+  TouchToSkipMessage: {fileID: 0}
   timer: 0
 --- !u!1 &1777864257
 GameObject:
@@ -58642,7 +58642,7 @@ MonoBehaviour:
   waittime: 10
   Activate: {fileID: 1120781032}
   Deactivate: {fileID: 1493791354}
-  TouchToSkipMessage: {fileID: 1975436574}
+  TouchToSkipMessage: {fileID: 0}
   timer: 0
 --- !u!114 &1777864260
 MonoBehaviour:
@@ -60781,7 +60781,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1789268952
+  randomSeed: -1861231703
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -65694,6 +65694,7 @@ GameObject:
   - component: {fileID: 1943414407}
   - component: {fileID: 1943414406}
   - component: {fileID: 1943414405}
+  - component: {fileID: 1943414409}
   m_Layer: 5
   m_Name: QuestProgressText (1)
   m_TagString: Untagged
@@ -65784,6 +65785,24 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1943414403}
+--- !u!114 &1943414409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1943414403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7839661149d1524409a1601b1821c2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CanTouchToSkip: 1
+  StartOnEnable: 1
+  waittime: 10
+  Activate: {fileID: 1493791354}
+  Deactivate: {fileID: 2105330502}
+  TouchToSkipMessage: {fileID: 0}
+  timer: 0
 --- !u!1 &1948110572
 GameObject:
   m_ObjectHideFlags: 0
@@ -66208,7 +66227,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1634669187}
   m_HandleRect: {fileID: 1634669186}
   m_Direction: 0
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -71370,7 +71389,7 @@ MonoBehaviour:
   waittime: 10
   Activate: {fileID: 846155835}
   Deactivate: {fileID: 1733023829}
-  TouchToSkipMessage: {fileID: 1322590096}
+  TouchToSkipMessage: {fileID: 0}
   timer: 0
 --- !u!114 &2045463133
 MonoBehaviour:

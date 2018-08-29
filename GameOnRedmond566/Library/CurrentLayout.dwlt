@@ -343,7 +343,7 @@ MonoBehaviour:
       y: 17
       width: 810
       height: 525
-    m_Scale: {x: 0.68359375, y: 0.68359375}
+    m_Scale: {x: 0.7910156, y: 0.7910157}
     m_Translation: {x: 405, y: 262.5}
     m_MarginLeft: 0
     m_MarginRight: 0
@@ -351,12 +351,12 @@ MonoBehaviour:
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -592.45715
-      y: -384
-      width: 1184.9143
-      height: 768
+      x: -512
+      y: -331.85184
+      width: 1024
+      height: 663.7037
     m_MinimalGUI: 1
-  m_defaultScale: 0.68359375
+  m_defaultScale: 0.7910156
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
   m_LastWindowPixelSize: {x: 810, y: 542}
@@ -390,14 +390,14 @@ MonoBehaviour:
     width: 298
     height: 542
   m_SceneLighting: 1
-  lastFramingTime: 1653.6928534519918
+  lastFramingTime: 7478.9308573986
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.20892334, y: 7.1905212, z: 0}
+    m_Target: {x: -0.6205239, y: 3.1171012, z: 10.818062}
     speed: 2
-    m_Value: {x: -0.20892334, y: 7.1905212, z: 0}
+    m_Value: {x: -0.6205239, y: 3.1171012, z: 10.818062}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -420,13 +420,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.12762558, y: -0.19357787, z: 0.02540627, w: 0.9724165}
+    m_Target: {x: -0.13723509, y: -0.068289645, z: 0.009484139, w: -0.9881362}
     speed: 2
-    m_Value: {x: -0.12762558, y: 0.19357789, z: -0.025406271, w: -0.9724165}
+    m_Value: {x: -0.1372351, y: -0.06828965, z: 0.00948414, w: -0.98813623}
   m_Size:
-    m_Target: 22
+    m_Target: 46.148052
     speed: 2
-    m_Value: 22
+    m_Value: 46.148052
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -543,19 +543,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Stamps
+    - Assets/dragonprefabs
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Stamps
+  - Assets/dragonprefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\TommyHanusa\Desktop\GameOnRedmondRebuild\game_on_bellevue3\GameOnRedmond566
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 313}
-    m_SelectedIDs: 2c2f0000
-    m_LastClickedID: 12076
-    m_ExpandedIDs: 00000000d62600004027000032280000e42900004e2a0000442c0000262f0000dc2f0000223000009a300000ee30000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 95}
+    m_SelectedIDs: cc2f0000
+    m_LastClickedID: 12236
+    m_ExpandedIDs: 00000000002700006a2700005c2800000e2a0000782a0000722c0000542f0000cc2f00000a30000050300000c83000001c3100003ebd040000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -583,7 +583,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000d62600004027000032280000e42900004e2a0000442c0000262f0000dc2f0000223000009a300000ee300000
+    m_ExpandedIDs: 00000000002700006a2700005c2800000e2a0000782a0000722c0000542f00000a30000050300000c83000001c310000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -610,8 +610,8 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: bae6fdffac03000084200000c624000054220000f2060000c62d0000b0070000f41e0000761c00009a050000ee240000fe2400004c2500004a250000ce260000f226000004370100b42500007c2a0000209c000050290000c2250000842500006c26000004320000cc2e0000742600008829000000000000402b0000002c0000
+    m_HadKeyboardFocusLastEvent: 1
+    m_ExpandedInstanceIDs: bae6fdffac03000084200000c624000054220000f2060000c62d0000b0070000f41e0000761c00009a050000ee240000fe2400004c2500004a250000ce260000f226000004370100b42500007c2a0000209c000050290000c2250000842500006c26000004320000cc2e0000742600008829000000000000402b0000002c00005c2f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -666,23 +666,23 @@ MonoBehaviour:
     height: 875
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
+    m_SelectedIDs: 4cbd0400
     m_LastClickedID: 0
-    m_ExpandedIDs: ec25ffffbe26ffff4428ffff4e28ffff5628ffffe6fbffff00000000ec35000024360000703800009c390000743f00007c43000096450000
+    m_ExpandedIDs: 58a0fdff50a1fdffd4a2fdffdca2fdffe2a2fdff86b6fdff42b7fdffc6b8fdffceb8fdffd4b8fdffdc1dfeffce1efeff5220feff5a20feff6020feffa62dfeff982efeff1c30feff2430feff2a30feff6a64feff5c65feffe266feffec66fefff466feffe0b3feffb6b4feff3cb6feff46b6feff4eb6feffcefbffff00000000063700009a380000283f0000fc4000004e3f0100fa3c02003a4002008ec902001e5603005e5903002c110400e4ad0400
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: StationResource210
-      m_OriginalName: StationResource210
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 13262
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 11}
     m_SearchString: 

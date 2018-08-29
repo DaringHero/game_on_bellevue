@@ -1,0 +1,189 @@
+fileFormatVersion: 2
+guid: c106779ec3d6a5447bf0eebcb504afc5
+timeCreated: 1535515135
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: LP_Adult_Dragon_Back_Fin_01
+    100004: LP_Adult_Dragon_Back_Fin_02
+    100006: LP_Adult_Dragon_Back_Fin_03
+    100008: LP_Adult_Dragon_Back_Fin_04
+    100010: LP_Adult_Dragon_Back_Fin_05
+    100012: LP_Adult_Dragon_Back_Fin_06
+    100014: LP_Adult_Dragon_Back_Fin_07
+    100016: LP_Adult_Dragon_Back_Fin_08
+    100018: LP_Adult_Dragon_Back_Fin_09
+    100020: LP_Adult_Dragon_Back_Fin_10
+    100022: LP_Adult_Dragon_Back_Fins
+    100024: LP_Adult_Dragon_Back_Spikes
+    100026: LP_Adult_Dragon_Body
+    100028: LP_Adult_Dragon_Cheek_Spike_01
+    100030: LP_Adult_Dragon_Cheek_Spike_02
+    100032: LP_Adult_Dragon_Cheek_Spike_03
+    100034: LP_Adult_Dragon_Cheek_Spikes
+    100036: LP_Adult_Dragon_Eyes
+    100038: LP_Adult_Dragon_Horns
+    100040: LP_Adult_Dragon_Leg_Spikes
+    100042: LP_Adult_Dragon_Teeth
+    100044: LP_Adult_Dragon_Tongue
+    100046: LP_Adult_Dragon_Wing_Membrane
+    400000: //RootNode
+    400002: LP_Adult_Dragon_Back_Fin_01
+    400004: LP_Adult_Dragon_Back_Fin_02
+    400006: LP_Adult_Dragon_Back_Fin_03
+    400008: LP_Adult_Dragon_Back_Fin_04
+    400010: LP_Adult_Dragon_Back_Fin_05
+    400012: LP_Adult_Dragon_Back_Fin_06
+    400014: LP_Adult_Dragon_Back_Fin_07
+    400016: LP_Adult_Dragon_Back_Fin_08
+    400018: LP_Adult_Dragon_Back_Fin_09
+    400020: LP_Adult_Dragon_Back_Fin_10
+    400022: LP_Adult_Dragon_Back_Fins
+    400024: LP_Adult_Dragon_Back_Spikes
+    400026: LP_Adult_Dragon_Body
+    400028: LP_Adult_Dragon_Cheek_Spike_01
+    400030: LP_Adult_Dragon_Cheek_Spike_02
+    400032: LP_Adult_Dragon_Cheek_Spike_03
+    400034: LP_Adult_Dragon_Cheek_Spikes
+    400036: LP_Adult_Dragon_Eyes
+    400038: LP_Adult_Dragon_Horns
+    400040: LP_Adult_Dragon_Leg_Spikes
+    400042: LP_Adult_Dragon_Teeth
+    400044: LP_Adult_Dragon_Tongue
+    400046: LP_Adult_Dragon_Wing_Membrane
+    2300000: LP_Adult_Dragon_Back_Fin_01
+    2300002: LP_Adult_Dragon_Back_Fin_02
+    2300004: LP_Adult_Dragon_Back_Fin_03
+    2300006: LP_Adult_Dragon_Back_Fin_04
+    2300008: LP_Adult_Dragon_Back_Fin_05
+    2300010: LP_Adult_Dragon_Back_Fin_06
+    2300012: LP_Adult_Dragon_Back_Fin_07
+    2300014: LP_Adult_Dragon_Back_Fin_08
+    2300016: LP_Adult_Dragon_Back_Fin_09
+    2300018: LP_Adult_Dragon_Back_Fin_10
+    2300020: LP_Adult_Dragon_Back_Spikes
+    2300022: LP_Adult_Dragon_Body
+    2300024: LP_Adult_Dragon_Cheek_Spike_01
+    2300026: LP_Adult_Dragon_Cheek_Spike_02
+    2300028: LP_Adult_Dragon_Cheek_Spike_03
+    2300030: LP_Adult_Dragon_Eyes
+    2300032: LP_Adult_Dragon_Horns
+    2300034: LP_Adult_Dragon_Leg_Spikes
+    2300036: LP_Adult_Dragon_Teeth
+    2300038: LP_Adult_Dragon_Tongue
+    2300040: LP_Adult_Dragon_Wing_Membrane
+    3300000: LP_Adult_Dragon_Back_Fin_01
+    3300002: LP_Adult_Dragon_Back_Fin_02
+    3300004: LP_Adult_Dragon_Back_Fin_03
+    3300006: LP_Adult_Dragon_Back_Fin_04
+    3300008: LP_Adult_Dragon_Back_Fin_05
+    3300010: LP_Adult_Dragon_Back_Fin_06
+    3300012: LP_Adult_Dragon_Back_Fin_07
+    3300014: LP_Adult_Dragon_Back_Fin_08
+    3300016: LP_Adult_Dragon_Back_Fin_09
+    3300018: LP_Adult_Dragon_Back_Fin_10
+    3300020: LP_Adult_Dragon_Back_Spikes
+    3300022: LP_Adult_Dragon_Body
+    3300024: LP_Adult_Dragon_Cheek_Spike_01
+    3300026: LP_Adult_Dragon_Cheek_Spike_02
+    3300028: LP_Adult_Dragon_Cheek_Spike_03
+    3300030: LP_Adult_Dragon_Eyes
+    3300032: LP_Adult_Dragon_Horns
+    3300034: LP_Adult_Dragon_Leg_Spikes
+    3300036: LP_Adult_Dragon_Teeth
+    3300038: LP_Adult_Dragon_Tongue
+    3300040: LP_Adult_Dragon_Wing_Membrane
+    4300000: LP_Adult_Dragon_Eyes
+    4300002: LP_Adult_Dragon_Tongue
+    4300004: LP_Adult_Dragon_Teeth
+    4300006: LP_Adult_Dragon_Body
+    4300008: LP_Adult_Dragon_Cheek_Spike_01
+    4300010: LP_Adult_Dragon_Cheek_Spike_02
+    4300012: LP_Adult_Dragon_Cheek_Spike_03
+    4300014: LP_Adult_Dragon_Horns
+    4300016: LP_Adult_Dragon_Back_Fin_01
+    4300018: LP_Adult_Dragon_Back_Fin_02
+    4300020: LP_Adult_Dragon_Back_Fin_03
+    4300022: LP_Adult_Dragon_Back_Fin_04
+    4300024: LP_Adult_Dragon_Back_Fin_05
+    4300026: LP_Adult_Dragon_Back_Fin_06
+    4300028: LP_Adult_Dragon_Back_Fin_07
+    4300030: LP_Adult_Dragon_Back_Fin_08
+    4300032: LP_Adult_Dragon_Back_Fin_09
+    4300034: LP_Adult_Dragon_Back_Fin_10
+    4300036: LP_Adult_Dragon_Back_Spikes
+    4300038: LP_Adult_Dragon_Wing_Membrane
+    4300040: LP_Adult_Dragon_Leg_Spikes
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
