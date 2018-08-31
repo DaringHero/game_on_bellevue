@@ -70,7 +70,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 47
+  controlID: 26
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -185,7 +185,7 @@ MonoBehaviour:
   m_MinSize: {x: 887, y: 492}
   m_MaxSize: {x: 18008, y: 14042}
   vertical: 0
-  controlID: 45
+  controlID: 24
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -209,7 +209,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 46
+  controlID: 25
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -422,7 +422,7 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: -0.13723509, y: -0.068289645, z: 0.009484139, w: -0.9881362}
     speed: 2
-    m_Value: {x: -0.1372351, y: -0.06828965, z: 0.00948414, w: -0.98813623}
+    m_Value: {x: -0.13723509, y: -0.068289645, z: 0.009484139, w: -0.9881362}
   m_Size:
     m_Target: 46.148052
     speed: 2
@@ -543,19 +543,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/dragonprefabs
+    - Assets/Resources/ResourcePrefabs/Sprites
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/dragonprefabs
+  - Assets/Resources/ResourcePrefabs/Sprites
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\TommyHanusa\Desktop\GameOnRedmondRebuild\game_on_bellevue3\GameOnRedmond566
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 95}
-    m_SelectedIDs: cc2f0000
-    m_LastClickedID: 12236
-    m_ExpandedIDs: 00000000002700006a2700005c2800000e2a0000782a0000722c0000542f0000cc2f00000a30000050300000c83000001c3100003ebd040000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 233}
+    m_SelectedIDs: 222a0000
+    m_LastClickedID: 10786
+    m_ExpandedIDs: 00000000d62600004027000032280000e8290000522a0000502c0000b22c0000362f0000ae2f0000ec2f000032300000ee3000004231000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -583,7 +583,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000002700006a2700005c2800000e2a0000782a0000722c0000542f00000a30000050300000c83000001c310000
+    m_ExpandedIDs: 00000000d62600004027000032280000e8290000522a0000502c0000b22c0000362f0000ae2f0000ec2f000032300000ee30000042310000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -666,9 +666,9 @@ MonoBehaviour:
     height: 875
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 4cbd0400
+    m_SelectedIDs: 542f0000
     m_LastClickedID: 0
-    m_ExpandedIDs: 58a0fdff50a1fdffd4a2fdffdca2fdffe2a2fdff86b6fdff42b7fdffc6b8fdffceb8fdffd4b8fdffdc1dfeffce1efeff5220feff5a20feff6020feffa62dfeff982efeff1c30feff2430feff2a30feff6a64feff5c65feffe266feffec66fefff466feffe0b3feffb6b4feff3cb6feff46b6feff4eb6feffcefbffff00000000063700009a380000283f0000fc4000004e3f0100fa3c02003a4002008ec902001e5603005e5903002c110400e4ad0400
+    m_ExpandedIDs: e6fbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
