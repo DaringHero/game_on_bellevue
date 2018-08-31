@@ -47,7 +47,41 @@ public class WaitAndActivate : MonoBehaviour {
         this.Deactivate.SetActive(false);
     }
 
-    public virtual IEnumerator WaitAndThenActivateTouch()
+	public virtual IEnumerator WaitAndThenActivateTouch()
+	{
+		while (timer < this.waittime && !DoubleTap)// waiting and hasnt tapped
+		{
+
+			if ( ((Input.touches.Length>0) && Input.GetTouch(0).phase == TouchPhase.Ended) || Input.GetKeyUp(KeyCode.Return))// check for taps
+			{
+				DoubleTap = true;//single tap only
+
+				if (TouchToSkipMessage != null)// show tap message if there is tapping// not needed?
+				{
+					this.TouchToSkipMessage.SetActive(true);
+				}
+			}
+
+			timer += Time.deltaTime;
+			yield return null;
+		}
+
+		if (TouchToSkipMessage != null)// unshow tap message//not needed?
+		{
+			this.TouchToSkipMessage.SetActive(false);
+		}
+
+		this.Activate.SetActive(true);
+		this.Deactivate.SetActive(false);
+
+		if(GetComponent<setready2scantrue>())
+		{
+			GetComponent<setready2scantrue>().setit(true);
+		}
+
+	}
+
+    public virtual IEnumerator WaitAndThenActivateTouch2()
     {
 
         while (timer < this.waittime && !DoubleTap)// waiting and hasnt doubletapped
