@@ -15,6 +15,11 @@ public class PlayFireworks : MonoBehaviour {
 		
 	}
 
+    private void OnEnable()
+    {
+        PlayTheFireWorks();
+    }
+
     public void PlayTheFireWorks()
     {
         foreach(ParticleSystem work in f)
