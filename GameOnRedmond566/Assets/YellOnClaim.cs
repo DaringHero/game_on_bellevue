@@ -915,6 +915,7 @@ public class YellOnClaim : MonoBehaviour
 
     public void ChangeRegion(int index)
     {
+        Debug.Log("Region is changing to " + index);
         currentRegion = (Regions)index;
     }
 
