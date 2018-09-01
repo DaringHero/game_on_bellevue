@@ -1885,7 +1885,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4614,6 +4614,8 @@ MonoBehaviour:
     - m_Text: Market
       m_Image: {fileID: 0}
     - m_Text: Hunting
+      m_Image: {fileID: 0}
+    - m_Text: Sanc2
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -10384,7 +10386,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &307884146
 RectTransform:
   m_ObjectHideFlags: 0
@@ -56792,7 +56794,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -58805,6 +58807,7 @@ MonoBehaviour:
   - {fileID: 1370126973}
   - {fileID: 1845234768}
   - {fileID: 1045384674}
+  - {fileID: 1436556726}
   currentRegion: 0
   questLocation: 0
   ScanPage_0: {fileID: 0}
@@ -59127,7 +59130,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0.93000007, y: 1}
   m_AnchoredPosition: {x: 38.5, y: 0}
-  m_SizeDelta: {x: 77, y: 0}
+  m_SizeDelta: {x: 77, y: 72.265625}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1712791688
 MonoBehaviour:
@@ -67184,11 +67187,47 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: CLEVELAND
+    - m_Text: 1
       m_Image: {fileID: 0}
-    - m_Text: RTC_WEST
+    - m_Text: 2
       m_Image: {fileID: 0}
-    - m_Text: RTC_EAST
+    - m_Text: 3
+      m_Image: {fileID: 0}
+    - m_Text: 4
+      m_Image: {fileID: 0}
+    - m_Text: 5
+      m_Image: {fileID: 0}
+    - m_Text: 6
+      m_Image: {fileID: 0}
+    - m_Text: 7
+      m_Image: {fileID: 0}
+    - m_Text: 8
+      m_Image: {fileID: 0}
+    - m_Text: 9
+      m_Image: {fileID: 0}
+    - m_Text: 10
+      m_Image: {fileID: 0}
+    - m_Text: 11
+      m_Image: {fileID: 0}
+    - m_Text: 12
+      m_Image: {fileID: 0}
+    - m_Text: 13
+      m_Image: {fileID: 0}
+    - m_Text: 14
+      m_Image: {fileID: 0}
+    - m_Text: 15
+      m_Image: {fileID: 0}
+    - m_Text: 16
+      m_Image: {fileID: 0}
+    - m_Text: 17
+      m_Image: {fileID: 0}
+    - m_Text: 18
+      m_Image: {fileID: 0}
+    - m_Text: 19
+      m_Image: {fileID: 0}
+    - m_Text: 20
+      m_Image: {fileID: 0}
+    - m_Text: 20
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:

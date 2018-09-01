@@ -132,6 +132,7 @@ public class DictionariesForThings : MonoBehaviour {
         Location2Resource.Add("SWAMP", "REED");
         Location2Resource.Add("MOUNTAIN", "SNOW");
         Location2Resource.Add("SANC", "AMETHYST");
+        Location2Resource.Add("SANC2", "AMETHYST");
         Location2Resource.Add("HUNTING", "SCALE");
         Location2Resource.Add("MARKET" , "BASKET");
         Location2Resource.Add("LUMBER" , "WOOD");
@@ -162,7 +163,7 @@ public class DictionariesForThings : MonoBehaviour {
         EnumLocation2Resource.Add(YellOnClaim.Location.MARKET, "BASKET");
         EnumLocation2Resource.Add(YellOnClaim.Location.LUMBER, "WOOD");
         EnumLocation2Resource.Add(YellOnClaim.Location.ORCHARD, "APPLE");
-
+        EnumLocation2Resource.Add(YellOnClaim.Location.SANC2, "AMETHYST");
 
     }
 	
