@@ -459,7 +459,9 @@ public class YellOnClaim : MonoBehaviour
         thestring += " ";
         thestring += currentRegion.ToString();
         thestring += " ";
-        thestring += System.DateTime.UtcNow.ToString();
+        System.Int32 unixTimestamp = (System.Int32)(System.DateTime.UtcNow.Subtract(new System.DateTime(1970, 1, 1))).TotalSeconds;
+
+        thestring += unixTimestamp.ToString();
 
         MyCurrentToy.customData.AddString("LocationTimes", thestring);
 
