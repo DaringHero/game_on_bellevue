@@ -34,6 +34,8 @@ public class shrinkAndDing : MonoBehaviour {
 
     private void OnEnable()
     {
+        transform.localScale = orig;
+        theTime = 0;
         going = true;
     }
 }
