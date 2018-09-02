@@ -27577,10 +27577,10 @@ MonoBehaviour:
   m_Script: {fileID: -219053434, guid: 37ca7e128c62f834a9c8039782a9643a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  whichServer: 0
+  whichServer: 1
   developerID: digipen
   applicationID: digipen.redmond2018
-  authenticationKey: /oyrePcrbMDd0ByO
+  authenticationKey: WjtG1DNKCnKnBVyU
   usesQR: 0
   usesNativeNFC: 1
   usesBluetoothReader: 1
