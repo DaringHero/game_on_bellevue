@@ -41,6 +41,7 @@ public class SetStationPages : MonoBehaviour {
 		Location2ResourceDic.Add(YellOnClaim.Location.SWAMP, "REED");
         Location2ResourceDic.Add(YellOnClaim.Location.HUNTING, "SCALE");
         Location2ResourceDic.Add(YellOnClaim.Location.SANC, "AMETHYST");
+        Location2ResourceDic.Add(YellOnClaim.Location.SANC2, "AMETHYST");
         Location2ResourceDic.Add(YellOnClaim.Location.ORCHARD, "APPLE");
         Location2ResourceDic.Add(YellOnClaim.Location.MARKET, "BASKET");
         Location2ResourceDic.Add(YellOnClaim.Location.LUMBER, "WOOD");
@@ -155,6 +156,8 @@ public class SetStationPages : MonoBehaviour {
         ret.Add(new KeyValuePair<string, int>(Location2ResourceDic[YellOnClaim.Location.MARKET], myYellOnClaim.MyCurrentToy.customData.GetInt(Location2ResourceDic[YellOnClaim.Location.MARKET], -1)));
         ret.Add(new KeyValuePair<string, int>(Location2ResourceDic[YellOnClaim.Location.LUMBER], myYellOnClaim.MyCurrentToy.customData.GetInt(Location2ResourceDic[YellOnClaim.Location.LUMBER], -1)));
 
+
+        ret.Add(new KeyValuePair<string, int>(Location2ResourceDic[YellOnClaim.Location.SANC2], myYellOnClaim.MyCurrentToy.customData.GetInt(Location2ResourceDic[YellOnClaim.Location.SANC2], -1)));
         ret.Add(new KeyValuePair<string, int>(Location2ResourceDic[YellOnClaim.Location.SANC], myYellOnClaim.MyCurrentToy.customData.GetInt(Location2ResourceDic[YellOnClaim.Location.SANC], -1)));
         return ret;
 

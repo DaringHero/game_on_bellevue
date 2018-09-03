@@ -46,7 +46,7 @@ public class YellOnClaim : MonoBehaviour
 
     //all background screens
     public List<GameObject> Backgrounds;
-    public enum Location { SANC, SWAMP, MOUNTAIN, FOREST, LAKE, WIND, FARM, LUMBER, ORCHARD, MARKET, HUNTING };
+    public enum Location { SANC, SWAMP, MOUNTAIN, FOREST, LAKE, WIND, FARM, LUMBER, ORCHARD, MARKET, HUNTING, SANC2 };
 
     public enum CLEVELAND_Locations { LUMBER, MOUNTAIN};
     public enum RTCEAST_Locations { MARKET, WIND};
@@ -356,7 +356,7 @@ public class YellOnClaim : MonoBehaviour
 
     public void OnSawTag(string _id)
     {
-        //ParticlesPlay();
+        ParticlesPlay();
         WriteToErrorLog("Saw tag id="+_id);
     }
 
@@ -459,7 +459,9 @@ public class YellOnClaim : MonoBehaviour
         thestring += " ";
         thestring += currentRegion.ToString();
         thestring += " ";
-        thestring += System.DateTime.UtcNow.ToString();
+        System.Int32 unixTimestamp = (System.Int32)(System.DateTime.UtcNow.Subtract(new System.DateTime(1970, 1, 1))).TotalSeconds;
+
+        thestring += unixTimestamp.ToString();
 
         MyCurrentToy.customData.AddString("LocationTimes", thestring);
 
@@ -520,13 +522,24 @@ public class YellOnClaim : MonoBehaviour
         }
         else// if valid scan
         {
-            bool isThisADebugCard = MyCurrentToy.customData.GetBool("DebugCard", false);
-
-            if(isThisADebugCard)
+            //only works if id is longer than 3 , which it should be
+            if(MyCurrentToy.styleId != null && MyCurrentToy.styleId.Length >= 3)
             {
-                debugmode = false;
-                ToggleDebugStuff();
+                string last3chars = MyCurrentToy.styleId.Substring(MyCurrentToy.styleId.Length - 3);
+                bool isThisADebugCard;
+
+                if (last3chars == "dev")
+                    isThisADebugCard = true;
+                else
+                    isThisADebugCard = false;
+
+                if (isThisADebugCard)
+                {
+                    debugmode = false;
+                    ToggleDebugStuff();
+                }
             }
+
 
             AddLocationData();
 
@@ -561,7 +574,7 @@ public class YellOnClaim : MonoBehaviour
                 // which state are we in?
 
 
-                if (myQuestProgress.StationIsForQuest() && currentLocation != Location.SANC)
+                if (myQuestProgress.StationIsForQuest() && (currentLocation != Location.SANC) && (currentLocation != Location.SANC2))
                 {
 					
 
@@ -600,7 +613,7 @@ public class YellOnClaim : MonoBehaviour
 
 
                 }
-                else if(currentLocation != Location.SANC)// wrong station
+                else if((currentLocation != Location.SANC) && (currentLocation != Location.SANC2))// wrong station
                 {
 					this.SetPageInfoEX();// we need to set up cards even if not right
                     this.ScanCardWrong.SetActive(true);
@@ -610,7 +623,7 @@ public class YellOnClaim : MonoBehaviour
                 }
 
                 //TODO sanctuary too early
-                if (currentLocation == Location.SANC)
+                if (currentLocation == Location.SANC2)
                 {
                     int currentDragonLevel = this.MyCurrentToy.customData.GetInt("DragonLevel", 0);
 
@@ -915,7 +928,9 @@ public class YellOnClaim : MonoBehaviour
 
     public void ChangeRegion(int index)
     {
-        currentRegion = (Regions)index;
+        //commenting out for now because for analytics region is going to be unique id of station
+     //   Debug.Log("Region is changing to " + index);
+     //   currentRegion = (Regions)index;
     }
 
     public void ChangeBackground(int index)

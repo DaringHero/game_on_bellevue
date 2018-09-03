@@ -5,8 +5,8 @@ using UnityEngine.Networking;
 
 public class JSONPost : MonoBehaviour {
 
-    private static readonly string POSTAddUserURL = "http://www.daringhero.com/redmond/park/sanctuary/display_data.php";
-    //private static readonly string POSTAddUserURL = "http://www.daringhero.com/redmond/park/sanctuary/update_resources.php";
+    //private static readonly string POSTAddUserURL = "http://www.daringhero.com/redmond/park/sanctuary/display_data.php";
+    private static readonly string POSTAddUserURL = "http://www.daringhero.com/redmond/park/sanctuary/update_resources.php";
 
     public string convertjson(string jsonstr)
     {
