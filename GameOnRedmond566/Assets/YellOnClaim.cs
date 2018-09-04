@@ -580,7 +580,7 @@ public class YellOnClaim : MonoBehaviour
 
                     //increment data for going to this station// ie collecting the resource
                     this.MyCurrentToy.customData.SetInt(this.GetComponent<DictionariesForThings>().Location2Resource[this.currentLocation.ToString()], 1);
-	
+                    this.GetComponent<JSONPost>().POST(this.GetComponent<DictionariesForThings>().Location2Resource[this.currentLocation.ToString()]);
                     this.SetPageInfoEX();// we need to set cards after new resource
                     if (myQuestProgress.CompletedAllQuests())
                     {
@@ -632,7 +632,7 @@ public class YellOnClaim : MonoBehaviour
                     {
                        int currentDragonsReleased =  this.MyCurrentToy.customData.GetInt("DragonsReleased", 0);
                         //
-                        GetComponent<JSONPost>().POST(MyCurrentToy.customData.AsJSONString());
+                        
                         currentDragonsReleased += 1;
                         this.MyCurrentToy.customData.SetInt("DragonsReleased", currentDragonsReleased);
 
@@ -873,9 +873,11 @@ public class YellOnClaim : MonoBehaviour
                 listofstrings.Add(GetComponent<DictionariesForThings>().CLEVELAND_EnumLocation2Resource[(CLEVELAND_Locations)clevelandChoice]);
             }
 
-
+            string send2doug = "";
             foreach (string i in listofstrings)
                 {
+                send2doug += i;
+                send2doug += ",";
                     int resint = MyCurrentToy.customData.GetInt(i, -999);
 
                     if (resint == -999)
@@ -888,7 +890,8 @@ public class YellOnClaim : MonoBehaviour
                     }
                 }
 
-            }
+               // this.GetComponent<JSONPost>().POST(MyCurrentToy.customData.AsJSONString());
+        }
             else if (levelofdragon == 2) //adult, it is now time to release at the sanctuary
             {
             //clear all the previous quests
