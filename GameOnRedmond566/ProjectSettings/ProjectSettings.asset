@@ -233,7 +233,7 @@ PlayerSettings:
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: C:/Users/stfu1/Documents/GitHub/realbellevue/game_on_bellevue/GameOnRedmond566/user.keystore
+  AndroidKeystoreName: C:/Users/TommyHanusa/Desktop/GameOnRedmondRebuild/game_on_bellevue3/GameOnRedmond566/user.keystore
   AndroidKeyaliasName: digipengameonbellevuekeystore
   AndroidTVCompatibility: 1
   AndroidIsGame: 1

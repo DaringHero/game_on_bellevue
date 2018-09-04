@@ -1885,7 +1885,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -10311,7 +10311,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &307884146
 RectTransform:
   m_ObjectHideFlags: 0
@@ -23899,7 +23899,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: CLEVELAND
+  m_Text: 1
 --- !u!222 &828346875
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -56359,7 +56359,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -58348,11 +58348,10 @@ MonoBehaviour:
   - {fileID: 44617995}
   - {fileID: 585262565}
   - {fileID: 1298726555}
-  - {fileID: 0}
+  - {fileID: 855523470}
   - {fileID: 1157333465}
   - {fileID: 955693454}
   - {fileID: 1014326067}
-  - {fileID: 855523470}
   myLevelUpResourceCards:
   - {fileID: 386691565}
   - {fileID: 1181569431}
@@ -58512,7 +58511,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0.93000007, y: 1}
   m_AnchoredPosition: {x: 38.5, y: 0}
-  m_SizeDelta: {x: 77, y: 72.265625}
+  m_SizeDelta: {x: 77, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1712791688
 MonoBehaviour:
@@ -77458,7 +77457,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2105330503
 RectTransform:
   m_ObjectHideFlags: 0
