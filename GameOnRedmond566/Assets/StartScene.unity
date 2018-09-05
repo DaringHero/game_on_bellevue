@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -23899,7 +23899,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 1
+  m_Text: 0
 --- !u!222 &828346875
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -48136,7 +48136,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 58733119}
   m_HandleRect: {fileID: 58733118}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -66454,6 +66454,8 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
+    - m_Text: 0
+      m_Image: {fileID: 0}
     - m_Text: 1
       m_Image: {fileID: 0}
     - m_Text: 2
@@ -66491,8 +66493,6 @@ MonoBehaviour:
     - m_Text: 18
       m_Image: {fileID: 0}
     - m_Text: 19
-      m_Image: {fileID: 0}
-    - m_Text: 20
       m_Image: {fileID: 0}
     - m_Text: 20
       m_Image: {fileID: 0}
