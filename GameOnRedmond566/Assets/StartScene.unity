@@ -22860,8 +22860,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 82615783}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.1309137, y: -2.8606162, z: -4.2000227}
-  m_LocalScale: {x: 5.000029, y: 5.000029, z: 5.0000196}
+  m_LocalPosition: {x: -2.1309001, y: -2.8606162, z: -4.2000227}
+  m_LocalScale: {x: 5.0000296, y: 5.000029, z: 5.00002}
   m_Children:
   - {fileID: 966562996}
   m_Father: {fileID: 585262566}
@@ -36506,6 +36506,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: 1d5280b2420b94c4e894300c39ee530e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f9c487f106e1fc14a948e85fb5de1854, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1d5280b2420b94c4e894300c39ee530e, type: 3}
   m_IsPrefabParent: 0
@@ -48710,7 +48714,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 58733119}
   m_HandleRect: {fileID: 58733118}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -54887,7 +54891,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a81d1413e7ea81b488fe7ffb1441f78f, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a81d1413e7ea81b488fe7ffb1441f78f, type: 3}
       propertyPath: m_LocalScale.x
@@ -60884,6 +60888,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: 2cb03b3bb1970ab4d9209b588e281e96, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f9c487f106e1fc14a948e85fb5de1854, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2cb03b3bb1970ab4d9209b588e281e96, type: 3}
   m_IsPrefabParent: 0
@@ -68812,8 +68820,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1634669187}
   m_HandleRect: {fileID: 1634669186}
   m_Direction: 0
-  m_Value: 0
-  m_Size: 1
+  m_Value: 0.75
+  m_Size: 0.99999976
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
