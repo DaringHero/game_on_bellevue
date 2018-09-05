@@ -158,7 +158,7 @@ public class SetStationPages : MonoBehaviour {
 
 
         ret.Add(new KeyValuePair<string, int>(Location2ResourceDic[YellOnClaim.Location.SANC2], myYellOnClaim.MyCurrentToy.customData.GetInt(Location2ResourceDic[YellOnClaim.Location.SANC2], -1)));
-        ret.Add(new KeyValuePair<string, int>(Location2ResourceDic[YellOnClaim.Location.SANC], myYellOnClaim.MyCurrentToy.customData.GetInt(Location2ResourceDic[YellOnClaim.Location.SANC], -1)));
+    //    ret.Add(new KeyValuePair<string, int>(Location2ResourceDic[YellOnClaim.Location.SANC], myYellOnClaim.MyCurrentToy.customData.GetInt(Location2ResourceDic[YellOnClaim.Location.SANC], -1)));
         return ret;
 
 	}
