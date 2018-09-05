@@ -111,7 +111,7 @@ public class DictionariesForThings : MonoBehaviour {
 		Resource2Sprite.Add("PINECONE", Resources.Load<Sprite>("Assets/Resources/ResourcePrefabs/Sprites/PricklyPinecone"));
 		*/
 
-        Resource2Sprite.Add("SCALE", 	Resources.Load<Sprite>("ResourcePrefabs/Sprites/ScintScales"));
+		Resource2Sprite.Add("SCALE", 	Resources.Load<Sprite>("ResourcePrefabs/Sprites/Mushroom"));//changed to mushrooms
 		Resource2Sprite.Add("WOOD", 	Resources.Load<Sprite>("ResourcePrefabs/Sprites/SuperCedar"));
 		Resource2Sprite.Add("SNOW", 	Resources.Load<Sprite>("ResourcePrefabs/Sprites/Snow"));
 		Resource2Sprite.Add("REED", 	Resources.Load<Sprite>("ResourcePrefabs/Sprites/Reeds"));
@@ -119,7 +119,7 @@ public class DictionariesForThings : MonoBehaviour {
 		Resource2Sprite.Add("APPLE", Resources.Load<Sprite>("ResourcePrefabs/Sprites/AppealingApple"));
         Resource2Sprite.Add("SALMON", Resources.Load<Sprite>("ResourcePrefabs/Sprites/slipperysalmon"));
         Resource2Sprite.Add("FEATHER", Resources.Load<Sprite>("ResourcePrefabs/Sprites/eagle_feather"));
-        Resource2Sprite.Add("GRASS", Resources.Load<Sprite>("ResourcePrefabs/Sprites/braidedgrass"));
+		Resource2Sprite.Add("GRASS", Resources.Load<Sprite>("ResourcePrefabs/Sprites/Tulip"));//changed to tulips
         Resource2Sprite.Add("AMETHYST", Resources.Load<Sprite>("ResourcePrefabs/Sprites/amazingamethyst"));
         Resource2Sprite.Add("BASKET", Resources.Load<Sprite>("ResourcePrefabs/Sprites/Basket"));
 		Resource2Sprite.Add("PINECONE", Resources.Load<Sprite>("ResourcePrefabs/Sprites/PricklyPinecone"));//pinecones are important!
@@ -166,9 +166,5 @@ public class DictionariesForThings : MonoBehaviour {
         EnumLocation2Resource.Add(YellOnClaim.Location.SANC2, "AMETHYST");
 
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
 }
