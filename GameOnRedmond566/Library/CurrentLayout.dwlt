@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 8}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -95,7 +95,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 135
+  controlID: 49
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_MinSize: {x: 887, y: 492}
   m_MaxSize: {x: 18008, y: 14042}
   vertical: 0
-  controlID: 23
+  controlID: 47
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -193,7 +193,7 @@ MonoBehaviour:
     y: 0
     width: 1891
     height: 962
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &9
 MonoBehaviour:
@@ -259,7 +259,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 134
+  controlID: 48
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -322,19 +322,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Resources/ResourcePrefabs/Sprites
+    - Assets/dragonprefabs/Egg
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Resources/ResourcePrefabs/Sprites
+  - Assets/dragonprefabs/Egg
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\TommyHanusa\Desktop\GameOnRedmondRebuild\game_on_bellevue3\GameOnRedmond566
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 311}
-    m_SelectedIDs: 2e2a0000
-    m_LastClickedID: 10798
-    m_ExpandedIDs: 00000000de2600004c2700003e280000f42900005e2a00005e2c0000c02c00004a2f0000c22f00000030000046300000023100005631000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 95}
+    m_SelectedIDs: 50490000
+    m_LastClickedID: 18768
+    m_ExpandedIDs: 00000000ea260000582700004a280000002a00006a2a00006a2c0000cc2c0000562f0000ce2f00000c300000523000000e310000623100005049000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -362,7 +362,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000de2600004c2700003e280000f42900005e2a00005e2c0000c02c00004a2f0000c22f000000300000463000000231000056310000
+    m_ExpandedIDs: 00000000ea260000582700004a280000002a00006a2a00006a2c0000cc2c0000562f0000ce2f00000c300000523000000e31000062310000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -478,23 +478,23 @@ MonoBehaviour:
     height: 891
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
-    m_LastClickedID: 0
-    m_ExpandedIDs: ee86ffffd687ffff5c89ffff6689ffff6e89ffffe6fbffff000000003a390000343e000010470000
+    m_SelectedIDs: 08370000
+    m_LastClickedID: 14088
+    m_ExpandedIDs: e6fbffff00000000e034000054380000f23c0000323e000074420000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Egg
+      m_OriginalName: Egg
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 17006
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 2}
     m_SearchString: 
@@ -530,14 +530,14 @@ MonoBehaviour:
     width: 504
     height: 620
   m_SceneLighting: 1
-  lastFramingTime: 8566.875514041545
+  lastFramingTime: 543.7576394984033
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -5.541384, y: 3.1449172, z: 3.4023724}
+    m_Target: {x: -2.1551056, y: -5.165283, z: -4.5146}
     speed: 2
-    m_Value: {x: -5.541384, y: 3.1449172, z: 3.4023724}
+    m_Value: {x: -2.1551056, y: -5.165283, z: -4.5146}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -564,9 +564,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: -0.13488318, y: -0.014270765, z: 0.0019427779, w: -0.99075687}
   m_Size:
-    m_Target: 53.034664
+    m_Target: 31.618324
     speed: 2
-    m_Value: 53.034664
+    m_Value: 31.618324
   m_Ortho:
     m_Target: 0
     speed: 2
