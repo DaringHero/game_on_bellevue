@@ -491,7 +491,7 @@ public class YellOnClaim : MonoBehaviour
             return;
         }
         ready2scan = false;// only take one scan at a time// reset in SetIsReadyForScan.cs
-  
+        StartCoroutine(EnableReady2Scan());
         this.MyCurrentToy = theToy;
 
         CurrentPlayerID = theToy.bitToysId;
@@ -925,7 +925,7 @@ public class YellOnClaim : MonoBehaviour
     /// <returns></returns>
     IEnumerator EnableReady2Scan()
     {
-        yield return new WaitForSeconds(3.0f);
+        yield return new WaitForSeconds(8.0f);
         ready2scan = true;
     }
 

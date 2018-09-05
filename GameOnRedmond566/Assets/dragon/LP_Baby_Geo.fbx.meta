@@ -1,0 +1,278 @@
+fileFormatVersion: 2
+guid: 38529c6e02f27404b933bf204e65a840
+timeCreated: 1536163039
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: LP_Baby_Horns:L_Baby_Wing_Membrane
+    100004: LP_Baby_Horns:LP_Baby_Back_Fin_01
+    100006: LP_Baby_Horns:LP_Baby_Back_Fin_02
+    100008: LP_Baby_Horns:LP_Baby_Back_Fin_03
+    100010: LP_Baby_Horns:LP_Baby_Back_Fin_04
+    100012: LP_Baby_Horns:LP_Baby_Back_Fin_05
+    100014: LP_Baby_Horns:LP_Baby_Back_Fin_06
+    100016: LP_Baby_Horns:LP_Baby_Back_Fin_07
+    100018: LP_Baby_Horns:LP_Baby_Back_Fins
+    100020: LP_Baby_Horns:LP_Baby_Back_Leg_Spike
+    100022: LP_Baby_Horns:LP_Baby_Back_Spike_01
+    100024: LP_Baby_Horns:LP_Baby_Back_Spike_02
+    100026: LP_Baby_Horns:LP_Baby_Bod
+    100028: LP_Baby_Horns:LP_Baby_Bottom_Teeth
+    100030: LP_Baby_Horns:LP_Baby_Cheek_Spike_01
+    100032: LP_Baby_Horns:LP_Baby_Cheek_Spike_02
+    100034: LP_Baby_Horns:LP_Baby_Cheek_Spike_03
+    100036: LP_Baby_Horns:LP_Baby_Cheek_Spikes
+    100038: LP_Baby_Horns:LP_Baby_Eyes
+    100040: LP_Baby_Horns:LP_Baby_Front_Leg_Spike_01
+    100042: LP_Baby_Horns:LP_Baby_Front_Leg_Spike_02
+    100044: LP_Baby_Horns:LP_Baby_Horns
+    100046: LP_Baby_Horns:LP_Baby_Teeth
+    100048: LP_Baby_Horns:LP_Baby_Tongue
+    100050: LP_Baby_Horns:LP_Baby_Top_Teeth
+    400000: //RootNode
+    400002: LP_Baby_Horns:L_Baby_Wing_Membrane
+    400004: LP_Baby_Horns:LP_Baby_Back_Fin_01
+    400006: LP_Baby_Horns:LP_Baby_Back_Fin_02
+    400008: LP_Baby_Horns:LP_Baby_Back_Fin_03
+    400010: LP_Baby_Horns:LP_Baby_Back_Fin_04
+    400012: LP_Baby_Horns:LP_Baby_Back_Fin_05
+    400014: LP_Baby_Horns:LP_Baby_Back_Fin_06
+    400016: LP_Baby_Horns:LP_Baby_Back_Fin_07
+    400018: LP_Baby_Horns:LP_Baby_Back_Fins
+    400020: LP_Baby_Horns:LP_Baby_Back_Leg_Spike
+    400022: LP_Baby_Horns:LP_Baby_Back_Spike_01
+    400024: LP_Baby_Horns:LP_Baby_Back_Spike_02
+    400026: LP_Baby_Horns:LP_Baby_Bod
+    400028: LP_Baby_Horns:LP_Baby_Bottom_Teeth
+    400030: LP_Baby_Horns:LP_Baby_Cheek_Spike_01
+    400032: LP_Baby_Horns:LP_Baby_Cheek_Spike_02
+    400034: LP_Baby_Horns:LP_Baby_Cheek_Spike_03
+    400036: LP_Baby_Horns:LP_Baby_Cheek_Spikes
+    400038: LP_Baby_Horns:LP_Baby_Eyes
+    400040: LP_Baby_Horns:LP_Baby_Front_Leg_Spike_01
+    400042: LP_Baby_Horns:LP_Baby_Front_Leg_Spike_02
+    400044: LP_Baby_Horns:LP_Baby_Horns
+    400046: LP_Baby_Horns:LP_Baby_Teeth
+    400048: LP_Baby_Horns:LP_Baby_Tongue
+    400050: LP_Baby_Horns:LP_Baby_Top_Teeth
+    2300000: LP_Baby_Horns:L_Baby_Wing_Membrane
+    2300002: LP_Baby_Horns:LP_Baby_Back_Fin_01
+    2300004: LP_Baby_Horns:LP_Baby_Back_Fin_02
+    2300006: LP_Baby_Horns:LP_Baby_Back_Fin_03
+    2300008: LP_Baby_Horns:LP_Baby_Back_Fin_04
+    2300010: LP_Baby_Horns:LP_Baby_Back_Fin_05
+    2300012: LP_Baby_Horns:LP_Baby_Back_Fin_06
+    2300014: LP_Baby_Horns:LP_Baby_Back_Fin_07
+    2300016: LP_Baby_Horns:LP_Baby_Back_Leg_Spike
+    2300018: LP_Baby_Horns:LP_Baby_Back_Spike_01
+    2300020: LP_Baby_Horns:LP_Baby_Back_Spike_02
+    2300022: LP_Baby_Horns:LP_Baby_Bod
+    2300024: LP_Baby_Horns:LP_Baby_Bottom_Teeth
+    2300026: LP_Baby_Horns:LP_Baby_Cheek_Spike_01
+    2300028: LP_Baby_Horns:LP_Baby_Cheek_Spike_02
+    2300030: LP_Baby_Horns:LP_Baby_Cheek_Spike_03
+    2300032: LP_Baby_Horns:LP_Baby_Eyes
+    2300034: LP_Baby_Horns:LP_Baby_Front_Leg_Spike_01
+    2300036: LP_Baby_Horns:LP_Baby_Front_Leg_Spike_02
+    2300038: LP_Baby_Horns:LP_Baby_Horns
+    2300040: LP_Baby_Horns:LP_Baby_Tongue
+    2300042: LP_Baby_Horns:LP_Baby_Top_Teeth
+    3300000: LP_Baby_Horns:L_Baby_Wing_Membrane
+    3300002: LP_Baby_Horns:LP_Baby_Back_Fin_01
+    3300004: LP_Baby_Horns:LP_Baby_Back_Fin_02
+    3300006: LP_Baby_Horns:LP_Baby_Back_Fin_03
+    3300008: LP_Baby_Horns:LP_Baby_Back_Fin_04
+    3300010: LP_Baby_Horns:LP_Baby_Back_Fin_05
+    3300012: LP_Baby_Horns:LP_Baby_Back_Fin_06
+    3300014: LP_Baby_Horns:LP_Baby_Back_Fin_07
+    3300016: LP_Baby_Horns:LP_Baby_Back_Leg_Spike
+    3300018: LP_Baby_Horns:LP_Baby_Back_Spike_01
+    3300020: LP_Baby_Horns:LP_Baby_Back_Spike_02
+    3300022: LP_Baby_Horns:LP_Baby_Bod
+    3300024: LP_Baby_Horns:LP_Baby_Bottom_Teeth
+    3300026: LP_Baby_Horns:LP_Baby_Cheek_Spike_01
+    3300028: LP_Baby_Horns:LP_Baby_Cheek_Spike_02
+    3300030: LP_Baby_Horns:LP_Baby_Cheek_Spike_03
+    3300032: LP_Baby_Horns:LP_Baby_Eyes
+    3300034: LP_Baby_Horns:LP_Baby_Front_Leg_Spike_01
+    3300036: LP_Baby_Horns:LP_Baby_Front_Leg_Spike_02
+    3300038: LP_Baby_Horns:LP_Baby_Horns
+    3300040: LP_Baby_Horns:LP_Baby_Tongue
+    3300042: LP_Baby_Horns:LP_Baby_Top_Teeth
+    4300000: LP_Baby_Horns:LP_Baby_Cheek_Spike_03
+    4300002: LP_Baby_Horns:LP_Baby_Cheek_Spike_01
+    4300004: LP_Baby_Horns:LP_Baby_Cheek_Spike_02
+    4300006: LP_Baby_Horns:LP_Baby_Back_Leg_Spike
+    4300008: LP_Baby_Horns:LP_Baby_Front_Leg_Spike_01
+    4300010: LP_Baby_Horns:LP_Baby_Front_Leg_Spike_02
+    4300012: LP_Baby_Horns:LP_Baby_Horns
+    4300014: LP_Baby_Horns:L_Baby_Wing_Membrane
+    4300016: LP_Baby_Horns:LP_Baby_Tongue
+    4300018: LP_Baby_Horns:LP_Baby_Eyes
+    4300020: LP_Baby_Horns:LP_Baby_Bod
+    4300022: LP_Baby_Horns:LP_Baby_Back_Spike_01
+    4300024: LP_Baby_Horns:LP_Baby_Back_Spike_02
+    4300026: LP_Baby_Horns:LP_Baby_Back_Fin_01
+    4300028: LP_Baby_Horns:LP_Baby_Back_Fin_02
+    4300030: LP_Baby_Horns:LP_Baby_Back_Fin_03
+    4300032: LP_Baby_Horns:LP_Baby_Back_Fin_04
+    4300034: LP_Baby_Horns:LP_Baby_Back_Fin_05
+    4300036: LP_Baby_Horns:LP_Baby_Back_Fin_06
+    4300038: LP_Baby_Horns:LP_Baby_Back_Fin_07
+    4300040: LP_Baby_Horns:LP_Baby_Bottom_Teeth
+    4300042: LP_Baby_Horns:LP_Baby_Top_Teeth
+    7400000: Take 001
+    9500000: //RootNode
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 2
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 2
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 120
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: LP_Baby_Horns:L_Baby_Wing_Membrane
+        weight: 1
+      - path: LP_Baby_Horns:LP_Baby_Back_Fins
+        weight: 1
+      - path: LP_Baby_Horns:LP_Baby_Back_Fins/LP_Baby_Horns:LP_Baby_Back_Fin_01
+        weight: 1
+      - path: LP_Baby_Horns:LP_Baby_Back_Fins/LP_Baby_Horns:LP_Baby_Back_Fin_02
+        weight: 1
+      - path: LP_Baby_Horns:LP_Baby_Back_Fins/LP_Baby_Horns:LP_Baby_Back_Fin_03
+        weight: 1
+      - path: LP_Baby_Horns:LP_Baby_Back_Fins/LP_Baby_Horns:LP_Baby_Back_Fin_04
+        weight: 1
+      - path: LP_Baby_Horns:LP_Baby_Back_Fins/LP_Baby_Horns:LP_Baby_Back_Fin_05
+        weight: 1
+      - path: LP_Baby_Horns:LP_Baby_Back_Fins/LP_Baby_Horns:LP_Baby_Back_Fin_06
+        weight: 1
+      - path: LP_Baby_Horns:LP_Baby_Back_Fins/LP_Baby_Horns:LP_Baby_Back_Fin_07
+        weight: 1
+      - path: LP_Baby_Horns:LP_Baby_Back_Leg_Spike
+        weight: 1
+      - path: LP_Baby_Horns:LP_Baby_Back_Spike_01
+        weight: 1
+      - path: LP_Baby_Horns:LP_Baby_Back_Spike_02
+        weight: 1
+      - path: LP_Baby_Horns:LP_Baby_Bod
+        weight: 1
+      - path: LP_Baby_Horns:LP_Baby_Cheek_Spikes
+        weight: 1
+      - path: LP_Baby_Horns:LP_Baby_Cheek_Spikes/LP_Baby_Horns:LP_Baby_Cheek_Spike_01
+        weight: 1
+      - path: LP_Baby_Horns:LP_Baby_Cheek_Spikes/LP_Baby_Horns:LP_Baby_Cheek_Spike_02
+        weight: 1
+      - path: LP_Baby_Horns:LP_Baby_Cheek_Spikes/LP_Baby_Horns:LP_Baby_Cheek_Spike_03
+        weight: 1
+      - path: LP_Baby_Horns:LP_Baby_Eyes
+        weight: 1
+      - path: LP_Baby_Horns:LP_Baby_Front_Leg_Spike_01
+        weight: 1
+      - path: LP_Baby_Horns:LP_Baby_Front_Leg_Spike_02
+        weight: 1
+      - path: LP_Baby_Horns:LP_Baby_Horns
+        weight: 1
+      - path: LP_Baby_Horns:LP_Baby_Teeth
+        weight: 1
+      - path: LP_Baby_Horns:LP_Baby_Teeth/LP_Baby_Horns:LP_Baby_Bottom_Teeth
+        weight: 1
+      - path: LP_Baby_Horns:LP_Baby_Teeth/LP_Baby_Horns:LP_Baby_Top_Teeth
+        weight: 1
+      - path: LP_Baby_Horns:LP_Baby_Tongue
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
