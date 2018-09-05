@@ -55,7 +55,7 @@ public class YellOnClaim : MonoBehaviour
 
 
     public enum Regions { CLEVELAND, RTCWEST, RTCEAST};
-    public Regions currentRegion;
+    public int currentStationID;
 
     public Location questLocation = Location.SANC;//default to sanc for now
     //pages
@@ -304,7 +304,7 @@ public class YellOnClaim : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        currentStationID = 0;
         OnlyCleveland = false;
         BluetoothLowBatteryText.gameObject.SetActive(false);
         ready2scan = true;
@@ -931,6 +931,7 @@ public class YellOnClaim : MonoBehaviour
 
     public void ChangeRegion(int index)
     {
+        currentStationID = index;
         //commenting out for now because for analytics region is going to be unique id of station
      //   Debug.Log("Region is changing to " + index);
      //   currentRegion = (Regions)index;
