@@ -457,7 +457,7 @@ public class YellOnClaim : MonoBehaviour
 
         string thestring = currentLocation.ToString();
         thestring += " ";
-        thestring += currentRegion.ToString();
+        thestring += currentStationID.ToString();
         thestring += " ";
         System.Int32 unixTimestamp = (System.Int32)(System.DateTime.UtcNow.Subtract(new System.DateTime(1970, 1, 1))).TotalSeconds;
 
