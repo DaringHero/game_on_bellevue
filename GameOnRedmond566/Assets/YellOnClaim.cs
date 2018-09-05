@@ -523,22 +523,23 @@ public class YellOnClaim : MonoBehaviour
         else// if valid scan
         {
             //only works if id is longer than 3 , which it should be
-            if(MyCurrentToy.styleId != null && MyCurrentToy.styleId.Length >= 3)
-            {
-                string last3chars = MyCurrentToy.styleId.Substring(MyCurrentToy.styleId.Length - 3);
-                bool isThisADebugCard;
+            //commented out for doug
+            //if(MyCurrentToy.styleId != null && MyCurrentToy.styleId.Length >= 3)
+            //{
+            //    string last3chars = MyCurrentToy.styleId.Substring(MyCurrentToy.styleId.Length - 3);
+            //    bool isThisADebugCard;
 
-                if (last3chars == "dev")
-                    isThisADebugCard = true;
-                else
-                    isThisADebugCard = false;
+            //    if (last3chars == "dev")
+            //        isThisADebugCard = true;
+            //    else
+            //        isThisADebugCard = false;
 
-                if (isThisADebugCard)
-                {
-                    debugmode = false;
-                    ToggleDebugStuff();
-                }
-            }
+            //    if (isThisADebugCard)
+            //    {
+            //        debugmode = false;
+            //        ToggleDebugStuff();
+            //    }
+            //}
 
 
             AddLocationData();
