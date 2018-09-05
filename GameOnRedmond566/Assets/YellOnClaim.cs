@@ -1133,8 +1133,8 @@ public class YellOnClaim : MonoBehaviour
         StartCoroutine(EnableReady2Scan());
 
         this.ScanCardFail.SetActive(true);
-        this.leftScanParticles.gameObject.SetActive(false);
-        this.rightscanParticles.gameObject.SetActive(false);
+      //  this.leftScanParticles.gameObject.SetActive(false);
+       // this.rightscanParticles.gameObject.SetActive(false);
     }
 
     public void TestJson()
