@@ -2427,7 +2427,7 @@ Transform:
   m_GameObject: {fileID: 89747072}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.272841, y: -0.8239272, z: -5.6432543}
-  m_LocalScale: {x: 1.999986, y: 1.999986, z: 1.2500007}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 1124993506}
   m_Father: {fileID: 1014326068}
@@ -4655,7 +4655,7 @@ Transform:
   m_GameObject: {fileID: 203457808}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.2742107, y: -0.82482237, z: 1.26}
-  m_LocalScale: {x: 2.0000122, y: 2.0000122, z: 1.2500111}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 1214313830}
   m_Father: {fileID: 955693455}
@@ -5705,7 +5705,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -312366932
+  randomSeed: 1687366432
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -13564,6 +13564,7 @@ MonoBehaviour:
   stampBack8: {fileID: 1831647217}
   complete_8: {fileID: 284620792}
   myYellOnClaim: {fileID: 1708775438}
+  checkforfinalstampcard: 1
 --- !u!212 &386691567
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15237,6 +15238,7 @@ MonoBehaviour:
   stampBack8: {fileID: 751954576}
   complete_8: {fileID: 909098989}
   myYellOnClaim: {fileID: 1708775438}
+  checkforfinalstampcard: 1
 --- !u!212 &442804295
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15540,7 +15542,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: You don't need this now!
+  m_Text: 'You are at the
+
+    wrong location!'
 --- !u!222 &446682411
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -17213,6 +17217,7 @@ MonoBehaviour:
   stampBack8: {fileID: 1691950814}
   complete_8: {fileID: 1110038778}
   myYellOnClaim: {fileID: 1708775438}
+  checkforfinalstampcard: 1
 --- !u!212 &540395082
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19786,7 +19791,7 @@ Transform:
   m_GameObject: {fileID: 661557082}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1495.4912, y: -937, z: 0}
-  m_LocalScale: {x: 7.9999533, y: 7.9999533, z: 2.3124993}
+  m_LocalScale: {x: 8, y: 8, z: 8}
   m_Children: []
   m_Father: {fileID: 1982862054}
   m_RootOrder: 2
@@ -21362,6 +21367,7 @@ MonoBehaviour:
   stampBack8: {fileID: 1619584985}
   complete_8: {fileID: 573062945}
   myYellOnClaim: {fileID: 1708775438}
+  checkforfinalstampcard: 0
 --- !u!212 &697292255
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -23809,7 +23815,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &821806676
 RectTransform:
   m_ObjectHideFlags: 0
@@ -25885,14 +25891,14 @@ RectTransform:
   m_GameObject: {fileID: 906599302}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 15.98, y: 1.9480453, z: 0.9999801}
+  m_LocalScale: {x: 18.57444, y: 4.642626, z: 1.1623324}
   m_Children: []
   m_Father: {fileID: 821806676}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -45.999954, y: 625.9999}
+  m_AnchoredPosition: {x: -45.999954, y: 564}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &906599304
@@ -26277,7 +26283,7 @@ Transform:
   m_GameObject: {fileID: 923643092}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.2742107, y: -0.8248156, z: -0.96}
-  m_LocalScale: {x: 2, y: 2, z: 1.2500112}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 1538087065}
   m_Father: {fileID: 585262566}
@@ -26521,6 +26527,7 @@ MonoBehaviour:
   stampBack8: {fileID: 1474381765}
   complete_8: {fileID: 1933114511}
   myYellOnClaim: {fileID: 1708775438}
+  checkforfinalstampcard: 1
 --- !u!1 &927726339
 GameObject:
   m_ObjectHideFlags: 0
@@ -32779,7 +32786,7 @@ Transform:
   m_GameObject: {fileID: 1057899078}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.2742107, y: -0.75813806, z: -0.54}
-  m_LocalScale: {x: 2, y: 2, z: 1.2500112}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 1759446372}
   m_Father: {fileID: 1298726556}
@@ -36814,6 +36821,7 @@ MonoBehaviour:
   stampBack8: {fileID: 1963559976}
   complete_8: {fileID: 322528497}
   myYellOnClaim: {fileID: 1708775438}
+  checkforfinalstampcard: 1
 --- !u!212 &1181569433
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -41773,6 +41781,7 @@ MonoBehaviour:
   stampBack8: {fileID: 402287240}
   complete_8: {fileID: 743603660}
   myYellOnClaim: {fileID: 1708775438}
+  checkforfinalstampcard: 1
 --- !u!212 &1267573080
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -59784,7 +59793,7 @@ Transform:
   m_GameObject: {fileID: 1730975364}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1495.5, y: -937.0054, z: 0}
-  m_LocalScale: {x: 8, y: 8, z: 2.3125129}
+  m_LocalScale: {x: 8, y: 8, z: 8}
   m_Children: []
   m_Father: {fileID: 2079067064}
   m_RootOrder: 2
@@ -61756,7 +61765,7 @@ Transform:
   m_GameObject: {fileID: 1798173104}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.2742107, y: -0.82480204, z: -2.05}
-  m_LocalScale: {x: 2, y: 2, z: 1.2500112}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 346641750}
   m_Father: {fileID: 44617996}
