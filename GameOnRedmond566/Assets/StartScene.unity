@@ -1503,7 +1503,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "This is what you \nare looking for..."
+  m_Text: Go find these resources!
 --- !u!222 &47540246
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5075,8 +5075,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 231058562}
   m_LocalRotation: {x: -0, y: -0.92062175, z: -0, w: -0.39045566}
-  m_LocalPosition: {x: -1.700114, y: -2.8606162, z: -5.8072143}
-  m_LocalScale: {x: 7.68306, y: 5.000029, z: 7.683056}
+  m_LocalPosition: {x: -1.700114, y: -2.8606162, z: 1}
+  m_LocalScale: {x: 5, y: 5.000029, z: 5}
   m_Children:
   - {fileID: 1802760690}
   m_Father: {fileID: 585262566}
@@ -14124,7 +14124,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Here is a dragon egg for you to raise!
+  m_Text: Here is a dragon egg to hatch!
 --- !u!222 &402539937
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15482,7 +15482,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -686, y: 689}
+  m_AnchoredPosition: {x: -423, y: 627}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &446682408
@@ -15542,9 +15542,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'You are at the
-
-    wrong location!'
+  m_Text: Wrong location!
 --- !u!222 &446682411
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -23815,7 +23813,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &821806676
 RectTransform:
   m_ObjectHideFlags: 0
@@ -25231,7 +25229,7 @@ RectTransform:
   m_GameObject: {fileID: 872914131}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 16.76902, y: 4.1, z: 0.9999884}
+  m_LocalScale: {x: 17.195496, y: 4.1, z: 0.9999884}
   m_Children: []
   m_Father: {fileID: 2105330503}
   m_RootOrder: 0
@@ -25891,7 +25889,7 @@ RectTransform:
   m_GameObject: {fileID: 906599302}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 18.57444, y: 4.642626, z: 1.1623324}
+  m_LocalScale: {x: 18.57444, y: 2.0440345, z: 1.1623324}
   m_Children: []
   m_Father: {fileID: 821806676}
   m_RootOrder: 0
@@ -27301,14 +27299,14 @@ RectTransform:
   m_GameObject: {fileID: 955674651}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 11.825349, y: 3.2044144, z: 0.99998015}
+  m_LocalScale: {x: 15.955291, y: 3.2044144, z: 0.99998015}
   m_Children: []
   m_Father: {fileID: 1832210552}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -68, y: 479}
+  m_AnchoredPosition: {x: -68, y: 556}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &955674653
@@ -56605,9 +56603,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'You did a great job!
+  m_Text: 'Great job!
 
-    It''s time to release your dragon...'
+    Now release your dragon!'
 --- !u!222 &1612610729
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -68219,7 +68217,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Great Job!
 
-    You got all the resources!'
+    You found all the resources!'
 --- !u!222 &1943414408
 CanvasRenderer:
   m_ObjectHideFlags: 0

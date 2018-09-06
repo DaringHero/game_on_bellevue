@@ -14,15 +14,15 @@ public class DisplayCorrectDragonLevel : MonoBehaviour {
         int dragonlevel = myYellOnClaim.MyCurrentToy.customData.GetInt("DragonLevel", 0);
         if (dragonlevel == 0)
         {
-            t.text = "an Egg";
+            t.text = "an egg";
         }
             else if(dragonlevel == 1)
         {
-            t.text = "a Hatchling";
+            t.text = "a hatchling";
         }
             else if(dragonlevel == 2)
         {
-            t.text = "an Adult";
+            t.text = "an adult";
         }
     }
 		
