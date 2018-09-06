@@ -575,7 +575,7 @@ public class YellOnClaim : MonoBehaviour
                 // which state are we in?
 
 
-                if (myQuestProgress.StationIsForQuest() && (currentLocation != Location.SANC) && (currentLocation != Location.SANC2))
+                if (myQuestProgress.StationIsForQuest() && (currentLocation != Location.SANC2))
                 {
 					
 
@@ -614,7 +614,7 @@ public class YellOnClaim : MonoBehaviour
 
 
                 }
-                else if((currentLocation != Location.SANC) && (currentLocation != Location.SANC2))// wrong station
+                else if(currentLocation != Location.SANC2)// wrong station
                 {
 					this.SetPageInfoEX();// we need to set up cards even if not right
                     this.ScanCardWrong.SetActive(true);
