@@ -86,6 +86,9 @@ public class YellOnClaim : MonoBehaviour
     public Text QuestProgressText;
     public Text BluetoothLowBatteryText;
 
+    public enum NextActive { SANCPAGE, SANCTOOSOON, SCANWRONG, SCANSUCCESS, NUX, NEWQUESTS};
+    public NextActive activateThis;
+
     public Location currentLocation;
     public GameObject mountain;
     public bool debugmode;
@@ -368,11 +371,46 @@ public class YellOnClaim : MonoBehaviour
     public void OnPutData_Fail(string _id, BitToys.FailReason reason, string text)
     {
         WriteToErrorLog("Updating customData for id: " + _id + " failed: " + reason + " " + text);
+
+
     }
     public void OnPutData_Success(BitToys.Toy _toy)
     {
         WriteToErrorLog("Updating customData succeeded for toy: " + _toy.bitToysId);
-    }
+
+
+         //   public enum NextActive { SANCPAGE, SANCTOOSOON, SCANWRONG, SCANSUCCESS, NUX, NEWQUESTS }
+         switch(activateThis)
+        {
+            case NextActive.SANCPAGE:
+                SanctuaryPage.SetActive(true);
+                break;
+            case NextActive.SANCTOOSOON:
+                SanctuaryTooSoon.SetActive(true);
+                break;
+            case NextActive.SCANWRONG:
+                ScanCardWrong.SetActive(true);
+                break;
+            case NextActive.SCANSUCCESS:
+                ScanCardSuccess.SetActive(true);
+                break;
+            case NextActive.NUX:
+                ScanCardNUX.SetActive(true);
+                break;
+            case NextActive.NEWQUESTS:
+                ScanCardNewQuests.SetActive(true);
+                break;
+
+
+
+
+
+            default:
+                SanctuaryPage.SetActive(true);
+                break;
+
+        }
+}
 
     public void WriteToErrorLog(string message)// new function for error logging, the old error logs are kinda a hack
     {
@@ -558,7 +596,8 @@ public class YellOnClaim : MonoBehaviour
             {
                 this.MyCurrentToy.customData.AddInt("DragonsReleased", 0);
                 this.MyCurrentToy.customData.AddBool("NewUser", false);// flag as an old user
-                this.ScanCardNUX.SetActive(true);
+                                                                       //      this.ScanCardNUX.SetActive(true);
+                activateThis = NextActive.NUX;
                 //first set of quests
                 this.MyCurrentToy.customData.AddInt("DragonLevel", 0);
                 this.SetNewQuestCard(this.MyCurrentToy.customData.GetInt("DragonLevel", 0));//rando some quests?
@@ -575,7 +614,7 @@ public class YellOnClaim : MonoBehaviour
                 // which state are we in?
 
 
-                if (myQuestProgress.StationIsForQuest() && (currentLocation != Location.SANC2))
+                if (myQuestProgress.StationIsForQuest() && (currentLocation != Location.SANC2) && (currentLocation != Location.SANC))
                 {
 					
 
@@ -585,7 +624,8 @@ public class YellOnClaim : MonoBehaviour
                     this.SetPageInfoEX();// we need to set cards after new resource
                     if (myQuestProgress.CompletedAllQuests())
                     {
-                        this.ScanCardNewQuests.SetActive(true);
+                        //    this.ScanCardNewQuests.SetActive(true);
+                        activateThis = NextActive.NEWQUESTS;
 
                         int currentDragonLevel = this.MyCurrentToy.customData.GetInt("DragonLevel", 0);
                         currentDragonLevel += 1;
@@ -607,24 +647,26 @@ public class YellOnClaim : MonoBehaviour
                     else// haven't completed all quests
                     {
 						this.SetPageInfoEX();// we need to set up cards even if not right
-                        this.ScanCardSuccess.SetActive(true);
+                                             //       this.ScanCardSuccess.SetActive(true);
+                        activateThis = NextActive.SCANSUCCESS;
                         WriteToErrorLog("Scan = Progress Quests");
                     }
 
 
 
                 }
-                else if(currentLocation != Location.SANC2)// wrong station
+                else if(currentLocation != Location.SANC2 && currentLocation != Location.SANC)// wrong station
                 {
 					this.SetPageInfoEX();// we need to set up cards even if not right
-                    this.ScanCardWrong.SetActive(true);
+                                         //       this.ScanCardWrong.SetActive(true);
+                    activateThis = NextActive.SCANWRONG;
                     WriteToErrorLog("Scan = Wrong Station");
                     //update cards ui?
                     //update dragon ui?
                 }
 
                 //TODO sanctuary too early
-                if (currentLocation == Location.SANC2)
+                if (currentLocation == Location.SANC2 || currentLocation == Location.SANC)
                 {
                     int currentDragonLevel = this.MyCurrentToy.customData.GetInt("DragonLevel", 0);
 
@@ -641,12 +683,13 @@ public class YellOnClaim : MonoBehaviour
                         MyCurrentToy.customData.Remove("DragonLevel");
 
                         //setactive
-                        SanctuaryPage.SetActive(true);
-
+                        //    SanctuaryPage.SetActive(true);
+                        activateThis = NextActive.SANCPAGE;
                     }
                     else if(currentDragonLevel < 2)//too early
                     {
-                        SanctuaryTooSoon.SetActive(true);
+                        //   SanctuaryTooSoon.SetActive(true);
+                        activateThis = NextActive.SANCTOOSOON;
                     }
 
 
@@ -693,6 +736,7 @@ public class YellOnClaim : MonoBehaviour
             //UPDATE CUSTOM DATA!!!
             int currentDragonLevel2 = this.MyCurrentToy.customData.GetInt("DragonLevel", 0);
             this.MyCurrentToy.customData.SendAsync();//update that toy data!
+            
 
         }//end of else valid scan
     } // end of function
@@ -1053,6 +1097,7 @@ public class YellOnClaim : MonoBehaviour
         //this.MyCurrentToy.customData.SendAsync();
 
         this.OnClaimToy_Success(this.MyCurrentToy, true);// fake the scan
+        this.OnPutData_Success(MyCurrentToy);
         WriteToErrorLog("Fake NUX");
     }
 
@@ -1068,7 +1113,7 @@ public class YellOnClaim : MonoBehaviour
         this.MyCurrentToy.bitToysId = this.CurrentPlayerID;
 
         this.OnClaimToy_Success(this.MyCurrentToy, true);// fake the scan
-
+        this.OnPutData_Success(MyCurrentToy);
         WriteToErrorLog("Fake Scan");
     }
     public void ResetFakeScan()
