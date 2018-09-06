@@ -15,8 +15,8 @@ public class UpdateServer : MonoBehaviour {
 
     public void Start()
     {
-        BitToys.inst.onPutCustomData_Fail += OnPutData_Fail;
-        BitToys.inst.onPutCustomData_OK += OnPutData_Success;
+       // BitToys.inst.onPutCustomData_Fail += OnPutData_Fail;
+      //  BitToys.inst.onPutCustomData_OK += OnPutData_Success;
     }
 
     public void OnPutData_Fail(string _id, BitToys.FailReason reason, string text)
