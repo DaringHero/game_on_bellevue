@@ -109,8 +109,8 @@ public class YellOnClaim : MonoBehaviour
 
     public static string ErrorLog = "";
 
+    public bool changing_from_egg_2_hatchling = false;
 
-    
     public ParticleSystem idleparticles1;
     public ParticleSystem idleparticles2;
 
@@ -614,7 +614,7 @@ public class YellOnClaim : MonoBehaviour
                 // which state are we in?
 
 
-                if (myQuestProgress.StationIsForQuest() && (currentLocation != Location.SANC2) && (currentLocation != Location.SANC))
+                if (myQuestProgress.StationIsForQuest() && (currentLocation != Location.SANC2))
                 {
 					
 
@@ -628,6 +628,10 @@ public class YellOnClaim : MonoBehaviour
                         activateThis = NextActive.NEWQUESTS;
 
                         int currentDragonLevel = this.MyCurrentToy.customData.GetInt("DragonLevel", 0);
+
+                        if (currentDragonLevel == 0)
+                            changing_from_egg_2_hatchling = true;
+
                         currentDragonLevel += 1;
                         MyCurrentToy.customData.SetInt("DragonLevel", currentDragonLevel);
 
@@ -655,7 +659,7 @@ public class YellOnClaim : MonoBehaviour
 
 
                 }
-                else if(currentLocation != Location.SANC2 && currentLocation != Location.SANC)// wrong station
+                else if(currentLocation != Location.SANC2)// wrong station
                 {
 					this.SetPageInfoEX();// we need to set up cards even if not right
                                          //       this.ScanCardWrong.SetActive(true);
@@ -666,7 +670,7 @@ public class YellOnClaim : MonoBehaviour
                 }
 
                 //TODO sanctuary too early
-                if (currentLocation == Location.SANC2 || currentLocation == Location.SANC)
+                if (currentLocation == Location.SANC2)
                 {
                     int currentDragonLevel = this.MyCurrentToy.customData.GetInt("DragonLevel", 0);
 
@@ -1092,7 +1096,7 @@ public class YellOnClaim : MonoBehaviour
         this.MyCurrentToy.bitToysId = this.CurrentPlayerID;
 
         //first set of quests
-        //this.MyCurrentToy.customData.AddInt("DragonLevel", 0);
+        this.MyCurrentToy.customData.AddInt("DragonLevel", 0);
        // this.MyCurrentToy.customData.AddInt("")
         //this.MyCurrentToy.customData.SendAsync();
 

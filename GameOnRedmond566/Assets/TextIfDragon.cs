@@ -13,7 +13,6 @@ public class TextIfDragon : MonoBehaviour {
 	[HideInInspector]
 	public string ReplaceWith;
 
-
 	string originalText;
 
 
@@ -26,7 +25,13 @@ public class TextIfDragon : MonoBehaviour {
 			myText.text = ReplaceWith;
 			Debug.Log("set ReplaceWith text = "+ReplaceWith);
 		}
-		else
+		else if(myYellOnClaim.changing_from_egg_2_hatchling)
+        {
+            myText.text = ReplaceWith;
+            Debug.Log("set ReplaceWith text = " + ReplaceWith);
+            myYellOnClaim.changing_from_egg_2_hatchling = false;
+        }
+        else
 		{
 			myText.text = this.originalText;
 			Debug.Log("set originalText = "+originalText);
