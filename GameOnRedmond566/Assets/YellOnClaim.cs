@@ -493,15 +493,32 @@ public class YellOnClaim : MonoBehaviour
         if (MyCurrentToy == null)
             return;
 
-        string thestring = currentLocation.ToString();
-        thestring += " ";
+        //   string thestring = currentLocation.ToString();
+        //  thestring += ",";
+        string thestring = "STATIONID:";
         thestring += currentStationID.ToString();
-        thestring += " ";
+        thestring += ",";
+
+        thestring += "TIME:";
         System.Int32 unixTimestamp = (System.Int32)(System.DateTime.UtcNow.Subtract(new System.DateTime(1970, 1, 1))).TotalSeconds;
-
         thestring += unixTimestamp.ToString();
+        thestring += ",";
 
-        MyCurrentToy.customData.AddString("LocationTimes", thestring);
+        thestring += "PLAYERID:";
+        thestring += MyCurrentToy.bitToysId;
+        thestring += ",";
+
+        thestring += "DRAGONLEVEL";
+        thestring += MyCurrentToy.customData.GetInt("DragonLevel",0);
+        thestring += ",";
+
+        thestring += "DRAGONSRELEASED:";
+        thestring += MyCurrentToy.customData.GetInt("DragonsReleased",0);
+        thestring += ",";
+
+        //Location ID, Unix Time Stamp, User id, dragon level, dragons released
+
+        MyCurrentToy.customData.AddString("Metrics", thestring);
 
     }
 
@@ -594,7 +611,11 @@ public class YellOnClaim : MonoBehaviour
 
             if ( this.ShowNUX && this.MyCurrentToy.customData.GetBool("NewUser", true))
             {
-                this.MyCurrentToy.customData.AddInt("DragonsReleased", 0);
+                int test = this.MyCurrentToy.customData.GetInt("DragonsReleased", -999);
+                if(test == -999)
+                 this.MyCurrentToy.customData.AddInt("DragonsReleased", 0);
+
+
                 this.MyCurrentToy.customData.AddBool("NewUser", false);// flag as an old user
                                                                        //      this.ScanCardNUX.SetActive(true);
                 activateThis = NextActive.NUX;
@@ -679,7 +700,7 @@ public class YellOnClaim : MonoBehaviour
                     {
                        int currentDragonsReleased =  this.MyCurrentToy.customData.GetInt("DragonsReleased", 0);
                         //
-                        
+                        this.SetPageInfoEX();
                         currentDragonsReleased += 1;
                         this.MyCurrentToy.customData.SetInt("DragonsReleased", currentDragonsReleased);
 

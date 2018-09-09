@@ -5705,7 +5705,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1687366432
+  randomSeed: 486115387
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -25388,7 +25388,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1749947306}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.15, y: -2.8597143, z: -4.199988}
+  m_LocalPosition: {x: -2.15, y: -2.8597143, z: -2.65}
   m_LocalScale: {x: 90, y: 90, z: 90}
   m_Children:
   - {fileID: 1540680986}
@@ -28730,7 +28730,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1014326067}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1465.7703, y: -874.70044, z: 72.9}
+  m_LocalPosition: {x: -1465.7703, y: -874.70044, z: 57.5}
   m_LocalScale: {x: 9, y: 9, z: 9}
   m_Children:
   - {fileID: 89747073}
@@ -44020,7 +44020,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 344199024
+  randomSeed: -660599824
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -57110,7 +57110,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: version .701 (BD 9-8-2018 3:30PM)
+  m_Text: version .703 (BD 9-8-2018 7:30PM)
 --- !u!222 &1629485846
 CanvasRenderer:
   m_ObjectHideFlags: 0
