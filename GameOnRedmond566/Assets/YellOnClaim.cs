@@ -497,13 +497,15 @@ public class YellOnClaim : MonoBehaviour
         //  thestring += ",";
         string dougstring = "";
         string thestring = "STATIONID:";
+        dougstring += "station_id:";
         thestring += currentStationID.ToString();
+        dougstring += currentStationID.ToString();
         thestring += ",";
+        dougstring += ",";
 
-        dougstring += thestring;
 
         thestring += "TIME:";
-        dougstring += "TIME:";
+        dougstring += "scan_dts:";
         System.Int32 unixTimestamp = (System.Int32)(System.DateTime.UtcNow.Subtract(new System.DateTime(1970, 1, 1))).TotalSeconds;
         thestring += unixTimestamp.ToString();
         dougstring += unixTimestamp.ToString();
@@ -512,23 +514,30 @@ public class YellOnClaim : MonoBehaviour
 
 
         thestring += "PLAYERID:";
-        dougstring += "PLAYERID:";
+        dougstring += "player_id:";
         thestring += MyCurrentToy.bitToysId;
         dougstring += MyCurrentToy.bitToysId;
         thestring += ",";
         dougstring += ",";
 
-        thestring += "DRAGONLEVEL";
+     //   dougstring += this.GetComponent<DictionariesForThings>().Location2Resource[this.currentLocation.ToString()];
+     //   dougstring += ":1";
+    //    dougstring += ",";
+
+       thestring += "DRAGONLEVEL:";
+        dougstring += "dragon_level:";
         thestring += MyCurrentToy.customData.GetInt("DragonLevel",0);
+        dougstring += MyCurrentToy.customData.GetInt("DragonLevel", 0);
+
         thestring += ",";
+        dougstring += ",";
 
         thestring += "DRAGONSRELEASED:";
+        dougstring += "dragons_released:";
         thestring += MyCurrentToy.customData.GetInt("DragonsReleased",0);
-        thestring += ",";
-
+        dougstring += MyCurrentToy.customData.GetInt("DragonsReleased", 0);
         //Location ID, Unix Time Stamp, User id, dragon level, dragons released
-        dougstring += this.GetComponent<DictionariesForThings>().Location2Resource[this.currentLocation.ToString()];
-        dougstring += ":1";
+
 
         MyCurrentToy.customData.AddString("Metrics", thestring);
 
