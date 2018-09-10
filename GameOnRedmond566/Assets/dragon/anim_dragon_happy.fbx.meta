@@ -265,7 +265,7 @@ ModelImporter:
     4300026: rig_dragon_LP_Adult_Dragon_Leg_Spikes
     4300028: rig_dragon_LP_Adult_Dragon_Wing_Membrane_right
     4300030: rig_dragon_geo_body
-    7400000: Take 001
+    7400000: adulthappy
     9500000: //RootNode
     11100000: //RootNode
     13700000: rig_dragon_geo_body
@@ -292,15 +292,15 @@ ModelImporter:
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
-    animationWrapMode: 2
+    animationWrapMode: 1
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Take 001
+      name: adulthappy
       takeName: Take 001
       firstFrame: 1
       lastFrame: 32
-      wrapMode: 2
+      wrapMode: 1
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0

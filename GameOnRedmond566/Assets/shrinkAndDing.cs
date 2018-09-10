@@ -24,7 +24,7 @@ public class shrinkAndDing : MonoBehaviour {
             theTime += Time.deltaTime;
         }
 
-        if(theTime >1.5f && !hasplayedsound)
+        if(theTime >1.1f && !hasplayedsound)
         {
             hasplayedsound = true;
             AudioSource.PlayClipAtPoint(soundeffect, Vector3.zero);
