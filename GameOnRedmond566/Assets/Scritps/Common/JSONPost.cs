@@ -24,63 +24,7 @@ public class JSONPost : MonoBehaviour {
 
         //  Debug.Log("jsonstr is " + jsonStr) ;
         //pull out all the things
-        if (jsonStr.Contains("GRASS"))
-        {
-            ultrastring += "GRASS:1,";
-        }
-
-        if (jsonStr.Contains("FEATHER"))
-        {
-            ultrastring += "FEATHER:1,";
-        }
-
-        if (jsonStr.Contains("SALMON"))
-        {
-            ultrastring += "SALMON:1,";
-        }
-
-        if (jsonStr.Contains("PINECONE"))
-        {
-            ultrastring += "PINECONE:1,";
-        }
-
-        if (jsonStr.Contains("REED"))
-        {
-            ultrastring += "REED:1,";
-        }
-
-        if (jsonStr.Contains("SNOW"))
-        {
-            ultrastring += "SNOW:1,";
-        }
-
-        if (jsonStr.Contains("AMETHYST"))
-        {
-            ultrastring += "AMETHYST:1,";
-        }
-
-        if (jsonStr.Contains("SCALE"))
-        {
-            ultrastring += "SCALE:1,";
-        }
-
-        if (jsonStr.Contains("BASKET"))
-        {
-            ultrastring += "BASKET:1,";
-        }
-
-        if (jsonStr.Contains("WOOD"))
-        {
-            ultrastring += "WOOD:1,";
-        }
-
-        if (jsonStr.Contains("APPLE"))
-        {
-            ultrastring += "APPLE:1";
-        }
-
-        if (ultrastring.EndsWith(","))
-            ultrastring.TrimEnd(',');
+        ultrastring = jsonStr;
 
 
 

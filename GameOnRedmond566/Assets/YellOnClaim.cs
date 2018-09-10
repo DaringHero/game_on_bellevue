@@ -495,18 +495,28 @@ public class YellOnClaim : MonoBehaviour
 
         //   string thestring = currentLocation.ToString();
         //  thestring += ",";
+        string dougstring = "";
         string thestring = "STATIONID:";
         thestring += currentStationID.ToString();
         thestring += ",";
 
+        dougstring += thestring;
+
         thestring += "TIME:";
+        dougstring += "TIME:";
         System.Int32 unixTimestamp = (System.Int32)(System.DateTime.UtcNow.Subtract(new System.DateTime(1970, 1, 1))).TotalSeconds;
         thestring += unixTimestamp.ToString();
+        dougstring += unixTimestamp.ToString();
         thestring += ",";
+        dougstring += ",";
+
 
         thestring += "PLAYERID:";
+        dougstring += "PLAYERID:";
         thestring += MyCurrentToy.bitToysId;
+        dougstring += MyCurrentToy.bitToysId;
         thestring += ",";
+        dougstring += ",";
 
         thestring += "DRAGONLEVEL";
         thestring += MyCurrentToy.customData.GetInt("DragonLevel",0);
@@ -517,9 +527,16 @@ public class YellOnClaim : MonoBehaviour
         thestring += ",";
 
         //Location ID, Unix Time Stamp, User id, dragon level, dragons released
+        dougstring += this.GetComponent<DictionariesForThings>().Location2Resource[this.currentLocation.ToString()];
+        dougstring += ":1";
 
         MyCurrentToy.customData.AddString("Metrics", thestring);
 
+       
+
+
+
+        this.GetComponent<JSONPost>().POST(dougstring);
     }
 
     public void SetDebugCard()
@@ -641,7 +658,7 @@ public class YellOnClaim : MonoBehaviour
 
                     //increment data for going to this station// ie collecting the resource
                     this.MyCurrentToy.customData.SetInt(this.GetComponent<DictionariesForThings>().Location2Resource[this.currentLocation.ToString()], 1);
-                    this.GetComponent<JSONPost>().POST(this.GetComponent<DictionariesForThings>().Location2Resource[this.currentLocation.ToString()]);
+                    
                     this.SetPageInfoEX();// we need to set cards after new resource
                     if (myQuestProgress.CompletedAllQuests())
                     {
