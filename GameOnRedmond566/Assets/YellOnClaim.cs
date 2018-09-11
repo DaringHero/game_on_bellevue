@@ -371,7 +371,13 @@ public class YellOnClaim : MonoBehaviour
     public void OnPutData_Fail(string _id, BitToys.FailReason reason, string text)
     {
         WriteToErrorLog("Updating customData for id: " + _id + " failed: " + reason + " " + text);
-        OnClaimToy_Fail(reason, text);
+        // OnClaimToy_Fail(reason, text);
+        ready2scan = false;
+        // if (!ready2scan)
+        //     return;
+
+        // ready2scan = false;
+         StartCoroutine(EnableReady2Scan());
 
     }
     public void OnPutData_Success(BitToys.Toy _toy)
@@ -1156,6 +1162,8 @@ public class YellOnClaim : MonoBehaviour
     {
         this.OnClaimToy_Fail(BitToys.FailReason.NETWORK_ERROR, "test fail");
         WriteToErrorLog("Fake Fail");
+
+
     }
 
     public void FakeScan()

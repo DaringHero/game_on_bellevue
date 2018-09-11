@@ -240,7 +240,7 @@ ModelImporter:
     4300018: LP_Baby_Cheek_Spike_02
     4300020: LP_Baby_leg_spikes
     4300022: r_Baby_Wing_Membrane
-    7400000: happybaby
+    7400000: babyhappy
     9500000: //RootNode
     11100000: //RootNode
     13700000: geo_body
@@ -271,7 +271,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: happybaby
+      name: babyhappy
       takeName: Take 001
       firstFrame: 1
       lastFrame: 50
