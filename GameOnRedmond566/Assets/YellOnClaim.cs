@@ -371,7 +371,7 @@ public class YellOnClaim : MonoBehaviour
     public void OnPutData_Fail(string _id, BitToys.FailReason reason, string text)
     {
         WriteToErrorLog("Updating customData for id: " + _id + " failed: " + reason + " " + text);
-
+        OnClaimToy_Fail(reason, text);
 
     }
     public void OnPutData_Success(BitToys.Toy _toy)
@@ -1221,13 +1221,14 @@ public class YellOnClaim : MonoBehaviour
         debugstring += "\n ******************************";
 
         WriteToErrorLog( debugstring);
-  //      UniClipboard.SetText(UniClipboard.GetText() + "\n" + System.DateTime.Now + " " + debugstring);
-
-        if (!ready2scan)
-            return;
+        //      UniClipboard.SetText(UniClipboard.GetText() + "\n" + System.DateTime.Now + " " + debugstring);
 
         ready2scan = false;
-        StartCoroutine(EnableReady2Scan());
+       // if (!ready2scan)
+       //     return;
+
+       // ready2scan = false;
+      ///  StartCoroutine(EnableReady2Scan());
 
         this.ScanCardFail.SetActive(true);
       //  this.leftScanParticles.gameObject.SetActive(false);
