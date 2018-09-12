@@ -494,7 +494,7 @@ public class YellOnClaim : MonoBehaviour
     }
 
     //this function should happen before sendasync, so right after onclaimtoy success
-    public void AddLocationData()
+    public void AddLocationData(bool isrightstation)
     {
         if (MyCurrentToy == null)
             return;
@@ -544,6 +544,12 @@ public class YellOnClaim : MonoBehaviour
         dougstring += MyCurrentToy.customData.GetInt("DragonsReleased", 0);
         //Location ID, Unix Time Stamp, User id, dragon level, dragons released
 
+        thestring += "RIGHTORWRONGSTATION:";
+
+        if (isrightstation || currentLocation == Location.SANC || currentLocation == Location.SANC2)
+            thestring += "1";
+        else
+            thestring += "0";
 
         MyCurrentToy.customData.AddString("Metrics", thestring);
 
@@ -629,7 +635,7 @@ public class YellOnClaim : MonoBehaviour
             //}
 
 
-            AddLocationData();
+            
 
             WriteToErrorLog("GotValidScan");
 
@@ -639,7 +645,10 @@ public class YellOnClaim : MonoBehaviour
 			Debug.Log("location = " + this.currentLocation.ToString() + "\t Location2ResourceDic = "+tempSetStationPages.Location2ResourceDic[this.currentLocation].ToString());
 			Debug.Log("location = " + this.currentLocation.ToString() + "\t Location2Resource = "+tempConverstions.Location2Resource[this.currentLocation.ToString()].ToString());
 			tempSetStationPages.SetAllStationResoruces(tempConverstions.Resource2Sprite[tempConverstions.Location2Resource[this.currentLocation.ToString()]]);
-			//
+            //
+            QuestProgress myQuestProgress = this.gameObject.GetComponent<QuestProgress>();
+            bool correctstation = myQuestProgress.StationIsForQuest();
+            AddLocationData(correctstation);
 
             if ( this.ShowNUX && this.MyCurrentToy.customData.GetBool("NewUser", true))
             {
@@ -660,10 +669,6 @@ public class YellOnClaim : MonoBehaviour
             }
             else
             {
-
-
-                QuestProgress myQuestProgress = this.gameObject.GetComponent<QuestProgress>();
-
                 // which state are we in?
 
 
@@ -1236,7 +1241,7 @@ public class YellOnClaim : MonoBehaviour
        //     return;
 
        // ready2scan = false;
-      ///  StartCoroutine(EnableReady2Scan());
+        StartCoroutine(EnableReady2Scan());
 
         this.ScanCardFail.SetActive(true);
       //  this.leftScanParticles.gameObject.SetActive(false);
