@@ -494,7 +494,7 @@ public class YellOnClaim : MonoBehaviour
     }
 
     //this function should happen before sendasync, so right after onclaimtoy success
-    public void AddLocationData(bool isrightstation)
+    public void AddLocationData(bool isrightstation, int numberofquests)
     {
         if (MyCurrentToy == null)
             return;
@@ -504,7 +504,7 @@ public class YellOnClaim : MonoBehaviour
         string dougstring = "";
         string thestring = "STATIONID:";
         dougstring += "station_id:";
-
+        thestring += "S";
         if(currentStationID < 10)
         {
             thestring += "0";
@@ -557,6 +557,11 @@ public class YellOnClaim : MonoBehaviour
             thestring += "1";
         else
             thestring += "0";
+
+        thestring += ",";
+        thestring += "QUESTSTOCOMPLETE:";
+        thestring += numberofquests.ToString();
+        thestring += ",";
 
         MyCurrentToy.customData.AddString("Metrics", thestring);
 
@@ -655,7 +660,7 @@ public class YellOnClaim : MonoBehaviour
             //
             QuestProgress myQuestProgress = this.gameObject.GetComponent<QuestProgress>();
             bool correctstation = myQuestProgress.StationIsForQuest();
-            AddLocationData(correctstation);
+            AddLocationData(correctstation, myQuestProgress.NumberOfQuestsToComplete());
 
             if ( this.ShowNUX && this.MyCurrentToy.customData.GetBool("NewUser", true))
             {

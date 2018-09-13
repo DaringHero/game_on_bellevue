@@ -57240,7 +57240,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: version .709 (BD 9-12-2018 10:00PM)
+  m_Text: version .711 (BD 9-13-2018 12:00PM)
 --- !u!222 &1629485846
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -73465,6 +73465,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2008698356}
   - component: {fileID: 2008698357}
+  - component: {fileID: 2008698358}
   m_Layer: 0
   m_Name: dragon Prefab Green
   m_TagString: Untagged
@@ -73499,6 +73500,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03f468376cc695442b13f0e19b7c362c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2008698358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2008698355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6107069687c2324499f4c5f16099d2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dragonsound: {fileID: 8300000, guid: 44211670d4b161c42b1d75bb94bd3fa1, type: 3}
 --- !u!1 &2009290959
 GameObject:
   m_ObjectHideFlags: 0

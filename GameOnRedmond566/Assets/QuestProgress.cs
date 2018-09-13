@@ -20,6 +20,18 @@ public class QuestProgress : MonoBehaviour {
         return false;
     }
 
+    public int NumberOfQuestsToComplete()
+    {
+        int i = 0;
+        foreach (YellOnClaim.Location loc in (YellOnClaim.Location[])System.Enum.GetValues(typeof(YellOnClaim.Location)))
+        {
+            string res = myYellOnClaim.GetComponent<DictionariesForThings>().EnumLocation2Resource[loc];
+            int questinfo = myYellOnClaim.MyCurrentToy.customData.GetInt(res, -1);
+            if (questinfo == 0)
+                i++;
+        }
+        return i;
+    }
 
     public bool CompletedAllQuests()
     {
