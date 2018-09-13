@@ -504,7 +504,14 @@ public class YellOnClaim : MonoBehaviour
         string dougstring = "";
         string thestring = "STATIONID:";
         dougstring += "station_id:";
+
+        if(currentStationID < 10)
+        {
+            thestring += "0";
+        }
         thestring += currentStationID.ToString();
+
+
         dougstring += currentStationID.ToString();
         thestring += ",";
         dougstring += ",";
