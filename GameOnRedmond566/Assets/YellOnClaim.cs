@@ -551,6 +551,7 @@ public class YellOnClaim : MonoBehaviour
         dougstring += MyCurrentToy.customData.GetInt("DragonsReleased", 0);
         //Location ID, Unix Time Stamp, User id, dragon level, dragons released
 
+        thestring += ",";
         thestring += "RIGHTORWRONGSTATION:";
 
         if (isrightstation || currentLocation == Location.SANC || currentLocation == Location.SANC2)
